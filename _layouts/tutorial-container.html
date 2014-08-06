@@ -1,0 +1,57 @@
+---
+layout: default
+extra_js: ["http://yandex.st/highlightjs/8.0/highlight.min.js"]
+extra_css: ["../css/tutorials.css", "../css/solarized_dark.css"]
+---
+<div class="container">
+
+	<h2>{{ page.title }}</h2>
+	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
+	{% if page.estimated-time %}
+		<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>
+	{% endif %} 
+	<div class="static-content">
+		{{ content }}
+	<br />	
+	</div>
+</div>
+<script>hljs.initHighlightingOnLoad();
+jQuery(document).ready(function() {
+		jQuery(".highlight").each(function(i,e){
+
+			var divHigh = $(e);
+			divHigh.children().hide();
+
+			var toggleBox = document.createElement("div");
+			toggleBox.className = "tutorials-togglebox"
+			divHigh.prepend(toggleBox);
+
+			var awesomeIcon = document.createElement("span");
+			var awesomeText= document.createElement("span");
+
+			awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
+			awesomeText.textContent = "Display the code";
+			awesomeText.className = "tutorials-togglebox-text";
+
+			toggleBox.appendChild(awesomeIcon);
+			toggleBox.appendChild(awesomeText);
+
+
+			$(toggleBox).click(function(){
+
+				var codeBox = divHigh.children().last();
+				var text = divHigh.children().first();
+				if( codeBox.css("display") == "none" ){
+					codeBox.show(700);
+					awesomeText.textContent = "Hide the code";
+					awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-up";
+				}else{
+					codeBox.hide(500);
+					awesomeText.textContent = "Display the code";
+					awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
+				}
+
+			});
+		});
+});
+</script>

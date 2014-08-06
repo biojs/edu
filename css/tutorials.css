@@ -1,0 +1,58 @@
+.tutorials-togglebox {
+    cursor: pointer;
+    background-color: rgba(100,100,100,0.15);
+}
+
+.tutorials-togglebox-icon {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.tutorials-togglebox-text{
+    font-weight: bold;
+}
+
+.tutorials-highlight {
+    min-height:50px;
+    display: table;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tutorials-highlight-text {
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 7px;
+}
+.tutorials-highlight-child{
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tutorials-highlight-challenge {
+    background-image: url(../img/tutorials/code.png);
+}
+
+.tutorials-highlight-verification {
+    background-image: url(../img/tutorials/checkbox.png);
+}
+
+.tutorials-highlight-stop{
+    background-image: url(../img/tutorials/stop.png);
+}
+
+.tutorials-highlight-question{
+    background-image: url(../img/tutorials/question.png);
+}
+
+.tutorials-highlight-raise{
+    background-image: url(../img/tutorials/raiseHand.png);
+}
+
+.highlight pre {
+    background: none;
+    border: none;
+}

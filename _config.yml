@@ -1,0 +1,7 @@
+name: BioJS
+description: Represent all biological data on the web
+url: http://biojs.net
+markdown: redcarpet
+pygments: true
+timezone: UTC
+encoding: utf-8
