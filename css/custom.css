@@ -7,28 +7,31 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar {
-  border: 0;
-  padding: 1ex 0;
-  border-bottom: 1px solid #eee;
-  background: #fff;
+    border: 0;
+    padding: 1ex 0;
+    border-bottom: 1px solid #eee;
+    background: #fff;
 }
-.navbar h2 {
-  display: inline-block;
-  font-size: 4em;
-  margin: 0;
-  line-height: 1em;
-  vertical-align: middle;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  font-weight: 100;
-  text-transform: uppercase;
+
+.navbar h1 {
+    display: inline-block;
+    font-size: 4em;
+    margin: 0;
+    line-height: 1em;
+    vertical-align: middle;
+    margin-left: 0.25em;
+    font-weight: 100;
+    text-transform: uppercase;
 }
-.navbar h2 a {
-  font-size: inherit;
+
+.navbar h1 .reg {
+    color: #bbb;
+    display: none;
 }
+
 .navbar-brand {
-  height: auto;
-  padding: 0;
+    height: auto;
+    padding: 0;
 }
 
 @media (min-width: 900px) {
