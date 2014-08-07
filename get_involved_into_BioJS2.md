@@ -2,7 +2,7 @@
 title: 'Tutorial: Get involved into BioJS 2.0'
 layout: tutorial-container
 author: David Dao
-category: tutorials
+category: Tutorial
 estimated-time: 45
 ---
 
@@ -39,16 +39,15 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 Objectives
 ----------
 
-This tutorial shows how to use a Biojs component. We use the BioJS
-Sequence component as a case study. By the end of this tutorial you are
+This tutorial shows how to use a Biojs 2 component. We use the BioJS
+Tree Viewer component as a case study. By the end of this tutorial you are
 expected to know how to
 
--   Get the javascript files required by a BioJS component
--   Instantiate a BioJS component on the window.onload funtion
--   Modify the default options when instantiating a component
--   Activate, deactivate, and use the Biojs.console
+-   Install node and npm for your computer
+-   Download and build a BioJS 2 Component from Source
+-   Find tests, examples and builds of the component
+-   Create a BioJS visualization for your webpage
 -   Use some methods provided by a component
--   Use a web service and proxy to retrieve a sequence from UniProt
 -   Be comfortable when reading a BioJS component documentation
 
 Requirements and recommendations
@@ -58,9 +57,8 @@ Requirements and recommendations
 
 -   Basics on JavaScript
 -   Basics on HTML
--   A bit more than basics on Web developer tools for Chrome of Firefox
--   Optional: jQuery
--   Optional: Basic php
+-   Optional: d3
+-   Optional: node/npm
 
 ### Tools and files
 
@@ -76,21 +74,14 @@ Requirements and recommendations
 ### Data and folder setup
 
 Initially you do not need any special data other than a String, but
-later in the tutorial you will use some sequences from UniProt. Below
-there is the folder organization that we use in this tutorial, please
+later in the tutorial you will use some sequences from Ensembl. Below
+there is the folder organization that .we use in this tutorial, please
 create the folders and retrieve the required files from the links
 provided.
 
 -   biojs folder: Biojs.core, Biojs.Sequence, and Biojs.tooltip (we will
     tell you how to get them)
 -   css folder: Biojs tooltip CSS (we will tell you how to get this one)
--   proxy folder: proxy.php (we will tell you how to get this one)
--   js folder: [jQuery](http://code.jquery.com/jquery-1.11.1.min.js),
-    [jQuery
-    UI](http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js),
-    [jQuery UI
-    CSS](https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/base/jquery.ui.all.css)
--   html folder: all HTML files that we will create in this tutorial
 
 Tutorial
 --------
