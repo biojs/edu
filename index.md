@@ -33,3 +33,12 @@ Demonstrations
 	{% endif %}
 {% endfor %}
 </ul>
+
+Registry
+---
+
+<ul>
+    <li>
+        <a href="http://biojs.net/registry-ui/client/">BioJS Registry</a>
+    </li>
+</ul>
