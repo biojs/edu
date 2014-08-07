@@ -1,6 +1,7 @@
 ---
 layout: container
 title: 'BioJS Tree Viewer'
+author: David Dao
 category: Demo
 ---
 <meta charset="utf-8">
