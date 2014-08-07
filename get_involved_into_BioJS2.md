@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Get involved into BioJS 2.0'
+title: 'Tutorial: Get involved into BioJS 2.0 (Under Construction!)'
 layout: tutorial-container
 author: David Dao
 category: Tutorial

@@ -17,6 +17,12 @@ title: Tutorials
 {% endfor %}
 </ul>
 
+Migration
+---
+<ul>
+    <li><a href="https://github.com/biojs/biojs2/wiki/Migrate-from-BioJS-0.1">How to migrate your old component to BioJS 2</a></li>
+</ul>
+
 Demonstrations
 ---
 
@@ -39,6 +45,6 @@ Registry
 
 <ul>
     <li>
-        <a href="http://biojs.net/registry-ui/client/">BioJS Registry</a>
+        <a href="http://biojs.net/registry-ui/client/">BioJS Registry (Under construction!)</a>
     </li>
 </ul>
