@@ -16,3 +16,20 @@ title: Tutorials
 	{% endif %}
 {% endfor %}
 </ul>
+
+Demonstrations
+---
+
+<ul>
+{% for page in site.pages %}
+	{% if page.category == "Demo" %}
+	<li><a href="{{ page.url }}">
+	{% if page.title contains "Demo: " %}
+		{{ page.title | remove_first: "Demo: " }}
+	{% else %}
+		{{ page.title }}
+	{% endif %}
+	</a></li>
+	{% endif %}
+{% endfor %}
+</ul>
