@@ -18,7 +18,8 @@ Another snippet
 <script src="biojs-vis-msa/snippets/msa_ordering.js"></script>
 
 <script>
-var msa = new biojs.vis.msa.msa('msa');
+var msa_viewer = biojs.vis.msa;
+var msa = new msa_viewer.msa('msa');
 msa.seqmgr.addDummySequences();
 </script>
 </body>
