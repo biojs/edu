@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Get involved into BioJS 2.0 (Under Construction!)'
+title: 'Tutorial: How to use a BioJS 2 Component (Under Construction!)'
 layout: tutorial-container
 author: David Dao
 category: Tutorial
@@ -7,11 +7,12 @@ estimated-time: 45
 ---
 
 
+
 Objectives
 ----------
 
-This tutorial shows how to use a Biojs 2 component. We use the BioJS
-Tree Viewer component as a case study. By the end of this tutorial you are
+This tutorial shows how to use a Biojs 2 component. We use the [BioJS
+Tree Viewer](https://github.com/biojs/biojs2/tree/master/biojs-vis-tree) component as a case study. By the end of this tutorial you are
 expected to know how to
 
 -   Install node and npm for your computer
@@ -28,6 +29,7 @@ Requirements and recommendations
 
 -   Basics on JavaScript
 -   Basics on HTML
+-   Basics with the console
 -   Optional: d3
 -   Optional: node/npm
 
@@ -41,31 +43,27 @@ Requirements and recommendations
 -   Optional: Web development IDE such us [Aptana](http://aptana.com/),
     [Brackets](http://brackets.io/), or any other you like (although you
     can also use a plain text editor)
+    
+### General tips with working with the console
 
-### Data and folder setup
+Before we begin, some general tips with working with the console (OSX):
 
-Initially you do not need any special data other than a String, but
-later in the tutorial you will use some sequences from Ensembl. Below
-there is the folder organization that .we use in this tutorial, please
-create the folders and retrieve the required files from the links
-provided.
-
--   biojs folder: Biojs.core, Biojs.Sequence, and Biojs.tooltip (we will
-    tell you how to get them)
--   css folder: Biojs tooltip CSS (we will tell you how to get this one)
+-   Press up and down to navigate command history. This is great for iteratively building up a pipeline
+    Press alt and left and right to skip forwards/backwards one word
+-   Cmd + k to clear the console
+-   Ctrl + e to skip to end, Ctrl + a to skip to the start
+-   Ctrl + enter to add a new line without running the current command
 
 Tutorial
 --------
 
 ### Step 1: Get the BioJS files
 
-Please make sure you have installed the required software, you have
-created the required folders in your working space, and you have
-populated those folders with the required files.
+Please make sure you have installed the required software.
 
 As already mentioned, you will also need some BioJS files. You can
 retrieve them from the [BioJS GitHub
-repository](https://github.com/biojs/biojs). Yoy can fork the project or
+repository](https://github.com/biojs/biojs2). Yoy can fork the project or
 download a zip to your computer so you will get all the BioJS code.
 
 If you are interested only in retrieving a particular file, js or css,
