@@ -6,35 +6,6 @@ category: Tutorial
 estimated-time: 45
 ---
 
-{% highlightblock verification %}
-We will use this icon to mark verification points.
-A verification point is a way for you to check how you are doing.
-{% endhighlightblock %}
-
-{% highlightblock stop %}
-For most of the steps in this tutorial we will
-provide the code as it should look after the task. It is tempting, we
-know, but please, please, do not go for the “copy&paste” way.
-{% endhighlightblock %}
-
-{% highlightblock challenge %}
-We will use this icon to challenge you
-with additional code-related tasks so you can go further at your own
-pace. No inline answer will be provide for those challenges but we will
-give you some guidelines and tips. By the way, within the instructions
-we will use *an italic font* to refer to variables and pieces of code.
-{% endhighlightblock %}
-
-{% highlightblock question %}
-We will use this icon to ask you some questions related to the task your are working on.
-{% endhighlightblock %}
-
-{% highlightblock raise %}
-If you are following this tutorial as part of a workshop, do not hesitate to
-raise your hand and share any questions or comments you may have.
-If you are doing it by your own, you still can raise your hand in our
-mailing list, just join our [Google Group](https://groups.google.com/forum/#!forum/biojs).
-{% endhighlightblock %}
 
 Objectives
 ----------

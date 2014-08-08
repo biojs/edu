@@ -1,4 +1,8 @@
-
+span.glyphicon {
+    font-size: 2.0em;
+    display:inline-block;
+    vertical-align:text-bottom 
+}
 
 .tutorials-togglebox {
     cursor: pointer;
