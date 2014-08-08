@@ -54,6 +54,7 @@ This is the step for building a BioJS package.
 4. Build a file for a browser
  >`nmp run build-browser`
 
+####Working examples of the component can be found in the snippet folder of each package
 
 <br>
 <br> 
@@ -107,6 +108,8 @@ This is the step for building a BioJS package.
 
 4. Build a file for a browser
  >`nmp run build-browser`
+ 
+####Working examples of the component can be found in the snippet folder of each package
 
 <br> 
 <br>  
@@ -154,4 +157,6 @@ This is the step for building a BioJS package.
 
 4. Build a file for a browser
  >`nmp run build-browser`
+ 
+####Working examples of the component can be found in the snippet folder of each package
 
