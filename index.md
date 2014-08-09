@@ -25,7 +25,6 @@ Tutorials
 	</a></li>
 	{% endif %}
 {% endfor %}
-    <li><a href="https://github.com/biojs/biojs2/wiki/Migrate-from-BioJS-0.1">How to migrate your old component to BioJS 2</a></li>
 </ul>
 
 Demonstrations

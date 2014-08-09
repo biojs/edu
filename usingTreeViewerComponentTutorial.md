@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Using the Tree Viewer Component'
+title: 'Using the Tree Viewer Component'
 layout: tutorial-container
 author: David Dao
 category: Tutorial

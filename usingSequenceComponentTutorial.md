@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Using the Sequence Component'
+title: 'Using the Sequence Component'
 layout: tutorial-container
 author: Leyla Garcia
 category: Tutorial
