@@ -6,17 +6,11 @@ category: Tutorial
 estimated-time: 5
 ---
 
-Setup a development machine
---------------------------
-
 - [__Mac__](#mac)
 - [__Linux__](#linux)
 - [__Windows__](#windows)
 
 When your machine is ready to rumble, continue to the [tutorial](howToCreateComponent.html)
-
-<br> 
-<br> 
 
 <a name="mac"></a>
 Mac Users 
@@ -33,10 +27,6 @@ Mac Users
 
 Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/)
 
-<br> 
-<br>  
-<br> 
-
 <a name="linux"></a>
 Linux users
 ------------------------------
@@ -48,10 +38,6 @@ E.g. for Ubuntu run
 > sudo apt-get install npm
 
  
-<br>
-<br> 
-<br> 
-
 <a name="windows"></a>
 Windows Users 
 ------------------------------
@@ -68,7 +54,7 @@ Way 2) Build node from the source code
         * python → python 
         * devel → git
      - Open the cygwin command line with Start > Cygwin > Cygwin Bash Shell.
-<br>    
+  
 
 2. Build node from the source:
     >`git clone git://github.com/ry/node.git`
