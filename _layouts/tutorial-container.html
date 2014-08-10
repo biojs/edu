@@ -49,7 +49,7 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 jQuery(document).ready(function() {
 		jQuery(".collapsible").each(function(i,e){
 
-			var divHigh = $(e).parent();
+			var divHigh = $(e);
 			divHigh.children().hide();
 
 			var toggleBox = document.createElement("div");

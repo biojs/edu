@@ -48,6 +48,8 @@ eos
       end
 
       def render(context)
+
+
         if context.registers[:site].pygments
           render_pygments(context, super)
         else
@@ -80,8 +82,8 @@ eos
         #The div is required because RDiscount blows ass
 
         <<-HTML
-  <div>
-    <pre><code class='#{@lang} #{@collapsible}'>#{h(code).strip}</code></pre>
+  <div class='collapsible'>
+    <pre><code class='#{@lang} '>#{h(code).strip}</code></pre>
   </div>
         HTML
       end
