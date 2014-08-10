@@ -13,7 +13,8 @@ estimated-time: 5
 When your machine is ready to rumble, continue to the [tutorial](howToCreate.html)
 
 <a name="mac"></a>
-#### Mac Users 
+
+### Mac Users 
 
 1. Clone our BioJS 2 repository
 
@@ -36,7 +37,8 @@ brew install node
 Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/)
 
 <a name="linux"></a>
-#### Linux users
+
+### Linux users
 
 Install nodejs via [your package manager](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)
 
@@ -47,7 +49,8 @@ sudo apt-get install npm
 ~~~
  
 <a name="windows"></a>
-#### Windows Users 
+
+### Windows Users 
 
 
 Way 1) Download & install using the [Windows installer](http://nodejs.org/download/)
