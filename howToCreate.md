@@ -161,8 +161,9 @@ var parser = require('path to biojs-io-graduates');
 parser.graduates();
 ~~~
 
-### 5) Browserify and publish your component
+### 5) Publish your component
 
+<!--
 Make sure, that in __package.json__ , the main attribute is set to the path of your main file.
 Currently the default is __index.js__. Also edit the __npm run build-browser__ command, denoted in package.json by adjusting index.js to the path of your main file.
 
@@ -183,6 +184,7 @@ TODO: publish the dummy component so people don't have to use it.
 Normally you would now publish your package to npm and github.
 
 **TODO** Here we only show you how to publish it to github.
+-->
 
-Congratulations! Your component is now on npm and part of Biojs 2. It is ready to be used by everybody. 
-In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs.io.contributors__ component.
+Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody. Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
+In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs.io.graduates__ component.
