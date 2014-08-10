@@ -1,6 +1,6 @@
 ---
 title: 'How to create a component for BioJS 2'
-layout: container
+layout: tutorial-container
 author: Iris Shih and David Dao 
 category: Tutorial
 estimated-time: 30 
@@ -11,12 +11,9 @@ estimated-time: 30
 	<span class="glyphicon glyphicon-info-sign" style="font-size:22px"></span> &nbsp;
 	You need to install `npm` before you can start to rock.
 </div>
-{% highlightblock question %}
-You need to install `npm` before you can start to rock.
-{% endhighlightblock %}
 
 In the following we will give you a gentle introduction how to create a component for BioJS 2.
-As a case study, we will build a parser for parsing a list of all graduates of this tutorial.
+As a case study, we will build a simple parser for reading a list of all graduates of this tutorial.
 
 **TODO**
 
@@ -24,16 +21,16 @@ As a case study, we will build a parser for parsing a list of all graduates of t
 graduates (of this tutorial) --> (1) biojs-io-graduates --> (2) biojs-vis-graduates--> | Chart |
 ```
 
-### 1) Clone the BioJS 2 Template from GitHub
+### 1) Fork the BioJS 2 Template from GitHub
 
 We created a BioJS Template for giving you a headstart for developing your component. 
-You can find it in our [BioJS2 folder](https://github.com/biojs/biojs2).
-
-__TODO__: please move it to a separate repo.
+You can find it in our [BioJS2 folder](https://github.com/biojs/biojs2). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
+Now enter following command lines:
 
 ```
-git clone https://github.com/biojs/biojs2.git
-cd biojs-template
+git clone https://github.com/YOUR-USERNAME/biojs2.git
+cd biojs2/biojs-template
+
 ```
 
 Inside the folder you find following files:
@@ -43,12 +40,13 @@ Inside the folder you find following files:
 - `browser.js`: Helper to create a namespace file for client-side javascript
 - `index.js`: Your source code
 - `package.json`: Information about your package: author, version, ...
+- `src` : Folder including our tutorial index.js
 
 More detailed information will be given in the following.
 
 ### 2) Choose a name for your component
 
-Choose a name for your component. For the following example, we will name our component *biojs-io-contributors*.
+Choose a name for your component. For the following example, we will name our component *biojs-io-graduates*.
 For Biojs 2 components, we have following naming conventions:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
@@ -59,11 +57,15 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 - Use `algo` for server/client side algorithms processing the data
 
 Now we have to edit the name in __package.json__.
-Open the file with an editor and replace every __biojs-template__ to __biojs-io-contributors__.
+Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
 
-### 3) Write your component
+### 3) Write a parser
 
-Now it is time to code! First we will have a look at the [data]().
+Now it is time to code! 
+To begin please open now the src folder and access the index.js file. 
+
+First we will have a look at the data. 
+It is structured as follows:
 
 ```
 nickname,country (two chars)
@@ -82,22 +84,70 @@ timruffles:UK
 iriscshih:TW
 ```
 
+Now have a look at the provided code.
+
+```
+var biojs = {}
+
+biojs.graduates = function() {
+
+    var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
+    var graduates = {};
+
+    // count countries
+    for (var i = 0; i < data.length; i++) {
+       //Fill in the missing code here!
+    }
+
+    console.log(graduates); 
+}
+
+biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
+
+```
+
+
 
 {% highlightblock challenge %}
-Can you write a parser for this data so that the resulting JSON File has following structure?
+
+Can you fill in the missing code inside the for loop so that `biojs.graduates()` outputs the number of graduates for each country?
+
 {% endhighlightblock %}
 
-You can find the complete file [here](https://github.com/biojs/tutorial-heroes/blob/master/list)
-to [download](https://raw.githubusercontent.com/biojs/tutorial-heroes/master/list)
+```
+{country : number of graduates} 
 
-**TODO**: Assume people do not know about JSON
-**TODO**: help them to write the parser
+```
 
-### 4) Write the parser
 
-**TODO**
+__Solution:__ 
 
-### 4) Export your component with CommonJS and NPM
+```
+var biojs = {}
+
+biojs.graduates = function() {
+
+    var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
+    var graduates = {};
+
+    // count countries
+    for (var i = 0; i < data.length; i++) {
+        var row = data[i].split(":"); 
+        // init if new
+        if (graduates[row[1]] === undefined) {
+            graduates[row[1]] = 0;
+        }
+        graduates[row[1]]++;
+    }
+
+    console.log(graduates); 
+}
+
+biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
+
+```
+
+### 5) Export your component with CommonJS and NPM
 
 Great work! Now it is time to export your component in order to provide your functionality with the other BioJS components.
 We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in Biojs.
@@ -105,23 +155,21 @@ We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export mo
 Please export your parser in the following way:
 
 ```
-var parser = function() {
+var biojs = { }
 
+biojs.graduates = function() {
+    ...
 }
 
-parser.contributors_parser = function(string) {
-    
-}
-
-module.exports = parser;
+module.exports = biojs;
 
 ```
 
 now other BioJS components are able to include your component by using
 
 ```
-var parser = require(biojs-io-contributors);
-parser.contributors_parser(string);
+var parser = require('path to biojs-io-graduates');
+parser.graduates();
 
 ```
 
