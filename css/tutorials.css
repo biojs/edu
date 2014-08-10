@@ -4,6 +4,13 @@ span.glyphicon {
     vertical-align:text-bottom 
 }
 
+.improve-this-page .glyphicon {
+    font-size: 1.2em;
+}
+.tutorials-togglebox .glyphicon {
+    font-size: 1.5em;
+}
+
 .tutorials-togglebox {
     cursor: pointer;
     background-color: rgba(100,100,100,0.15);
