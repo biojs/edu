@@ -1,6 +1,6 @@
 ---
 title: 'Quick guide to migrate your old BioJS component'
-layout: container
+layout: tutorial-container
 author: Sebastian Wilzbach
 category: Tutorial
 estimated-time: 10 
