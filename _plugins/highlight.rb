@@ -85,7 +85,7 @@ eos
 		puts code
         <<-HTML
   <div class='collapsible'>
-    <pre><code data-lang="text" class='#{@lang} '>#{code}</code></pre>
+    <pre><code data-lang="text" class='#{@lang} '>#{h(code).strip}</code></pre>
   </div>
         HTML
       end

@@ -8,9 +8,11 @@ extra_css: ["../css/tutorials.css", "../css/solarized_dark.css"]
 	<h2>{{ page.title }}</h2>
 	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
 	{% if page.estimated-time %}
-		<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>
+	<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>
 	{% endif %} 
 	<div class="static-content">
+
+		<div id="explanation">
 {% highlightblock verification %}
 We will use this icon to mark verification points.
 A verification point is a way for you to check how you are doing.
@@ -40,48 +42,59 @@ raise your hand and share any questions or comments you may have.
 If you are doing it by your own, you still can raise your hand in our
 mailing list, just join our [Google Group](https://groups.google.com/forum/#!forum/biojs).
 {% endhighlightblock %}
-        
+
+		</div>
+		<br />
+
 		{{ content }}
-	<br />	
+		<br />	
 	</div>
 </div>
 <script>hljs.initHighlightingOnLoad();
 jQuery(document).ready(function() {
-		jQuery(".collapsible").each(function(i,e){
+	jQuery(".collapsible").each(function(i,e){
+		collapseStuff(e,"Hide the code", "Display the code");
 
-			var divHigh = $(e);
-			divHigh.children().hide();
-
-			var toggleBox = document.createElement("div");
-			toggleBox.className = "tutorials-togglebox"
-			divHigh.prepend(toggleBox);
-
-			var awesomeIcon = document.createElement("span");
-			var awesomeText= document.createElement("span");
-
-			awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
-			awesomeText.textContent = "Display the code";
-			awesomeText.className = "tutorials-togglebox-text";
-
-			toggleBox.appendChild(awesomeIcon);
-			toggleBox.appendChild(awesomeText);
-
-
-			$(toggleBox).click(function(){
-
-				var codeBox = divHigh.children().last();
-				var text = divHigh.children().first();
-				if( codeBox.css("display") == "none" ){
-					codeBox.show(700);
-					awesomeText.textContent = "Hide the code";
-					awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-up";
-				}else{
-					codeBox.hide(500);
-					awesomeText.textContent = "Display the code";
-					awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
-				}
-
-			});
-		});
+	});
+	collapseStuff("#explanation","Hide the icon explanation", "Display the explanation");
 });
+
+function collapseStuff(e, textHidden, textDisplayed){
+
+	var divHigh = $(e);
+	var children = divHigh.children();
+	children.hide();
+
+	var toggleBox = document.createElement("div");
+	toggleBox.className = "tutorials-togglebox";
+	divHigh.prepend(toggleBox);
+
+	var awesomeIcon = document.createElement("span");
+	var awesomeText= document.createElement("span");
+
+	awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
+	awesomeText.textContent = "Display the code";
+	awesomeText.className = "tutorials-togglebox-text";
+
+	toggleBox.appendChild(awesomeIcon);
+	toggleBox.appendChild(awesomeText);
+
+
+	$(toggleBox).click(function(){
+
+		var codeBox = children;
+		var text = divHigh.children().first();
+		if( codeBox.css("display") == "none" ){
+			codeBox.show(700);
+			awesomeText.textContent = textHidden;
+			awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-up";
+		}else{
+			codeBox.hide(500);
+			awesomeText.textContent = textDisplayed;
+			awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
+		}
+
+	});
+};
+
 </script>
