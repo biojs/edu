@@ -1,5 +1,5 @@
 ---
-title: 'How to create a component for BioJS 2'
+title: 'How to create a Visualization component for BioJS 2 with D3'
 layout: tutorial-container
 author: Iris Shih and David Dao 
 category: Tutorial
@@ -9,17 +9,11 @@ estimated-time: 30
 <div class="alert alert-info">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
 	<span class="glyphicon glyphicon-info-sign" style="font-size:22px"></span> &nbsp;
-	You need to install `npm` before you can start to rock.
+	Please have a look at <a href="/howToCreate.html">Part 1</a>  before continuing
 </div>
 
 In the following we will give you a gentle introduction how to create a component for BioJS 2.
 As a case study, we will build a simple parser for reading a list of all graduates of this tutorial.
-
-**TODO**
-
-```
-graduates (of this tutorial) --> (1) biojs-io-graduates --> (2) biojs-vis-graduates--> | Chart |
-```
 
 ### 1) Fork the BioJS 2 Template from GitHub
 
@@ -178,7 +172,7 @@ parser.graduates();
 Make sure, that in __package.json__ , the main attribute is set to the path of your main file.
 Currently the default is __index.js__. Also edit the __npm run build-browser__ command, denoted in package.json by adjusting index.js to the path of your main file.
 
-Also adjust your namespace defined in the __browser.js__ file to __biojs.io.contributors__ .
+Also adjust your namespace defined in the __browser.js__ file to __biojs.io.graduates__ .
 Now you are ready to publish your component in npm. Adjust your keywords and author information in package.json. 
 They will be used by npm to display information about your component. Now type into the console:
 
@@ -197,4 +191,4 @@ Normally you would now publish your package to npm and github.
 **TODO** Here we only show you how to publish it to github.
 
 Congratulations! Your component is now on npm and part of Biojs 2. It is ready to be used by everybody. 
-In the next tutorial, you will learn [how to create a visualization component]() using your newly build __biojs.io.contributors__ component.
+In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs.io.contributors__ component.

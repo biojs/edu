@@ -50,7 +50,7 @@ eos
       def render(context)
 
 
-        if context.registers[:site].pygments
+		if false
           render_pygments(context, super)
         else
           render_codehighlighter(context, super)
@@ -81,9 +81,10 @@ eos
       def render_codehighlighter(context, code)
         #The div is required because RDiscount blows ass
 
+		puts code
         <<-HTML
   <div class='collapsible'>
-    <pre><code class='#{@lang} '>#{h(code).strip}</code></pre>
+    <pre><code class='#{@lang} '>#{code}</code></pre>
   </div>
         HTML
       end
