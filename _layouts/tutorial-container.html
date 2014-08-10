@@ -47,9 +47,9 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 </div>
 <script>hljs.initHighlightingOnLoad();
 jQuery(document).ready(function() {
-		jQuery(".highlight").each(function(i,e){
+		jQuery(".collapsible").each(function(i,e){
 
-			var divHigh = $(e);
+			var divHigh = $(e).parent();
 			divHigh.children().hide();
 
 			var toggleBox = document.createElement("div");
