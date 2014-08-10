@@ -21,11 +21,11 @@ We created a BioJS Template for giving you a headstart for developing your compo
 You can find it in our [BioJS2 folder](https://github.com/biojs/biojs2). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
 Now enter following command lines:
 
-```
+~~~
 git clone https://github.com/YOUR-USERNAME/biojs2.git
 cd biojs2/biojs-template
 
-```
+~~~
 
 Inside the folder you find following files:
 
@@ -61,26 +61,26 @@ To begin please open now the src folder and access the index.js file.
 First we will have a look at the data. 
 It is structured as follows:
 
-```
+~~~
 nickname,country (two chars)
-```
+~~~
 
 You can safely assume that the nickname is unique.
 For the country abbreviation the official standard [ISO 3166-1 Alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1) is used.
 
 For example:
 
-```
+~~~
 greenify:DE
 daviddao:HK
 mhelvens:NL
 timruffles:UK
 iriscshih:TW
-```
+~~~
 
 Now have a look at the provided code.
 
-```
+~~~
 var biojs = {}
 
 biojs.graduates = function() {
@@ -98,7 +98,7 @@ biojs.graduates = function() {
 
 biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
 
-```
+~~~
 
 
 
@@ -108,10 +108,10 @@ Can you fill in the missing code inside the for loop so that `biojs.graduates()`
 
 {% endhighlightblock %}
 
-```
+~~~
 {country : number of graduates} 
 
-```
+~~~
 
 
 __Solution:__ 
@@ -150,7 +150,7 @@ We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export mo
 
 Please export your parser in the following way:
 
-```
+~~~
 var biojs = { }
 
 biojs.graduates = function() {
@@ -159,15 +159,15 @@ biojs.graduates = function() {
 
 module.exports = biojs;
 
-```
+~~~
 
 now other BioJS components are able to include your component by using
 
-```
+~~~
 var parser = require('path to biojs-io-graduates');
 parser.graduates();
 
-```
+~~~
 
 ### 5) Browserify and publish your component
 
@@ -178,12 +178,12 @@ Also adjust your namespace defined in the __browser.js__ file to __biojs.io.grad
 Now you are ready to publish your component in npm. Adjust your keywords and author information in package.json. 
 They will be used by npm to display information about your component. Now type into the console:
 
-```
+~~~
 //First login or create a new account with following command
 npm adduser 
 //Now it is time to publish!
 npm publish
-```
+~~~
 
 TODO: Hmm they shouldn't publish their dummy package on npm.
 TODO: publish the dummy component so people don't have to use it.
