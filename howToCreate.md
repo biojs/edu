@@ -24,7 +24,6 @@ Now enter following command lines:
 ~~~
 git clone https://github.com/YOUR-USERNAME/biojs2.git
 cd biojs2/biojs-template
-
 ~~~
 
 Inside the folder you find following files:
@@ -97,7 +96,6 @@ biojs.graduates = function() {
 }
 
 biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
-
 ~~~
 
 
@@ -110,14 +108,12 @@ Can you fill in the missing code inside the for loop so that `biojs.graduates()`
 
 ~~~
 {country : number of graduates} 
-
 ~~~
 
 
 __Solution:__ 
 
 {% code javascript collapsible=true %}
-
 var biojs = {}
 
 biojs.graduates = function() {
@@ -139,8 +135,6 @@ biojs.graduates = function() {
 }
 
 biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
-
-
 {% endcode %}
 
 ### 5) Export your component with CommonJS and NPM
@@ -158,7 +152,6 @@ biojs.graduates = function() {
 }
 
 module.exports = biojs;
-
 ~~~
 
 now other BioJS components are able to include your component by using
@@ -166,7 +159,6 @@ now other BioJS components are able to include your component by using
 ~~~
 var parser = require('path to biojs-io-graduates');
 parser.graduates();
-
 ~~~
 
 ### 5) Browserify and publish your component

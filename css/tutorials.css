@@ -58,7 +58,7 @@ span.glyphicon {
     background-image: url(../img/tutorials/raiseHand.png);
 }
 
-.highlight pre {
+.highlight pre, .tutorials pre {
     background: none;
     border: none;
 }

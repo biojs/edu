@@ -49,8 +49,9 @@ eos
 
       def render(context)
 
-
-		if false
+        # pygements is not installed on some macs
+        #if context.registers[:site].pygments
+		    if false
           render_pygments(context, super)
         else
           render_codehighlighter(context, super)
@@ -84,7 +85,7 @@ eos
 		puts code
         <<-HTML
   <div class='collapsible'>
-    <pre><code class='#{@lang} '>#{code}</code></pre>
+    <pre><code data-lang="text" class='#{@lang} '>#{code}</code></pre>
   </div>
         HTML
       end
