@@ -28,30 +28,30 @@ Let your `BioJs(.)*.js` be the `index.js` in the lib folder
 
   1.1) install it 
 
-```
+~~~
 npm install biojs-legacy --save
-```
+~~~
 
   1.2) require it 
 
 Add this as the first line of your component.
 
-```
+~~~
 var BioJs = require('biojs-legacy');
-```
+~~~
 
 ### 2. export your module
  
 export your module.
  
-```
+~~~
 module.exports = Biojs.Sequence = Biojs.extend(
-```
+~~~
 
 
 ### 3. edit your browser.js
 
-```
+~~~
 if (typeof biojs === 'undefined') {
   module.exports = biojs = {}
 }
@@ -66,19 +66,19 @@ if (typeof Biojs === 'undefined') {
 }
 
 Biojs.Sequence = require('./');
-```
+~~~
 
 ### 4. Create your js file
 
-```
+~~~
 browserify browser.js > biojs_vis_sequence.min.js
-```
+~~~
 
 or 
 
-```
+~~~
 npm run build-browser
-```
+~~~
 
 This will create the file `biojs_vis_sequence.min.js`
 
