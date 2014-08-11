@@ -10,7 +10,7 @@ series: cat
 		{{ content }}
 
 		<ul>
-		{% for post in site.pages %}
+		{% for post in site.pages | sort: 'url' %}
 		{% if post.category  ==  page.cat and post.url != page.url %}
 		<li> {{ count }} <a href="{{ post.url }}" >
 				{{post.title}}
