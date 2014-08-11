@@ -26,7 +26,6 @@ module Jekyll
     def generate(site)
       #if site.layouts.key? 'category_index'
         dir = site.config['category_dir'] || 'categories'
-        puts "config"
         categories = site.config["cats"]
         categories.each do |category|
           catname = category['name']
