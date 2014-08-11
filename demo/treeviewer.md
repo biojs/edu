@@ -1,8 +1,9 @@
 ---
-layout: container
+layout: series_container
 title: 'BioJS Tree Viewer'
 author: David Dao
-category: Demo
+category: demo
+series: demo
 ---
 <meta charset="utf-8">
 
@@ -12,10 +13,10 @@ category: Demo
 
   <!-- BioJS 2.0 Component -->
   <!-- link rel="stylesheet" href="/biojs-vis-tree/tnt.css" type="text/css" /-->
-  <script src="/biojs-vis-tree/build/biojs_vis_tree.min.js"></script>
+  <script src="biojs-vis-tree/build/biojs_vis_tree.min.js"></script>
 
   <!-- Tree.js -->
-  <script src="/biojs-vis-tree/snippets/swap_nodes/swap_nodes.js"></script>
+  <script src="biojs-vis-tree/snippets/swap_nodes/swap_nodes.js"></script>
 
   <h3>Swap tree nodes</h3>
   <div id="1"></div>
@@ -29,7 +30,7 @@ category: Demo
   </script>
 
   <!-- Tree.js -->
-  <script src="/biojs-vis-tree/snippets/newick_input/newick_input.js"></script>
+  <script src="biojs-vis-tree/snippets/newick_input/newick_input.js"></script>
 
   <h3>Newick Annotation Theme</h3>
   <div id="2"></div>

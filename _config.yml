@@ -5,3 +5,10 @@ markdown: kramdown
 pygments: false
 timezone: UTC
 encoding: utf-8
+cats:
+    - name: demo
+      desc: Demonstration
+    - name: tutorials
+      desc: Tutorials and Stuff
+    - name: howto
+      desc: How-Tos

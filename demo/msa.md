@@ -1,8 +1,9 @@
 ---
-layout: container
+layout: series_container
 title: 'BioJS MSA Viewer'
 author: Sebastian Wilzbach
-category: Demo
+category: demo
+series: demo
 ---
 
 <link type="text/css" rel="stylesheet" href="biojs-vis-msa/css/msa.css" />

@@ -2,7 +2,8 @@
 title: 'How to create a Visualization component for BioJS 2 with D3 (Under construction!)'
 layout: tutorial-container
 author: Iris Shih and David Dao 
-category: Tutorial
+category: tutorials
+series: 101
 estimated-time: 30 
 ---
 

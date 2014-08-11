@@ -2,7 +2,8 @@
 title: 'How to setup your machine for BioJS 2'
 layout: tutorial-container
 author: Iris Shih
-category: Tutorial
+category: tutorials
+series: 101
 estimated-time: 5
 ---
 

@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: series
 extra_js: ["http://yandex.st/highlightjs/8.0/highlight.min.js"]
 extra_css: ["../css/tutorials.css", "../css/solarized_dark.css"]
 ---
-<div class="container tutorials">
+<div class="container-fluid tutorials">
 
 	<h2>{{ page.title }}</h2>
 	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
 		collapseStuff(e,"Hide the code", "Display the code");
 
 	});
-	collapseStuff("#explanation","Hide the icon explanation", "Display the explanation");
+	collapseStuff("#explanation","Hide the icon explanation", "Display the icon explanation");
 });
 
 function collapseStuff(e, textHidden, textDisplayed){
@@ -79,6 +79,7 @@ function collapseStuff(e, textHidden, textDisplayed){
 	toggleBox.appendChild(awesomeIcon);
 	toggleBox.appendChild(awesomeText);
 
+	awesomeText.textContent = textDisplayed;
 
 	$(toggleBox).click(function(){
 

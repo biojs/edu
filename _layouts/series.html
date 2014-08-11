@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+{% if page.series != nil %}
+
+{% assign count = '0' %}
+{% assign idx = '0' %}
+{% for post in site.pages reversed %}
+{% if post.series == page.series %}
+{% capture count %}{{ count | plus: '1' }}{% endcapture %}
+{% if post.url == page.url %}
+{% capture idx %}{{count}}{% endcapture %}
+{% endif %}
+{% endif %}
+{% endfor %}
+
+
+
+<div class="container-fluid">
+<div id="sidebar-row" class="row">
+  <div class="col-sm-2">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Series</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+
+	{% assign count = '0' %}
+	{% for tpage in site.pages %}
+	{% if tpage.series ==  page.series  %}
+
+	{% capture count %}{{ count | plus: '1' }}{% endcapture %}
+		{% if tpage.url ==  page.url %}
+		<li class="active"> <a href="#">
+				{{ count }}. {{tpage.title}}
+			</a>
+
+		{% else %}
+		<li> 
+		<a href="{{ tpage.url }}" >
+			{{ count }}. {{tpage.title}}
+		</a>
+			{% endif %}
+	</li>
+	{% endif %}
+	{% endfor %}
+
+          </ul>
+		  <!--		{{ count }} articles in this series. -->
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+{% assign count = nil %}
+{% assign idx = nil %}
+
+  <div class="col-sm-9">
+
+     {{ content }}
+
+  </div>
+</div> 
+
+</div>
+
+{% else %}
+
+No series id provided.
+
+{% endif %}

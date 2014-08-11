@@ -2,7 +2,8 @@
 title: 'How to create a component for BioJS 2'
 layout: tutorial-container
 author: Iris Shih and David Dao 
-category: Tutorial
+category: tutorials
+series: 101
 estimated-time: 30 
 ---
 
@@ -187,4 +188,4 @@ Normally you would now publish your package to npm and github.
 -->
 
 Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody. Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
-In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs.io.graduates__ component.
+In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs-io-graduates__ component.
