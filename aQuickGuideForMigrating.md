@@ -7,7 +7,7 @@ estimated-time: 10
 ---
 
 **Warning**: only use this guide for quick & dirty migration using `biojs-legacy`.
-We highly encourage you to follow the [real guide](/howToCreateComponent.html) and look at other new components of BioJS 2.0.
+We highly encourage you to follow the [real guide](/howToCreate.html) and look at other new components of BioJS 2.0.
 
 A working example for this quick migration can be found at biojs-sequence.
 
