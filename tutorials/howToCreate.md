@@ -1,15 +1,16 @@
 ---
-title: 'How to create a Visualization component for BioJS 2 with D3'
+title: 'How to create a component for BioJS 2'
 layout: tutorial-container
 author: Iris Shih and David Dao 
-category: Tutorial
+category: tutorials
+series: 101
 estimated-time: 30 
 ---
 
 <div class="alert alert-info">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
 	<span class="glyphicon glyphicon-info-sign" style="font-size:22px"></span> &nbsp;
-	Please have a look at <a href="/howToCreate.html">Part 1</a>  before continuing
+	You need to install `npm` before you can start to rock.
 </div>
 
 In the following we will give you a gentle introduction how to create a component for BioJS 2.
@@ -21,11 +22,10 @@ We created a BioJS Template for giving you a headstart for developing your compo
 You can find it in our [BioJS2 folder](https://github.com/biojs/biojs2). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
 Now enter following command lines:
 
-```
+~~~
 git clone https://github.com/YOUR-USERNAME/biojs2.git
 cd biojs2/biojs-template
-
-```
+~~~
 
 Inside the folder you find following files:
 
@@ -61,26 +61,26 @@ To begin please open now the src folder and access the index.js file.
 First we will have a look at the data. 
 It is structured as follows:
 
-```
+~~~
 nickname,country (two chars)
-```
+~~~
 
 You can safely assume that the nickname is unique.
 For the country abbreviation the official standard [ISO 3166-1 Alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1) is used.
 
 For example:
 
-```
+~~~
 greenify:DE
 daviddao:HK
 mhelvens:NL
 timruffles:UK
 iriscshih:TW
-```
+~~~
 
 Now have a look at the provided code.
 
-```
+~~~
 var biojs = {}
 
 biojs.graduates = function() {
@@ -97,8 +97,7 @@ biojs.graduates = function() {
 }
 
 biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
-
-```
+~~~
 
 
 
@@ -108,15 +107,14 @@ Can you fill in the missing code inside the for loop so that `biojs.graduates()`
 
 {% endhighlightblock %}
 
-```
+~~~
 {country : number of graduates} 
-
-```
+~~~
 
 
 __Solution:__ 
 
-```
+{% code javascript collapsible=true %}
 var biojs = {}
 
 biojs.graduates = function() {
@@ -138,8 +136,7 @@ biojs.graduates = function() {
 }
 
 biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
-
-```
+{% endcode %}
 
 ### 5) Export your component with CommonJS and NPM
 
@@ -148,7 +145,7 @@ We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export mo
 
 Please export your parser in the following way:
 
-```
+~~~
 var biojs = { }
 
 biojs.graduates = function() {
@@ -156,19 +153,18 @@ biojs.graduates = function() {
 }
 
 module.exports = biojs;
-
-```
+~~~
 
 now other BioJS components are able to include your component by using
 
-```
+~~~
 var parser = require('path to biojs-io-graduates');
 parser.graduates();
+~~~
 
-```
+### 5) Publish your component
 
-### 5) Browserify and publish your component
-
+<!--
 Make sure, that in __package.json__ , the main attribute is set to the path of your main file.
 Currently the default is __index.js__. Also edit the __npm run build-browser__ command, denoted in package.json by adjusting index.js to the path of your main file.
 
@@ -176,12 +172,12 @@ Also adjust your namespace defined in the __browser.js__ file to __biojs.io.grad
 Now you are ready to publish your component in npm. Adjust your keywords and author information in package.json. 
 They will be used by npm to display information about your component. Now type into the console:
 
-```
+~~~
 //First login or create a new account with following command
 npm adduser 
 //Now it is time to publish!
 npm publish
-```
+~~~
 
 TODO: Hmm they shouldn't publish their dummy package on npm.
 TODO: publish the dummy component so people don't have to use it.
@@ -189,6 +185,7 @@ TODO: publish the dummy component so people don't have to use it.
 Normally you would now publish your package to npm and github.
 
 **TODO** Here we only show you how to publish it to github.
+-->
 
-Congratulations! Your component is now on npm and part of Biojs 2. It is ready to be used by everybody. 
-In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs.io.contributors__ component.
+Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody. Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
+In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs.io.graduates__ component.

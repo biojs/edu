@@ -66,7 +66,6 @@ eos
         classes = Array[@lang]
         if defined? @collapsible
           classes.push "collapsible"
-          puts "collapsible"
         end
 
         output = add_code_tags(
@@ -81,8 +80,6 @@ eos
 
       def render_codehighlighter(context, code)
         #The div is required because RDiscount blows ass
-
-		puts code
         <<-HTML
   <div class='collapsible'>
     <pre><code data-lang="text" class='#{@lang} '>#{h(code).strip}</code></pre>

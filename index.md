@@ -1,6 +1,7 @@
 ---
 layout: container
 ---
+
 Registry
 ---
 
@@ -10,36 +11,12 @@ Registry
     </li>
 </ul>
 
-Tutorials
+Categories
 ---
 
 <ul>
-{% for page in site.pages %}
-	{% if page.category == "Tutorial" %}
-	<li><a href="{{ page.url }}">
-	{% if page.title contains "Tutorial: " %}
-		{{ page.title | remove_first: "Tutorial: " }}
-	{% else %}
-		{{ page.title }}
-	{% endif %}
-	</a></li>
-	{% endif %}
-{% endfor %}
-</ul>
 
-Demonstrations
----
-
-<ul>
-{% for page in site.pages %}
-	{% if page.category == "Demo" %}
-	<li><a href="{{ page.url }}">
-	{% if page.title contains "Demo: " %}
-		{{ page.title | remove_first: "Demo: " }}
-	{% else %}
-		{{ page.title }}
-	{% endif %}
-	</a></li>
-	{% endif %}
+{% for cat in site.cats %}
+<li> <a href="/categories/{{ cat.name }}/index.html"> {{ cat.desc }} </a>
 {% endfor %}
 </ul>

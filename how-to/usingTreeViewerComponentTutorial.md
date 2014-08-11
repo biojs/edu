@@ -2,7 +2,8 @@
 title: 'Using the Tree Viewer Component (Under construction!)'
 layout: tutorial-container
 author: David Dao
-category: Tutorial
+category: howto
+series: howto
 estimated-time: 45
 ---
 
