@@ -14,36 +14,37 @@ BioJS Phylogenetic Tree Viewer is influenced and based on [d3js]() and [TnT](). 
 Installing the tree-viewer component is very easy.
 
 Include this link inside your html
-```
+
+~~~
 <script src="www.biojs.net/biojs-vis-tree.min.js"></script>
-```
+~~~
 
 or download the latest version directly from our github repository:
 
-```
+~~~
 git clone https://github.com/biojs/biojs-vis-tree.git
 cd biojs-vis-tree
 npm install
 npm run build-browser
 
-```
+~~~
 
 Basics
 --------
 
-For later convenience we will save the `biojs.vis.tree` namespace in a `var treelib`.
+For later convenience we will save the `biojs.vis.tree` namespace in a var `treelib`.
 
-```
+~~~
 var treelib = biojs.vis.tree;
-```
+~~~
 
 ### Tree object
 
 It is very easy to build a tree object using the tree viewer:
 
-```
+~~~
 var tree = treelib.tree(); 
-```
+~~~
 
 The tree object offers you following design possibilities:
 
@@ -66,22 +67,22 @@ and following events:
 
 for example:
 
-```
+~~~
 tree
     .duration(500)
     .on_click(function(node) {
         node.toggle();
         tree.update();
     })
-```
+~~~
 ### Tree layouts
 
 For visualizing the tree we provide two layout objects which can be given to the layout function as parameter:
 
-```
+~~~
 var vertical_layout = treelib.tree.layout.vertical();
 var radial_layout = treelib.tree.layout.radial();
-```
+~~~
 
 The layout object offers you following functionalities:
 
@@ -90,18 +91,18 @@ The layout object offers you following functionalities:
 
 Set the parameters of the layout object first before giving it as parameter to the tree, for example:
 
-```
+~~~
 vertical_layout
             .width(500)
             .scale(false);
-```
+~~~
 
 As you have already noticed, biojs tree viewer allows you to chain methods like in d3 instead of writing:
 
-```
+~~~
 vertical_layout.width(500);
 vertical_layout.scale(false);
-```
+~~~
 
 ### Tree label 
 The label method allows you to access and change the properties of the node labels
@@ -110,42 +111,42 @@ The label method allows you to access and change the properties of the node labe
 
 Furthermore we have a label object:
 
-```
+~~~
 var textobject = treelib.tree.label.text();
 
-```
+~~~
 
 The label object allows you to customize your text
 
-```
+~~~
 tree
     .label(textobject.text(function(node) {return node.data().name))
         .height(20);
         .fontsize(13);
-```
+~~~
 
 
 
 To finally include your visualization into your html element, give the tree object a div parameter:
 
-```
+~~~
 <div id="tree"></div>
 <script>
 ...
 var div = document.getElementByID("tree");
 tree(div)
 </script>
-```
+~~~
 
 
 Themes
 --------
-Themes are visualizations using `biojs-vis-tree`, which can be easily included inside your website.
+Themes are visualizations using ~biojs-vis-tree~, which can be easily included inside your website.
 In the following we provided a list of examples which can be reused for many purposes.
 
 Including a theme can be done in the following way:
 
-```
+~~~
 <div id="tree"></div>
 
 <script>
@@ -155,7 +156,7 @@ var theme = your_theme();
 theme(tree,document.getElementById("tree"));
 </script>
 
-```
+~~~
 
 
 
