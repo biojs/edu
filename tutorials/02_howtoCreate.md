@@ -45,10 +45,10 @@ For Biojs 2 components, we have following naming conventions:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
 
-- Use `io` for components which are responsible for parsing data into a specific format
+- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
 - Use `vis` for components which are visualizing data sets
 - Use `rest` for REST apis to databases
-- Use `algo` for server/client side algorithms processing the data
+- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
 
 Now we have to edit the name in __package.json__.
 Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
