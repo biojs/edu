@@ -126,7 +126,7 @@ series: demo
     }());
   </script>
 
-<h4>Released under <a href="http://www.opensource.org/licenses/apache2.0.php">Apache 2.0</a> by David Dao for BioJS 2 based on the TnT Library</h4>
+<h4>Released under <a href="http://www.opensource.org/licenses/apache2.0.php">Apache 2.0</a> by David Dao and Miguel Pignatelli for BioJS 2 based on the TnT Library</h4>
 
 
 
