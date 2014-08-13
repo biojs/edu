@@ -16,7 +16,7 @@ Installing the tree-viewer component is very easy.
 Include this link inside your html
 
 ~~~
-<script src="www.biojs.net/biojs-vis-tree.min.js"></script>
+<script src="http://daviddao.de/biojs-vis-tree.min.js"></script>
 ~~~
 
 or download the latest version directly from our github repository:
@@ -26,7 +26,6 @@ git clone https://github.com/biojs/biojs-vis-tree.git
 cd biojs-vis-tree
 npm install
 npm run build-browser
-
 ~~~
 
 Basics
@@ -106,6 +105,7 @@ vertical_layout.scale(false);
 
 ### Tree label 
 The label method allows you to access and change the properties of the node labels
+
 - `height(number)` - sets the height of the label
 - `fontsize(number)` - sets the fontsize for each node
 
@@ -155,7 +155,6 @@ var tree = treelib.tree();
 var theme = your_theme();
 theme(tree,document.getElementById("tree"));
 </script>
-
 ~~~
 
 
