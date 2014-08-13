@@ -98,4 +98,13 @@ and now we encourage you to ...
 ### 7. Get rid of biojs-legacy and split your component in reusable modules
 
 Now you can take a coffee break and have a look at the normal guide.
- 
+
+
+### 8. Event system
+
+~~~
+var BioJSEvents = require('biojs-events');
+BioJSEvents.mixin(YourClass.prototype);
+~~~
+
+You can find more info about the event system on our github [wiki](https://github.com/biojs/biojs2/wiki/Event-systems).
