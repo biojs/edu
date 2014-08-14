@@ -4,7 +4,7 @@ layout: tutorial-container
 author: David Dao
 category: howto
 series: howto
-estimated-time: 45
+estimated-time: 10
 ---
 
 BioJS Phylogenetic Tree Viewer is influenced and based on [d3js]() and [TnT](). It offers you a diverse variety of functions to easily visualize and process phylogenetic trees for your website. Furthermore, we provide also themes using the BioJS tree library to create beautiful and reusable applications with minimal coding.
@@ -105,6 +105,7 @@ vertical_layout.scale(false);
 
 ### Tree label 
 The label method allows you to access and change the properties of the node labels
+
 
 - `height(number)` - sets the height of the label
 - `fontsize(number)` - sets the fontsize for each node

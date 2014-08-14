@@ -32,7 +32,7 @@ Just call `Biojs.io.newick.newick(string)` for parsing a newick string.
 Biojs.io.newick.newick('((A,B),C)');
 ~~~
 
-Call Biojs.io.newick.extended(string) for parsing an extended newick format.
+Call `Biojs.io.newick.extended(string)` for parsing an extended newick format.
 
 ~~~
 Biojs.io.newick.extended('((A,B),C)');
@@ -64,6 +64,8 @@ Converted to JSON:
   ]
 }
 ~~~
+
+The JSON data can be now given i.e. to the [tree viewer component](usingTreeViewerComponentTutorial.html)!
 
 * * * * *
 
