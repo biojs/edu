@@ -25,9 +25,10 @@ series: demo
 
 								var newick = inputform.node().value;
 
-								data = biojs.io.newick.newick(newick);
-								
+								data = biojs.io.newick.parse_nwk(newick);
                                 console.log(data);
+                                
+                                d3.select("#demo").append("h3").html(JSON.stringify(data));
 
 							});
 
