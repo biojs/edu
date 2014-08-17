@@ -7,7 +7,7 @@ series: howto
 estimated-time: 5
 ---
 
-### Newick-Parser for BioJS 2
+### BioJS Newick-Parser  
 
 Installing the Newick Parser component is very easy.
 
