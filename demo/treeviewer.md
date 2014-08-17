@@ -13,7 +13,7 @@ series: demo
 
   <!-- BioJS 2.0 Component -->
   <!-- link rel="stylesheet" href="/biojs-vis-tree/tnt.css" type="text/css" /-->
-  <script src="biojs-vis-tree/build/biojs_vis_tree.min.js"></script>
+  <script src="http://daviddao.de/biojs-vis-tree.min.js"></script>
 
   <!-- Tree.js -->
   <script src="biojs-vis-tree/snippets/swap_nodes/swap_nodes.js"></script>
