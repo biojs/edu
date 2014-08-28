@@ -7,6 +7,8 @@ series: 101
 estimated-time: 5
 ---
 
+You will need __npm__ and __git__ on your shell.
+
 - [__Mac__](#mac)
 - [__Linux__](#linux)
 - [__Windows__](#windows)
@@ -17,22 +19,22 @@ When your machine is ready to rumble, continue to the [tutorial](howToCreate.htm
 
 ### Mac Users 
 
-1. Clone our BioJS 2 repository
-
-~~~
-git clone https://github.com/biojs/biojs2.git
-~~~
-
-2. Install homebrew
+ 1. Install homebrew
 
 ~~~
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ~~~
 
-3. Install node
+ 2. Install node
 
 ~~~
 brew install node
+~~~
+
+If you have not installed `git`, run 
+
+~~~
+brew install git
 ~~~
 
 Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/)
@@ -48,15 +50,19 @@ E.g. for Ubuntu run
 ~~~
 sudo apt-get install npm
 ~~~
+
+We assume that you most likely will know how to install a package, however feel free to add instructions for your favorite distro.
  
 <a name="windows"></a>
 
 ### Windows Users 
 
+You must be completely crazy if you want to develop anything on Windows.
+Be warned that some packages just assume that they have a UNIX-like enviroment.
 
 Way 1) Download & install using the [Windows installer](http://nodejs.org/download/)
 
-Way 2) Build node from the source code 
+Way 2) Build node from the source code  (recommended)
 
 1. [install cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/)
     - Use setup.exe in the cygwin folder to install the following packages:
