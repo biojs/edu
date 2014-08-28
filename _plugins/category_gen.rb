@@ -21,7 +21,6 @@ module Jekyll
         category['numbering'] = false
       end
       self.data['numbering'] = category['numbering']
-      self.data['gen_cat'] = true
     end
   end
 
@@ -32,10 +31,16 @@ module Jekyll
       #if site.layouts.key? 'category_index'
         dir = site.config['category_dir'] || 'categories'
         categories = site.config["cats"]
-        categories = categories.sort { |a,b| a['desc'] <=> b['desc'] }
-        categories.each do |category|
-          catname = category['name']
-          site.pages << CategoryPage.new(site, site.source, File.join(dir, catname), category)
+        # convert hash to array
+        cats = Array.new
+        categories.each do |key,category|
+          category['name'] = key
+          cats.push(category)
+        end
+        # sort alphabetically after displayed name
+        cats = cats.sort { |a,b| a['desc'] <=> b['desc'] }
+        cats.each do |category|
+          site.pages << CategoryPage.new(site, site.source, File.join(dir, category['name']), category)
         end
       #end
     end

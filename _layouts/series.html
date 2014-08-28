@@ -15,7 +15,11 @@ layout: default
 {% endif %}
 {% endfor %}
 
-
+{% if page.series ==  "cat" %}
+{% assign series_title = "Categories" %}
+{% else if %}
+{% assign series_title = site.cats[page.category].desc %}
+{% endif %}
 
 <div class="container-fluid">
 <div id="sidebar-row" class="row">
@@ -29,14 +33,19 @@ layout: default
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <span class="visible-xs navbar-brand">Series</span>
+		  <span class="visible-xs navbar-brand"> {{ series_title }}</span>
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
+
+		<h4 id="sidemenu-title" class="hidden-xs">
+			{{ series_title }}
+		</h4>
+
           <ul class="nav navbar-nav">
 
 	{% assign count = '1' %}
 
-	{% if page.gen_cat %}
+	{% if page.series ==  "cat" %}
 		{% assign sortedpages = site.pages  %}
 	{% else %}
 		{% assign sortedpages = site.pages | sort: "url" %}

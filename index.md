@@ -8,8 +8,6 @@ layout: container
 Categories
 ---
 
-
-{% assign sortedcats = site.cats | sort: "desc" %}
-{% for cat in sortedcats %}
-<h4> <a href="/categories/{{ cat.name }}/index.html"> {{ cat.desc }} </h4>
-{% endfor %}
+{% sorted_keys_for cat in site.cats sort_by:desc has_hash:site.cats %}
+<h4> <a href="/categories/{{ cat }}/index.html"> {{ site.cats[cat].desc }} </a> </h4>
+{% endsorted_keys_for %}

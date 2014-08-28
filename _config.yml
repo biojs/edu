@@ -6,12 +6,12 @@ pygments: false
 timezone: UTC
 encoding: utf-8
 cats:
-    - name: demo
+    demo:
       desc: Demonstration of components
-    - name: 101_tutorial
+    101_tutorial:
       desc: "101 Tutorial series"
       numbering: true
-    - name: tutorials
+    tutorials:
       desc: Basic tutorials
-    - name: howto
+    howto:
       desc: How-Tos about components
