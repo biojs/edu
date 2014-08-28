@@ -78,12 +78,12 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
 							<ul class="dropdown-menu">
                                  {% assign sortedcats = site.cats | sort: "desc" %}
-                                 {% for cat in sortedcats %}
-								 <li> <a href="/categories/{{ cat.name }}/index.html"> {{ cat.desc }} </a> </li>
+								 {% sorted_keys_for cat in site.cats sort_by:desc has_hash:site.cats %}
+									<li> <a href="/categories/{{ cat }}/index.html"> {{ site.cats[cat].desc }} </a> </li>
 								 {% unless forloop.last %}
 									<li class="divider"></li>
 								{% endunless %}
-                                 {% endfor %}
+								{% endsorted_keys_for %}
 							</ul>
 
 						</li>

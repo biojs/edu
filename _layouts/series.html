@@ -16,9 +16,11 @@ layout: default
 {% endfor %}
 
 {% if page.series ==  "cat" %}
-{% assign series_title = "Categories" %}
+	{% assign series_title = "Categories" %}
+	{% assign series_url = "/" %}
 {% else if %}
-{% assign series_title = site.cats[page.category].desc %}
+	{% assign series_title = site.cats[page.category].desc %}
+	{% assign series_url = "/categories/" | append: page.category | append: "/index.html" %}
 {% endif %}
 
 <div class="container-fluid">
@@ -33,12 +35,16 @@ layout: default
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <span class="visible-xs navbar-brand"> {{ series_title }}</span>
+		  <span class="visible-xs navbar-brand"> 
+			  <a href="{{series_url }} ">
+				  {{ series_title }} </a></span>
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
 
 		<h4 id="sidemenu-title" class="hidden-xs">
-			{{ series_title }}
+			<a href="{{series_url }} ">
+				{{ series_title }}
+			</a>
 		</h4>
 
           <ul class="nav navbar-nav">
@@ -46,6 +52,7 @@ layout: default
 	{% assign count = '1' %}
 
 	{% if page.series ==  "cat" %}
+	{% assign sortedpages = site.pages  %}
 		{% assign sortedpages = site.pages  %}
 	{% else %}
 		{% assign sortedpages = site.pages | sort: "url" %}
