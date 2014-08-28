@@ -53,7 +53,7 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 Now we have to edit the name in __package.json__.
 Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
 
-{% hlblock challenge %}
+{% hlblock task %}
 Can you rename the github repository to `biojs-io-graduates`?
 (Remember to update your `git remote` or `.git/config`)
 {% endhlblock %}
@@ -142,7 +142,7 @@ Or this one for a short fresh up of [variables](http://thewebivore.com/wp-conten
 {% endhlblock %}
 
 
-{% hlblock challenge %}
+{% hlblock task %}
 
 Can you fill in the missing code inside the for loop so that `graduates.parse()` outputs the number of graduates for each country and your unit test is green?
 

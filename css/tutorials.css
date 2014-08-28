@@ -45,26 +45,6 @@ span.glyphicon {
     vertical-align: middle;
 }
 
-.tutorials-highlight-challenge {
-    background-image: url(../img/tutorials/code.png);
-}
-
-.tutorials-highlight-verification {
-    background-image: url(../img/tutorials/checkbox.png);
-}
-
-.tutorials-highlight-stop{
-    background-image: url(../img/tutorials/stop.png);
-}
-
-.tutorials-highlight-question{
-    background-image: url(../img/tutorials/question.png);
-}
-
-.tutorials-highlight-raise{
-    background-image: url(../img/tutorials/raiseHand.png);
-}
-
 .highlight pre, .tutorials pre {
     background: none;
     border: none;

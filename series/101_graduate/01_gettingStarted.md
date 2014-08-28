@@ -15,7 +15,7 @@ You will need __`npm`__ and __`git`__ on your shell.
 
 When your machine is ready to rumble, continue to the [tutorial](howToCreate.html)
 
-{% hlblock verification %}
+{% hlblock check %}
 
 See whether you have both commands (`npm`, `git`) installed. You should run the above without 
 any error.
@@ -27,7 +27,7 @@ npm help
 
 {% endhlblock %}
 
-{% hlblock challenge %}
+{% hlblock task %}
 What does `npm` stand for?
 {% endhlblock %}
 

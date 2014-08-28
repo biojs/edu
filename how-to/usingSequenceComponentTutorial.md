@@ -232,7 +232,7 @@ Additions/changes to the previous code are in bold blue.
         </body>
     </html>
 
-{% hlblock challenge %}
+{% hlblock task %}
 Using the window.onload function is a
 good starting point, but how would you do it on, for instance, clicking
 a button?
@@ -310,7 +310,7 @@ Sequence component documentation, but how would you get there starting
 from the main BioJS registry page?
 {% endhlblock %}
 
-{% hlblock challenge %}
+{% hlblock task %}
 Take a deeper look to the [Sequence component
 documentation](http://www.ebi.ac.uk/Tools/biojs/registry/Biojs.Sequence.html).
 What are the possible formats that you can use? What if you want to
@@ -465,7 +465,7 @@ again and look the methods tab, can you figure out what the
 difference between a selection and a highlight is?
 {% endhlblock %}
 
-{% hlblock challenge %}
+{% hlblock task %}
 Add a text box and a button to your page.
 Use the text box to enter a new sequence and the button to call the
 setSequence method. You can also add a second text box to capture the
@@ -594,18 +594,18 @@ previous code are in bold blue
         </body>
     </html>
 
-{% hlblock challenge %}
+{% hlblock task %}
 Add a text box and a button to your page.
 Use the text box to enter a protein identifier and the button to call
 ajax request.
 {% endhlblock %}
 
-{% hlblock challenge %}
+{% hlblock task %}
 Add a try/catch in the *success* option of the AJAX request
 so you can do some error handling there.
 {% endhlblock %}
 
-{% hlblock challenge %}
+{% hlblock task %}
 Add support to the *error* option for the AJAX request so you can do
 some more error handling there.
 {% endhlblock %}

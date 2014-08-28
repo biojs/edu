@@ -19,24 +19,34 @@ module Jekyll
         
           
         case @block_name 
-            when "challenge"
+            # task for the students
+            when "task"
                 strGlyph = 'glyphicon glyphicon-road';
             
-            when "verification"
+            # ask the student questions
+            when "question"
+                strGlyph = 'glyphicon glyphicon-bell';
+
+            # check point and verification
+            when "check"
                 strGlyph = 'glyphicon glyphicon-check';
             
+            # use this block before you show a solution.
             when "stop"
                 strGlyph = 'glyphicon glyphicon-minus-sign';
             
-            when "question"
-                strGlyph = 'glyphicon glyphicon-bell';
-            
-            when "raise"
-                strGlyph = 'glyphicon glyphicon-hand-up';
-                
+            # additional info, and references
             when "info"
                 strGlyph = 'glyphicon glyphicon-info-sign';
+
+            # tips, help
+            when "help"
+                strGlyph = 'glyphicon glyphicon-gift';
                     
+            # never used, only in the icon intro
+            when "raise"
+                strGlyph = 'glyphicon glyphicon-hand-up';
+
             end
           
         strReturn =  '<div style="display:block"><div class="tutorials-highlight" style="display:block;"><span class="' + strGlyph + '" style="float:left;display:block;margin-right:20px"></span><div class="tutorials-highlight-text">'  \

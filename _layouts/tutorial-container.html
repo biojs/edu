@@ -7,15 +7,18 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 
 	<h2>{{ page.title }}</h2>
 	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
+	{% if page.author %}
+	<div class="tutorial-item">Author(s): {{ page.author }}</div>
+	{% endif %} 
 	{% if page.estimated-time %}
 	<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>
 	{% endif %} 
 	<div class="static-content">
 
 		<div id="explanation">
-{% hlblock verification %}
-We will use this icon to mark verification points.
-A verification point is a way for you to check how you are doing.
+{% hlblock check %}
+We will use this icon to mark check points.
+A check point is a way for you to check how you are doing.
 {% endhlblock %}
 
 {% hlblock stop %}
@@ -24,7 +27,7 @@ provide the code as it should look after the task. It is tempting, we
 know, but please, please, do not go for the “copy&paste” way.
 {% endhlblock %}
 
-{% hlblock challenge %}
+{% hlblock task %}
 We will use this icon to challenge you
 with additional code-related tasks so you can go further at your own
 pace. No inline answer will be provide for those challenges but we will
@@ -38,6 +41,10 @@ We will use this icon to ask you some questions related to the task your are wor
 
 {% hlblock info %}
 Additional info and resources - this is not essential to complete the tutorial, but very interesting.
+{% endhlblock %}
+
+{% hlblock help %}
+Tips that might help you on this task.
 {% endhlblock %}
 
 {% hlblock raise %}
