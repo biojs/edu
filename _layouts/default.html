@@ -70,23 +70,19 @@
 					<ul class="nav navbar-nav">
                         
                         <li class="dropdown">
-							<a href="http://biojs.net" >Home</a>
+							<a href="/" >Home</a>
 						</li>
 
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="/our_mission.html">Mission and Vision</a></li>
-								<li class="divider"></li>
-
-								<li><a href="/get_involved.html">Organization overview</a></li>
-								<li class="divider"></li>
-
-								<li><a href="/publications.html">Publications</a></li>
-								<li class="divider"></li>
-
-								<li><a href="http://biojs.net/tutorials/slides/biojs_talk.html">Slides</a></li>
-
+                                 {% assign sortedcats = site.cats | sort: "desc" %}
+                                 {% for cat in sortedcats %}
+								 <li> <a href="/categories/{{ cat.name }}/index.html"> {{ cat.desc }} </a> </li>
+								 {% unless forloop.last %}
+									<li class="divider"></li>
+								{% endunless %}
+                                 {% endfor %}
 							</ul>
 
 						</li>
@@ -95,7 +91,7 @@
 			</div>
 
 			<!-- Github ribbon -->
-			<a href="https://github.com/biojs/biojs2">
+			<a href="https://github.com/biojs/edu/">
 				<div id="github-ribbon" alt="Fork me on GitHub">
 				</div>
 			</a>

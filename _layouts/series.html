@@ -34,20 +34,31 @@ layout: default
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
 
-	{% assign count = '0' %}
-	{% for tpage in site.pages %}
+	{% assign count = '1' %}
+
+	{% if page.gen_cat %}
+		{% assign sortedpages = site.pages  %}
+	{% else %}
+		{% assign sortedpages = site.pages | sort: "url" %}
+	{% endif%}
+
+	{% for tpage in sortedpages %}
 	{% if tpage.series ==  page.series  %}
+
+	{% unless tpage.cat %}
+		{% assign counter = count | append: "." %}
+	{% endunless %}
 
 	{% capture count %}{{ count | plus: '1' }}{% endcapture %}
 		{% if tpage.url ==  page.url %}
 		<li class="active"> <a href="#">
-				{{ count }}. {{tpage.title}}
+				{{ counter }} {{tpage.title}}
 			</a>
 
 		{% else %}
 		<li> 
 		<a href="{{ tpage.url }}" >
-			{{ count }}. {{tpage.title}}
+			{{ counter }} {{tpage.title}}
 		</a>
 			{% endif %}
 	</li>

@@ -6,16 +6,20 @@ series: cat
 
 	<h2>{{ page.title }}</h2>
 
+
 	<div class="static-content">
 		{{ content }}
 
+		{% assign count = '1' %}
 		<ul>
 		{% for post in site.pages | sort: 'url' %}
 		{% if post.category  ==  page.cat and post.url != page.url %}
-		<li> {{ count }} <a href="{{ post.url }}" >
+		<li> <a href="{{ post.url }}" >
+				{% if page.numbering %} {{ count }}. {% endif %}
 				{{post.title}}
 			</a>
 		</li>
+		{% capture count %}{{ count | plus: '1' }}{% endcapture %}
 		{% endif %}
 		{% endfor %}
 		</ul>

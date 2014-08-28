@@ -7,8 +7,11 @@ timezone: UTC
 encoding: utf-8
 cats:
     - name: demo
-      desc: Demonstration
+      desc: Demonstration of components
+    - name: 101_tutorial
+      desc: "101 Tutorial series"
+      numbering: true
     - name: tutorials
-      desc: Tutorials and Stuff
+      desc: Basic tutorials
     - name: howto
-      desc: How-Tos
+      desc: How-Tos about components

@@ -17,6 +17,11 @@ module Jekyll
       self.data['desc'] = category['desc']
       self.data['cat'] = category['name']
       self.data['title'] = category['desc']
+      unless category.has_key?('numbering')
+        category['numbering'] = false
+      end
+      self.data['numbering'] = category['numbering']
+      self.data['gen_cat'] = true
     end
   end
 
@@ -25,10 +30,15 @@ module Jekyll
 
     def generate(site)
       #if site.layouts.key? 'category_index'
+        site.pages = site.pages.sort { |a,b|
+          1
+        }
         dir = site.config['category_dir'] || 'categories'
         categories = site.config["cats"]
+        categories = categories.sort { |a,b| a['desc'] <=> b['desc'] }
         categories.each do |category|
           catname = category['name']
+          puts category['desc']
           site.pages << CategoryPage.new(site, site.source, File.join(dir, catname), category)
         end
       #end
