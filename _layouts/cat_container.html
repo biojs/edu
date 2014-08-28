@@ -12,7 +12,8 @@ series: cat
 
 		{% assign count = '1' %}
 		<ul>
-		{% for post in site.pages | sort: 'url' %}
+		{% assign sorted_posts = site.pages | sort: 'url' %}
+		{% for post in sorted_posts %}
 		{% if post.category  ==  page.cat and post.url != page.url %}
 		<li> <a href="{{ post.url }}" >
 				{% if page.numbering %} {{ count }}. {% endif %}
