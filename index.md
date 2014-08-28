@@ -2,14 +2,10 @@
 layout: container
 ---
 
-Registry
----
 
-<ul>
-    <li>
-        <a href="http://biojs.net/registry-ui/client/">BioJS Registry (Under construction!)</a>
-    </li>
-</ul>
+
+[![search](./img/front/search.png) Search in our registry](http://biojs.net/registry-ui/client/)
+ 
 
 Categories
 ---

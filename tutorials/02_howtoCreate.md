@@ -98,9 +98,12 @@ npm test
 
 It is really ok if you see errors here - after all you will fix them ;-)
 
+{% hlblock info %}
+In this tutorial we use [Mocha](https://visionmedia.github.io/mocha/) as JavaScript test framework.
+However you can use your favorite - you only need to change the `test` command in the `scripts` section of your `package.json`. 
+{% endhlblock %}
 
-
-4) Start coding
+5) Start coding
 ----------------
 
 Now it is time to code! 
@@ -114,6 +117,7 @@ graduates.parse = function() {
     
     var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
     var parsed = {};
+    console.log("Welcome to the BioJS tutorial");
 
     // count countries
     for (var i = 0; i < data.length; i++) {
@@ -128,11 +132,21 @@ graduates.parse = function() {
 graduates.parse(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
 ~~~
 
+You can always run your application directly with with Node, like this:
+
+~~~
+node index.js
+~~~
+
+{% hlblock info %}
+If you are new or have not done a lot for a while, you might want to check out this [Cheatsheet](http://overapi.com/javascript/).
+Or this one for a short fresh up of [variables](http://thewebivore.com/wp-content/uploads/2013/02/PamsJavascriptCheatSheet.pdf).
+{% endhlblock %}
 
 
 {% hlblock challenge %}
 
-Can you fill in the missing code inside the for loop so that `graduates.parse()` outputs the number of graduates for each country?
+Can you fill in the missing code inside the for loop so that `graduates.parse()` outputs the number of graduates for each country and your unit test is green?
 
 {% endhlblock %}
 
@@ -140,34 +154,40 @@ Can you fill in the missing code inside the for loop so that `graduates.parse()`
 {country : number of graduates} 
 ~~~
 
+6) Verify your solution
+----------------
+
+{% hlblock stop %}
+
+No please do __NOT__ have a look at our solution, if your unit test is green - 
+your solution is correct!
+Please only continue if your solution is working.
+
+{% endhlblock %}
 
 __Solution:__ 
 
 {% code javascript collapsible=true %}
 var biojs = {}
 
-biojs.graduates = function() {
+graduates.parse = function() {
 
     var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
-    var graduates = {};
+    var parsed = {};
 
     // count countries
     for (var i = 0; i < data.length; i++) {
         var row = data[i].split(":"); 
         // init if new
-        if (graduates[row[1]] === undefined) {
-            graduates[row[1]] = 0;
+        if (parsed[row[1]] === undefined) {
+            parsed[row[1]] = 0;
         }
-        graduates[row[1]]++;
+        parsed[row[1]]++;
     }
-
-    console.log(graduates); 
 }
-
-biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
 {% endcode %}
 
-### 5) Export your component with CommonJS and NPM
+### 7) Export your component with CommonJS and NPM
 
 Great work! Now it is time to export your component in order to provide your functionality with the other BioJS components.
 We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in Biojs.
@@ -187,11 +207,13 @@ module.exports = biojs;
 now other BioJS components are able to include your component by using
 
 ~~~
-var parser = require('path to biojs-io-graduates');
+var parser = require('<path>');
 parser.graduates();
 ~~~
 
-### 5) Publish your component
+The path can be either relative `../src/index.js` or simply the package name `biojs-io-graduates`.
+
+### 8) Publish your component
 
 <!--
 Make sure, that in [`package.json`](https://www.npmjs.org/doc/files/package.json.html), the main attribute is set to the path of your main file.
@@ -216,5 +238,11 @@ Normally you would now publish your package to npm and github.
 **TODO** Here we only show you how to publish it to github.
 -->
 
-Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody. Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
+Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody
+
+{% hlblock info %}
+If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
+{% endhlblock %}
+
+Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
 In the next tutorial, you will learn [how to create a visualization component](howToCreateVis.html) using your newly build __biojs-io-graduates__ component.
