@@ -34,6 +34,9 @@ module Jekyll
             when "raise"
                 strGlyph = 'glyphicon glyphicon-hand-up';
                 
+            when "info"
+                strGlyph = 'glyphicon glyphicon-info-sign';
+                    
             end
           
         strReturn =  '<div style="display:block"><div class="tutorials-highlight" style="display:block;"><span class="' + strGlyph + '" style="float:left;display:block;margin-right:20px"></span><div class="tutorials-highlight-text">'  \
@@ -46,4 +49,4 @@ module Jekyll
 end
 
 
-Liquid::Template.register_tag('highlightblock', Jekyll::HighlightBlock)
+Liquid::Template.register_tag('hlblock', Jekyll::HighlightBlock)

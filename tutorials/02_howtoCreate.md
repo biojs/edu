@@ -1,7 +1,7 @@
 ---
 title: 'How to create a component for BioJS 2'
 layout: tutorial-container
-author: Iris Shih and David Dao 
+author: David, Iris, Seb
 category: tutorials
 series: 101
 estimated-time: 30 
@@ -10,21 +10,22 @@ estimated-time: 30
 <div class="alert alert-info">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
 	<span class="glyphicon glyphicon-info-sign" style="font-size:22px"></span> &nbsp;
-	You need to install `npm` before you can start to rock.
+	You need to install `npm` before you can start to rock. See <a href="/tutorials/01_gettingStarted.html"> the getting started guide </a> for more info.
 </div>
 
 In the following we will give you a gentle introduction how to create a component for BioJS 2.
 As a case study, we will build a simple parser for reading a list of all graduates of this tutorial.
+In the next tutorial we will show you how to visuale this data.
 
 ### 1) Fork the BioJS 2 Template from GitHub
 
 We created a BioJS Template for giving you a headstart for developing your component. 
-You can find it in our [BioJS2 folder](https://github.com/biojs/biojs2). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
+You can find it in our [BioJS2 folder](https://github.com/biojs/biojs). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
 Now enter following command lines:
 
 ~~~
-git clone https://github.com/YOUR-USERNAME/biojs2.git
-cd biojs2/biojs-template
+git clone https://github.com/<YOUR-USERNAME>/biojs.git
+cd biojs
 ~~~
 
 Inside the folder you find following files:
@@ -32,16 +33,17 @@ Inside the folder you find following files:
 - `.gitignore`: Files that should be ignored by the git versioning system
 - `LICENSE`: The license under which you want your source code to be distributed, e.g. MIT or Apache 2
 - `browser.js`: Helper to create a namespace file for client-side javascript
-- `index.js`: Your source code
+- `index.js`:  Index file over all submodules
 - `package.json`: Information about your package: author, version, ...
 - `src` : Folder including our tutorial index.js
+- `test`: Folder containing your first unit test
 
-More detailed information will be given in the following.
+(More detailed information will be given later in this tutorial)
 
 ### 2) Choose a name for your component
 
 Choose a name for your component. For the following example, we will name our component *biojs-io-graduates*.
-For Biojs 2 components, we have following naming conventions:
+For BioJS 2 components, we have following naming conventions:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
 
@@ -53,10 +55,13 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 Now we have to edit the name in __package.json__.
 Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
 
-### 3) Write a parser
+{% hlblock challenge %}
+Can you rename the github repository to `biojs-io-graduates`?
+(Remember to update your `git remote` or `.git/config`)
+{% endhlblock %}
 
-Now it is time to code! 
-To begin please open now the src folder and access the index.js file. 
+### 3) Our input data 
+
 
 First we will have a look at the data. 
 It is structured as follows:
@@ -65,7 +70,7 @@ It is structured as follows:
 nickname,country (two chars)
 ~~~
 
-You can safely assume that the nickname is unique.
+You can safely assume that the github nickname is unique.
 For the country abbreviation the official standard [ISO 3166-1 Alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1) is used.
 
 For example:
@@ -78,34 +83,58 @@ timruffles:UK
 iriscshih:TW
 ~~~
 
-Now have a look at the provided code.
+The [full github file](https://github.com/biojs/tutorial-graduates/blob/master/list) is available at [`http://graduates.biojs.net/list`](http://graduates.biojs.net/list).
+After this tutorial you can add your name to this list of all biojs graduates ;-)
+
+4) The first testcase
+----------------------
+
+We already provide you with one one test case, in the next section we will show you how to fix this unit test.
+You can execute the test suite with:
+
+```
+npm test
+```
+
+It is really ok if you see errors here - after all you will fix them ;-)
+
+
+
+4) Start coding
+----------------
+
+Now it is time to code! 
+To begin please open now the src folder and access the index.js file. 
+First have a look at the provided code.
 
 ~~~
-var biojs = {}
+var graduates = {};
 
-biojs.graduates = function() {
-
+graduates.parse = function() {
+    
     var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
-    var graduates = {};
+    var parsed = {};
 
     // count countries
     for (var i = 0; i < data.length; i++) {
-       //Fill in the missing code here!
+        // Please fill in your code here! 
     }
 
-    console.log(graduates); 
+    console.log(parsed); 
+
+    return parsed;
 }
 
-biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
+graduates.parse(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
 ~~~
 
 
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 
-Can you fill in the missing code inside the for loop so that `biojs.graduates()` outputs the number of graduates for each country?
+Can you fill in the missing code inside the for loop so that `graduates.parse()` outputs the number of graduates for each country?
 
-{% endhighlightblock %}
+{% endhlblock %}
 
 ~~~
 {country : number of graduates} 
@@ -165,7 +194,7 @@ parser.graduates();
 ### 5) Publish your component
 
 <!--
-Make sure, that in __package.json__ , the main attribute is set to the path of your main file.
+Make sure, that in [`package.json`](https://www.npmjs.org/doc/files/package.json.html), the main attribute is set to the path of your main file.
 Currently the default is __index.js__. Also edit the __npm run build-browser__ command, denoted in package.json by adjusting index.js to the path of your main file.
 
 Also adjust your namespace defined in the __browser.js__ file to __biojs.io.graduates__ .
@@ -173,9 +202,9 @@ Now you are ready to publish your component in npm. Adjust your keywords and aut
 They will be used by npm to display information about your component. Now type into the console:
 
 ~~~
-//First login or create a new account with following command
+# First login or create a new account with following command
 npm adduser 
-//Now it is time to publish!
+# Now it is time to publish!
 npm publish
 ~~~
 

@@ -103,11 +103,11 @@ biojs.graduates(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
 
 
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 
 Can you fill in the missing code inside the for loop so that `biojs.graduates()` outputs the number of graduates for each country?
 
-{% endhighlightblock %}
+{% endhlblock %}
 
 ```
 {country : number of graduates} 

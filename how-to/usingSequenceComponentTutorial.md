@@ -100,9 +100,9 @@ workspace/css folder, and the proxy to your workspace/proxy/ folder.
 -   [biojs.Tooltip.css](https://raw.githubusercontent.com/biojs/biojs/master/src/main/resources/css/biojs.Tooltip.css)
 -   [proxy.php](https://raw.githubusercontent.com/biojs/biojs/master/src/main/resources/dependencies/proxy/proxy.php)
 
-{% highlightblock verification %}
+{% hlblock verification %}
 This is how your folders and files should look like right now:
-{% endhighlightblock %}
+{% endhlblock %}
 
 -   biojs
     -   Biojs.js
@@ -128,9 +128,9 @@ workspace/html folder. We are using jQuery compatibility style. If you
 want to use any of the 2 jQuery version, you will need the migration
 package, see more about it [here](http://jquery.com/download/).
 
-{% highlightblock verification %}
+{% hlblock verification %}
 You web page should look like this.
-{% endhighlightblock %}
+{% endhlblock %}
 
     <!doctype html>
     <html>
@@ -155,11 +155,11 @@ You web page should look like this.
     </html>
         
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Make sure your page loads without any errors. In order to look for errors,
 use the Web Development tools on your browser and check the console logs.
 And keep checking this after any step involving changes in the code.
-{% endhighlightblock %}
+{% endhlblock %}
 
 ### Step 3: Instantiate the Sequence component
 
@@ -192,9 +192,9 @@ Use the following options as the argument for the *new*
 
 Then save your web page as workspace/html/**step3.html**.
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Your web page should look like this.
-{% endhighlightblock %}
+{% endhlblock %}
 
 Additions/changes to the previous code are in bold blue.
 
@@ -232,11 +232,11 @@ Additions/changes to the previous code are in bold blue.
         </body>
     </html>
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 Using the window.onload function is a
 good starting point, but how would you do it on, for instance, clicking
 a button?
-{% endhighlightblock %}
+{% endhlblock %}
 
 ### Step 4: Modify the default options
 
@@ -258,9 +258,9 @@ here. The default format is “FASTA”, but CODATA is also possible. So
 
 Then save your web page as workspace/html/**step4.html**.
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Your web page should look like this.
-{% endhighlightblock %}
+{% endhlblock %}
 Additions/changes to the previous code are in bold blue.
 
     <!doctype html>
@@ -298,19 +298,19 @@ Additions/changes to the previous code are in bold blue.
         </body>
     </html>
 
-{% highlightblock question %}
+{% hlblock question %}
 What do you see on the initial documentation page for the Sequence component?
 What can you do there?
 What are the different tabs about?
-{% endhighlightblock %}
+{% endhlblock %}
 
-{% highlightblock question %}
+{% hlblock question %}
 We provided you the direct link to the
 Sequence component documentation, but how would you get there starting
 from the main BioJS registry page?
-{% endhighlightblock %}
+{% endhlblock %}
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 Take a deeper look to the [Sequence component
 documentation](http://www.ebi.ac.uk/Tools/biojs/registry/Biojs.Sequence.html).
 What are the possible formats that you can use? What if you want to
@@ -318,7 +318,7 @@ display the sequence grouping 20 amino acids (in this case we are
 working with an protein sequence) in one “column”? What does a column
 mean in this context? You may need to take a look to the actual code of
 the component in order to figure it out.
-{% endhighlightblock %}
+{% endhlblock %}
 
 ### Step 5: Activate Biojs.console
 
@@ -348,9 +348,9 @@ before instantiating the component, please add some debug logs:
 
 Then save your web page as workspace/html/**step5.html**.
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Additions/changes to the previous code are in bold blue
-{% endhighlightblock %}
+{% endhlblock %}
 
     <!doctype html>
     <html>
@@ -392,11 +392,11 @@ Additions/changes to the previous code are in bold blue
         </body>
     </html>
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Those logs messages were probably not to exciting.
 Why not to try to display some information about the different
 options used to instantiate this component?
-{% endhighlightblock %}
+{% endhlblock %}
 
 ### Step 6: Select a portion of the sequence displayed
 
@@ -412,9 +412,9 @@ Right after the last Biojs.console.log:
 
 Then save your web page as workspace/html/**step6.html**.
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Additions/changes to the previous code are in bold blue
-{% endhighlightblock %}
+{% endhlblock %}
 
     <!doctype html>
     <html>
@@ -455,22 +455,22 @@ Additions/changes to the previous code are in bold blue
         </body>
     </html>
 
-{% highlightblock question %}
+{% hlblock question %}
 Have you already tried to select a portion of the sequence with your mouse?
-{% endhighlightblock %}
+{% endhlblock %}
 
-{% highlightblock question %}
+{% hlblock question %}
 Go to the component [documentation](http://www.ebi.ac.uk/Tools/biojs/registry/Biojs.Sequence.html)
 again and look the methods tab, can you figure out what the
 difference between a selection and a highlight is?
-{% endhighlightblock %}
+{% endhlblock %}
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 Add a text box and a button to your page.
 Use the text box to enter a new sequence and the button to call the
 setSequence method. You can also add a second text box to capture the
 sequence identifier.
-{% endhighlightblock %}
+{% endhlblock %}
 
 ### Step 7: Use a web service to retrieve the sequence
 
@@ -536,10 +536,10 @@ The success option is a function with parameters *response* and
 Do not forget to save your page as workspace/html/**step7.html**, this
 time inside you htdocs in your XAMPP
 
-{% highlightblock verification %}
+{% hlblock verification %}
 Additions/changes to the
 previous code are in bold blue
-{% endhighlightblock %}
+{% endhlblock %}
 
     <!doctype html>
     <html>
@@ -594,21 +594,21 @@ previous code are in bold blue
         </body>
     </html>
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 Add a text box and a button to your page.
 Use the text box to enter a protein identifier and the button to call
 ajax request.
-{% endhighlightblock %}
+{% endhlblock %}
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 Add a try/catch in the *success* option of the AJAX request
 so you can do some error handling there.
-{% endhighlightblock %}
+{% endhlblock %}
 
-{% highlightblock challenge %}
+{% hlblock challenge %}
 Add support to the *error* option for the AJAX request so you can do
 some more error handling there.
-{% endhighlightblock %}
+{% endhlblock %}
 
 * * * * *
 

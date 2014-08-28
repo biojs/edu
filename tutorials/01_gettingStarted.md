@@ -1,13 +1,13 @@
 ---
 title: 'How to setup your machine for BioJS 2'
 layout: tutorial-container
-author: Iris Shih
+author: Iris, Seb
 category: tutorials
 series: 101
 estimated-time: 5
 ---
 
-You will need __npm__ and __git__ on your shell.
+You will need __`npm`__ and __`git`__ on your shell.
 
 - [__Mac__](#mac)
 - [__Linux__](#linux)
@@ -15,20 +15,31 @@ You will need __npm__ and __git__ on your shell.
 
 When your machine is ready to rumble, continue to the [tutorial](howToCreate.html)
 
+{% hlblock verification %}
+
+See whether you have both commands (`npm`, `git`) installed. You should run the above without 
+any error.
+
+~~~
+git help
+npm help
+~~~
+
+{% endhlblock %}
+
+{% hlblock challenge %}
+What does `npm` stand for?
+{% endhlblock %}
+
 <a name="mac"></a>
 
 ### Mac Users 
 
- 1. Install homebrew
+Installation via homebrew
 
 ~~~
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-~~~
-
- 2. Install node
-
-~~~
-brew install node
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" # brew is a package manager
+brew install node # installs the node package
 ~~~
 
 If you have not installed `git`, run 
