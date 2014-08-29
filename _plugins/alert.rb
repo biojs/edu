@@ -43,6 +43,9 @@ module Jekyll
                 strGlyph = 'glyphicon-info-sign';
                 alertType = 'alert alert-info';
                     
+            when "ok"
+                strGlyph = 'glyphicon-thumbs-up';
+                alertType = 'alert alert-success';
             end
         
         strReturn = '<div class="' + alertType + ' "> <a href="#" class="close" data-dismiss="alert">&times;</a>

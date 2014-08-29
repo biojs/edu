@@ -27,7 +27,7 @@ npm help
 
 {% endhlblock %}
 
-{% hlblock task %}
+{% hlblock question %}
 What does `npm` stand for?
 {% endhlblock %}
 

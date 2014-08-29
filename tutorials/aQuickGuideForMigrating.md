@@ -1,15 +1,17 @@
 ---
 title: 'Quick guide to migrate your old BioJS component'
 layout: tutorial-container
-author: Sebastian Wilzbach
+author: Seb
 category: tutorials
 estimated-time: 10 
 ---
 
-**Warning**: only use this guide for quick & dirty migration using `biojs-legacy`.
-We highly encourage you to follow the [real guide](/howToCreate.html) and look at other new components of BioJS 2.0.
+{% alert danger %}
+only use this guide for quick & dirty migration with `biojs-legacy`.
+We highly encourage you to follow the [real guide](/categories/101_tutorial/index.html) and look at other new components of BioJS 2.0.
+{% endalert %}
 
-A working example for this quick migration can be found at biojs-sequence.
+A working example for this quick migration can be found at [biojs-sequence](https://github.com/ljgarcia/biojs-vis-sequence).
 
 
 I. Create your BioJS repository
@@ -21,18 +23,18 @@ See the normal guide for more explanation about this or just copy an existing re
 II. Apply Ugly way: include biojs-legacy
 --------------------------------
 
-Let your `BioJs(.)*.js` be the `index.js` in the lib folder
+Let your `BioJs(.*).js` be the `index.js` in the lib folder
 
 
-### 1. add  biojs-legacy
+### 1. Add  biojs-legacy
 
-  1.1) install it 
+####  1.1) install it 
 
 ~~~
 npm install biojs-legacy --save
 ~~~
 
-  1.2) require it 
+####  1.2) require it 
 
 Add this as the first line of your component.
 
@@ -40,7 +42,7 @@ Add this as the first line of your component.
 var BioJs = require('biojs-legacy');
 ~~~
 
-### 2. export your module
+### 2. Export your module
  
 export your module.
  
@@ -49,7 +51,7 @@ module.exports = Biojs.Sequence = Biojs.extend(
 ~~~
 
 
-### 3. edit your browser.js
+### 3. Edit your browser.js
 
 ~~~
 if (typeof biojs === 'undefined') {
@@ -60,7 +62,7 @@ if (typeof biojs.vis === 'undefined') {
 }
 biojs.vis.sequence = require('./');
 
-// legacy code - only add if absolutely needed
+// legacy code begins - add only if absolutely needed
 if (typeof Biojs === 'undefined') {
   module.exports = Biojs = {}
 }
@@ -107,4 +109,4 @@ var BioJSEvents = require('biojs-events');
 BioJSEvents.mixin(YourClass.prototype);
 ~~~
 
-You can find more info about the event system on our github [wiki](https://github.com/biojs/biojs2/wiki/Event-systems).
+You can find more info about the event system on our [github](https://github.com/biojs/biojs-events).

@@ -136,8 +136,8 @@ You can always run your application directly with with Node, like this:
 node index.js
 ~~~
 
-{% hlblock info %}
-If you are new or have not done a lot for a while, you might want to check out this [Cheatsheet](http://overapi.com/javascript/).
+{% hlblock help %}
+If you are new JavaScript or have not coded for a while, you might want to check out this [Cheatsheet](http://overapi.com/javascript/).
 Or this one for a short fresh up of [variables](http://thewebivore.com/wp-content/uploads/2013/02/PamsJavascriptCheatSheet.pdf).
 {% endhlblock %}
 
@@ -221,3 +221,7 @@ If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.gi
 
 Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
 In the next tutorial, you will learn [how to create a visualization component](03_visualization_basics.html) using your newly build `biojs-io-graduates` component.
+
+{% hlblock info %}
+You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
+{% endhlblock %}
