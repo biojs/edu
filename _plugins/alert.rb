@@ -16,15 +16,8 @@ module Jekyll
         converter = site.getConverterImpl(::Jekyll::Converters::Markdown)
         output = converter.convert(super(context))
         output = output.strip()
-        # hack: removed the <p>
-        if output[0..2] == "<p>"
-          output = output[3..-5]
-        elsif output[0..4] == "<pre>"
-          output = output[5..-7]
-        end
-        if output[0..5] == "<code>"
-          output = output[6..-8]
-        end
+        # remove <p> at front and end
+        output = output.gsub(/^\<p\>(.+)\<\/p\>$/ms, '\1')
 
         strGlyph = '';  
         alertType = '';
