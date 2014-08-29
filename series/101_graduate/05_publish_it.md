@@ -12,10 +12,6 @@ Please do __NOT__ publish the dummy tutorial package on npm.
 Have a look at this guide once you made a great package.
 {% endalert %}
 
-{% alert danger %}
-This tutorial is in work.
-{% endalert %}
-
 ### 1) Upload it on npm
 
 {% hlblock check %}
