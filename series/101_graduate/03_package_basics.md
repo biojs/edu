@@ -8,7 +8,7 @@ estimated-time: 30
 ---
 
 {% alert warn %}
-You need to install `npm` before you can start to rock. See <a href="01_gettingStarted.html"> the getting started guide </a> for more info.
+You need to install `npm` before you can start to rock. See <a href="02_getting_started.html"> the getting started guide </a> for more info.
 {% endalert %}
 
 In the following we will give you a gentle introduction how to create a component for BioJS 2.
@@ -220,7 +220,7 @@ If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.gi
 {% endhlblock %}
 
 Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
-In the next tutorial, you will learn [how to create a visualization component](03_visualization_basics.html) using your newly build `biojs-io-graduates` component.
+In the next tutorial, you will learn [how to create a visualization component](04_visualization_basics.html) using your newly build `biojs-io-graduates` component.
 
 {% hlblock info %}
 You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).

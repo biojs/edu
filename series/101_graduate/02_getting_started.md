@@ -1,5 +1,5 @@
 ---
-title: 'Geting started'
+title: 'Getting started'
 layout: tutorial-container
 author: Iris, Seb
 category: 101_tutorial

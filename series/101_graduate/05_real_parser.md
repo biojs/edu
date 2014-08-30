@@ -8,7 +8,7 @@ estimated-time: 30
 ---
 
 {% alert warn %}
-Please create the [basic package](./02_package_basics.md) before.
+Please create the [basic package](./03_package_basics.html) before.
 {% endalert %}
 
 ### 1) Installing a npm dependency
