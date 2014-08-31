@@ -23,3 +23,6 @@ About jekyll
 ```
 jekyll serve -w
 ```
+(runs jekyll in the server mode + watching for changes)
+
+[Install](http://jekyllrb.com/docs/installation/) jekyll.
