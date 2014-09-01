@@ -12,6 +12,10 @@ Please create the [basic package](./03_package_basics.html) before.
 Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
+{% hlblock help %} 
+[Here](http://jsbin.com/hiyijagawete/2/edit) is the result of this example - parsing the 15MB file with 500,000 lines in your browser.
+{% endhlblock %}
+
 ### 1) Installing a npm dependency
 
 As we want to download data, we need a `request` package.
