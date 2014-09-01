@@ -40,7 +40,7 @@ Inside the folder you find following files:
 
 ### 2) Choose a name for your component
 
-Choose a name for your component. For the following example, we will name our component *biojs-io-snipspector*.
+Choose a name for your component. For the following example, we will name our component `biojs-io-snipspector`.
 For BioJS 2 components, we have following naming conventions:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
@@ -50,32 +50,25 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 - Use `rest` for REST apis to databases
 - Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
 
-Now we have to edit the name in the __package.json__.
-Open the file with an editor and replace every __biojs-template__ to __biojs-io-snipspector__.
+Now we have to edit the name in the `package.json`.
+Open the file with an editor and replace every `biojs-template` to `biojs-io-snipspector`.
 
 {% hlblock task %}
-Rename the github repository to `biojs-io-snipspector`
+Rename your github repository to `biojs-io-snipspector`
 {% endhlblock %}
 
-### Solution
+__Solution__:
 
-1. Rename it on github
-
-2. Update your `git remote` or `.git/config`
-
-~~~
-git remove origin
+{% code bash collapsible=true %}
+# 1. Rename it on github
+# 2. Update your `git remote` or `.git/config`
+git remote origin
 git remote add origin git@github.com:<username>/biojs-io-snipspector.git
-~~
-
-3. Update your packge.json
-
-~~~
+# 3. Update your packge.json
 git add package.json
 git commit -m 'changed package.pkg'
-~~~
+{% endcode %}
 
-__TODO__: solution should be collapsible
 
 ### 3) Our input data 
 
@@ -84,8 +77,7 @@ First we will have a look at the data.
 It is structured as follows:
 
 ~~~
-track
-chrom chromStart chromEnd
+rsid chromosome pos genotype
 ~~~
 
 These three fields in each feature line are required:
@@ -114,7 +106,10 @@ rs9604967	22	15492342	CC
 ~~~
 
 This real file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/manny).
-For the end of this tutorial we will only work with the given subset. In the [extended parsing](./05_real_parser.md) you will learn how to parse the real file.
+
+{% hlblock info %}
+To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](05_real_parser.html) you will learn how to parse the real file with 500,000 rows.
+{% endhlblock %}
 
 4) Export your component
 ------------------------
@@ -134,14 +129,14 @@ snipspector.parse = function() {
 module.exports = snipspector;
 ~~~
 
-now other BioJS components are able to include your component by using
+Other BioJS components are able to include your component by using
 
 ~~~
 var snipspector = require('biojs-io-snipspector');
 snipspector.parse();
 ~~~
 
-Instead of requiring packages, you can alos require files:
+Instead of requiring packages, you can also require files:
 
 ~~~
 var snipspector = require('../src/index');
@@ -173,7 +168,7 @@ However you can use your favorite - you only need to change the `test` command i
 6) Start coding
 ----------------
 
-Now it is time to code! 
+It is time to code! 
 To begin please open now the `src` folder and access the `index.js` file. 
 First have a look at the provided code.
 
@@ -325,7 +320,7 @@ Congratulations! You wrote your very first Biojs 2 Component. You can now publis
 If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
 {% endhlblock %}
 
-Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
+Furthermore, consider to [publish](06_publish_it.html) your future components to npm. 
 In the next tutorial, you will learn [how to create a visualization component](04_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}

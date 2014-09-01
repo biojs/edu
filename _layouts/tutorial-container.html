@@ -57,6 +57,15 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 		</div>
 		<br />
 
+<div id="upper-link-box" class="link-box">
+{% if page.next_in_category != nil %} 
+	<a href="{{page.next_in_category.url}}" class="btn btn-primary previous-link">Previous</a>
+{% endif %} 
+{% if page.previous_in_category != nil %}
+	<a href="{{page.previous_in_category.url}}" class="btn btn-primary next-link pull-right">Next</a>
+{% endif %}
+</div>
+
 {% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback.
 Click either on 
 
@@ -70,7 +79,18 @@ Click either on
 
 
 		{{ content }}
-		<br />	
+
+<div id="lower-link-box" class="link-box">
+{% if page.next_in_category != nil %} 
+	<a href="{{page.next_in_category.url}}" class="btn btn-primary previous-link">Previous</a>
+{% endif %} 
+{% if page.previous_in_category != nil %}
+	<a href="{{page.previous_in_category.url}}" class="btn btn-primary next-link pull-right">Next</a>
+{% endif %}
+
+<br />	
+</div>
+
 	</div>
 </div>
 <script>hljs.initHighlightingOnLoad();
