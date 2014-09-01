@@ -2,6 +2,7 @@
 title: 'Package basics'
 layout: tutorial-container
 author: David, Iris, Seb
+revised: Manny
 category: 101_tutorial
 series: 101
 estimated-time: 30 
@@ -11,8 +12,8 @@ estimated-time: 30
 You need to install `npm` before you can start to rock. See <a href="02_getting_started.html"> the getting started guide </a> for more info.
 {% endalert %}
 
-In the following we will give you a gentle introduction how to create a component for BioJS 2.
-As a case study, we will build a simple parser for reading a list of all graduates of this tutorial.
+In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
+As a case study, we will build a simple parser to read a list of graduates in this tutorial.
 In the next tutorial we will show you how to visuale this data.
 
 ### 1) Fork the BioJS 2 Template from GitHub
