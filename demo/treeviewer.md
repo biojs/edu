@@ -1,7 +1,7 @@
 ---
 layout: series_container
 title: 'BioJS Tree Viewer'
-author: David Dao
+contributors: David Dao
 category: demo
 series: demo
 ---

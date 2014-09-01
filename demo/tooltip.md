@@ -1,7 +1,7 @@
 ---
 layout: series_container
 title: 'BioJS Tooltip Plugin'
-author: David Dao
+contributors: David Dao
 category: demo
 series: demo
 ---

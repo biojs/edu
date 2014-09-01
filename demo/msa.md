@@ -1,7 +1,7 @@
 ---
 layout: series_container
 title: 'BioJS MSA Viewer'
-author: Sebastian Wilzbach
+contributors: Sebastian Wilzbach
 category: demo
 series: demo
 ---

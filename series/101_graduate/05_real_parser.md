@@ -1,7 +1,7 @@
 ---
 title: 'Working with real data'
 layout: tutorial-container
-author: Seb
+contributors: Seb
 category: 101_tutorial
 series: 101
 estimated-time: 30 

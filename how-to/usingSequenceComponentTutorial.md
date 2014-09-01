@@ -1,7 +1,7 @@
 ---
 title: 'Using the Sequence Component'
 layout: tutorial-container
-author: Leyla Garcia
+contributors: Leyla Garcia
 category: howto
 series: howto
 estimated-time: 45

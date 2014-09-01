@@ -2,8 +2,9 @@
 title: 'Package basics'
 layout: tutorial-container
 contributors: David, Iris, Manny, Seb
-category: 101_tutorial
-series: 101
+# Backup of the graduate tutorial
+#category: 101_tutorial
+#series: 101
 estimated-time: 30 
 ---
 
@@ -12,8 +13,8 @@ You need to install `npm` before you can start to rock. See <a href="02_getting_
 {% endalert %}
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
-As a case study, we will build a simple parser to read __xxx___.
-In the next tutorial we will show you how to visualzee this data.
+As a case study, we will build a simple parser to read a list of graduates in this tutorial.
+In the next tutorial we will show you how to visuale this data.
 
 ### 1) Fork the BioJS 2 Template from GitHub
 
@@ -50,32 +51,19 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 - Use `rest` for REST apis to databases
 - Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
 
-Now we have to edit the name in the __package.json__.
+Now we have to edit the name in __package.json__.
 Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
 
 {% hlblock task %}
 Rename the github repository to `biojs-io-graduates`
+
 {% endhlblock %}
 
-### Solution
-
-1. Rename it on github
-
-2. Update your `git remote` or `.git/config`
-
-~~~
-git remove origin
-git remote add origin git@github.com:<username>/biojs-io-graduates.git
-~~
-
-3. Update your packge.json
-
+Update your `git remote` or `.git/config`
 ~~~
 git add package.json
 git commit -m 'changed package.pkg'
 ~~~
-
-__TODO__: solution should be collapsible
 
 ### 3) Our input data 
 
@@ -84,44 +72,24 @@ First we will have a look at the data.
 It is structured as follows:
 
 ~~~
-track
-chrom chromStart chromEnd
+nickname:country (two chars)
 ~~~
 
-These three fields in each feature line are required:
-
-* `chrom` - name of the chromosome or scaffold. Any valid seq_region_name can be used, and chromosome names can be given with or without the 'chr' prefix.
-* `chromStart` - Start position of the feature in standard chromosomal coordinates (i.e. first base is 0).
-* `chromEnd` - End position of the feature in standard chromosomal coordinates
-
-{% hlblock info %}
-For detailed info about the BED format, visit the [ensembl doc](http://www.ensembl.org/info/website/upload/bed.html) or the [UCSC help](http://genome.ucsc.edu/FAQ/FAQformat.html#format1)
-{% endhlblock %}
-
+You can safely assume that the github nickname is unique.
+For the country abbreviation the official standard [ISO 3166-1 Alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1) is used.
 
 For example:
 
 ~~~
-rs5747620	22	15412698	TT
-rs9605903	22	15434720	CC
-rs5747968	22	15447504	GG
-rs2236639	22	15452483	GG
-rs5747999	22	15455353	AA
-rs11089263	22	15467656	AA
-rs2096537	22	15474749	AC
-rs9604959	22	15479107	CC
-rs9604967	22	15492342	CC
-rs4819849	22	15532611	AG
-rs9605028	22	15534984	AA
-rs1892844	22	15535383	AA
+greenify:DE
+daviddao:HK
+mhelvens:NL
+timruffles:UK
+iriscshih:TW
 ~~~
 
-This file is available at [`files.biojs.net/101.sample`](http://files.biojs.net/101.sample).
-Have a look at it:
-
-~~~
-curl files.biojs.net/101.sample
-~~~
+The [full github file](https://github.com/biojs/tutorial-graduates/blob/master/list) is available at [`http://graduates.biojs.net/list`](http://graduates.biojs.net/list).
+After this tutorial you can add your name to this list of all biojs graduates ;-)
 
 4) The first testcase
 ----------------------
@@ -152,19 +120,7 @@ var graduates = {};
 
 graduates.parse = function() {
     
-    var data = ["rs5747620	22	15412698	TT",
-				"rs9605903	22	15434720	CC",
-				"rs5747968	22	15447504	GG",
-				"rs2236639	22	15452483	GG",
-				"rs5747999	22	15455353	AA",
-				"rs11089263	22	15467656	AA",
-				"rs2096537	22	15474749	AC",
-				"rs9604959	22	15479107	CC",
-				"rs9604967	22	15492342	CC",
-				"rs4819849	22	15532611	AG",
-				"rs9605028	22	15534984	AA",
-				"rs1892844	22	15535383	AA"];
-
+    var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
     var parsed = {};
     console.log("Welcome to the BioJS tutorial");
 
@@ -221,25 +177,12 @@ var biojs = {}
 
 graduates.parse = function() {
 
-    var data = ["rs5747620	22	15412698	TT",
-				"rs9605903	22	15434720	CC",
-				"rs5747968	22	15447504	GG",
-				"rs2236639	22	15452483	GG",
-				"rs5747999	22	15455353	AA",
-				"rs11089263	22	15467656	AA",
-				"rs2096537	22	15474749	AC",
-				"rs9604959	22	15479107	CC",
-				"rs9604967	22	15492342	CC",
-				"rs4819849	22	15532611	AG",
-				"rs9605028	22	15534984	AA",
-				"rs1892844	22	15535383	AA"];
-
-
+    var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
     var parsed = {};
 
     // count countries
     for (var i = 0; i < data.length; i++) {
-        var row = data[i].split(/\s+/); 
+        var row = data[i].split(":"); 
         // init if new
         if (parsed[row[1]] === undefined) {
             parsed[row[1]] = 0;

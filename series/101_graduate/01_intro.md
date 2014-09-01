@@ -1,8 +1,7 @@
 ---
 title: 'Intro'
 layout: tutorial-container
-author: Seb
-revised: Manny
+contributors: Manny, Seb
 category: 101_tutorial
 series: 101
 estimated-time: 5

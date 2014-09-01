@@ -8,7 +8,7 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 	<h2>{{ page.title }}</h2>
 	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
 	{% if page.author %}
-	<div class="tutorial-item">Author(s): {{ page.author }}</div>
+	<div class="tutorial-item">Contributors(s): {{ page.contributors }}</div>
 	{% endif %} 
 	{% if page.estimated-time %}
 	<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>

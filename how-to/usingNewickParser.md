@@ -1,7 +1,7 @@
 ---
 title: 'Using the Newick Parser'
 layout: tutorial-container
-author: David Dao
+contributors: David Dao
 category: howto
 series: howto
 estimated-time: 5

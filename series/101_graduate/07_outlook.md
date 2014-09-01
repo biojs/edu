@@ -1,7 +1,7 @@
 ---
 title: 'Outlook'
 layout: tutorial-container
-author: David, Seb
+contributors: David, Seb
 category: 101_tutorial
 series: 101
 estimated-time: 10 
