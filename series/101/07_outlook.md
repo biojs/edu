@@ -12,10 +12,7 @@ Did you really finish all previous tutorials?
 {% endalert %}
 
 
-### If you finished this tutorial successfully, you can 
-
-* add you your name to the [graduates](https://github.com/biojs/tutorial-graduates/blob/master/list)
-* create your own BioJS component and [publish it](05_publish_it.html)
+### If you finished this tutorial successfully, you can create your own BioJS component and [publish it](05_publish_it.html)
 
 {% hlblock help %}
 [Creating a pull request](https://help.github.com/articles/creating-a-pull-request).
@@ -24,7 +21,7 @@ Did you really finish all previous tutorials?
 ### Find the solutions on github
 
 * [`biojs-io-snipspector`](https://github.com/biojs/biojs-io-snipspector)
-* [`biojs-vis-graduates`](https://github.com/biojs/biojs-vis-peoplemap)
+* [`biojs-vis-snipspector`](https://github.com/biojs/biojs-vis-snipspector)
 
 ### Get inspirations of other packages
 

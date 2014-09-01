@@ -17,7 +17,7 @@ In the next tutorial we will show you how to visualzee this data.
 
 ### 1) Fork the BioJS 2 Template from GitHub
 
-We created a BioJS Template for giving you a headstart for developing your component. 
+We created a BioJS Template to give you a headstart for developing your component. 
 You can find it in our [BioJS2 folder](https://github.com/biojs/biojs). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
 Now enter following command lines:
 
@@ -90,9 +90,10 @@ chrom chromStart chromEnd
 
 These three fields in each feature line are required:
 
-* `chrom` - name of the chromosome or scaffold. Any valid seq_region_name can be used, and chromosome names can be given with or without the 'chr' prefix.
-* `chromStart` - Start position of the feature in standard chromosomal coordinates (i.e. first base is 0).
-* `chromEnd` - End position of the feature in standard chromosomal coordinates
+* `rsid` (String): snippet id
+* `chromosome` (String): name of the chromosome
+* `pos` (int): position in the chromosome
+* `genotype`: (String) both residues from the two matching chromosomes (warning: mitochondria (MT) is haploid)
 
 {% hlblock info %}
 For detailed info about the BED format, visit the [ensembl doc](http://www.ensembl.org/info/website/upload/bed.html) or the [UCSC help](http://genome.ucsc.edu/FAQ/FAQformat.html#format1)
@@ -102,28 +103,56 @@ For detailed info about the BED format, visit the [ensembl doc](http://www.ensem
 For example:
 
 ~~~
-rs5747620	22	15412698	TT
-rs9605903	22	15434720	CC
-rs5747968	22	15447504	GG
-rs2236639	22	15452483	GG
-rs5747999	22	15455353	AA
-rs11089263	22	15467656	AA
-rs2096537	22	15474749	AC
-rs9604959	22	15479107	CC
+rs5747620	20	15412698	TT
+rs9605903	20	15434720	CC
+rs2236639	20	15452483	GC
+rs5747999	21	15455353	AA
+rs11089263	21	15467656	A-
+rs2096537	21	15474749	AC
+rs9604959	22	15479107	CG
 rs9604967	22	15492342	CC
-rs4819849	22	15532611	AG
-rs9605028	22	15534984	AA
-rs1892844	22	15535383	AA
 ~~~
 
-This file is available at [`files.biojs.net/101.sample`](http://files.biojs.net/101.sample).
-Have a look at it:
+This real file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/manny).
+For the end of this tutorial we will only work with the given subset. In the [extended parsing](./05_real_parser.md) you will learn how to parse the real file.
+
+4) Export your component
+------------------------
+
+Now it is time to export your component in order to provide your functionality with the other BioJS components or in your module (e.g your firt test case).
+We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in BioJS.
+
+Please export your parser in the following way:
 
 ~~~
-curl files.biojs.net/101.sample
+var snipspector = { }
+
+snipspector.parse = function() {
+    ...
+}
+
+module.exports = snipspector;
 ~~~
 
-4) The first testcase
+now other BioJS components are able to include your component by using
+
+~~~
+var snipspector = require('biojs-io-snipspector');
+snipspector.parse();
+~~~
+
+Instead of requiring packages, you can alos require files:
+
+~~~
+var snipspector = require('../src/index');
+snipspector.parse();
+~~~
+
+{% hlblock info %}
+The path can be either relative `../src/index.js` or simply the package name `biojs-io-snipspector`.
+{% endhlblock %}
+
+5) The first testcase
 ----------------------
 
 We already provide you with one test case, in the next section we will show you how to fix this unit test.
@@ -140,45 +169,48 @@ In this tutorial we use [Mocha](https://visionmedia.github.io/mocha/) as JavaScr
 However you can use your favorite - you only need to change the `test` command in the `scripts` section of your `package.json`. 
 {% endhlblock %}
 
-5) Start coding
+
+6) Start coding
 ----------------
 
 Now it is time to code! 
-To begin please open now the src folder and access the index.js file. 
+To begin please open now the `src` folder and access the `index.js` file. 
 First have a look at the provided code.
 
 ~~~
-var graduates = {};
+var snipspector = {};
 
-graduates.parse = function() {
+snipspector.parse = function() {
     
-    var data = ["rs5747620	22	15412698	TT",
-				"rs9605903	22	15434720	CC",
-				"rs5747968	22	15447504	GG",
-				"rs2236639	22	15452483	GG",
-				"rs5747999	22	15455353	AA",
-				"rs11089263	22	15467656	AA",
-				"rs2096537	22	15474749	AC",
-				"rs9604959	22	15479107	CC",
-				"rs9604967	22	15492342	CC",
-				"rs4819849	22	15532611	AG",
-				"rs9605028	22	15534984	AA",
-				"rs1892844	22	15535383	AA"];
+    var data = ["rs5747620	20	15412698	TT",
+    "rs9605903	20	15434720	CC",
+    "rs2236639	20	15452483	GC",
+    "rs5747999	21	15455353	AA",
+    "rs11089263	21	15467656	A-",
+    "rs2096537	21	15474749	AC",
+    "rs9604959	22	15479107	CG",
+    "rs9604967	22	15492342	CC"];
 
-    var parsed = {};
-    console.log("Welcome to the BioJS tutorial");
+    var chromosomes = [];
 
-    // count countries
+    // analyze snippets
+    // homo(zygous): AA
+    // hetero(zygous): AC
+    // del(etion): A-, -A or --
     for (var i = 0; i < data.length; i++) {
         // Please fill in your code here! 
     }
 
-    console.log(parsed); 
+    console.log(chromosomes); 
 
-    return parsed;
+    return chromosomes;
 }
 
-graduates.parse(); //Should print {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1}
+snipspector.parse(); //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
+                     // {name: "21", homo: 1, hetero: 1, del: 1}, 
+                     // {name: "22", homo 1, hetero: 1, del: 0 }]
+
+module.exports = snipspector; // Export the object for other components
 ~~~
 
 You can always run your application directly with with Node, like this:
@@ -195,15 +227,18 @@ Or this one for a short fresh up of [variables](http://thewebivore.com/wp-conten
 
 {% hlblock task %}
 
-Can you fill in the missing code inside the for loop so that `graduates.parse()` outputs the number of graduates for each country and your unit test is green?
+Can you fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and "deleted" snippets
+If you have done a great job your unit test will turn green!
 
 {% endhlblock %}
 
+Sample of this format:
+
 ~~~
-{country : number of graduates} 
+[{name: "chrname", homo: 0, hetero: 0, del: 0}]
 ~~~
 
-6) Verify your solution
+7) Verify your solution
 ----------------
 
 {% hlblock stop %}
@@ -217,67 +252,74 @@ Please only continue if your solution is working.
 __Solution:__ 
 
 {% code javascript collapsible=true %}
-var biojs = {}
+var snipspector = {};
 
-graduates.parse = function() {
+snipspector.parse = function() {
+    
+    var data = ["rs5747620	20	15412698	TT",
+    "rs9605903	20	15434720	CC",
+    "rs2236639	20	15452483	GC",
+    "rs5747999	21	15455353	AA",
+    "rs11089263	21	15467656	A-",
+    "rs2096537	21	15474749	AC",
+    "rs9604959	22	15479107	CG",
+    "rs9604967	22	15492342	CC"];
 
-    var data = ["rs5747620	22	15412698	TT",
-				"rs9605903	22	15434720	CC",
-				"rs5747968	22	15447504	GG",
-				"rs2236639	22	15452483	GG",
-				"rs5747999	22	15455353	AA",
-				"rs11089263	22	15467656	AA",
-				"rs2096537	22	15474749	AC",
-				"rs9604959	22	15479107	CC",
-				"rs9604967	22	15492342	CC",
-				"rs4819849	22	15532611	AG",
-				"rs9605028	22	15534984	AA",
-				"rs1892844	22	15535383	AA"];
+    var parsed = [];
 
-
-    var parsed = {};
-
-    // count countries
+    // analyze snippets
+    // homo(zygous): AA
+    // hetero(zygous): AC
+    // del(etion): A-, -A or --
+    
+    var chr = null;
     for (var i = 0; i < data.length; i++) {
-        var row = data[i].split(/\s+/); 
-        // init if new
-        if (parsed[row[1]] === undefined) {
-            parsed[row[1]] = 0;
+      var row = data[i].split(/\s+/);
+      var chrName = row[1];
+
+      // new chromosome begins
+      if( chr == null ||  chrName !== chr.name) {
+        // ignore the first time
+        if( chr != null ){
+          parsed.push(chr);
         }
-        parsed[row[1]]++;
+        chr = {homo: 0, hetero: 0, del: 0};
+        chr.name = chrName;
+      }
+
+      var genotype = row[3];
+      if( genotype.length == 2){
+        // ignore MT
+        if(genotype[0] == genotype[1] && genotype[0] != "-"){
+          // homo
+          chr.homo = chr.homo + 1;  
+        } else if( genotype[0] != "-" && genotype[1] != "-"){
+          // hetero
+          chr.hetero = chr.hetero + 1;  
+        }else{
+          // del
+          chr.del = chr.del + 1;  
+        }
+      }
     }
+    // push the last item
+    parsed.push(chr);
+
+    return parsed;
 }
+
+snipspector.parse(); //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
+                     // {name: "21", homo: 1, hetero: 1, del: 1}, 
+                     // {name: "22", homo 1, hetero: 1, del: 0 }]
+
+module.exports = snipspector; // Export the object for other components
 {% endcode %}
 
-### 7) Export your component with CommonJS and NPM
-
-Great work! Now it is time to export your component in order to provide your functionality with the other BioJS components.
-We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in Biojs.
-
-Please export your parser in the following way:
-
-~~~
-var biojs = { }
-
-biojs.graduates = function() {
-    ...
-}
-
-module.exports = biojs;
-~~~
-
-now other BioJS components are able to include your component by using
-
-~~~
-var parser = require('<path>');
-parser.graduates();
-~~~
-
-The path can be either relative `../src/index.js` or simply the package name `biojs-io-snipspector`.
+You can also browse the solution at [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 
 ### 8) Publish your component
 
-Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody
+Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody.
 
 {% hlblock info %}
 If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
@@ -287,5 +329,5 @@ Furthermore, consider to publish your future components to npm. We will provide 
 In the next tutorial, you will learn [how to create a visualization component](04_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
+You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
 {% endhlblock %}

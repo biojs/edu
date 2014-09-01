@@ -9,6 +9,7 @@ estimated-time: 30
 
 {% alert warn %}
 Please create the [basic package](./03_package_basics.html) before.
+Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
 ### 1) Installing a npm dependency
@@ -34,12 +35,16 @@ var request = require("nets");
 A sample request might look like this.
 
 ~~~
-request('graduates.biojs.net/list', function (error, response, body) {
+request('files.biojs.net/manny.dummy', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Prints the reponse body
   }
 })
 ~~~
+
+{% hlblock info %}
+`manny.dummy` only contains the first 50 lines. We will use the whole file with 500.000 lines later in this tutorial.
+{% endhlblock  %}
 
 {% hlblock info %}
 [`nets`](https://github.com/maxogden/nets) is a meta-wrapper for the [request](https://github.com/mikeal/request) package, which switches to [xhr](https://github.com/Raynos/xhr) when it gets "browserified".
@@ -48,7 +53,7 @@ request('graduates.biojs.net/list', function (error, response, body) {
 {% hlblock task %}
 1. Install the `nets` package
 2. Create a sample file (e.g. `foo.js`)
-3. Download `graduates.biojs.net/list` and print it to the screen
+3. Download `files.biojs.net/manny.dummy` and print it to the screen
 {% endhlblock  %}
 
 {% hlblock help %}
@@ -61,7 +66,7 @@ __Solution__
 
 {% code javascript collapsible=true %}
 var request = require("nets");
-request('graduates.biojs.net/list', function (error, response, body) {
+request('files.biojs.net/manny.dummy', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Prints the reponse body
   }
@@ -71,7 +76,7 @@ request('graduates.biojs.net/list', function (error, response, body) {
 ### 3) Download the real data
 
 ~~~
-graduates.read = function(url, callback) {
+snipspector.read = function(url, callback) {
  // TODO
 }
 ~~~
@@ -87,6 +92,11 @@ Using callbacks is just one of multiple ways (but probably the easiest to unders
 Another very popular one is to use [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 {% endhlblock  %}
 
+{% hlblock help %}
+You can need to remove the static `data` object in the parse method.
+Put this data into your unit test.
+{% endhlblock  %}
+
 {% hlblock stop %}
 __Solution__ - if you have troubles: write the unit test first, before you look at this solution.
 {% endhlblock %}
@@ -95,41 +105,78 @@ __Solution__ - if you have troubles: write the unit test first, before you look 
 
 {% code javascript collapsible=true %}
 var request = require("nets");
-var graduates = {};
 
-graduates.read = function(url, callback) {
+var snipspector = {};
+
+snipspector.read = function(url, callback) {
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      var data = body.split("\n");
-      console.log(data);
-      callback(graduates.parse(data));
+      callback(snipspector.parse(body));
     }
   })
 }
 
-graduates.read_static = function(){
-  var data = ["greenify:DE","daviddao:HK","mhelvens:NL","timruffles:UK","iriscshih:TW"];
-  return graduates.parse(data);
-}
+snipspector.parse = function(data) {
 
-graduates.parse = function(data) {
-    var parsed = {};
-    // count countries
-    for (var i = 0; i < data.length; i++) {
-        if(data[i].trim().length === 0){
-          continue;
-        }
-        var row = data[i].split(":"); 
-        // init if new
-        if (parsed[row[1]] === undefined) {
-            parsed[row[1]] = 0;
-        }
-        parsed[row[1]]++;
+    if(data.indexOf('\n') >= 0 ){
+      data = data.split('\n');
     }
-    return parsed;
+    
+   var chromosomes = [];
+
+    // analyze snippets
+    // homo(zygous): AA
+    // hetero(zygous): AC
+    // del(etion): A-, -A or --
+    
+    var chr = null;
+    for (var i = 0; i < data.length; i++) {
+
+      // ignore empty rows or comments
+      if(data[i].length == 0 || data[i][0] === "#"){
+        continue;
+      }
+
+      var row = data[i].split(/\s+/);
+      var chrName = row[1];
+
+      // new chromosome begins
+      if( chr == null ||  chrName !== chr.name) {
+        // ignore the first time
+        if( chr != null ){
+          chromosomes.push(chr);
+        }
+        chr = {homo: 0, hetero: 0, del: 0};
+        chr.name = chrName;
+      }
+
+      var genotype = row[3];
+      if( genotype.length == 2){
+        // ignore MT
+        if(genotype[0] == genotype[1] && genotype[0] != "-"){
+          // homo
+          chr.homo = chr.homo + 1;  
+        } else if( genotype[0] !== "-" && genotype[1] !== "-"){
+          // hetero
+          chr.hetero = chr.hetero + 1;  
+        }else{
+          // del
+          chr.del = chr.del + 1;  
+        }
+      }
+    }
+    // push the last item
+    chromosomes.push(chr);
+
+    return chromosomes;
 }
 
-module.exports = graduates; // Export the object for other components
+//Should print [{name: "20", homo: 2, hetero: 1, del: 0,
+// {name: "21", homo: 1, hetero: 1, del: 1}, 
+// {name: "22", homo 1, hetero: 1, del: 0 }]
+
+
+module.exports = snipspector; // Export the object for other components
 {% endcode %}
 
 
@@ -168,21 +215,21 @@ var scope = nock(testURL)
 
 Now you only need to create the dummy file with which Nock should reply.
 
-`test/dummy.list`
+`test/test.file`
 
 ~~~
-greenify:DE
-daviddao:HK
-mhelvens:NL
-timruffles:UK
-iriscshih:TW
+rs5747620	20	15412698	TT
+rs9605903	20	15434720	CC
+rs2236639	20	15452483	GC
+rs5747999	21	15455353	AA
+rs11089263	21	15467656	A-
+rs2096537	21	15474749	AC
+rs9604959	22	15479107	CG
+rs9604967	22	15492342	CC
 ~~~
+(this is the same file from [the package basics tutorial](./03_package_basics.html)
 
-If you are lazy, run this
-
-~~~
-curl graduates.biojs.net/dummy.list -o test/dummy.list
-~~~
+For the beginning we use a small file for testing, so it is easier to debug.
 
 #### 4.2) Asynchronous testing
 
@@ -204,7 +251,7 @@ Passing an argument to an Mocha test will automatically let the test suite run y
 {% endhlblock  %}
 
 {% hlblock task %}
-Write a second unit test that calls our mocked URL and test whether `graduates.read(<url>, <callback>)` works.
+Write a second unit test that calls our mocked URL and test whether `snipspector.read(<url>, <callback>)` works.
 {% endhlblock  %}
 
 
@@ -222,36 +269,44 @@ your solution is correct!
 
 {% code javascript collapsible=true %}
 var assert = require("chai").assert;
-var tutorial = require("../");
+var snip = require("../");
 
 // you can find more docu about mocha here
 // https://visionmedia.github.io/mocha/
 
 var nock = require('nock')
-
 var testURL = 'http://an.url/'
 
 var scope = nock(testURL)
-.get('/list')
-.replyWithFile(200, __dirname + '/dummy.list');
+  .get('/list')
+  .replyWithFile(200, __dirname + '/test.file');
 
+  var dummyObj = [{name: "20", homo: 2, hetero: 1, del: 0},
+{name: "21", homo: 1, hetero: 1, del: 1}, 
+{name: "22", homo: 1, hetero: 1, del: 0 }];
 
-describe('Graduates', function(){
+describe('Snipspector', function(){
   // do any init stuff here
   beforeEach(function(){
   });
   describe('parse', function(){
     it('should return match with default object', function(){
-      dummyObj = {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1};
-      assert.deepEqual(tutorial.read_static(), dummyObj);
+      var data = ["rs5747620	20	15412698	TT",
+      "rs9605903	20	15434720	CC",
+      "rs2236639	20	15452483	GC",
+      "rs5747999	21	15455353	AA",
+      "rs11089263	21	15467656	A-",
+      "rs2096537	21	15474749	AC",
+      "rs9604959	22	15479107	CG",
+      "rs9604967	22	15492342	CC"];
+      assert.deepEqual(snip.parse(data), dummyObj);
     });
   });
   it('should work with live data', function(done){
-    tutorial.read(testURL + "list", function(parsed){
-        // the dummy file contains exactly this obj
-        dummyObj = {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1};
-        assert.deepEqual(parsed, dummyObj);
-        done(); // you need to call the done callback to resume mocha
+    snip.read(testURL + "list", function(parsed){
+      // the dummy file contains exactly this obj
+      assert.deepEqual(parsed, dummyObj);
+      done(); // you need to call the done callback to resume mocha
     });
   });
 });
