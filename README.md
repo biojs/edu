@@ -14,6 +14,11 @@ For now here is a simple formula:
 4. If we merge your pull request, you get commit access. BAM. Go back to step 2 and stay there as long as you want.
 
 
+Contributor list
+----------------
+
+Don't be shy - add yourself to the contributors list of an article.
+The names are sorted alphabetically.
 
 About jekyll
 -----------
