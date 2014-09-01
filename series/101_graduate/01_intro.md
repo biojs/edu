@@ -2,6 +2,7 @@
 title: 'Intro'
 layout: tutorial-container
 author: Seb
+revised: Manny
 category: 101_tutorial
 series: 101
 estimated-time: 5
@@ -11,30 +12,30 @@ estimated-time: 5
 Purpose of this tutorial series
 -------------------------------
 
-* learn basic concepts of BioJS
-* get hands on dependency management in BioJS
-* master the workflow to publish a package on npm and the BioJS registry
+* Learn basic concepts of BioJS
+* Get hands on dependency management in BioJS 2.0
+* Master the workflow for publishing a package on npm and the BioJS 2.0 registry
 
 After installing npm, you will first create 
 
-1. a simple parser of [a list of all the people](https://github.com/biojs/tutorial-graduates/) who have done this tutorial (`biojs-io-gradutes`)
-2. visualize this output (`biojs-vis-graduates`)
-3. extend your simple parser and download a live list (`biojs-io-graduates`)
-4. learn how to publish your parser
+1. A simple parser of [a list of all the people](https://github.com/biojs/tutorial-graduates/) who have done this tutorial (`biojs-io-gradutes`)
+2. Visualize this output (`biojs-vis-graduates`)
+3. Extend your simple parser and download a live list (`biojs-io-graduates`)
+4. Learn how to publish your parser
 
 Concepts
 --------
 
-* data separation and modularity 
-* versioning (via npm)
-* minimal rules -> conventions and gold standards
+* Data separation and modularity 
+* Versioning (via npm)
+* Minimal rules -> conventions and gold standards
 
-What is a BioJS packages?
+What is a BioJS 2.0 package?
 -------------------------
 
 A tiny building block. It could be anything from a FASTA parser, a tree algorithm or
-simple your visualization package.  
-A general rule of thumb: _something that can be
+a simple visualization module.  
+A general rule of thumb: _something that can be 
 reused by others_
 
 Javascript guides
@@ -58,5 +59,5 @@ Pointers to different visualization approaches
 
 
 {% hlblock info %}
-BioJS is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/gh-pages/series/101_graduate/).
+The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/gh-pages/series/101_graduate/).
 {% endhlblock %}
