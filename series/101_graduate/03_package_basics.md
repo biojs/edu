@@ -55,9 +55,15 @@ Now we have to edit the name in __package.json__.
 Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
 
 {% hlblock task %}
-Can you rename the github repository to `biojs-io-graduates`?
-(Remember to update your `git remote` or `.git/config`)
+Rename the github repository to `biojs-io-graduates`
+
 {% endhlblock %}
+
+Update your `git remote` or `.git/config`
+~~~
+git add package.json
+git commit -m 'changed package.pkg'
+~~~
 
 ### 3) Our input data 
 
@@ -66,7 +72,7 @@ First we will have a look at the data.
 It is structured as follows:
 
 ~~~
-nickname,country (two chars)
+nickname:country (two chars)
 ~~~
 
 You can safely assume that the github nickname is unique.
@@ -88,14 +94,14 @@ After this tutorial you can add your name to this list of all biojs graduates ;-
 4) The first testcase
 ----------------------
 
-We already provide you with one one test case, in the next section we will show you how to fix this unit test.
+We already provide you with one test case, in the next section we will show you how to fix this unit test.
 You can execute the test suite with:
 
 ```
 npm test
 ```
 
-It is really ok if you see errors here - after all you will fix them ;-)
+It is really ok if you see errors here - you will fix them later ;-)
 
 {% hlblock info %}
 In this tutorial we use [Mocha](https://visionmedia.github.io/mocha/) as JavaScript test framework.
