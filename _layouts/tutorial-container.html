@@ -15,7 +15,7 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 	{% endif %} 
 	<div class="static-content">
 
-		<div id="explanation" style="visible:hidden">
+		<div id="explanation" style="display:none">
 {% hlblock check %}
 We will use this icon to mark check points.
 A check point is a way for you to check how you are doing.
@@ -67,7 +67,6 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 </div>
 
 {% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback.
-Click either on 
 
 * [improve this page](https://github.com/biojs/edu/blob/gh-pages/{{page.path}})
 * [open an issue](https://github.com/biojs/edu/issues/new) on github
@@ -99,6 +98,7 @@ jQuery(document).ready(function() {
 		collapseStuff(e,"Hide the code", "Display the code");
 
 	});
+	jQuery("#explanation").css("display", "block");
 	collapseStuff("#explanation","Hide the icon explanation", "Display the icon explanation");
 });
 
