@@ -260,5 +260,5 @@ describe('Graduates', function(){
 <br>
   
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
+You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
 {% endhlblock %}

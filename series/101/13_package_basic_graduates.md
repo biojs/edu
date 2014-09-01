@@ -41,7 +41,7 @@ Inside the folder you find following files:
 
 ### 2) Choose a name for your component
 
-Choose a name for your component. For the following example, we will name our component *biojs-io-graduates*.
+Choose a name for your component. For the following example, we will name our component *biojs-io-snipspector*.
 For BioJS 2 components, we have following naming conventions:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
@@ -52,10 +52,10 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 - Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
 
 Now we have to edit the name in __package.json__.
-Open the file with an editor and replace every __biojs-template__ to __biojs-io-graduates__.
+Open the file with an editor and replace every __biojs-template__ to __biojs-io-snipspector__.
 
 {% hlblock task %}
-Rename the github repository to `biojs-io-graduates`
+Rename the github repository to `biojs-io-snipspector`
 
 {% endhlblock %}
 
@@ -216,7 +216,7 @@ var parser = require('<path>');
 parser.graduates();
 ~~~
 
-The path can be either relative `../src/index.js` or simply the package name `biojs-io-graduates`.
+The path can be either relative `../src/index.js` or simply the package name `biojs-io-snipspector`.
 
 ### 8) Publish your component
 
@@ -227,8 +227,8 @@ If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.gi
 {% endhlblock %}
 
 Furthermore, consider to publish your future components to npm. We will provide you with a tutorial for [that]().
-In the next tutorial, you will learn [how to create a visualization component](04_visualization_basics.html) using your newly build `biojs-io-graduates` component.
+In the next tutorial, you will learn [how to create a visualization component](04_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
+You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
 {% endhlblock %}

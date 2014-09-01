@@ -19,7 +19,7 @@ After installing npm, you will first create
 
 1. A simple parser of [a list of all the people](https://github.com/biojs/tutorial-graduates/) who have done this tutorial (`biojs-io-gradutes`)
 2. Visualize this output (`biojs-vis-graduates`)
-3. Extend your simple parser and download a live list (`biojs-io-graduates`)
+3. Extend your simple parser and download a live list (`biojs-io-snipspector`)
 4. Learn how to publish your parser
 
 Concepts

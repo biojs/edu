@@ -23,7 +23,7 @@ Did you really finish all previous tutorials?
 
 ### Find the solutions on github
 
-* [`biojs-io-graduates`](https://github.com/biojs/biojs-io-graduates)
+* [`biojs-io-snipspector`](https://github.com/biojs/biojs-io-snipspector)
 * [`biojs-vis-graduates`](https://github.com/biojs/biojs-vis-peoplemap)
 
 ### Get inspirations of other packages

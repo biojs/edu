@@ -27,6 +27,10 @@ npm help
 
 {% endhlblock %}
 
+{% hlblock info %}
+If you want to fresh up your `git` skills, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
+{% endhlblock %}
+
 {% hlblock question %}
 What does `npm` stand for?
 {% endhlblock %}
