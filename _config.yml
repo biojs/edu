@@ -2,7 +2,8 @@ name: BioJS
 description: Represent all biological data on the web
 url: http://biojs.net
 markdown: kramdown
-pygments: false
+#pygments: false
+#highlighter: pygments
 timezone: UTC
 encoding: utf-8
 cats:
