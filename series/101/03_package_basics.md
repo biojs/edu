@@ -147,6 +147,10 @@ snipspector.parse();
 The path can be either relative `../src/index.js` or simply the package name `biojs-io-snipspector`.
 {% endhlblock %}
 
+{% hlblock info %}
+There is a [excellent guide](https://github.com/maxogden/art-of-node#how-require-works) on how the `require` command works under the hood.
+{% endhlblock %}
+
 5) The first testcase
 ----------------------
 
