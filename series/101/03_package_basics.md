@@ -13,7 +13,7 @@ You need to install `npm` before you can start to rock. See <a href="02_getting_
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
 As a case study, we will build a simple parser to read __xxx___.
-In the next tutorial we will show you how to visualzee this data.
+In the next tutorial we will show you how to visualize this data.
 
 ### 1) Fork the BioJS 2 Template from GitHub
 
