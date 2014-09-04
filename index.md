@@ -2,7 +2,7 @@
 layout: container
 ---
 
-[![search](/img/front/search.png) Search in our registry](http://biojs.net/registry-ui/client/)
+[![search](/img/front/search.png) Search in our registry](http://registry.biojs.net/)
  
 
 Categories
