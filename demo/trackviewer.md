@@ -18,7 +18,7 @@ series: demo
   <link rel="stylesheet" href="biojs-vis-track/tnt.css" type="text/css" />
 
 
-   <script src="/biojs-vis-track/snippets/2_data_and_features/2_data_and_features.js"></script>
+   <script src="biojs-vis-track/snippets/2_data_and_features/2_data_and_features.js"></script>
 
     <h3>Showing 2 Features in one Track</h3>
     <div id="1"></div>
@@ -31,7 +31,7 @@ series: demo
         })();
     </script>
     
-    <script src="/biojs-vis-track/snippets/buttons/buttons.js"></script>
+    <script src="biojs-vis-track/snippets/buttons/buttons.js"></script>
     
     <h3>The Buttons-based theme</h3>
     <div id="2"></div>
@@ -44,7 +44,7 @@ series: demo
         })();
     </script>
   
-    <script src="/biojs-vis-track/snippets/compact/compact.js"></script>
+    <script src="biojs-vis-track/snippets/compact/compact.js"></script>
 
     <h3>The Compact Theme</h3>
     <div id="3"></div>
@@ -60,7 +60,7 @@ series: demo
         })();
     </script>
     
-     <script src="/biojs-vis-track/snippets/comparative/comparative.js"></script>
+     <script src="biojs-vis-track/snippets/comparative/comparative.js"></script>
 
 
     <h3>The Comparative Theme</h3>
@@ -81,7 +81,7 @@ series: demo
         })();
     </script>
     
-    <script src="/biojs-vis-track/snippets/dynamic_track/dynamic_track.js"></script>
+    <script src="biojs-vis-track/snippets/dynamic_track/dynamic_track.js"></script>
 
     <h3>Adaptative track</h3>
     <div id="5"></div>
@@ -95,7 +95,7 @@ series: demo
         })();
     </script>
     
-    <script src="/biojs-vis-track/snippets/line_track/line_track.js"></script>
+    <script src="biojs-vis-track/snippets/line_track/line_track.js"></script>
 
     <h3>Line Tracks</h3>
     <div id="6"></div>
@@ -108,7 +108,7 @@ series: demo
         })();
     </script>
     
-    <script src="/biojs-vis-track/snippets/sequence_track/sequence_track.js"></script>
+    <script src="biojs-vis-track/snippets/sequence_track/sequence_track.js"></script>
 
     <h3>A Sequence Track</h3>
     <div id="8"></div>
@@ -122,7 +122,7 @@ series: demo
         })();
     </script>
     
-    <script src="/biojs-vis-track/snippets/swap_tracks/swap_tracks.js"></script>
+    <script src="biojs-vis-track/snippets/swap_tracks/swap_tracks.js"></script>
 
     <h1>Swapping Tracks</h1>
     <div id="9"></div>

@@ -16,7 +16,7 @@ series: demo
 
 Another snippet
 <div id='msa-ordering'></div>
-<script src="biojs-vis-msa/snippets/msa_ordering.js"></script>
+<script src="/biojs-vis-msa/snippets/msa_ordering.js"></script>
 
 <script>
 var msa_viewer = biojs.vis.msa;

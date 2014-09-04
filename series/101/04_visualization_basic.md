@@ -7,10 +7,6 @@ series: 101
 estimated-time: 30 
 ---
 
-{% alert danger %}
-in build
-{% endalert %}
-
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
 As a case study, we will continue working with chromosome data and show you how to visualize this data with D3.
 

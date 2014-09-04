@@ -12,7 +12,7 @@ series: demo
   <script src="http://d3js.org/d3.v3.min.js"></script>
 
   <!-- BioJS 2.0 Component -->
-  <!-- link rel="stylesheet" href="/biojs-vis-tree/tnt.css" type="text/css" /-->
+  <!-- link rel="stylesheet" href="biojs-vis-tree/tnt.css" type="text/css" /-->
   <script src="http://daviddao.de/biojs-vis-tree.min.js"></script>
 
   <!-- Tree.js -->
@@ -62,7 +62,7 @@ series: demo
 
   </p>
 
-  <script src="/biojs-vis-tree/snippets/sort_nodes/sort_nodes.js"></script>
+  <script src="biojs-vis-tree/snippets/sort_nodes/sort_nodes.js"></script>
 
   <h3>Sorting nodes</h3>
   <div id="3"></div>
@@ -73,7 +73,7 @@ series: demo
     theme(tree_vis, document.getElementById("3"));
   </script>
 
-  <script src="/biojs-vis-tree/snippets/scaled_branches/scaled_branches.js"></script>
+  <script src="biojs-vis-tree/snippets/scaled_branches/scaled_branches.js"></script>
 
   <h3>Scaled branches</h3>
   <div id="4"></div>
@@ -86,7 +86,7 @@ series: demo
     }());
   </script>
 
-  <script src="/biojs-vis-tree/snippets/ensembl_species/ensembl_species.js"></script>
+  <script src="biojs-vis-tree/snippets/ensembl_species/ensembl_species.js"></script>
 
   <h3>Ensembl Species</h3>
   <div id="5"></div>
@@ -100,7 +100,7 @@ series: demo
   </script>
 
   <!-- Tree.js -->
-  <script src="/biojs-vis-tree/snippets/colors/colors.js"></script>
+  <script src="biojs-vis-tree/snippets/colors/colors.js"></script>
 
   <h3>Colors</h3>
   <div id="6"></div>
@@ -113,7 +113,7 @@ series: demo
     }());
   </script>
 
-  <script src="/biojs-vis-tree/snippets/collapse_nodes/collapse_nodes.js"></script>
+  <script src="biojs-vis-tree/snippets/collapse_nodes/collapse_nodes.js"></script>
 
   <h3>Collapse tree nodes</h3>
   <div id="7"></div>
