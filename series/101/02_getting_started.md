@@ -60,10 +60,13 @@ Alternatively you can also install NodeJs via the [package installer](http://nod
 
 Install nodejs via [your package manager](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)
 
-E.g. for Ubuntu run
+E.g. 
 
 ~~~
-sudo apt-get install npm
+sudo apt-get install npm # Ubuntu
+pacman -S nodejs #  Arch
+emerge nodejs # Gentoo
+yum install npm # Fedora
 ~~~
 
 We assume that you most likely will know how to install a package, however feel free to add instructions for your favorite distro.
@@ -74,10 +77,11 @@ We assume that you most likely will know how to install a package, however feel 
 
 You must be completely crazy if you want to develop anything on Windows.
 Be warned that some packages just assume that they have a UNIX-like enviroment.
+Anyway installing npm on windows is still easy.
 
 Way 1) Download & install using the [Windows installer](http://nodejs.org/download/)
 
-Way 2) Build node from the source code  (recommended)
+Way 2) Build node from the source code  
 
 1. [install cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/)
     - Use setup.exe in the cygwin folder to install the following packages:

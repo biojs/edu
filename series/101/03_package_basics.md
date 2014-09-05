@@ -12,17 +12,21 @@ You need to install `npm` before you can start to rock. See <a href="02_getting_
 {% endalert %}
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
-As a case study, we will build a simple parser to read __xxx___.
+As a case study, we will build a simple parser to read SNPs from Manny.
 In the next tutorial we will show you how to visualize this data.
 
-### 1) Fork the BioJS 2 Template from GitHub
+1) Fork the BioJS 2 Template from GitHub
+--------------------------------------------
 
 We created a BioJS Template to give you a headstart for developing your component. 
-You can find it in our [BioJS2 folder](https://github.com/biojs/biojs). Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
-Now enter following command lines:
+You can find it in our [BioJS2 folder](https://github.com/biojs/biojs).
+
+1. Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
+2. Rename the repository to your name (here: `biojs-io-snipspector`)
+3. Clone the repository
 
 ~~~
-git clone https://github.com/<YOUR-USERNAME>/biojs.git
+git clone https://github.com/<YOUR-USERNAME>/biojs-io-snipspector.git
 cd biojs
 ~~~
 
@@ -38,9 +42,10 @@ Inside the folder you find following files:
 
 (More detailed information will be given later in this tutorial)
 
-### 2) Choose a name for your component
+4. Now we have to edit the name in the `package.json`.
+Open the file with an editor and replace every `biojs-template` to `biojs-io-snipspector`.
 
-Choose a name for your component. For the following example, we will name our component `biojs-io-snipspector`.
+{% hlblock info %}
 For BioJS 2 components, we have following naming conventions:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
@@ -49,29 +54,10 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 - Use `vis` for components which are visualizing data sets
 - Use `rest` for REST apis to databases
 - Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
-
-Now we have to edit the name in the `package.json`.
-Open the file with an editor and replace every `biojs-template` to `biojs-io-snipspector`.
-
-{% hlblock task %}
-Rename your github repository to `biojs-io-snipspector`
 {% endhlblock %}
 
-__Solution__:
-
-{% code bash collapsible=true %}
-# 1. Rename it on github
-# 2. Update your `git remote` or `.git/config`
-git remote origin
-git remote add origin git@github.com:<username>/biojs-io-snipspector.git
-# 3. Update your packge.json
-git add package.json
-git commit -m 'changed package.pkg'
-{% endcode %}
-
-
-### 3) Our input data 
-
+2) Our input data 
+------------------
 
 First we will have a look at the data. 
 It is structured as follows:
@@ -111,7 +97,7 @@ This real file is available at [`files.biojs.net/chromosome/manny`](http://files
 To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](05_real_parser.html) you will learn how to parse the real file with 500,000 rows.
 {% endhlblock %}
 
-4) Export your component
+3) Export your component
 ------------------------
 
 Now it is time to export your component in order to provide your functionality with the other BioJS components or in your module (e.g your firt test case).
@@ -151,7 +137,7 @@ The path can be either relative `../src/index.js` or simply the package name `bi
 There is a [excellent guide](https://github.com/maxogden/art-of-node#how-require-works) on how the `require` command works under the hood.
 {% endhlblock %}
 
-5) The first testcase
+4) The first testcase
 ----------------------
 
 We already provide you with one test case, in the next section we will show you how to fix this unit test.
@@ -169,7 +155,7 @@ However you can use your favorite - you only need to change the `test` command i
 {% endhlblock %}
 
 
-6) Start coding
+5) Start coding
 ----------------
 
 It is time to code! 
@@ -237,7 +223,7 @@ Sample of this format:
 [{name: "chrname", homo: 0, hetero: 0, del: 0}]
 ~~~
 
-7) Verify your solution
+6) Verify your solution
 ----------------
 
 {% hlblock stop %}
@@ -316,7 +302,8 @@ module.exports = snipspector; // Export the object for other components
 
 You can also browse the solution at [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 
-### 8) Publish your component
+7) Publish your component
+-------------------------
 
 Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody.
 
