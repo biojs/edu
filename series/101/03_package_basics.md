@@ -71,7 +71,7 @@ The file is structured as follows:
 rsid chromosome pos genotype
 ~~~
 
-Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genooty usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
+Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genotype usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
 
 There are 3 types of genotypes that we will look at in this example.
 
