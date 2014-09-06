@@ -61,18 +61,30 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 
 First we will have a look at the data. The whole file is a set of ~500K SNPs (Simple Nucleotide Polymorphisms) from [@manuelcorpas] (http://manuelcorpas.com). These SNPs come from a saliva sample genotyped using the SNP chip version 2 from [23andMe] (https://www.23andme.com/), a personal genomics provider.
 
+SNPs are the minimal unit of genetic variation that can occur and correspond to a single letter change in the DNA sequence of an organism (in this case @manuelcorpas).  
+
+This file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/manny).
+
 The file is structured as follows:
 
 ~~~
 rsid chromosome pos genotype
 ~~~
 
+Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genooty usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
+
+There are 3 types of genotypes that we will look at in this example.
+
+1. If the same letter is present in both copies, then we say that we have a homozygous SNP; e.g.: AA, TT, GG, CC.
+2. If the letters are different, then we have a heterozygous SNP: AT, GC, etc. 
+3. The position might have been delete in both or either chromosome: --, A-, -G, etc.
+
 These three fields in each feature line are required:
 
-* `rsid` (String): snippet id
+* `rsid` (String): SNP id
 * `chromosome` (String): name of the chromosome
 * `pos` (int): position in the chromosome
-* `genotype`: (String) both residues from the two matching chromosomes (warning: mitochondria (MT) is haploid)
+* `genotype`: (String) both residues from the two matching chromosomes (warning: mitochondria (MT) or Y chromosome are haploid)
 
 {% hlblock info %}
 For detailed info about the BED format, visit the [ensembl doc](http://www.ensembl.org/info/website/upload/bed.html) or the [UCSC help](http://genome.ucsc.edu/FAQ/FAQformat.html#format1)
@@ -92,7 +104,6 @@ rs9604959	22	15479107	CG
 rs9604967	22	15492342	CC
 ~~~
 
-This real file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/manny).
 
 {% hlblock info %}
 To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](05_real_parser.html) you will learn how to parse the real file with 500,000 rows.
