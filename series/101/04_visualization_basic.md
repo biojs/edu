@@ -205,12 +205,13 @@ Now you can easily include this into a simple html using:
 
 ~~~
 <html>
-	<body>
-		<script src="path to your biojs-template.min.js"></script>
+<meta charset="utf-8">
+    <body>
+    <script src="path to your biojs-template.min.js"></script>
         <script>
-            biojs.template();
+        biojs.template();
         </script>
-	</body>
+    </body>
 </html>
 ~~~
 
