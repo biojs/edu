@@ -222,6 +222,10 @@ Or this one for a short fresh up of [variables](http://thewebivore.com/wp-conten
 {% endhlblock %}
 
 
+6) Your first, big task
+---------------------
+
+
 {% hlblock task %}
 
 Please fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and deleted SNPs. If you have done a great job your unit test will turn green!
@@ -234,7 +238,7 @@ Sample of this format:
 [{name: "chrname", homo: 0, hetero: 0, del: 0}]
 ~~~
 
-6) Verify your solution
+7) Verify your solution
 ----------------
 
 {% hlblock stop %}
@@ -313,7 +317,7 @@ module.exports = snipspector; // Export the object for other components
 
 You can also browse the solution at [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 
-7) Publish your component
+8) Publish your component
 -------------------------
 
 Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody.
