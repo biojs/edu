@@ -228,14 +228,15 @@ Or this one for a short fresh up of [variables](http://thewebivore.com/wp-conten
 
 {% hlblock task %}
 
-Please fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and deleted SNPs. If you have done a great job your unit test will turn green!
+Please fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and deleted SNPs. Your task is to count the number or homozygous, heterozygous and deleted SNPs per chromosome. Note that heterozygous deletions are counted as deletions only, not heterozygous SNPs. If you have done a great job your unit test will turn green!
 
 {% endhlblock %}
 
-Sample of this format:
+
+Sample of format:
 
 ~~~
-[{name: "chrname", homo: 0, hetero: 0, del: 0}]
+[{name: "chrname", homo: 2, hetero: 0, del: 1}]
 ~~~
 
 7) Verify your solution
