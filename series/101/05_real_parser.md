@@ -39,7 +39,7 @@ var request = require("nets");
 A sample request might look like this.
 
 ~~~
-request('files.biojs.net/manny.dummy', function (error, response, body) {
+request('https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/test/test.file', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Prints the reponse body
   }
@@ -57,7 +57,7 @@ request('files.biojs.net/manny.dummy', function (error, response, body) {
 {% hlblock task %}
 1. Install the `nets` package
 2. Create a sample file (e.g. `foo.js`)
-3. Download `files.biojs.net/manny.dummy` and print it to the screen
+3. Download `https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/test/test.file` and print it to the screen
 {% endhlblock  %}
 
 {% hlblock help %}
@@ -70,7 +70,7 @@ __Solution__
 
 {% code javascript collapsible=true %}
 var request = require("nets");
-request('files.biojs.net/manny.dummy', function (error, response, body) {
+request('https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/test/test.file', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Prints the reponse body
   }
