@@ -7,6 +7,8 @@ series: 101
 estimated-time: 5 
 ---
 
+This is a short 5 minutes tutorial on the basics of using and reusing BioJS components.
+
 1) Install npm
 -------------------------
 
