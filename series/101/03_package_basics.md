@@ -63,7 +63,7 @@ First we will have a look at the data. The whole file is a set of ~500K SNPs (Si
 
 SNPs are the minimal unit of genetic variation that an organism may have and correspond to a single letter change in the DNA sequence of an organism (in this case @manuelcorpas).  
 
-This file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/manny).
+This file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/chromosomes/manny).
 
 The file is structured as follows:
 
@@ -71,7 +71,7 @@ The file is structured as follows:
 rsid chromosome pos genotype
 ~~~
 
-Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genooty usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
+Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genotype usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
 
 There are 3 types of genotypes that we will look at in this example.
 
@@ -222,20 +222,24 @@ Or this one for a short fresh up of [variables](http://thewebivore.com/wp-conten
 {% endhlblock %}
 
 
+6) Your first, big task
+---------------------
+
+
 {% hlblock task %}
 
-Can you fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and "deleted" snippets
-If you have done a great job your unit test will turn green!
+Please fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and deleted SNPs. Your task is to count the number or homozygous, heterozygous and deleted SNPs per chromosome. Note that heterozygous deletions are counted as deletions only, not heterozygous SNPs. If you have done a great job your unit test will turn green!
 
 {% endhlblock %}
 
-Sample of this format:
+
+Sample of format:
 
 ~~~
-[{name: "chrname", homo: 0, hetero: 0, del: 0}]
+[{name: "chrname", homo: 2, hetero: 0, del: 1}]
 ~~~
 
-6) Verify your solution
+7) Verify your solution
 ----------------
 
 {% hlblock stop %}
@@ -314,7 +318,7 @@ module.exports = snipspector; // Export the object for other components
 
 You can also browse the solution at [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 
-7) Publish your component
+8) Publish your component
 -------------------------
 
 Congratulations! You wrote your very first Biojs 2 Component. You can now publish it on github and it is ready to be used by everybody.
