@@ -9,6 +9,9 @@ estimated-time: 30
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
 As a case study, we will continue working with chromosome data and show you how to visualize this data with D3.
+First of all create a new folder called `biojs-vis-snipspector` by downloading our [template](https://github.com/biojs/biojs).
+We will use this as our working bench and only edit the `index.js` file inside the `src` folder. 
+Note: Please replace the current code with our following code!
 
 ### 1) Installing a npm dependency
 
@@ -24,7 +27,7 @@ npm install biojs-io-snipspector --save
 What does `--save` mean? [Help](https://www.npmjs.org/doc/cli/npm-install.html)
 {% endhlblock  %}
 
-to get our parsed data, please have a look at the previous [tutorial](https://edu.biojs.net/03_package_basics.html).
+to get our parsed data, please have a look at the previous [tutorial](http://edu.biojs.net/series/101/05_real_parser.html) with real data.
 
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
@@ -73,7 +76,7 @@ Let me go trough the code:
 - First we need a `radius`,`width` and `height` value for our svg components.
 - `color` is a function which will translate values into color code. 
 - `arc` draws our svg arc. We we set `innerRadius` to `0`, we would get a piechart.
-- `pie` is our data transformer. D3 provides us with an converter, which will convert an array data representation into a suitable representation for pie charts.
+- `pie` is our data transformer. D3 provides us with an converter (or layouts), which will convert an array data representation into a suitable representation for pie charts.
 
 ### 4) Convert our data
 
@@ -86,6 +89,7 @@ Therefore we need to convert our data into this format for each chromosome (each
 
 Can you come up with an converter?
 Here is our solution:
+Add this into your code.
 
 ~~~
 function converter(genome){
@@ -117,8 +121,12 @@ function converter(genome){
 }
 ~~~
 
+Everything should look like this right now:
 
 ~~~
+
+function converter(genome){...}
+
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
   var data_res = converter(result);
   
@@ -169,6 +177,137 @@ Let's create a svg which we append on the body of our html!
 
 D3 handles new data with `enter()`. To learn more about `enter`,`update` and `delete`, visit the [d3 tutorial](http://d3js.org/).
 Congratulations! You wrote your first visualization component for biojs!
+Now it is time to export and build it! 
+
+To export it write a wrapper around your all your code (except the dependencies)
+
+~~~
+require("d3");
+var parser = require("biojs-io-snipspector");
+
+function d3_show() {
+//All of our written code until now (except for the dependencies)
+}
+
+module.exports = d3_show();
+
+~~~
+
+We recommend browserify. Therefore use our preinstalled npm run build-browser!
+
+~~~
+npm install browserify --save
+npm run build-browser 
+~~~
+
+to create a build for this file! If this fails, create a build folder first!
+Now you can easily include this into a simple html using:
+
+~~~
+<html>
+	<body>
+		<script src="path to your biojs-template.min.js"></script>
+        <script>
+            biojs.template();
+        </script>
+	</body>
+</html>
+~~~
+
+Don't forget to run it on a server! Otherwise Manny's is not loaded.
+
+The final program looks like this:
+
+{% code javascript collapsible=true %}
+
+require("d3");
+var parser = require("biojs-io-snipspector");
+
+function d3_show() {
+
+ var width = 960,
+            height = 500,
+            radius = Math.min(width, height) / 2;
+
+        var color = d3.scale.category10();
+
+        var arc = d3.svg.arc()
+                    .outerRadius(radius - 10)
+                    .innerRadius(radius - 150);
+
+        var pie = d3.layout.pie()
+                    .sort(null)
+                    .value(function (d) {
+                        return d.number;
+                    });
+    
+function converter(genome){
+        var data_res = [];
+
+        for (var k = 0; k < 25; k++) {
+                    var data = [{
+                        category: "del",
+                        number: genome[k].del
+            }, {
+                        category: "hetero",
+                        number: genome[k].hetero
+            }, {
+                        category: "homo",
+                        number: genome[k].homo
+            }];
+
+
+                    var data_wrapper = [{
+                        name: genome[k].name,
+                        data: data
+            }];
+
+                    data_res = data_res.concat(data_wrapper);
+
+        }
+
+        return data_res;
+}
+
+parser.read("http://files.biojs.net/chromosomes/manny", function(result){
+  var data_res = converter(result);
+  
+  var X_data = data_res[22].data;
+        
+        var svg = d3.select("body").append("svg")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .append("g")
+                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        var g = svg.selectAll(".arc")
+                    .data(pie(X_data))
+                    .enter().append("g")
+                    .attr("class", "arc");
+
+        g.append("path")
+            .attr("d", arc)
+            .style("fill", function (d) {
+                    return color(d.data.category);
+                });
+
+        g.append("text")
+            .attr("transform", function (d) {
+                    return "translate(" + arc.centroid(d) + ")";
+                })
+            .attr("dy", ".35em")
+            .style("text-anchor", "middle")
+            .text(function (d) {
+                    return d.data.category;
+                });
+  
+})
+
+}
+
+module.exports = d3_show;
+
+{% endcode %}
 
 For more information about how each code component works, have a look at following [resources](http://schoolofdata.org/2013/10/01/pie-and-donut-charts-in-d3-js/).
 
