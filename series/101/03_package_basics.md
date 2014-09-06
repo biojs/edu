@@ -224,7 +224,7 @@ Or this one for a short fresh up of [variables](http://thewebivore.com/wp-conten
 
 {% hlblock task %}
 
-Please fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and "deleted" snippets. If you have done a great job your unit test will turn green!
+Please fill in the missing code inside the for loop so that `snipspector.parse()` counts all homozygous, heterozygous and deleted SNPs. If you have done a great job your unit test will turn green!
 
 {% endhlblock %}
 
