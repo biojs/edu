@@ -189,7 +189,7 @@ function d3_show() {
 //All of our written code until now (except for the dependencies)
 }
 
-module.exports = d3_show();
+module.exports = d3_show;
 
 ~~~
 
@@ -215,7 +215,8 @@ Now you can easily include this into a simple html using:
 </html>
 ~~~
 
-Don't forget to run it on a server! Otherwise Manny's is not loaded.
+Don't forget to run it on a server! Otherwise Manny's chromosome data is not loaded.
+By the way, you can change the namespace anytime you want. It is defined inside the file `browser.js`!
 
 The final program looks like this:
 
