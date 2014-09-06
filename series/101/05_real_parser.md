@@ -210,7 +210,7 @@ var nock = require('nock')
 var testURL = 'http://an.url/'
 var scope = nock(testURL)
 .get('/list')
-.replyWithFile(200, __dirname + '/dummy.list');
+.replyWithFile(200, __dirname + '/test.file');
 ~~~
 
 {% hlblock info %}

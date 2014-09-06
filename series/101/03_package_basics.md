@@ -63,7 +63,7 @@ First we will have a look at the data. The whole file is a set of ~500K SNPs (Si
 
 SNPs are the minimal unit of genetic variation that an organism may have and correspond to a single letter change in the DNA sequence of an organism (in this case @manuelcorpas).  
 
-This file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/manny).
+This file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/chromosomes/manny).
 
 The file is structured as follows:
 
