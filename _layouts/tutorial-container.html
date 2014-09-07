@@ -15,7 +15,7 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 	{% endif %} 
 	<div class="static-content">
 
-		<div id="explanation" style="visible:hidden">
+		<div id="explanation" style="display:none">
 {% hlblock check %}
 We will use this icon to mark check points.
 A check point is a way for you to check how you are doing.
@@ -102,6 +102,7 @@ jQuery(document).ready(function() {
 
 	});
 	collapseStuff("#explanation","Hide the icon explanation", "Display the icon explanation");
+	jQuery("#explanation").css("display", "block");
 });
 
 function collapseStuff(e, textHidden, textDisplayed){
