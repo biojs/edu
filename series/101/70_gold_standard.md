@@ -7,11 +7,6 @@ series: 101
 estimated-time: 5 
 ---
 
-{% alert danger %}
-In work.
-{% endalert %}
-
-
 Guidelines
 ----------
 
