@@ -48,16 +48,16 @@ Just send us a pull request for the [`index.toml`][adding].
 [adding]: https://github.com/biojs/registry/blob/master/index.toml
 
 {% alert ok %}
-You made it. Get your coffee and celebrate. However the rest of this tutorial keeps to be interesting.
+You made it. Get your coffee and celebrate. However the rest of this tutorial stays interesting.
 So just enjoy the rest.
 {% endalert %}
 
 ### 3) Add continous integration (CI)
 
-#### 3.1) Using [travis](https://travis-ci.org/)
+#### 3.1) Using [travis][Travis]
 
 
-Add a `.travis.yml` and add your project on Travis.
+1. Add a `.travis.yml`
 
 ~~~
 language: node_js
@@ -65,6 +65,11 @@ node_js:
   - "0.11"
   - "0.10"
 ~~~~
+
+2. Add your project on [Travis](https://travis-ci.org/profile/greenify) (flip the button to on - this will create a github webhook)
+
+[travis]: http://travis-ci.org
+[travis-start]: http://docs.travis-ci.com/user/getting-started/
 
 #### 3.2) Using [drone.io](https://drone.io/)
 
@@ -82,7 +87,7 @@ npm run build-browser
 * artifacts: enter the relative dir of files that should be downloadable (e.g. `build/biojs_io_fasta.min.js`)
 
 {% hlblock info %}
-Adding you build badges to your repo is easy - and to our registry too.
+Adding your build badges to your repo is easy - and to our registry too.
 {% endhlblock%}
 
 ### 4) Add other badges
@@ -95,8 +100,3 @@ There are plenty of fancy badges, here is a list to have a quick start.
 [![Code Climate](https://codeclimate.com/github/<username>/<package-name>/badges/gpa.svg)](https://codeclimate.com/github/<username>/<package-name>)
 [![NPM downloads](http://img.shields.io/npm/dm/<package-name>.svg)](https://www.npmjs.org/package/<package-name>)
 ~~~
-
-{% alert warn %}
-gold standard is in work.
-{% endalert %}
-
