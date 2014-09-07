@@ -1,7 +1,7 @@
 ---
-title: 'Visualization basics with D3'
+title: 'Visualization: D3'
 layout: tutorial-container
-contributors: Iris Shih and David Dao 
+contributors: Seb
 category: 101_tutorial
 series: 101
 estimated-time: 30 

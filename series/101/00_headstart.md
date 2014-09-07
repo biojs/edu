@@ -13,11 +13,11 @@ This is a short 5 minutes tutorial on the basics of using and reusing BioJS comp
 -------------------------
 
 {% alert warn %}
-You need to install `npm` before you can start to rock. See <a href="02_getting_started.html"> the getting started guide </a> for more info.
+You need to install `npm` before you can start to rock. See <a href="20_getting_started.html"> the getting started guide </a> for more info.
 {% endalert %}
 
 How does the LEGO-System of BioJS works?
-We recommend you to use a unix terminal and a text editor!
+We recommend you to use a Unix terminal and a text editor!
 
 
 2) Your first easy BioJS Component
@@ -113,8 +113,3 @@ You should get following:
 
 Congratulations!
 You parsed a string by reusing a common biojs algorithm.
-
-
-{% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
-{% endhlblock %}

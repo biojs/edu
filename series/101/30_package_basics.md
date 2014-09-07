@@ -4,11 +4,11 @@ layout: tutorial-container
 contributors: David, Iris, Manny, Seb
 category: 101_tutorial
 series: 101
-estimated-time: 30 
+estimated-time: 60 
 ---
 
 {% alert warn %}
-You need to install `npm` before you can start to rock. See <a href="02_getting_started.html"> the getting started guide </a> for more info.
+You need to install `npm` before you can start to rock. See <a href="20_getting_started.html"> the getting started guide </a> for more info.
 {% endalert %}
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
@@ -110,7 +110,7 @@ rs9604967	22	15492342	CC
 
 
 {% hlblock info %}
-To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](05_real_parser.html) you will learn how to parse the real file with 500,000 rows.
+To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](50_real_parser.html) you will learn how to parse the real file with 500,000 rows.
 {% endhlblock %}
 
 3) Export your component
@@ -331,8 +331,8 @@ Congratulations! You wrote your very first Biojs 2 Component. You can now publis
 If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
 {% endhlblock %}
 
-Furthermore, consider to [publish](06_publish_it.html) your future components to npm. 
-In the next tutorial, you will learn [how to create a visualization component](04_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
+Furthermore, consider to [publish](60_publish_it.html) your future components to npm. 
+In the next tutorial, you will learn [how to create a visualization component](40_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}
 You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).

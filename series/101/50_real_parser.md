@@ -8,7 +8,7 @@ estimated-time: 30
 ---
 
 {% alert warn %}
-Please create the [basic package](./03_package_basics.html) before.
+Please create the [basic package](./30_package_basics.html) before.
 Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
@@ -231,7 +231,7 @@ rs2096537	21	15474749	AC
 rs9604959	22	15479107	CG
 rs9604967	22	15492342	CC
 ~~~
-(this is the same file from [the package basics tutorial](./03_package_basics.html)
+(this is the same file from [the package basics tutorial](./30_package_basics.html)
 
 For the beginning we use a small file for testing, so it is easier to debug.
 
