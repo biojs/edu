@@ -12,19 +12,29 @@ In work.
 {% endalert %}
 
 
+Guidelines
+----------
+
+This is our minimal set of rules.
+
+* event system: [`biojs-events`](https://github.com/biojs/biojs-events)
+
+Gold standard
+-------------
+
+Not needed, but highly recommended.
+
 The gold standard is aimed at pointing new comers to the best solutions available at the moment.
 It is not so important how fancy they are. The key focus should be how easy they are to use and understand.
 
-Our recommended gold standard:
-
-* event system: `biojs-events`
-* documentation framework
+* [style guide](https://github.com/biojs/style-guide)
 * build system: gulp?
 * testing framework: mocha?
 * CI server: travis?
 * Linting?
 * Visualisation: D3?
 * Contribution Guidelines: in addition to those included in README (https://github.com/biojs/biojs)?
+* documentation framework
 
 
 (feel free to continue)
