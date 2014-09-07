@@ -27,20 +27,26 @@ Not needed, but highly recommended.
 The gold standard is aimed at pointing new comers to the best solutions available at the moment.
 It is not so important how fancy they are. The key focus should be how easy they are to use and understand.
 
-* [style guide](https://github.com/biojs/style-guide)
-* build system: gulp?
-* testing framework: mocha?
-* CI server: travis?
+For the use of every item you will be rewarded by special badges in the registry.
+
+* BioJS [coding style guide](https://github.com/biojs/style-guide)
+* build system: [gulp](http://travismaynard.com/writing/getting-started-with-gulp)
+* testing framework: [mocha](http://webapplog.com/test-driven-development-in-node-js-with-mocha/)
+* CI server: [travis](60_publish_it.html)
 * Linting?
 * Visualisation: D3?
 * Contribution Guidelines: in addition to those included in README (https://github.com/biojs/biojs)?
 * documentation framework
 
-
-(feel free to continue)
-
 {% alert warn %}
-TODO: Maybe we can write a short intro and howto for those (if not already covered by the 101) or at least link to an intro.
+The gold standard is work in progress.
+If you do disagree with an item listed here, please open an issue on github.
 {% endalert %}
 
-`?` means most likely (if you don't disagree - if you do disagree please contribute to the discussion)
+
+Example components
+-----------------
+
+* [biojs-vis-msa](https://github.com/greenify/biojs-vis-msa) (in CoffeeScript)
+
+(feel free to add your component here)
