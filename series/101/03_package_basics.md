@@ -26,9 +26,13 @@ You can find it in our [BioJS2 folder](https://github.com/biojs/biojs).
 3. Clone the repository
 
 ~~~
-git clone https://github.com/<YOUR-USERNAME>/biojs-io-snipspector.git
+git clone --depth 1 https://github.com/<YOUR-USERNAME>/biojs-io-snipspector.git
 cd biojs
 ~~~
+
+{% hlblock info %}
+`--depth 1` clones the template without history.
+{% endhlblock %}
 
 Inside the folder you find following files:
 
