@@ -94,7 +94,12 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 </div>
 <script>
 jQuery(document).ready(function() {
-hljs.initHighlightingOnLoad(); // load highlighted code blocks
+	// load highlighted code blocks
+    $('pre code').each(function(i, block) {
+      console.log(block);
+      hljs.highlightBlock(block);
+    });
+
 	jQuery(".collapsible").each(function(i,e){
 		collapseStuff(e,"Hide the code", "Display the code");
 
