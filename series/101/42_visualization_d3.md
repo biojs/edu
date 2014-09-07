@@ -27,7 +27,7 @@ npm install biojs-io-snipspector --save
 What does `--save` mean? [Help](https://www.npmjs.org/doc/cli/npm-install.html)
 {% endhlblock  %}
 
-to get our parsed data, please have a look at the previous [tutorial](http://edu.biojs.net/series/101/05_real_parser.html) with real data.
+to get our parsed data, please have a look at the previous [tutorial](/series/101/05_real_parser.html) with real data.
 
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){

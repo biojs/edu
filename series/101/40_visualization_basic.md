@@ -10,8 +10,10 @@ estimated-time: 15
 1) Create a new package
 -----------------------
 
+Go one directory up (`cd ..`) and create a new template.
+
 ~~~
-git clone --depth 1 https://github.com/biojs/biojs
+git clone --depth 1 https://github.com/biojs/biojs biojs-vis-snipspector
 ~~~
 
 2) Installing the parser as dependency
@@ -27,7 +29,7 @@ npm install biojs-io-snipspector --save
 What does `--save` mean? [Help](https://www.npmjs.org/doc/cli/npm-install.html)
 {% endhlblock  %}
 
-To get our parsed data, please have a look at the previous [tutorial](http://edu.biojs.net/series/101/50_real_parser.html) with real data.
+To get our parsed data, please have a look at the previous [tutorial](/series/101/50_real_parser.html) with real data.
 
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
@@ -41,6 +43,7 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 We require the parser from the previous tutorial.
 
 `src/index.js`
+
 ~~~
 var parser = require("biojs-io-snipspector");
 var vis = function(divEl){
@@ -60,7 +63,7 @@ module.exports = vis;
 There is a JavaScript development enviroment in the browser which support `require`.
 
 * Open [`requirebin.com`](requirebin.com)
-* Paste these eleven lines
+* Paste the 11 lines
 * Add (as a new line) on the bottom `vis()`
 * Hit __Rebuild__
 
@@ -79,7 +82,7 @@ npm run build-browser
 This will bundle all your dependencies and build the file `build/biojs-template.js`.
 
 {% hlblock help %}
-If you are lazy, you can use watchify to recompile on every file change.  
+If you are lazy, you can use `watchify` to recompile on every file change.  
 Install: `npm install watchify --save-dev`  
 Run: `watchify browser.js -o build/biojs-template.js`
 {% endhlblock %}
@@ -90,6 +93,7 @@ Run: `watchify browser.js -o build/biojs-template.js`
 You only need to create a very simple HTML file to call your visualization module.
 
 `simple.html`
+
 ~~~
 <div id=simple></div>
 <script src="build/biojs-template.js"></script>
@@ -101,19 +105,22 @@ Don't forget to run it on a server! Otherwise Manny's chromosome data is not loa
 {% endalert %}
 
 {% hlblock info %}
-You can run a http server easily  
+You can run a local server easily  
 Install: `sudo npm install -g http-server`  
 Run: `http-server` (in the package root dir)
+Address: [`localhost:8080`](http://localhost:8080)
 {% endhlblock %}
 
 {% hlblock info %}
-You can change the namespace anytime you want. It is defined inside the file `browser.js`!
+You can change the namespace anytime you want. It is defined inside `browser.js`!
 {% endhlblock %}
 
 6) Extend the visualization
 ---------------------------
 
+{% alert warn %}
 (in work)
+{% endalert %}
 
 
 7) Verify your solution
