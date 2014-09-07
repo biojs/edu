@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Example:
 # {% alert danger %} 
 # text in your red alert box
@@ -17,7 +18,8 @@ module Jekyll
         output = converter.convert(super(context))
         output = output.strip()
         # remove <p> at front and end
-        output = output.gsub(/^\<p\>(.+)\<\/p\>$/ms, '\1')
+        regex = Regexp.new '^\<p\>(.+)\<\/p\>$'.encode('UTF-8'), Regexp::IGNORECASE | Regexp::MULTILINE
+        output = output.gsub(regex, '\1')
 
         strGlyph = '';  
         alertType = '';
