@@ -1,6 +1,5 @@
 ---
 layout: series
-extra_js: ["http://yandex.st/highlightjs/8.0/highlight.min.js"]
 extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 ---
 <div class="container-fluid tutorials">
@@ -105,7 +104,7 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 	</div>
 </div>
 <script>
-jQuery(document).ready(function() {
+$(document).ready(function (){
 	// load highlighted code blocks
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
@@ -158,3 +157,5 @@ function collapseStuff(e, textHidden, textDisplayed){
 	});
 };
 </script>
+
+<script src="/js/highlight.min.js"></script>
