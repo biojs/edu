@@ -63,7 +63,7 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 2) Our input data 
 ------------------
 
-First we will have a look at the data. The whole file is a set of ~500K SNPs (Simple Nucleotide Polymorphisms) from [@manuelcorpas] (http://manuelcorpas.com). These SNPs come from a saliva sample genotyped using the SNP chip version 2 from [23andMe] (https://www.23andme.com/), a personal genomics provider.
+First we will have a look at the data. The whole file is a set of ~500K SNPs (Simple Nucleotide Polymorphisms) from [@manuelcorpas](http://manuelcorpas.com). These SNPs come from a saliva sample genotyped using the SNP chip version 2 from [23andMe](https://www.23andme.com/), a personal genomics provider.
 
 SNPs are the minimal unit of genetic variation that an organism may have and correspond to a single letter change in the DNA sequence of an organism (in this case @manuelcorpas).  
 

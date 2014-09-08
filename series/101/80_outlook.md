@@ -23,9 +23,9 @@ Did you really finish all previous tutorials?
 * [`biojs-io-snipspector`](https://github.com/biojs/biojs-io-snipspector)
 * [`biojs-vis-snipspector`](https://github.com/biojs/biojs-vis-snipspector)
 
-### Get inspirations of other packages
+### Get inspirations from other packages
 
 It is not a shame to get inspiration and techniques from other popular packages.
-Just browse [our registry](http://biojs.net/registry-ui/client/) for interesting ones.
+Just browse [our registry](http://biojs.net/registry-ui/client/) for interesting or popular ones.
 
 ### [Get involved in the awesome BioJS community](http://biojs.net/get_involved.html)
