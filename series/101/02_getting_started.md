@@ -43,6 +43,11 @@ Installation via homebrew
 
 ~~~
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" # brew is a package manager
+~~~
+
+This installs homebrew first. It takes a while depending on your internet connection. 
+For more information about Homebrew, see their homepage (https://brew.sh)
+~~~
 brew install node # installs the node package
 ~~~
 
@@ -53,6 +58,8 @@ brew install git
 ~~~
 
 Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/)
+
+To ensure you have installed these correctly, it's worth checking by typing git help and npm help again. 
 
 <a name="linux"></a>
 
