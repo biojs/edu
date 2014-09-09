@@ -55,7 +55,7 @@ Installing homebrew:
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" # brew is a package manager
 ~~~
 
-This installs homebrew first. Homebrew is quite a large package so it can take a while depending on your internet connection.
+This installs Homebrew. Homebrew is quite a large package so downloading can take a while depending on your internet connection.
 
 Using Homebrew to install node.js:
 ~~~
@@ -70,8 +70,9 @@ brew install git
 
 To ensure you have installed these correctly, it's worth checking by typing "git help" and "npm help" into the command line again. 
 
-Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/)
-You can also download [Github for Mac](https://mac.github.com/)
+Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/).
+
+You can also download [Github for Mac](https://mac.github.com/).
 
 
 <a name="linux"></a>
