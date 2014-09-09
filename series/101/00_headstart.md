@@ -37,7 +37,8 @@ module.exports = biojs101;
 ~~~
 
 Congratulations, you wrote your first BioJS Component!
-Run 
+
+To run this component, type:
 
 ~~~
 node index.js 
