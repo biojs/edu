@@ -45,7 +45,7 @@ Homebrew, git and node.js are three packages that are worth having on your Mac i
 
 [Git](https://github.com) is a version control system that will keep track of the changes you have made in code.
  
-[Node.js](http://nodejs.org) is a 'platform to run JavaScript on an server'.
+[Node.js](http://nodejs.org) is a 'runtime environment platform for server-side JavaScript applications'.
 
 You need to open a Terminal session first.
 
@@ -58,6 +58,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" # br
 This installs Homebrew. Homebrew is quite a large package so downloading can take a while depending on your internet connection.
 
 Using Homebrew to install node.js:
+
 ~~~
 brew install node # installs the node package
 ~~~
