@@ -44,7 +44,7 @@ To run this component, type:
 node index.js 
 ~~~
 
-to run this file! It should show you `3`.
+It should show you `3`.
 
 3) Reuse your component
 -------------------------
