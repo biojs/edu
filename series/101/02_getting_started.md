@@ -39,21 +39,23 @@ What does `npm` stand for?
 
 ### Mac Users 
 
-Homebrew, git and node.js are three packages that are worth having on your Mac if you want to do software development. 
+Homebrew, git and node.js are three packages that are worth having on your Mac if you want to do software development.
+ 
 [Homebrew](http://brew.sh) is called the 'missing package manager for OS X'. It allows you to download packages onto your Mac from your command line.  
-[Git](https://github.com) is a version control system that will keep track of the changes you have made in code. 
-[Node](http://nodejs.org) is an 'asynchronous event driven framework'.
+
+[Git](https://github.com) is a version control system that will keep track of the changes you have made in code.
+ 
+[Node.js](http://nodejs.org) is an 'asynchronous event driven framework'.
 
 You need to open a Terminal session first.
 
-Installing homebrew.
+Installing homebrew:
 
 ~~~
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" # brew is a package manager
 ~~~
 
-This installs homebrew first. Homebrew is quite a large package so it can take a while depending on your internet connection. 
-For more information about Homebrew, see their homepage (http://brew.sh)
+This installs homebrew first. Homebrew is quite a large package so it can take a while depending on your internet connection.
 
 Using Homebrew to install node.js:
 ~~~
