@@ -30,7 +30,6 @@ For those recommendations to new comers: It is not so important how fancy they a
 
 ### Our checklist
 
-* BioJS [coding style guide](https://github.com/biojs/style-guide)
 * npm presence
   - use [`npm upload`][publish-guide]
 * automated tests
@@ -40,6 +39,7 @@ For those recommendations to new comers: It is not so important how fancy they a
   - [drone.io][publish-guide]
 * tool-enforced code-consistency
   - [jshint](http://www.jshint.com/)
+  - BioJS [coding style guide](https://github.com/biojs/style-guide)
 * user documentation
   - `README.md`
   - Github wiki
