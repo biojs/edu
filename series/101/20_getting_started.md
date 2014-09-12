@@ -80,12 +80,14 @@ You can also download [Github for Mac](https://mac.github.com/).
 
 ### Linux users
 
+{% hlblock help %}
 Install nodejs via [your package manager](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)
+{% endhlblock %}
 
 E.g. 
 
 ~~~
-sudo apt-get install npm # Ubuntu
+curl -sL https://deb.nodesource.com/setup | sudo bash - # Ubuntu, Debian
 pacman -S nodejs #  Arch
 emerge nodejs # Gentoo
 yum install npm # Fedora
