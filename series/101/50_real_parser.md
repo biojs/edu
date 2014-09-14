@@ -16,6 +16,8 @@ Alternatively you can clone the [solution of the last exercise](https://github.c
 [Here](http://jsbin.com/hiyijagawete/2/edit) is the result of this example - parsing the 15MB file with 500,000 lines in your browser.
 {% endhlblock %}
 
+{% jsbin hiyijagawete/2 js,console %}
+
 ### 1) Installing a npm dependency
 
 As we want to download data, we need a `request` package.
