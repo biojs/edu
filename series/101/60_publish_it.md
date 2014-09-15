@@ -23,6 +23,7 @@ Make sure that in [`package.json`](https://www.npmjs.org/doc/files/package.json.
 * package name is correct
 * also edit the `npm run build-browser` command, denoted in `package.json` by adjusting `index.js` to the path of your main file.
 * your `npm test` executes the correct command and is passing.
+* you have added descriptive keywords
 
 Also check, that
 

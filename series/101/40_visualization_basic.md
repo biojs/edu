@@ -13,7 +13,7 @@ estimated-time: 15
 Go one directory up (`cd ..`) and create a new template.
 
 ~~~
-git clone --depth 1 https://github.com/biojs/biojs biojs-vis-snipspector
+slush biojs
 ~~~
 
 2) Installing the parser as dependency

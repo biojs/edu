@@ -18,36 +18,46 @@ In the next tutorial we will show you how to visualize this data.
 1) Fork the BioJS 2 Template from GitHub
 --------------------------------------------
 
-We created a BioJS Template to give you a headstart for developing your component. 
-You can find it in our [BioJS2 folder](https://github.com/biojs/biojs).
+Use our [slush generator](https://github.com/biojs/slush-biojs) to bootstrap your new project.
 
-1. Please [fork](https://help.github.com/articles/fork-a-repo) the repository from github.
-2. Rename the repository to your name (here: `biojs-io-snipspector`)
-3. Clone the repository
+1. Install slush
 
 ~~~
-git clone --depth 1 https://github.com/<YOUR-USERNAME>/biojs-io-snipspector.git
-cd biojs
+npm install -g slush slush-biojs
 ~~~
 
-{% hlblock info %}
-`--depth 1` clones the template without history.
-{% endhlblock %}
+2. Bootstrap your new project
+
+~~~
+mkdir <your-project>
+cd <your-project> && slush biojs
+~~~
+
+3. Answer the all questions
+
+~~~
+? What the module name?: biojs-vis-msa
+? What the description?: An awesome BioJS component
+? What the module version?: 0.1.0
+? What the author name?: greenify
+? What the author email?: <hidden>
+? What the github username?: greenify
+? Enter keywords for npm (separate with comma): visualization,msa,alignment
+? Choose your license type: Apache 2
+~~~
+
 
 Inside the folder you find following files:
 
 - `.gitignore`: Files that should be ignored by the git versioning system
 - `LICENSE`: The license under which you want your source code to be distributed, e.g. MIT or Apache 2
-- `browser.js`: Helper to create a namespace file for client-side javascript
+- `browser.js`: Helper for browserify to create a namespaced file for client-side javascript
 - `index.js`:  Index file over all submodules
 - `package.json`: Information about your package: author, version, ...
-- `src` : Folder including our tutorial index.js
+- `lib` : Folder including your real source code
 - `test`: Folder containing your first unit test
 
 (More detailed information will be given later in this tutorial)
-
-4. Now we have to edit the name in the `package.json`.
-Open the file with an editor and replace every `biojs-template` to `biojs-io-snipspector`.
 
 {% hlblock info %}
 For BioJS 2 components, we have following naming conventions:
@@ -63,9 +73,11 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 2) Our input data 
 ------------------
 
-First we will have a look at the data. The whole file is a set of ~500K SNPs (Simple Nucleotide Polymorphisms) from [@manuelcorpas](http://manuelcorpas.com). These SNPs come from a saliva sample genotyped using the SNP chip version 2 from [23andMe](https://www.23andme.com/), a personal genomics provider.
+First we will have a look at the data. The whole file is a set of ~500K SNPs (Simple Nucleotide Polymorphisms) from [@manuelcorpas][manuelcorpas]). These SNPs come from a saliva sample genotyped using the SNP chip version 2 from [23andMe](https://www.23andme.com/), a personal genomics provider.
 
-SNPs are the minimal unit of genetic variation that an organism may have and correspond to a single letter change in the DNA sequence of an organism (in this case @manuelcorpas).  
+SNPs are the minimal unit of genetic variation that an organism may have and correspond to a single letter change in the DNA sequence of an organism (in this case [@manuelcorpas][manuelcorpas]).  
+
+[manuelcorpas]: http://manuelcorpas.com
 
 This file is available at [`files.biojs.net/chromosome/manny`](http://files.biojs.net/chromosomes/manny).
 
@@ -74,6 +86,7 @@ The file is structured as follows:
 ~~~
 rsid chromosome pos genotype
 ~~~
+
 
 Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genotype usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
 
