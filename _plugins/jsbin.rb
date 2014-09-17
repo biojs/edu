@@ -20,7 +20,7 @@
 module Jekyll
   class JSBin < Liquid::Tag
     def initialize(tag_name, markup, tokens)
-      if /(?<jsbin>[^\s\/]+)(\/(?<revision>\d))?(?:\s+(?<sequence>[\w,]+))?/ =~ markup
+      if /(?<jsbin>[^\s\/]+)(\/(?<revision>\d))?(?:\s+(?<sequence>[\w,&=]+))?/ =~ markup
         @bin = jsbin
         @revision = revision || 'latest'
         @sequence = (sequence unless sequence == 'all') || 'html,css,js,output'
