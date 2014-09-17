@@ -6,12 +6,9 @@ series: playground
 ---
 
 
-{% jsbin quvex/7 js,output %}
+{% jsbin quvex/7 js,output&height=330px %}
 
 ### A large example:
 
-{% jsbin zunuko/5 js,output %}
+{% jsbin zunuko/5 js,output&height=600px %}
 
-### Pure parser
-
-{% jsbin lavaka/1 js,console %}
