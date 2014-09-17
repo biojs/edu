@@ -16,3 +16,5 @@ cats:
       desc: Basic tutorials
     howto:
       desc: How-Tos about components
+    playground:
+      desc: BioJS playground
