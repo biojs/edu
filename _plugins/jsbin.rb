@@ -20,19 +20,29 @@
 module Jekyll
   class JSBin < Liquid::Tag
     def initialize(tag_name, markup, tokens)
-      if /(?<jsbin>[^\s\/]+)(\/(?<revision>\d))?(?:\s+(?<sequence>[\w,&=]+))?/ =~ markup
+      if /(?<jsbin>[^\s\/]+)(\/(?<revision>[\w\/]+))?(?:\s+(?<sequence>[\w,&=]+))?/ =~ markup
         @bin = jsbin
+        puts jsbin
         @revision = revision || 'latest'
+        puts revision
         @sequence = (sequence unless sequence == 'all') || 'html,css,js,output'
       end
     end
 
     def render(context)
       if @bin
-<<HTML
-<a class="jsbin-embed" href="http://jsbin.com/#{@bin}/#{@revision}/embed?#{@sequence}">JS Bin</a>
-<script src="http://static.jsbin.com/js/embed.js"></script> 
+        if @bin == "gist"
+link = <<HTML
+<a class="jsbin-embed" href="http://gist.jsbin.com/#{@revision}/embed?#{@sequence}">JS Bin</a>
 HTML
+        else
+link = <<HTML
+<a class="jsbin-embed" href="http://jsbin.com/#{@bin}/#{@revision}/embed?#{@sequence}">JS Bin</a>
+HTML
+      end
+      link = link + '<script src="http://static.jsbin.com/js/embed.js"></script> '
+      puts link
+      return link
       else
         "Error processing input, expected syntax: {% jsbin bin [panels] %}"
       end

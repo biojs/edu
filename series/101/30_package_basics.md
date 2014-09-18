@@ -33,15 +33,15 @@ mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-3. Answer the all questions
+3. Answer all questions
 
 ~~~
-? What the module name?: biojs-vis-msa
-? What the description?: An awesome BioJS component
-? What the module version?: 0.1.0
-? What the author name?: greenify
-? What the author email?: <hidden>
-? What the github username?: greenify
+? Module name?: biojs-vis-msa
+? Description?: An awesome BioJS component
+? Module version?: 0.1.0
+? Author name?: greenify
+? Author email?: <hidden>
+? Github username?: greenify
 ? Enter keywords for npm (separate with comma): visualization,msa,alignment
 ? Choose your license type: Apache 2
 ~~~
