@@ -95,10 +95,12 @@ yum install npm # Fedora
 
 {% hlblock info %}
 If you want to avoid installing packages with sudo, you can also use [nvm](https://github.com/creationix/nvm)
+
 ~~~
 curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash # install nvm
 nvm install 0.10.30 && nvm alias default 0.10.30 && nvm use default # install node & npm in userenv
 ~~~
+
 {% endhlblock %}
 
 
