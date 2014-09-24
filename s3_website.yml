@@ -6,11 +6,11 @@ s3_bucket: edu.biojs.net
 
 # site: path-to-your-website
 
- max_age:
+max_age:
    "assets/*": 6000
    "*": 300
 
- gzip:
+gzip:
    - .html
    - .css
    - .md
@@ -19,7 +19,7 @@ s3_bucket: edu.biojs.net
 # See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
 # s3_endpoint: ap-northeast-1
 
-s3_endpoint: s3-eu-west-1
+s3_endpoint: eu-west-1
 
 # ignore_on_server: that_folder_of_stuff_i_dont_keep_locally
 

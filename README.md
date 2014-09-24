@@ -3,6 +3,8 @@ edu.biojs.net
 
 Share resources with the general public.
 
+[![Build Status](https://travis-ci.org/biojs/edu.svg?branch=master)](https://travis-ci.org/biojs/edu)
+
 How to contribute
 ---------------
 
