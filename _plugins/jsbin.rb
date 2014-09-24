@@ -22,9 +22,7 @@ module Jekyll
     def initialize(tag_name, markup, tokens)
       if /(?<jsbin>[^\s\/]+)(\/(?<revision>[\w\/]+))?(?:\s+(?<sequence>[\w,&=]+))?/ =~ markup
         @bin = jsbin
-        puts jsbin
         @revision = revision || 'latest'
-        puts revision
         @sequence = (sequence unless sequence == 'all') || 'html,css,js,output'
       end
     end
@@ -41,7 +39,6 @@ link = <<HTML
 HTML
       end
       link = link + '<script src="http://static.jsbin.com/js/embed.js"></script> '
-      puts link
       return link
       else
         "Error processing input, expected syntax: {% jsbin bin [panels] %}"
