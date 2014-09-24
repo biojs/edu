@@ -6,6 +6,7 @@ markdown: kramdown
 #highlighter: pygments
 timezone: UTC
 encoding: utf-8
+exclude: [vendor]
 cats:
     demo:
       desc: Demonstration of components
