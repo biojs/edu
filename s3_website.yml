@@ -24,9 +24,8 @@ s3_endpoint: eu-west-1
 
 # ignore_on_server: that_folder_of_stuff_i_dont_keep_locally
 
-# exclude_from_upload:
-#   - those_folders_of_stuff
-#   - i_wouldnt_want_to_upload
+exclude_from_upload:
+    - "Gemfile*"
 
 # s3_reduced_redundancy: true
 

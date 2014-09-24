@@ -3,7 +3,11 @@ edu.biojs.net
 
 Share resources with the general public.
 
-[![Build Status](https://travis-ci.org/biojs/edu.svg?branch=master)](https://travis-ci.org/biojs/edu)
+[![Build Status][travis]](https://travis-ci.org/biojs/edu)
+
+(uses [s3_website](https://github.com/laurilehmijoki/s3_website) and [Travis][travis] for CI deployment).
+
+[travis]: https://travis-ci.org/biojs/edu.svg?branch=master
 
 How to contribute
 ---------------
@@ -30,6 +34,6 @@ About jekyll
 ```
 jekyll serve -w
 ```
-(runs jekyll in the server mode + watching for changes)
+(runs jekyll locally in the server mode + watching for changes)
 
 [Install](http://jekyllrb.com/docs/installation/) jekyll.
