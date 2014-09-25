@@ -24,6 +24,11 @@
 		<link rel="stylesheet" href="{{ css_name }}">
 		{% endfor %}
 
+		<!-- needed for tutorial specific css -->
+		{% for css_name in page.extra_css2 %}
+		<link rel="stylesheet" href="{{ css_name }}">
+		{% endfor %}
+
 		{% for js_name in page.extra_js %}
 		<script src="{{ js_name }}"></script>
 		{% endfor %}
