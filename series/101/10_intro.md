@@ -17,8 +17,8 @@ Purpose of this tutorial series
 
 After installing npm, you will first create 
 
-1. A simple parser of [a list of all the people](https://github.com/biojs/tutorial-graduates/) who have done this tutorial (`biojs-io-gradutes`)
-2. Visualize this output (`biojs-vis-graduates`)
+1. A simple parser of SNPs (Single Nucleotide Polymorphisms) from [@manuelcorpas](http://manuelcorpas.com/) (`biojs-io-snipspector`)
+2. Visualize this output (`biojs-vis-snipspector`)
 3. Extend your simple parser and download a live list (`biojs-io-snipspector`)
 4. Learn how to publish your parser
 
@@ -58,5 +58,5 @@ Pointers to different visualization approaches
 
 
 {% hlblock info %}
-The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/gh-pages/series/101_graduate/).
+The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101_graduate/).
 {% endhlblock %}
