@@ -65,7 +65,7 @@ node_js:
 [travis-start]: http://docs.travis-ci.com/user/getting-started/
 
 {% hlblock info %}
-You can also install the Travis CLI command and run `travis enable`.
+You can also install the [Travis CLI](https://github.com/travis-ci/travis.rb)(`gem install travis`) command and run `travis enable`.
 {% endhlblock%}
 
 3. Add the shield to your `package.json`.
