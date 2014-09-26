@@ -38,6 +38,7 @@ npm publish  # Now it is time to publish!
 > Errare human est
 
 If you have fixed them and want to deploy a new version of your component, run `npm publish` again.
+(hint: you need to change version for a new deployment)
 {% endhlblock %}
 
 {% alert ok %}
@@ -97,14 +98,14 @@ npm run build-browser
 
 Add the shield to your `package.json`.
 
-```
+~~~
   "shields": {
   	"build": {
          img: "https://drone.io/github.com/greenify/biojs-io-clustal/status.png",
          href: "https://drone.io/github.com/greenify/biojs-io-clustal/latest"
 	 }
    },
-```
+~~~
 
 ### 3) Add other badges
 
