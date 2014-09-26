@@ -18,16 +18,13 @@ Have a look at this guide once you made a great package.
 Make sure that in [`package.json`](https://www.npmjs.org/doc/files/package.json.html)
 
 * the main attribute is set to the path of your main file (Normally `index.js`.)
+* you have the `biojs` keyword
+* you have added other descriptive keywords
 * author information is correct (will be publicly visible)
 * repo url is correct
 * package name is correct
-* also edit the `npm run build-browser` command, denoted in `package.json` by adjusting `index.js` to the path of your main file.
-* your `npm test` executes the correct command and is passing.
-* you have added descriptive keywords
+* your `npm test` executes the correct command and is passing
 
-Also check, that
-
-* you adjusted your namespace defined in the `browser.js` file to `biojs.io.<your-parser>`.
 {% endhlblock %}
 
 Now type into the console:
@@ -38,24 +35,19 @@ npm publish  # Now it is time to publish!
 ~~~
 
 {% hlblock info %}
-Bugs are human. If you have fixed them and want to deploy a new version of your component, run `npm publish` again.
+> Errare human est
+
+If you have fixed them and want to deploy a new version of your component, run `npm publish` again.
 {% endhlblock %}
-
-### 2) Add it to the BioJS registry
-
-You made a great package? [Adding it to our registry][adding] takes less than a minute.
-Just send us a pull request for the [`index.toml`][adding].
-
-[adding]: https://github.com/biojs/registry/blob/master/index.toml
 
 {% alert ok %}
 You made it. Get your coffee and celebrate. However the rest of this tutorial stays interesting.
 So just enjoy the rest.
 {% endalert %}
 
-### 3) Add continous integration (CI)
+### 2) Add continuous integration (CI)
 
-#### 3.1) Using [travis][Travis]
+#### 2.1) Using [travis][Travis]
 
 
 1. Add a `.travis.yml`
@@ -72,7 +64,23 @@ node_js:
 [travis]: http://travis-ci.org
 [travis-start]: http://docs.travis-ci.com/user/getting-started/
 
-#### 3.2) Using [drone.io](https://drone.io/)
+{% hlblock info %}
+You can also install the Travis CLI command and run `travis enable`.
+{% endhlblock%}
+
+3. Add the shield to your `package.json`.
+
+~~~
+  "shields": {
+    "test": {
+      "img": "https://travis-ci.org/greenify/biojs-vis-msa.svg?branch=master",
+      "href": "https://travis-ci.org/greenify/biojs-vis-msa"
+    },
+  },
+~~~
+
+
+#### 2.2) Using [drone.io](https://drone.io/)
 
 * new project -> github -> add your project
 * choose node
@@ -87,11 +95,18 @@ npm run build-browser
 * change the nvm to node __0.10__
 * artifacts: enter the relative dir of files that should be downloadable (e.g. `build/biojs_io_fasta.min.js`)
 
-{% hlblock info %}
-Adding your build badges to your repo is easy - and to our registry too.
-{% endhlblock%}
+Add the shield to your `package.json`.
 
-### 4) Add other badges
+```
+  "shields": {
+  	"build": {
+         img: "https://drone.io/github.com/greenify/biojs-io-clustal/status.png",
+         href: "https://drone.io/github.com/greenify/biojs-io-clustal/latest"
+	 }
+   },
+```
+
+### 3) Add other badges
 
 There are plenty of fancy badges, here is a list to have a quick start.
 

@@ -15,7 +15,7 @@ In the following section we will give you a gentle introduction on how to create
 As a case study, we will build a simple parser to read SNPs from Manny.
 In the next tutorial we will show you how to visualize this data.
 
-1) Fork the BioJS 2 Template from GitHub
+1) Create a new package
 --------------------------------------------
 
 Use our [slush generator](https://github.com/biojs/slush-biojs) to bootstrap your new project.
