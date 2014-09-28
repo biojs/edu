@@ -37,3 +37,23 @@ jekyll serve -w
 (runs jekyll locally in the server mode + watching for changes)
 
 [Install](http://jekyllrb.com/docs/installation/) jekyll.
+
+
+Problems with jekyll?
+--------------------
+
+Try to install a recent version
+
+```
+gem install jekyll
+```
+
+or use [bundler](http://bundler.io/) (virtualenv for ruby).
+
+```
+gem install bundler
+bundle install # in your edu root folder
+# this will install the dependencies specified in the Gemfile & Gemfile.lock
+bundle exec jekyll serve -w # this will execute jekyll with your bundles in the virtualenv
+
+
