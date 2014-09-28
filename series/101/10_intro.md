@@ -56,6 +56,12 @@ Pointers to different visualization approaches
 
 (add your favorite library to this overview)
 
+MVC
+------
+
+* Backbone
+ - [Codeschool course](https://www.codeschool.com/courses/anatomy-of-backbone-js)
+
 
 {% hlblock info %}
 The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101_graduate/).
