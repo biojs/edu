@@ -62,7 +62,7 @@ module.exports = vis;
 {% hlblock help %}
 There is a JavaScript development enviroment in the browser which support `require`.
 
-* Open [`requirebin.com`](requirebin.com)
+* Open [`requirebin.com`](http://requirebin.com)
 * Paste the 11 lines
 * Add (as a new line) on the bottom `vis()`
 * Hit __Rebuild__
