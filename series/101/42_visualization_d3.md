@@ -19,13 +19,29 @@ For this tutorial, we will require d3 and our parsed data!
 In `npm` this is very easy, just run.
 
 ~~~
-npm install d3 --save
 npm install biojs-io-snipspector --save
 ~~~
 
+{% hlblock info %}
+Please add the following to the "snippets js" section of your `package.json`.
+
+~~~
+https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js
+~~~
+
+it should look like this
+
+~~~
+[...]
+"snippets": {
+	"js": ["/build/biojsvissnipspector.js", "//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
+[...]
+~~~
+{% endhlblock %}
+
 {% hlblock question %}
 What does `--save` mean? [Help](https://www.npmjs.org/doc/cli/npm-install.html)
-{% endhlblock  %}
+{% endhlblock %}
 
 to get our parsed data, please have a look at the previous [tutorial](/series/101/05_real_parser.html) with real data.
 
@@ -44,7 +60,6 @@ First we need some dependencies. We require d3 for our visualizations and the pa
 We can require them with following code:
 
 ~~~
-require("d3");
 var parser = require("biojs-io-snipspector");
 ~~~
 
@@ -182,10 +197,9 @@ Now it is time to export and build it!
 To export it write a wrapper around your all your code (except the dependencies)
 
 ~~~
-require("d3");
 var parser = require("biojs-io-snipspector");
 
-function d3_show() {
+function d3_show(opts) {
 //All of our written code until now (except for the dependencies)
 }
 
@@ -196,23 +210,16 @@ module.exports = d3_show;
 We recommend browserify. Therefore use our preinstalled npm run build-browser!
 
 ~~~
-npm install browserify --save
 npm run build-browser 
 ~~~
 
 to create a build for this file! If this fails, create a build folder first!
 Now you can easily include this into a simple html using:
 
+`snippets/simple_example.js`
 ~~~
-<html>
-<meta charset="utf-8">
-    <body>
-    <script src="path to your biojs-template.min.js"></script>
-        <script>
-        biojs.template();
-        </script>
-    </body>
-</html>
+var app = require("biojs-vis-snipspector"); 
+app({el: yourDiv});
 ~~~
 
 Don't forget to run it on a server! Otherwise Manny's chromosome data is not loaded.
@@ -222,13 +229,13 @@ The final program looks like this:
 
 {% code javascript collapsible=true %}
 
-require("d3");
 var parser = require("biojs-io-snipspector");
 
-function d3_show() {
+function d3_show(opts) {
 
- var width = 960,
-            height = 500,
+ var width = opts.width || 960,
+            height = opts.height || 500,
+            el = opts.el;
             radius = Math.min(width, height) / 2;
 
         var color = d3.scale.category10();
@@ -276,7 +283,7 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
   
   var X_data = data_res[22].data;
         
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select(el).append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .append("g")

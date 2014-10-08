@@ -93,6 +93,11 @@ emerge nodejs # Gentoo
 yum install npm # Fedora
 ~~~
 
+
+{% hlblock info %}
+If you want to install the packages globally in your userdir (without sudo), see [these instructions](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo-linux.md)
+{% endhlblock %}
+
 {% hlblock info %}
 If you want to avoid installing packages with sudo, you can also use [nvm](https://github.com/creationix/nvm)
 

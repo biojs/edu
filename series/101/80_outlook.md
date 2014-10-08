@@ -8,7 +8,7 @@ estimated-time: 10
 ---
 
 {% alert warn %}
-Did you really finish all previous tutorials?
+Did you really finish all previous tutorials? Wow.
 {% endalert %}
 
 

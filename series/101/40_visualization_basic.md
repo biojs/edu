@@ -10,11 +10,12 @@ estimated-time: 15
 1) Create a new package
 -----------------------
 
-Go one directory up (`cd ..`) and create a new template.
+Go one directory up (`cd ..`) and create a new project `biojs-vis-snipspector`.
 
 ~~~
 slush biojs
 ~~~
+
 
 2) Installing the parser as dependency
 --------------------------------------
@@ -46,7 +47,8 @@ We require the parser from the previous tutorial.
 
 ~~~
 var parser = require("biojs-io-snipspector");
-var vis = function(divEl){
+var vis = function(opts){
+  var divEl = opts.el;
   var self = this; // save reference to itself (in callbacks this is different)
   var el = divEl;
   parser.read("http://files.biojs.net/chromosomes/manny.dummy", function(result){
@@ -60,7 +62,7 @@ module.exports = vis;
 ~~~
 
 {% hlblock help %}
-There is a JavaScript development enviroment in the browser which support `require`.
+There is a JavaScript development enviroment in the browser which supports `require`.
 
 * Open [`requirebin.com`](requirebin.com)
 * Paste the 11 lines
@@ -76,19 +78,43 @@ There is a JavaScript development enviroment in the browser which support `requi
 We recommend browserify. It is preinstalled, just run
 
 ~~~
-npm run build-browser 
+npm run build
 ~~~
 
-This will bundle all your dependencies and build the file `build/biojs-template.js`.
+This will bundle all your dependencies and build the file `build/<your-name>.js`.
 
 {% hlblock help %}
 If you are lazy, you can use `watchify` to recompile on every file change.  
-Install: `npm install watchify --save-dev`  
-Run: `watchify browser.js -o build/biojs-template.js`
+~~~
+npm run watch
+~~~
+{% endhlblock %}
+
+{% hlblock help %}
+If you are lazy, you can use install gulp (the build tool) globally `npm install -g gulp` and then type even less
+~~~
+gulp build
+gulp watch
+~~~
 {% endhlblock %}
 
 5) See the first output
 ------------------------
+
+`snippets/simple_example.js`
+
+~~~
+var app = require("<your package name>");
+app({el: yourDiv});
+~~~
+
+~~~
+npm run sniper
+~~~
+
+Now browse to [`localhost:9090/snippets/`](http://localhost:9090/snippets).
+
+### b) Plain, old html (alternative way)
 
 You only need to create a very simple HTML file to call your visualization module.
 
@@ -97,7 +123,10 @@ You only need to create a very simple HTML file to call your visualization modul
 ~~~
 <div id=simple></div>
 <script src="build/biojs-template.js"></script>
-<script>biojs.template();</script>
+<script>
+var app = require("<your package name>");
+app.template();
+</script>
 ~~~
 
 {% alert warn %}
@@ -109,10 +138,6 @@ You can run a local server easily
 Install: `sudo npm install -g http-server`  
 Run: `http-server` (in the package root dir)
 Address: [`localhost:8080`](http://localhost:8080)
-{% endhlblock %}
-
-{% hlblock info %}
-You can change the namespace anytime you want. It is defined inside `browser.js`!
 {% endhlblock %}
 
 6) Extend the visualization

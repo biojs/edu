@@ -60,7 +60,7 @@ Inside the folder you find following files:
 (More detailed information will be given later in this tutorial)
 
 {% hlblock info %}
-For BioJS 2 components, we have following naming conventions:
+For BioJS 2 components, we have following naming guidelines:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
 
@@ -68,7 +68,11 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 - Use `vis` for components which are visualizing data sets
 - Use `rest` for REST apis to databases
 - Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
+
+If you have a better name for your package, please use it.
+This naming guideline is only if you are not that creative (like us).
 {% endhlblock %}
+
 
 2) Our input data 
 ------------------
@@ -188,7 +192,12 @@ However you can use your favorite - you only need to change the `test` command i
 ----------------
 
 It is time to code! 
-To begin please open now the `src` folder and access the `index.js` file. 
+To begin please open now the `lib` folder and access the `index.js` file. 
+
+{% hlblock info %}
+You can find the code for this exercise on [github](https://github.com/biojs/biojs-tutorial-template-snp). 
+{% endhlblock %}
+
 First have a look at the provided code.
 
 ~~~
