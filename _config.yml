@@ -13,6 +13,9 @@ cats:
     101_tutorial:
       desc: "101 Tutorial series"
       numbering: true
+    102_tutorial:
+      desc: "102 Tutorial series (Advanced)"
+      numbering: true
     tutorials:
       desc: Basic tutorials
     howto:
