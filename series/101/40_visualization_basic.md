@@ -337,7 +337,7 @@ var _ = require("underscore");
 var vis = function(opts){
   var divEl = opts.el;
   var self = this; // save reference to itself (in callbacks this is different)
-  parser.read("http://files.biojs.net/chromosomes/manny.dummy", function(result){
+  parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 
     for(var i=0; i < result.length; i++) {    
       var chr = document.createElement("div");
@@ -349,6 +349,11 @@ var vis = function(opts){
         else return memo
       });
   
+      // header
+	  var header = document.createElement("div");
+      header.textContent = "chr "+ result[i].name;
+      chr.appendChild(header);
+
       // create statistics for a single chromosome
       for(var key in result[i]){
           if(key == "name") continue
