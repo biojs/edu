@@ -20,20 +20,23 @@ In the next tutorial we will show you how to visualize this data.
 
 Use our [slush generator](https://github.com/biojs/slush-biojs) to bootstrap your new project.
 
-1. Install slush
+1) Install slush
 
 ~~~
 npm install -g slush slush-biojs
 ~~~
 
-2. Bootstrap your new project
+2) Bootstrap your new project
 
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-3. Answer all questions
+3) Answer all questions
+
+Our first component will be a pure parser, so you can answer `no` when being asked
+for visualization support (the next tutorial will use this parser for a visualization).
 
 ~~~
 ? Module name?: biojs-vis-msa
@@ -51,7 +54,6 @@ Inside the folder you find following files:
 
 - `.gitignore`: Files that should be ignored by the git versioning system
 - `LICENSE`: The license under which you want your source code to be distributed, e.g. MIT or Apache 2
-- `browser.js`: Helper for browserify to create a namespaced file for client-side javascript
 - `index.js`:  Index file over all submodules
 - `package.json`: Information about your package: author, version, ...
 - `lib` : Folder including your real source code
@@ -60,7 +62,7 @@ Inside the folder you find following files:
 (More detailed information will be given later in this tutorial)
 
 {% hlblock info %}
-For BioJS 2 components, we have following naming guidelines:
+For BioJS 2 components, we have following naming recommendations:
 
 __biojs-[io/rest/vis/algo/...]-[name]__
 
@@ -72,6 +74,57 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 If you have a better name for your package, please use it.
 This naming guideline is only if you are not that creative (like us).
 {% endhlblock %}
+
+1b) Available commands
+----------------------
+
+
+### 1. Test
+
+~~~
+gulp test
+~~~
+
+They are grouped into two sections:
+
+* Non-DOM `gulp test-unit` (folder: `test/unit`)
+* DOM-only `gulp test-dom` (folder: `test/dom`)
+
+Gotchas:
+
+* The Unit tests are run with PhantomJS, if you want to debug them open the `test/index.html` 
+your browser.
+* You need to add your _DOM_ tests to the `test/dom/index.js`.
+
+If you want to auto-execute all your test on a file change, run:
+
+~~~
+gulp test-watch
+~~~
+
+### 2. Snippets
+
+Allows you to write minimal example [snippets](https://github.com/biojs/biojs-sniper) of your visualization.
+These snippets will be used for the [BioJS registry](http://registry.biojs.net).
+
+~~~
+npm run sniper
+~~~
+
+and open [http://localhost:9090/snippets](http://localhost:9090/snippets)
+
+
+### 3. Watchify
+
+Watches all your files and runs [browserify](http://browserify.org) on every change.
+Combine this with the sniper.
+(Subsequent runs of watchify are fast).
+
+~~~
+npm run watch
+~~~
+
+Enjoy.
 
 
 2) Our input data 

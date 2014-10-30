@@ -11,11 +11,16 @@ estimated-time: 15
 -----------------------
 
 Go one directory up (`cd ..`) and create a new project `biojs-vis-snipspector`.
+Now we want to create a visualization component, so please answer `yes` to the generator. 
 
 ~~~
 slush biojs
 ~~~
 
+This tutorial is aimed to get you used to your development workflow,
+therefore we will avoid to use third-party visualization libraries and
+we will only use the standard DOM API and native JavaScript functions to create a basic [visualization][demo].
+In the advanced tutorial you will learn how to represent this data by using fancy D3 Charts.
 
 2) Installing the parser as dependency
 --------------------------------------
@@ -50,12 +55,11 @@ var parser = require("biojs-io-snipspector");
 var vis = function(opts){
   var divEl = opts.el;
   var self = this; // save reference to itself (in callbacks this is different)
-  var el = divEl;
   parser.read("http://files.biojs.net/chromosomes/manny.dummy", function(result){
     console.log(result);
-    divEl = document.createElement("div")
-		document.body.appendChild(divEl)
-    divEl.textContent = Object.keys(result).length + " chromosome(s) found.";
+    var resText = document.createElement("div")
+    resText.textContent = Object.keys(result).length + " chromosome(s) found.";
+	opts.el.appendChild(resText)
   })
 };
 module.exports = vis;
@@ -66,7 +70,7 @@ There is a JavaScript development enviroment in the browser which supports `requ
 
 * Open [`requirebin.com`](http://requirebin.com)
 * Paste the 11 lines
-* Add (as a new line) on the bottom `vis()`
+* Add (as a new line) on the bottom `vis({el: document.body})`
 * Hit __Rebuild__
 
 {% endhlblock %}
@@ -85,6 +89,7 @@ This will bundle all your dependencies and build the file `build/<your-name>.js`
 
 {% hlblock help %}
 If you are lazy, you can use `watchify` to recompile on every file change.  
+
 ~~~
 npm run watch
 ~~~
@@ -143,18 +148,261 @@ Address: [`localhost:8080`](http://localhost:8080)
 6) Extend the visualization
 ---------------------------
 
-{% alert warn %}
-(in work)
-{% endalert %}
+### a) calculate a relative percentage per chromosome
+
+We are going to use a utility library called [underscore](http://underscorejs.org/).
+There you need to `require` the library in your program (at the top).
+
+~~~
+var _ = require("underscore");
+~~~
+
+To save this dependency add `underscore` to your `package.json`
+
+~~~
+npm install underscore --save
+~~~
+
+Now we can calculate the total SNPs of a chromosome in a functional way.
+
+~~~
+// count the elements in this chromosome
+var total = _.reduce(result[i], function(memo,el,key){
+if(key != "name")
+	return memo + el
+else return memo
+});
+~~~
+
+Of course you could just write a normal loop and avoid using underscore.
+
+### b) Drawing in JavaScript
+
+We can use `svg`.
+
+~~~
+// @param [int] percentage relative amount of SNPs in the chromosome
+// @returns [DOM] svg dom node with a rectangular bar
+function createBar(percentage){
+	var svgNS = "http://www.w3.org/2000/svg";  
+	var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+	svg.style.height = "10px";
+	svg.style.width = "100px";
+	var rect = document.createElementNS(svgNS,"rect"); 
+	rect.setAttributeNS(null,"width",percentage * 100);
+	rect.setAttributeNS(null,"height",10);
+	rect.setAttributeNS(null,"fill","black");
+	rect.setAttributeNS(null,"stroke","none");
+	svg.appendChild(rect);
+	return svg;
+}     
+~~~
+
+Alternatively you could also use `canvas`.
+
+~~~
+var canvasEl = document.createElement("canvas");
+el.width = 100
+el.height = 10
+var ctx = canvasEl.getContext("2d");
+ctx.fillRect(0,0,percentage * 100,10);
+~~~
+
+In this example you could even draw with plain DOM nodes.
+However this is not recommended.
+
+~~~
+var bar = document.createElement("span");
+bar.style.display = "inline-block";
+bar.style.width = (percentage * 100) + "px";
+bar.style.backgroundColor = "blue";
+bar.innerHTML = "&nbsp;";
+~~~
+
+### c) Creating a stat row
+
+First we create description element to display the name of our current property.
+
+~~~
+// format the name of the property
+var desc = document.createElement("span");
+desc.textContent = key;
+desc.style.width = "50px";
+desc.style.paddingLeft = "5px";
+desc.style.display = "inline-block";
+~~~
+
+Then we want to display our previously defined naive bar chart.
+
+~~~
+// show the value as barchart
+var canvasChild = document.createElement("canvas");
+drawBar(canvasChild, percentage);
+~~~
+
+And now we need to group both in a row.
+        
+~~~
+// group both values in one row
+var row = document.createElement("div");
+row.appendChild(desc);
+row.appendChild(canvasChild);
+chr.appendChild(row); 
+~~~
+
+Remember to create `chr` when looping over the entire chromosome.
+
+### d) Outstanding: loop over the chromosome
+
+~~~
+// all chromosomes
+for(var i=0; i < result.length; i++) {    
+	// properties of a single chromosomes
+	for(var key in result[i]){
+~~~
+
+If you put our code together, you should get something similar to this:
+
+{% code javascript collapsible=true %}
+var parser = require("biojs-io-snipspector");
+var _ = require("underscore");
+
+var vis = function(opts){
+  var divEl = opts.el;
+  var self = this; // save reference to itself (in callbacks this is different)
+  parser.read("http://files.biojs.net/chromosomes/manny.dummy", function(result){
+
+    for(var i=0; i < result.length; i++) {    
+      var chr = document.createElement("div");
+      
+      // count the elements in this chromosome
+      var total = _.reduce(result[i], function(memo,el,key){
+        if(key != "name")
+           return memo + el
+        else return memo
+      });
+  
+      // create statistics for a single chromosome
+      for(var key in result[i]){
+          if(key == "name") continue
+          var percentage = result[i][key] / total;
+          if(percentage > 0.01){
+            
+            // format the name of the property
+            var desc = document.createElement("span");
+            desc.textContent = key;
+            desc.style.width = "50px";
+            desc.style.paddingLeft = "5px";
+            desc.style.display = "inline-block";
+            
+            // show the value as barchart
+            var canvasChild = document.createElement("canvas");
+            drawBar(canvasChild, percentage);
+                    
+            // group both values in one row
+            var row = document.createElement("div");
+            row.appendChild(desc);
+            row.appendChild(canvasChild);
+            
+            chr.appendChild(row);
+          }
+      }
+      divEl.appendChild(chr);
+    }
+    
+    function drawBar(el,percentage){
+   	   el.width = 100
+	   el.height = 10
+       var ctx = el.getContext("2d");
+       ctx.fillRect(0,0,percentage * 100,10);
+    }
+   
+  })
+};
+{% endcode %}
 
 
 7) Verify your solution
 ---------------------
 
-The final program looks like this:
+The final program could look like this:
+
+[Demo on RequireBin][demo]
+
 
 {% code javascript collapsible=true %}
-in work
-{% endcode %}
+var parser = require("biojs-io-snipspector");
+var _ = require("underscore");
+
+var vis = function(opts){
+  var divEl = opts.el;
+  var self = this; // save reference to itself (in callbacks this is different)
+  parser.read("http://files.biojs.net/chromosomes/manny.dummy", function(result){
+
+    for(var i=0; i < result.length; i++) {    
+      var chr = document.createElement("div");
+      
+      // count the elements in this chromosome
+      var total = _.reduce(result[i], function(memo,el,key){
+        if(key != "name")
+           return memo + el
+        else return memo
+      });
   
+      // create statistics for a single chromosome
+      for(var key in result[i]){
+          if(key == "name") continue
+          var percentage = result[i][key] / total;
+          if(percentage > 0.01){
+            
+            // format the name of the property
+            var desc = document.createElement("span");
+            desc.textContent = key;
+            desc.style.width = "50px";
+            desc.style.paddingLeft = "5px";
+            desc.style.display = "inline-block";
+            
+            // show the value as barchart
+            var canvasChild = document.createElement("canvas");
+            drawBar(canvasChild, percentage);
+                    
+            // group both values in one row
+            var row = document.createElement("div");
+            row.appendChild(desc);
+            row.appendChild(canvasChild);
+            
+            // dummy evts
+            row.addEventListener("mouseover",mouseover,false);
+            row.addEventListener("mouseout",mouseout,false);
+            
+            chr.appendChild(row);
+          }
+      }
+      divEl.appendChild(chr);
+    }
+    
+    function drawBar(el,percentage){
+   	   el.width = 100
+	   el.height = 10
+       var ctx = el.getContext("2d");
+       ctx.fillRect(0,0,percentage * 100,10);
+    }
+    
+    function mouseover(evt){
+      var el = this.childNodes[1];
+      el.style.paddingLeft = "10px";
+    }
+    
+     function mouseout(evt){
+      var el = this.childNodes[1];
+      el.style.paddingLeft = "0px";
+    }
+    
+  })
+};
+{% endcode %}
+
+  
+[demo]: http://requirebin.com/?gist=c9248b0840448995758a
+
   <!-- do not remove this empty line -->   

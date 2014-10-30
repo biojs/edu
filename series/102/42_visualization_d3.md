@@ -2,8 +2,8 @@
 title: 'Visualization: D3'
 layout: tutorial-container
 contributors: David
-category: 101_tutorial
-series: 101
+category: 102_tutorial
+series: 102
 estimated-time: 30 
 ---
 

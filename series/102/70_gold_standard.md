@@ -2,8 +2,8 @@
 title: 'Gold standard'
 layout: tutorial-container
 contributors: Seb
-category: 101_tutorial
-series: 101
+category: 102_tutorial
+series: 102
 estimated-time: 5 
 ---
 

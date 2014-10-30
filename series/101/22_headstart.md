@@ -71,7 +71,7 @@ It will show you `3` (because of console.log in `index.js`) and `9`.
 Are you interested how `require` [works](https://github.com/maxogden/art-of-node#how-require-works)?
 {% endhlblock %}
 
-4) Reusing current BioJS Components!
+4) Reusing current BioJS components!
 ----------------------------
 
 BioJS offers a lot of common parsers and algorithms for reuse.
@@ -117,3 +117,18 @@ You should get following:
 
 Congratulations!
 You parsed a string by reusing a common biojs algorithm.
+
+5) Reuse your component in the web
+----------------------------------
+
+It is super easy to reuse your component and built on top of it.
+
+We have created a very simple tree visualization by using this parser.
+
+[Have a look at it](http://requirebin.com/?gist=d565d273969c79a1546c
+
+
+{% hlblock info %}
+We can create more interactive and fancy visualizations. For a component using
+the Newick parse, have a look at [TnT](https://github.com/daviddao/biojs-vis-tree)
+{% endhlblock %}
