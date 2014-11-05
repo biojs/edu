@@ -125,7 +125,7 @@ It is super easy to reuse your component and built on top of it.
 
 We have created a very simple tree visualization by using this parser.
 
-[Have a look at it](http://requirebin.com/?gist=d565d273969c79a1546c
+[Have a look at it](http://requirebin.com/?gist=d565d273969c79a1546c)
 
 
 {% hlblock info %}
