@@ -41,8 +41,9 @@ Javascript guides
 -------------------
 
 * [Mozilla JavaScript guide](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide)
-* [w3schools](http://www.w3schools.com/js/)
 * [Codecademy](http://www.codecademy.com/courses/javascript-intro/0/1)
+* [Eloquent JavaScript](http://eloquentjavascript.net/) (e-Book)
+* [Speaking JavaScript](http://speakingjs.com/) (e-Book)
 
 Pointers to different visualization approaches
 ---------------------------------
