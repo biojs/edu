@@ -13,9 +13,11 @@ cats:
     101_tutorial:
       desc: "101 Tutorial series"
       numbering: true
+      displayed: true
     102_tutorial:
       desc: "102 Tutorial series (Advanced)"
       numbering: true
+      displayed: true
     howto:
       desc: How-Tos about components
     playground:

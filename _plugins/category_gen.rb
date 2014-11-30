@@ -39,6 +39,12 @@ module Jekyll
         end
         # sort alphabetically after displayed name
         cats = cats.sort { |a,b| a['desc'] <=> b['desc'] }
+
+        # filter
+        cats = cats.select { |x|
+          x['displayed']
+        }
+
         cats.each do |category|
           site.pages << CategoryPage.new(site, site.source, File.join(dir, category['name']), category)
         end
