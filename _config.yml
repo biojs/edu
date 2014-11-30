@@ -16,8 +16,6 @@ cats:
     102_tutorial:
       desc: "102 Tutorial series (Advanced)"
       numbering: true
-    tutorials:
-      desc: Basic tutorials
     howto:
       desc: How-Tos about components
     playground:
