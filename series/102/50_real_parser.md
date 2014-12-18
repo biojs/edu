@@ -8,7 +8,7 @@ estimated-time: 30
 ---
 
 {% alert warn %}
-Please create the [basic package](./30_package_basics.html) before.
+Please create the [basic package](../101/30_package_basics.html) before.
 Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
