@@ -253,7 +253,7 @@ done(); // call the mocha callback and resume the test suite
 
 {% hlblock info %}
 Passing an argument to an Mocha test will automatically let the test suite run your test asynchronously - the argument is your callback.
-[More info](https://visionmedia.github.io/mocha/#asynchronous-code).
+[More info](https://mochajs.github.io/mocha/#asynchronous-code).
 {% endhlblock  %}
 
 {% hlblock task %}
