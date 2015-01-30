@@ -70,6 +70,7 @@ There is a JavaScript development enviroment in the browser which supports `requ
 
 * Open [`requirebin.com`](http://requirebin.com)
 * Paste the 11 lines
+* Remove the last line `module.exports = vis` (`module` is not defined in RequireBin)
 * Add (as a new line) on the bottom `vis({el: document.body})`
 * Hit __Rebuild__
 
