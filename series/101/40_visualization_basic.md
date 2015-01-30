@@ -107,7 +107,7 @@ gulp watch
 5) See the first output
 ------------------------
 
-`snippets/simple_example.js`
+`examples/simple_example.js`
 
 ~~~
 var app = require("<your package name>");
@@ -118,7 +118,7 @@ app({el: yourDiv});
 npm run sniper
 ~~~
 
-Now browse to [`localhost:9090/snippets/`](http://localhost:9090/snippets).
+Now browse to [`localhost:9090/examples/`](http://localhost:9090/examples).
 
 ### b) Plain, old html (alternative way)
 
