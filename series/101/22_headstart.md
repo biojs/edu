@@ -79,7 +79,7 @@ BioJS offers a lot of common parsers and algorithms for reuse.
 Open your `reuse.js` file and type in
 
 ~~~
-var parser = require("biojs-io-newick").parse_nwk;
+var parser = require("biojs-io-newick").parse_newick;
 ~~~
 
 Now you included a newick parser for testing. Checkout the documentation for newick parser to see for yourself.
