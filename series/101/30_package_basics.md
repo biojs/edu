@@ -78,11 +78,36 @@ This naming guideline is only if you are not that creative (like us).
 1b) Available commands
 ----------------------
 
+### 1. Snippets
 
-### 1. Test
+Allows you to write minimal example [snippets](https://github.com/biojs/biojs-sniper) of your visualization.
+These snippets will be used for the [BioJS registry](http://biojs.io).
 
 ~~~
-gulp test
+npm run sniper
+~~~
+
+and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/biojs-sniper) for more details.
+
+
+### 2. Watchify
+
+Watches all your files and runs [browserify](http://browserify.org) on every change.
+Combine this with the sniper.
+(Subsequent runs of watchify are fast).
+
+~~~
+npm run watch
+~~~
+
+Enjoy.
+
+### 3. Test
+
+(only if you enabled it)
+
+~~~
+npm run test
 ~~~
 
 They are grouped into two sections:
@@ -102,29 +127,11 @@ If you want to auto-execute all your test on a file change, run:
 gulp test-watch
 ~~~
 
-### 2. Snippets
 
-Allows you to write minimal example [snippets](https://github.com/biojs/biojs-sniper) of your visualization.
-These snippets will be used for the [BioJS registry](http://biojs.io).
+### 4. More tasks
 
-~~~
-npm run sniper
-~~~
-
-and open [http://localhost:9090/snippets](http://localhost:9090/snippets)
-
-
-### 3. Watchify
-
-Watches all your files and runs [browserify](http://browserify.org) on every change.
-Combine this with the sniper.
-(Subsequent runs of watchify are fast).
-
-~~~
-npm run watch
-~~~
-
-Enjoy.
+Depending on the settings you select, the slush bootstraper might add more tasks.
+You can see [here](https://github.com/biojs/slush-biojs) the entire list.
 
 
 2) Our input data 
@@ -186,7 +193,7 @@ To make this tutorial as easy as possible, we will only work with this static ex
 3) Export your component
 ------------------------
 
-Now it is time to export your component in order to provide your functionality with the other BioJS components or in your module (e.g your firt test case).
+Now it is time to export your component in order to provide your functionality with the other BioJS components or in your module (e.g your first test case).
 We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in BioJS.
 
 Please export your parser in the following way:
