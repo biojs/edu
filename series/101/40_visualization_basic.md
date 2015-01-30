@@ -48,7 +48,7 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 
 We require the parser from the previous tutorial.
 
-`src/index.js`
+File: `lib/index.js`
 
 ~~~
 var parser = require("biojs-io-snipspector");
@@ -96,18 +96,10 @@ npm run watch
 ~~~
 {% endhlblock %}
 
-{% hlblock help %}
-If you are lazy, you can use install gulp (the build tool) globally `npm install -g gulp` and then type even less
-~~~
-gulp build
-gulp watch
-~~~
-{% endhlblock %}
-
 5) See the first output
 ------------------------
 
-`examples/simple_example.js`
+File: `examples/simple.js`
 
 ~~~
 var app = require("<your package name>");
@@ -120,9 +112,26 @@ npm run sniper
 
 Now browse to [`localhost:9090/examples/`](http://localhost:9090/examples).
 
+{% hlblock help %}
+
+If you are lazy, you can use `prunner`.
+
+~~~
+npm run w
+~~~
+
+(this will run `npm run watch` and `npm run sniper` in one shell)
+{% endhlblock %}
+
+
 ### b) Plain, old html (alternative way)
 
 You only need to create a very simple HTML file to call your visualization module.
+
+{% alert warn %}
+You don't need to create any `html` file when you use the BioJS sniper.
+So if you like the sniper - you can skip this subsection.
+{% endalert %}
 
 `simple.html`
 
