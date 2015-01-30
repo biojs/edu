@@ -34,7 +34,7 @@ it should look like this
 ~~~
 [...]
 "snippets": {
-	"js": ["/build/biojsvissnipspector.js", "//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
+	"js": ["/build/biojsvissnipspector.js", "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
 [...]
 ~~~
 {% endhlblock %}
@@ -69,21 +69,21 @@ Now we can get started. To define our chart, we first need the size of it, a set
 
 
 ~~~
-        var width = 960,
-            height = 500,
-            radius = Math.min(width, height) / 2;
+var width = 960,
+    height = 500,
+    radius = Math.min(width, height) / 2;
 
-        var color = d3.scale.category10();
+var color = d3.scale.category10();
 
-        var arc = d3.svg.arc()
-                    .outerRadius(radius - 10)
-                    .innerRadius(radius - 150);
+var arc = d3.svg.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(radius - 150);
 
-        var pie = d3.layout.pie()
-                    .sort(null)
-                    .value(function (d) {
-                        return d.number;
-                    });
+var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) {
+                return d.number;
+            });
 ~~~
 
 Let me go trough the code:
@@ -99,7 +99,7 @@ Now it is time to plot some data! In d3, data are arrays. So the format which ou
 Therefore we need to convert our data into this format for each chromosome (each chromosome will be represented by a pie/donut chart)
 
 ~~~
-        var chromosome_data = [{category: "del", number: 1}, {category: "hetero": ,number: 2} , {category: "homo" , number: 3}];
+var chromosome_data = [{category: "del", number: 1}, {category: "hetero": ,number: 2} , {category: "homo" , number: 3}];
 ~~~
 
 Can you come up with an converter?
@@ -108,38 +108,37 @@ Add this into your code.
 
 ~~~
 function converter(genome){
-        var data_res = [];
+   var data_res = [];
 
-        for (var k = 0; k < 25; k++) {
-                    var data = [{
-                        category: "del",
-                        number: genome[k].del
-            }, {
-                        category: "hetero",
-                        number: genome[k].hetero
-            }, {
-                        category: "homo",
-                        number: genome[k].homo
-            }];
+   for (var k = 0; k < 25; k++) {
+               var data = [{
+                   category: "del",
+                   number: genome[k].del
+       }, {
+                   category: "hetero",
+                   number: genome[k].hetero
+       }, {
+                   category: "homo",
+                   number: genome[k].homo
+       }];
 
 
-                    var data_wrapper = [{
-                        name: genome[k].name,
-                        data: data
-            }];
+               var data_wrapper = [{
+                   name: genome[k].name,
+                   data: data
+       }];
 
-                    data_res = data_res.concat(data_wrapper);
+               data_res = data_res.concat(data_wrapper);
 
-        }
+   }
 
-        return data_res;
+   return data_res;
 }
 ~~~
 
 Everything should look like this right now:
 
 ~~~
-
 function converter(genome){...}
 
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
@@ -160,34 +159,34 @@ First, we will visualize the data in chromosome 'X' in a donut chart!
 Let's create a svg which we append on the body of our html!
 
 ~~~
-        var X_data = data_res[22].data;
-        
-        var svg = d3.select("body").append("svg")
-                    .attr("width", width)
-                    .attr("height", height)
-                    .append("g")
-                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+var X_data = data_res[22].data;
 
-        var g = svg.selectAll(".arc")
-                    .data(pie(X_data))
-                    .enter().append("g")
-                    .attr("class", "arc");
+var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        g.append("path")
-            .attr("d", arc)
-            .style("fill", function (d) {
-                    return color(d.data.category);
-                });
+var g = svg.selectAll(".arc")
+            .data(pie(X_data))
+            .enter().append("g")
+            .attr("class", "arc");
 
-        g.append("text")
-            .attr("transform", function (d) {
-                    return "translate(" + arc.centroid(d) + ")";
-                })
-            .attr("dy", ".35em")
-            .style("text-anchor", "middle")
-            .text(function (d) {
-                    return d.data.category;
-                });
+g.append("path")
+    .attr("d", arc)
+    .style("fill", function (d) {
+            return color(d.data.category);
+        });
+
+g.append("text")
+    .attr("transform", function (d) {
+            return "translate(" + arc.centroid(d) + ")";
+        })
+    .attr("dy", ".35em")
+    .style("text-anchor", "middle")
+    .text(function (d) {
+            return d.data.category;
+        });
 ~~~
 
 D3 handles new data with `enter()`. To learn more about `enter`,`update` and `delete`, visit the [d3 tutorial](http://d3js.org/).
@@ -204,7 +203,6 @@ function d3_show(opts) {
 }
 
 module.exports = d3_show;
-
 ~~~
 
 We recommend browserify. Therefore use our preinstalled npm run build-browser!
@@ -217,6 +215,7 @@ to create a build for this file! If this fails, create a build folder first!
 Now you can easily include this into a simple html using:
 
 `snippets/simple_example.js`
+
 ~~~
 var app = require("biojs-vis-snipspector"); 
 app({el: yourDiv});
@@ -228,7 +227,6 @@ By the way, you can change the namespace anytime you want. It is defined inside 
 The final program looks like this:
 
 {% code javascript collapsible=true %}
-
 var parser = require("biojs-io-snipspector");
 
 function d3_show(opts) {
@@ -315,7 +313,6 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 }
 
 module.exports = d3_show;
-
 {% endcode %}
 
 For more information about how each code component works, have a look at following [resources](http://schoolofdata.org/2013/10/01/pie-and-donut-charts-in-d3-js/).
@@ -327,6 +324,6 @@ In our final component `biojs-vis-snipspector`, we also included a function to v
 Have a look at the [source code](https://github.com/biojs/biojs-vis-snipspector) to learn more!
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://daviddao.de/snipvis.js"></script>
-<script>snipvis(document.getElementById("vis"))</script>
-
+<script src="./res/snipvis.js"></script>
+<script>var snipvis = require("biojs-vis-snipspector");
+snipvis(document.getElementById("vis"))</script>
