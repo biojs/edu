@@ -105,7 +105,7 @@ gulp test-watch
 ### 2. Snippets
 
 Allows you to write minimal example [snippets](https://github.com/biojs/biojs-sniper) of your visualization.
-These snippets will be used for the [BioJS registry](http://registry.biojs.net).
+These snippets will be used for the [BioJS registry](http://biojs.io).
 
 ~~~
 npm run sniper
