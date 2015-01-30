@@ -8,7 +8,7 @@ estimated-time: 30
 ---
 
 {% alert warn %}
-Please create the [basic package](./30_package_basics.html) before.
+Please create the [basic package](../101/30_package_basics.html) before.
 Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
@@ -253,7 +253,7 @@ done(); // call the mocha callback and resume the test suite
 
 {% hlblock info %}
 Passing an argument to an Mocha test will automatically let the test suite run your test asynchronously - the argument is your callback.
-[More info](https://visionmedia.github.io/mocha/#asynchronous-code).
+[More info](https://mochajs.github.io/mocha/#asynchronous-code).
 {% endhlblock  %}
 
 {% hlblock task %}

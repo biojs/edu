@@ -65,5 +65,5 @@ MVC
 
 
 {% hlblock info %}
-The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101_graduate/).
+The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101/10_intro.md).
 {% endhlblock %}

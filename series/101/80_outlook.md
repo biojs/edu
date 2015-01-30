@@ -26,6 +26,6 @@ Did you really finish all previous tutorials? Wow.
 ### Get inspirations from other packages
 
 It is not a shame to get inspiration and techniques from other popular packages.
-Just browse [our registry](http://biojs.net/registry-ui/client/) for interesting or popular ones.
+Just browse [our registry](http://biojs.io) for interesting or popular ones.
 
 ### [Get involved in the awesome BioJS community](http://biojs.net/get_involved.html)
