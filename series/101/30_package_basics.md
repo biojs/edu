@@ -20,29 +20,35 @@ In the next tutorial we will show you how to visualize this data.
 
 Use our [slush generator](https://github.com/biojs/slush-biojs) to bootstrap your new project.
 
+{% alert warn %}
+On Linux and Mac you will need to prepend `sudo` for global (`-g`) installations
+{% endalert %}
+
+
 1) Install slush
 
 ~~~
 npm install -g slush slush-biojs
 ~~~
-2)Install watchify
+
+2) Install watchify & sniper (optional)
 
 ~~~
-npm install -g watchify
+npm install -g watchify biojs-sniper
 ~~~
-3)Install sniper
 
-~~~
-npm install -g sniper
-~~~
-4) Bootstrap your new project
+`Watchify`: Listens for file changes and incrementely runs `browserify`
+`Browserify`: A tool to lets you `require('modules')` in the browser by bundling up all of your dependencies
+`sniper`: Simulates the BioJS registry and allows you to load files from your disk (it is a local file server)
+
+3) Bootstrap your new project
 
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-5) Answer all questions
+4) Answer all questions
 
 Our first component will be a pure parser, so you can answer `no` when being asked
 for visualization support (the next tutorial will use this parser for a visualization).
@@ -55,10 +61,10 @@ for visualization support (the next tutorial will use this parser for a visualiz
 ? Author email?: <hidden>
 ? Github username?: greenify
 ? Enter keywords for npm (separate with comma): visualization,msa,alignment
-A visualization lib? No
+? A visualization lib? No
 ? Unit tests: Yes
-? Configure a build system? (recommended) Yes
-? Linting (Check code style with JSHint) Yes
+? Configure a build system? (Gulp) Yes
+? Linting (Check code style with JSHint) No
 ? Choose your license type: Apache 2
 ? Is this correct? (Y/n) Yes
 ~~~
@@ -92,7 +98,7 @@ This naming guideline is only if you are not that creative (like us).
 1b) Available commands
 ----------------------
 
-### 1. Snippets
+### 1. Snippets (only available for visualization -> skip)
 
 Allows you to write minimal example [snippets](https://github.com/biojs/biojs-sniper) of your visualization.
 These snippets will be used for the [BioJS registry](http://biojs.io).
@@ -101,7 +107,7 @@ These snippets will be used for the [BioJS registry](http://biojs.io).
 npm run sniper
 ~~~
 
-and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/biojs-sniper) for more details.
+and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/biojs-sniper) for more details. 
 
 
 ### 2. Watchify
@@ -141,6 +147,9 @@ If you want to auto-execute all your test on a file change, run:
 gulp test-watch
 ~~~
 
+{% hlblock info %}
+You can customize the sniper sections with a [local configuration file](https://github.com/biojs/slush-biojs#configuration)
+{% endhlblock %}
 
 ### 4. More tasks
 
