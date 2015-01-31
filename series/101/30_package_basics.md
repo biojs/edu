@@ -25,15 +25,24 @@ Use our [slush generator](https://github.com/biojs/slush-biojs) to bootstrap you
 ~~~
 npm install -g slush slush-biojs
 ~~~
+2)Install watchify
 
-2) Bootstrap your new project
+~~~
+npm install -g watchify
+~~~
+3)Install sniper
+
+~~~
+npm install -g sniper
+~~~
+4) Bootstrap your new project
 
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-3) Answer all questions
+5) Answer all questions
 
 Our first component will be a pure parser, so you can answer `no` when being asked
 for visualization support (the next tutorial will use this parser for a visualization).
@@ -46,7 +55,12 @@ for visualization support (the next tutorial will use this parser for a visualiz
 ? Author email?: <hidden>
 ? Github username?: greenify
 ? Enter keywords for npm (separate with comma): visualization,msa,alignment
+A visualization lib? No
+? Unit tests: Yes
+? Configure a build system? (recommended) Yes
+? Linting (Check code style with JSHint) Yes
 ? Choose your license type: Apache 2
+? Is this correct? (Y/n) Yes
 ~~~
 
 
