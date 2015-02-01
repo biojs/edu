@@ -1,9 +1,8 @@
 ---
 title: 'Visualization: D3'
-layout: tutorial-container
+layout: series_item
 contributors: David
-category: 102_tutorial
-series: 102
+series: '102'
 estimated-time: 30 
 ---
 
@@ -99,7 +98,6 @@ Now it is time to plot some data! In d3, data are arrays. So the format which ou
 Therefore we need to convert our data into this format for each chromosome (each chromosome will be represented by a pie/donut chart)
 
 ~~~
-var chromosome_data = [{category: "del", number: 1}, {category: "hetero": ,number: 2} , {category: "homo" , number: 3}];
 ~~~
 
 Can you come up with an converter?
@@ -112,13 +110,10 @@ function converter(genome){
 
    for (var k = 0; k < 25; k++) {
                var data = [{
-                   category: "del",
                    number: genome[k].del
        }, {
-                   category: "hetero",
                    number: genome[k].hetero
        }, {
-                   category: "homo",
                    number: genome[k].homo
        }];
 
@@ -253,13 +248,10 @@ function converter(genome){
 
         for (var k = 0; k < 25; k++) {
                     var data = [{
-                        category: "del",
                         number: genome[k].del
             }, {
-                        category: "hetero",
                         number: genome[k].hetero
             }, {
-                        category: "homo",
                         number: genome[k].homo
             }];
 

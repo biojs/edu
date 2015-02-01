@@ -15,12 +15,12 @@ layout: default
 {% endif %}
 {% endfor %}
 
-{% if page.series ==  "cat" %}
-	{% assign series_title = "Categories" %}
+{% if page.series ==  "series_list" %}
+	{% assign series_title = "Series" %}
 	{% assign series_url = "/" %}
 {% else if %}
-	{% assign series_title = site.cats[page.category].desc %}
-	{% assign series_url = "/categories/" | append: page.category | append: "/index.html" %}
+	{% assign series_title = site.series[page.series].desc %}
+	{% assign series_url = "/series/" | append: page.series | append: "/index.html" %}
 {% endif %}
 
 <div class="container-fluid">
@@ -51,9 +51,9 @@ layout: default
 
 	{% assign count = '1' %}
 
-	{% if page.series ==  "cat" %}
-	{% assign sortedpages = site.pages  %}
-		{% assign sortedpages = site.pages  %}
+	{% if page.series ==  "series_list" %}
+	<!--in the future we might need to change the sort order-->
+		{% assign sortedpages = site.pages  | sort: "url" %}
 	{% else %}
 		{% assign sortedpages = site.pages | sort: "url" %}
 	{% endif%}
@@ -61,7 +61,7 @@ layout: default
 	{% for tpage in sortedpages %}
 	{% if tpage.series ==  page.series  %}
 
-	{% unless tpage.cat %}
+	{% unless tpage.series == "series_list" %}
 		{% assign counter = count | append: "." %}
 	{% endunless %}
 

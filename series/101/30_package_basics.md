@@ -1,9 +1,8 @@
 ---
 title: 'Package basics'
-layout: tutorial-container
+layout: series_item
 contributors: David, Iris, Manny, Seb
-category: 101_tutorial
-series: 101
+series: '101'
 estimated-time: 60 
 ---
 

@@ -1,9 +1,8 @@
 ---
 title: 'Headstart'
-layout: tutorial-container
+layout: series_item
 contributors: David
-category: 101_tutorial
-series: 101
+series: '101'
 estimated-time: 5 
 ---
 

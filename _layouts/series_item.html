@@ -7,9 +7,9 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 	<h2>{{ page.title }}</h2>
 
 	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
-	{% if page.contributors %}
-	<div class="tutorial-item">Contributor(s): {{ page.contributors }}</div>
-	{% endif %} 
+	<!--{% if page.contributors %}-->
+	<!--<div class="tutorial-item">Contributor(s): {{ page.contributors }}</div>-->
+	<!--{% endif %} -->
 	{% if page.estimated-time %}
 	<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>
 	{% endif %} 
@@ -23,6 +23,8 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 
 	</div>
 	<div class="clearfix"></div>
+
+	{% if site.series[page.series].explanation %}
 
 	<div class="static-content">
 
@@ -67,17 +69,21 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 
 		</div>
 		<br />
+	{% endif %}
 
 <div id="upper-link-box" class="link-box">
-{% if page.next_in_category != nil %} 
-	<a href="{{page.next_in_category.url}}" class="btn btn-primary previous-link">Previous</a>
+{% if page.next_in_series != nil %} 
+	<a href="{{page.next_in_series.url}}" class="btn btn-primary previous-link">Previous</a>
 {% endif %} 
-{% if page.previous_in_category != nil %}
-	<a href="{{page.previous_in_category.url}}" class="btn btn-primary next-link pull-right">Next</a>
+{% if page.previous_in_series != nil %}
+	<a href="{{page.previous_in_series.url}}" class="btn btn-primary next-link pull-right">Next</a>
 {% endif %}
+
 </div>
 
 <div class="clearfix"> </div>
+
+{% if site.series[page.series].explanation %}
 
 {% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback.
 
@@ -86,16 +92,18 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 
 {% endalert %}
 
+{% endif %}
+
 
 
 		{{ content }}
 
 <div id="lower-link-box" class="link-box">
-{% if page.next_in_category != nil %} 
-	<a href="{{page.next_in_category.url}}" class="btn btn-primary previous-link">Previous</a>
+{% if page.next_in_series != nil %} 
+	<a href="{{page.next_in_series.url}}" class="btn btn-primary previous-link">Previous</a>
 {% endif %} 
-{% if page.previous_in_category != nil %}
-	<a href="{{page.previous_in_category.url}}" class="btn btn-primary next-link pull-right">Next</a>
+{% if page.previous_in_series != nil %}
+	<a href="{{page.previous_in_series.url}}" class="btn btn-primary next-link pull-right">Next</a>
 {% endif %}
 
 <br />	
@@ -103,6 +111,8 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 
 	</div>
 </div>
+
+{% if site.series[page.series].code %}
 <script>
 $(document).ready(function (){
 	// load highlighted code blocks
@@ -159,3 +169,5 @@ function collapseStuff(e, textHidden, textDisplayed){
 </script>
 
 <script src="/js/highlight.min.js"></script>
+
+{% endif %}

@@ -1,6 +1,6 @@
 ---
 layout: series
-series: cat
+series: series_list
 ---
 <div class="fluid-container">
 
@@ -12,9 +12,11 @@ series: cat
 
 		{% assign count = '1' %}
 		<ul>
+
 		{% assign sorted_posts = site.pages | sort: 'url' %}
 		{% for post in sorted_posts %}
-		{% if post.category  ==  page.cat and post.url != page.url %}
+
+		{% if post.series ==  page.child_series and post.url != page.url %}
 		<li> <a href="{{ post.url }}" >
 				{% if page.numbering %} {{ count }}. {% endif %}
 				{{post.title}}

@@ -1,9 +1,8 @@
 ---
 title: 'Parser: using real data'
-layout: tutorial-container
+layout: series_item
 contributors: Seb
-category: 102_tutorial
-series: 102
+series: '102'
 estimated-time: 30 
 ---
 

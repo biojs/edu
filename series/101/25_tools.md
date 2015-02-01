@@ -1,9 +1,8 @@
 ---
 title: 'Tools'
-layout: tutorial-container
+layout: series_item
 contributors: Seb
-category: 101_tutorial
-series: 101
+series: '101'
 estimated-time: 5
 extra_css2: ["/css/aspects.css"]
 aspectsURL: /img/aspects/

@@ -7,18 +7,18 @@ markdown: kramdown
 timezone: UTC
 encoding: utf-8
 exclude: [vendor]
-cats:
-    demo:
-      desc: Demonstration of components
-    101_tutorial:
-      desc: "101 Tutorial series"
+series:
+    "101":
+      desc: "Beginner series (101)"
       numbering: true
       displayed: true
-    102_tutorial:
-      desc: "102 Tutorial series (Advanced)"
+      code: true
+      explanation: true
+      sort: 1
+    "102":
+      desc: "Advanced series (102)"
       numbering: true
       displayed: true
-    howto:
-      desc: How-Tos about components
-    playground:
-      desc: BioJS playground
+      code: true
+      explanation: true
+      sort: 2

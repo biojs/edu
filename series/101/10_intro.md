@@ -1,9 +1,8 @@
 ---
 title: 'Intro'
-layout: tutorial-container
+layout: series_item
 contributors: Manny, Seb
-category: 101_tutorial
-series: 101
+series: '101'
 estimated-time: 5
 ---
 

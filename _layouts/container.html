@@ -3,7 +3,9 @@ layout: default
 ---
 <div class="container">
 
+	{% if page.title? %}
 	<h2>{{ page.title }}</h2>
+	{% endif %}
 	<div class="static-content">
 		{{ content }}
 	</div>

@@ -56,4 +56,11 @@ bundle install # in your edu root folder
 # this will install the dependencies specified in the Gemfile & Gemfile.lock
 bundle exec jekyll serve -w # this will execute jekyll with your bundles in the virtualenv
 
+Jekyll layouts
+-----------------
 
+* `default`: the root layout (all layouts inherit from this)
+* `container`: layout used for static pages, e.g. the start page (inherits from `default`)
+* `series`: layout used to display the series menu on the right (inherits from `default`)
+* `series_overview`: layout used to generate the category overview (inherits from `series`)
+* `series_item`: layout used to generate a page within a series (inherits from `series`)
