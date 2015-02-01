@@ -98,6 +98,7 @@ Now it is time to plot some data! In d3, data are arrays. So the format which ou
 Therefore we need to convert our data into this format for each chromosome (each chromosome will be represented by a pie/donut chart)
 
 ~~~
+var chromosome_data = [{category: "del", number: 1}, {category: "hetero": ,number: 2} , {category: "homo" , number: 3}];
 ~~~
 
 Can you come up with an converter?

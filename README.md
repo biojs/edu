@@ -66,3 +66,44 @@ Jekyll layouts
 * `series`: layout used to display the series menu on the right (inherits from `default`)
 * `series_overview`: layout used to generate the category overview (inherits from `series`)
 * `series_item`: layout used to generate a page within a series (inherits from `series`)
+
+
+Special blocks: hlblock
+--------------
+
+````
+{% hlblock question %}
+Do you like BioJS?
+{% endhlblock %}
+```
+
+Available types include at the moment:
+
+* `task`: use this to assign tasks to your students
+* `questions`: ask your readers questions
+* `check`: checkpoint & verification
+* `stop`: use this before you show a solution
+* `info`: additional info and references
+* `help`: tips, help, ...
+* `raise`: (currently not used)
+
+Special blocks: code
+------------------------
+
+We use `kramdown`, there you should use `~~~` to begin and mark a code block.
+To enforce a language or make it collapsible (e.g. for solutions) you can use the `code` block.
+
+```
+{% code javascript collapsible=true %}
+console.log("You can put this code block anywhere in your tutorial");
+{% endcode %}
+```
+
+Add your own series
+--------------------
+
+It is super simple:
+
+* add it to the `_config.yml`
+* create a new folder in `series` (the name has to be identical with the `key` of your series in the `_config.yml`)
+* add new pages to your series folder (don't forget to set your series in the header)
