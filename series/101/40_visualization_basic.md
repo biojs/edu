@@ -80,7 +80,7 @@ There is a JavaScript development enviroment in the browser which supports `requ
 4) Build a browserified version
 --------------------------------
 
-We recommend browserify. It is preinstalled, just run
+We recommend `browserify`. It is preinstalled, just run
 
 ~~~
 npm run build
@@ -106,6 +106,19 @@ var app = require("<your package name>");
 app({el: yourDiv});
 ~~~
 
+{% hlblock info %}
+`sniper` is a local file server that generates a HTML file on the file.
+Furthermore it automatically generates a div container and gives you access to it
+via `yourDiv`.
+
+* You can always also define your own HTML in `<same-filename>.html` (e.g. `examples/simple.html`).
+(You only need to put DOM elements into this HTML file - there is no need for `html`, `head` or `body`).
+* If you have a special example snippet that requires more dependencies you can create a `<same-filename.json` (e.g. `examples/simple.json`).
+and extend the sniper configuration from your `package.json` just for this snippet. Nearly all attributes are supported (e.g. `js` or `css`).
+{% endhlblock %}
+
+You can now run `sniper` - a simple file server that builds the snippets on the file and hence simulates the BioJS registry.
+
 ~~~
 npm run sniper
 ~~~
@@ -114,7 +127,7 @@ Now browse to [`localhost:9090/examples/`](http://localhost:9090/examples).
 
 {% hlblock help %}
 
-If you are lazy, you can use `prunner`.
+If you are lazy, you can use `prunner` for your subsequent development.
 
 ~~~
 npm run w
@@ -158,7 +171,7 @@ Address: [`localhost:8080`](http://localhost:8080)
 6) Extend the visualization
 ---------------------------
 
-### a) calculate a relative percentage per chromosome
+### a) Calculate a relative percentage per chromosome
 
 We are going to use a utility library called [underscore](http://underscorejs.org/).
 There you need to `require` the library in your program (at the top).
