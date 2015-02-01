@@ -98,8 +98,19 @@ npm run watch
 
 5) See the first output
 ------------------------
+Create `simple_example.html` 
+~~~
+<div id=yourDiv></div>
+<script src="build/<your js file>"></script>
+<script>
+var app = require("<your package name>");
+app.template();
+</script>
+~~~
 
 File: `examples/simple.js`
+
+`yourDiv` is the div id in your html file.
 
 ~~~
 var app = require("<your package name>");
