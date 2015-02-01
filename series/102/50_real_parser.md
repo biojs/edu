@@ -107,7 +107,7 @@ Put this data into your unit test.
 __Solution__ - if you have troubles: write the unit test first, before you look at this solution.
 {% endhlblock %}
 
-`src/index.js`
+`lib/index.js`
 
 {% code javascript collapsible=true %}
 var request = require("nets");

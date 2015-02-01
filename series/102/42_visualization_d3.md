@@ -10,7 +10,7 @@ estimated-time: 30
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
 As a case study, we will continue working with chromosome data and show you how to visualize this data with D3.
 First of all create a new folder called `biojs-vis-snipspector` by running [`slush biojs`](https://github.com/biojs/slush-biojs).
-We will use this as our working bench and only edit the `index.js` file inside the `src` folder. 
+We will use this as our working bench and only edit the `index.js` file inside the `lib` folder. 
 Note: Please replace the current code with our following code!
 
 ### 1) Installing a npm dependency

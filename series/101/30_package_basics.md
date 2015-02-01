@@ -241,12 +241,12 @@ snipspector.parse();
 Instead of requiring packages, you can also require files:
 
 ~~~
-var snipspector = require('../src/index');
+var snipspector = require('../lib/index');
 snipspector.parse();
 ~~~
 
 {% hlblock info %}
-The path can be either relative `../src/index.js` or simply the package name `biojs-io-snipspector`.
+The path can be either relative `../lib/index.js` or simply the package name `biojs-io-snipspector`.
 {% endhlblock %}
 
 {% hlblock info %}
