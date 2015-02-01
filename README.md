@@ -17,7 +17,8 @@ For now here is a simple formula:
 1. Fork the repository at [Github](https://github.com/biojs/edu)
 2. Do awesomeness!
 3. Send a pull request to [biojs/edu](https://github.com/biojs/edu)
-4. If we merge your pull request, you get commit access. BAM. Go back to step 2 and stay there as long as you want.
+4. Go back to step 2 and stay there as long as you want.
+5. If we merge two or three pull requests, you get commit access. BAM.
 
 
 Contributor list
@@ -55,6 +56,7 @@ gem install bundler
 bundle install # in your edu root folder
 # this will install the dependencies specified in the Gemfile & Gemfile.lock
 bundle exec jekyll serve -w # this will execute jekyll with your bundles in the virtualenv
+```
 
 Jekyll layouts
 -----------------
