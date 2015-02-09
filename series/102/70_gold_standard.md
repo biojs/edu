@@ -4,6 +4,7 @@ layout: series_item
 contributors: Seb
 series: '102'
 estimated-time: 5 
+tags: [['Guidelines','guidelines'],['Gold standard','gold-standard'],['Other useful pointers','other-useful-pointers'],['Example components','example-components'],]
 ---
 
 Guidelines

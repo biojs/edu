@@ -4,6 +4,7 @@ layout: series_item
 contributors: David
 series: '102'
 estimated-time: 30 
+tags: [['Installing a npm dependency','installing-a-npm-dependency'],['Require dependencies','require-dependencies'],['Getting started with d3','getting-started-with-d3'],['Convert our data','convert-our-data'],['Creating a donut chart!','creating-a-donut-chart']]
 ---
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
@@ -33,7 +34,7 @@ it should look like this
 ~~~
 [...]
 "snippets": {
-	"js": ["/build/biojsvissnipspector.js", "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
+  "js": ["/build/biojsvissnipspector.js", "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
 [...]
 ~~~
 {% endhlblock %}

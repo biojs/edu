@@ -4,6 +4,7 @@ layout: series_item
 contributors: Iris, Paul, Seb
 series: '101'
 estimated-time: 5
+tags: [['Mac Users','mac-users'],['Linux Users','linux-users'],['Windows Users','windows-users'],]
 ---
 
 You will need __`npm`__ and __`git`__ on your shell.

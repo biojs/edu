@@ -4,6 +4,7 @@ layout: series_item
 contributors: David, Seb
 series: '101'
 estimated-time: 5
+tags: [['Upload it on npm','upload-it-on-npm']]
 ---
 
 {% alert danger %}

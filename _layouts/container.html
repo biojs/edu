@@ -1,12 +1,68 @@
----
-layout: default
----
-<div class="container">
+<!DOCTYPE html>
+<html>
 
-	{% if page.title? %}
-	<h2>{{ page.title }}</h2>
-	{% endif %}
-	<div class="static-content">
-		{{ content }}
-	</div>
-</div>
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="Menu">
+        <div class="list">
+            <div class="logoDiv">
+                <img src="/img/logo.png" id="logoImg">
+                <div class="logoDivName">BIOJS Edu</div>
+            </div>
+
+          {{content}}
+        </div>
+    </div>
+    <div class="cover">
+        <div class="topNavbar">
+            <div class="navbar-div" id="logo">
+                BIOJS
+            </div>
+            <div class="navbar-div" id="navbar-links2">
+                <li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/" target="_blank"><i class="fa fa-github"></i><span class="gh-text" id="gh-text">Star</span></a></li>
+                <li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/fork" target="_blank"><i class="fa fa-code-fork"></i><span class="gh-text" id="gh-text">Fork</span></a></li>
+                <li><a class="git" id="gh-btn" href="https://github.com/biojs/edu" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+            </div>
+        </div>
+        <div class="learn">
+            <div class="learnHeading">
+                Learn BIOJS
+            </div>
+            <div class="getStarted">
+                <i class="fa fa-bars fa-2x"></i><span class="gtstd">Get Started</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+
+    </div>
+
+    <script>
+    $('.getStarted').click(function() {
+        $(".Menu").css("width", "100%");
+        $(".Menu").css("left", "0");
+        $('.pullButton').css("display", "none")
+    });
+    $('.Menu').click(function() {
+        $(".Menu").css("width", "250px");
+        $(".Menu").css("left", "-250px");
+        $('.pullButton').css("display", "block")
+    })
+    </script>
+</body>
+
+</html>

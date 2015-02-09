@@ -4,6 +4,7 @@ layout: series_item
 contributors: David, Iris, Manny, Seb
 series: '101'
 estimated-time: 60 
+tags: [['Create a new package','create-a-new-package'],['Our input data','our-input-data'],['Export your component','export-your-component'],['The first testcase','the-first-testcase'],['Start coding','start-coding'],['Your first big task','your-first-big-task'],['Verify your solution','verify-your-solution'],['Publish your component','publish-your-component']]
 ---
 
 {% alert warn %}
@@ -197,14 +198,14 @@ For detailed info about the BED format, visit the [ensembl doc](http://www.ensem
 For example:
 
 ~~~
-rs5747620	20	15412698	TT
-rs9605903	20	15434720	CC
-rs2236639	20	15452483	GC
-rs5747999	21	15455353	AA
-rs11089263	21	15467656	A-
-rs2096537	21	15474749	AC
-rs9604959	22	15479107	CG
-rs9604967	22	15492342	CC
+rs5747620 20  15412698  TT
+rs9605903 20  15434720  CC
+rs2236639 20  15452483  GC
+rs5747999 21  15455353  AA
+rs11089263  21  15467656  A-
+rs2096537 21  15474749  AC
+rs9604959 22  15479107  CG
+rs9604967 22  15492342  CC
 ~~~
 
 
@@ -287,14 +288,14 @@ var snipspector = {};
 
 snipspector.parse = function() {
     
-    var data = ["rs5747620	20	15412698	TT",
-    "rs9605903	20	15434720	CC",
-    "rs2236639	20	15452483	GC",
-    "rs5747999	21	15455353	AA",
-    "rs11089263	21	15467656	A-",
-    "rs2096537	21	15474749	AC",
-    "rs9604959	22	15479107	CG",
-    "rs9604967	22	15492342	CC"];
+    var data = ["rs5747620  20  15412698  TT",
+    "rs9605903  20  15434720  CC",
+    "rs2236639  20  15452483  GC",
+    "rs5747999  21  15455353  AA",
+    "rs11089263 21  15467656  A-",
+    "rs2096537  21  15474749  AC",
+    "rs9604959  22  15479107  CG",
+    "rs9604967  22  15492342  CC"];
 
     var chromosomes = [];
 
@@ -365,14 +366,14 @@ var snipspector = {};
 
 snipspector.parse = function() {
     
-    var data = ["rs5747620	20	15412698	TT",
-    "rs9605903	20	15434720	CC",
-    "rs2236639	20	15452483	GC",
-    "rs5747999	21	15455353	AA",
-    "rs11089263	21	15467656	A-",
-    "rs2096537	21	15474749	AC",
-    "rs9604959	22	15479107	CG",
-    "rs9604967	22	15492342	CC"];
+    var data = ["rs5747620  20  15412698  TT",
+    "rs9605903  20  15434720  CC",
+    "rs2236639  20  15452483  GC",
+    "rs5747999  21  15455353  AA",
+    "rs11089263 21  15467656  A-",
+    "rs2096537  21  15474749  AC",
+    "rs9604959  22  15479107  CG",
+    "rs9604967  22  15492342  CC"];
 
     var parsed = [];
 

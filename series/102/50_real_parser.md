@@ -4,6 +4,7 @@ layout: series_item
 contributors: Seb
 series: '102'
 estimated-time: 30 
+tags: [['Installing a npm dependency','installing-a-npm-dependency'],['Require a dependency','require-a-dependency'],['Download the real data','download-the-real-data'],['Test with live data (mocking)','test-with-live-data-mocking'],['Solution','solution']]
 ---
 
 {% alert warn %}
@@ -223,14 +224,14 @@ Now you only need to create the dummy file with which Nock should reply.
 `test/test.file`
 
 ~~~
-rs5747620	20	15412698	TT
-rs9605903	20	15434720	CC
-rs2236639	20	15452483	GC
-rs5747999	21	15455353	AA
-rs11089263	21	15467656	A-
-rs2096537	21	15474749	AC
-rs9604959	22	15479107	CG
-rs9604967	22	15492342	CC
+rs5747620 20  15412698  TT
+rs9605903 20  15434720  CC
+rs2236639 20  15452483  GC
+rs5747999 21  15455353  AA
+rs11089263  21  15467656  A-
+rs2096537 21  15474749  AC
+rs9604959 22  15479107  CG
+rs9604967 22  15492342  CC
 ~~~
 (this is the same file from [the package basics tutorial](./30_package_basics.html)
 
@@ -296,14 +297,14 @@ describe('Snipspector', function(){
   });
   describe('parse', function(){
     it('should return match with default object', function(){
-      var data = ["rs5747620	20	15412698	TT",
-      "rs9605903	20	15434720	CC",
-      "rs2236639	20	15452483	GC",
-      "rs5747999	21	15455353	AA",
-      "rs11089263	21	15467656	A-",
-      "rs2096537	21	15474749	AC",
-      "rs9604959	22	15479107	CG",
-      "rs9604967	22	15492342	CC"];
+      var data = ["rs5747620  20  15412698  TT",
+      "rs9605903  20  15434720  CC",
+      "rs2236639  20  15452483  GC",
+      "rs5747999  21  15455353  AA",
+      "rs11089263 21  15467656  A-",
+      "rs2096537  21  15474749  AC",
+      "rs9604959  22  15479107  CG",
+      "rs9604967  22  15492342  CC"];
       assert.deepEqual(snip.parse(data), dummyObj);
     });
   });
