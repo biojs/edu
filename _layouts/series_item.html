@@ -20,7 +20,7 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 <div class="Menu">
 			<div class="list">
 			<div class="logoDiv">
-				<img src="/img/logo.png" id="logoImg">
+				<img src="/img/logo.svg" id="logoImg">
 				<div class="logoDivName">BIOJS Edu</div>
 			</div>
 
@@ -77,9 +77,9 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
     <div class="leftPanel">
     <span class="h2itemsHeading">Contents</span>
 {% for tag in page.tags %}
-<a class="h2items" href="#{{tag[1]}}">{{ tag[0] }}</a>
+<a class="h2items color" href="#{{tag[1]}}">{{ tag[0] }}</a>
 {% endfor %}
-
+ 
     </div>
     <div class="rightPanel">
         
@@ -117,7 +117,8 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 
             <div class="clearfix"> </div>
 
-            {% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback. * [improve this page](https://github.com/biojs/edu/blob/master/{{page.path}}) * [open an issue](https://github.com/biojs/edu/issues/new) on github {% endalert %} {{ content }}
+            {% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback. * [improve this page](https://github.com/biojs/edu/blob/master/{{page.path}}) * [open an issue](https://github.com/biojs/edu/issues/new) on github {% endalert %} 
+            {{ content }}
 
            <div id="lower-link-box" class="link-box">
 				{% if page.next_in_series != nil %} 
