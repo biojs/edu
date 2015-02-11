@@ -12,7 +12,7 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 	        {% if page.contributors %}
 	        <div class="tutorial-item">Contributor(s): {{ page.contributors }}</div>
 	        {% endif %} {% if page.estimated-time %}
-	        <div class="tutorial-item">Duration: {{ page.estimated-time }} minutes read</div>
+	        <div class="tutorial-item">Duration <span class="glyphicon glyphicon-time" style="font-size:14px;margin-bottom: 2px;"></span>: {{ page.estimated-time }}minutes </div>
 	        {% endif %}
 		</div>
 </div>
@@ -77,7 +77,7 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
     <div class="leftPanel">
     <span class="h2itemsHeading">Contents</span>
 {% for tag in page.tags %}
-<a class="h2items color" href="#{{tag[1]}}">{{ tag[0] }}</a>
+<a class="h2items " href="#{{tag[1]}}">{{ tag[0] }}</a>
 {% endfor %}
  
     </div>
@@ -110,14 +110,60 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
         <div class="static-content">
 
             <div id="explanation" style="display:none">
-                {% hlblock check %} We will use this icon to mark check points. A check point is a way for you to check how you are doing. {% endhlblock %} {% hlblock stop %} For most of the steps in this tutorial we will provide the code as it should look after the task. It is tempting, we know, but please, please, do not go for the “copy&paste” way. {% endhlblock %} {% hlblock task %} We will use this icon to challenge you with additional code-related tasks so you can go further at your own pace. No inline answer will be provide for those challenges but we will give you some guidelines and tips. By the way, within the instructions we will use *an italic font* to refer to variables and pieces of code. {% endhlblock %} {% hlblock question %} We will use this icon to ask you some questions related to the task your are working on. {% endhlblock %} {% hlblock info %} Additional info and resources - this is not essential to complete the tutorial, but very interesting. {% endhlblock %} {% hlblock help %} Tips that might help you on this task. {% endhlblock %} {% hlblock raise %} If you are following this tutorial as part of a workshop, do not hesitate to raise your hand and share any questions or comments you may have. If you are doing it by your own, you still can raise your hand in our mailing list, just join our [Google Group](https://groups.google.com/forum/#!forum/biojs). {% endhlblock %}
+                {% hlblock check %}
+We will use this icon to mark check points.
+A check point is a way for you to check how you are doing.
+{% endhlblock %}
+
+{% hlblock stop %}
+For most of the steps in this tutorial we will
+provide the code as it should look after the task. It is tempting, we
+know, but please, please, do not go for the “copy&paste” way.
+{% endhlblock %}
+
+{% hlblock task %}
+We will use this icon to challenge you
+with additional code-related tasks so you can go further at your own
+pace. No inline answer will be provide for those challenges but we will
+give you some guidelines and tips. By the way, within the instructions
+we will use *an italic font* to refer to variables and pieces of code.
+{% endhlblock %}
+
+{% hlblock question %}
+We will use this icon to ask you some questions related to the task your are working on.
+{% endhlblock %}
+
+{% hlblock info %}
+Additional info and resources - this is not essential to complete the tutorial, but very interesting.
+{% endhlblock %}
+
+{% hlblock help %}
+Tips that might help you on this task.
+{% endhlblock %}
+
+{% hlblock raise %}
+If you are following this tutorial as part of a workshop, do not hesitate to
+raise your hand and share any questions or comments you may have.
+If you are doing it by your own, you still can raise your hand in our
+mailing list, just join our [Google Group](https://groups.google.com/forum/#!forum/biojs).
+{% endhlblock %}
+
 
             </div>
             <br />
 
             <div class="clearfix"> </div>
 
-            {% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback. * [improve this page](https://github.com/biojs/edu/blob/master/{{page.path}}) * [open an issue](https://github.com/biojs/edu/issues/new) on github {% endalert %} 
+{% if site.series[page.series].explanation %}
+
+{% alert warn %}The BioJS 101 is still in an early version. We really appreciate any feedback.
+
+* [improve this page](https://github.com/biojs/edu/blob/master/{{page.path}})
+* [open an issue](https://github.com/biojs/edu/issues/new) on github
+
+{% endalert %}
+
+{% endif %}
             {{ content }}
 
            <div id="lower-link-box" class="link-box">

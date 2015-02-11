@@ -23,6 +23,19 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/css/toc.css">
 
+	{% for css_name in page.extra_css %}
+		<link rel="stylesheet" href="{{ css_name }}">
+	{% endfor %}
+
+	<!-- needed for tutorial specific css -->
+	{% for css_name in page.extra_css2 %}
+		<link rel="stylesheet" href="{{ css_name }}">
+	{% endfor %}
+
+	{% for js_name in page.extra_js %}
+		<script src="{{ js_name }}"></script>
+	{% endfor %}
+
 <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>	
@@ -36,9 +49,13 @@
 			<a class="logoLink" href="/">BIOJS</a>
 			</div>
 			<div class="navbar-div" id="navbar-links2">
+				<li>
+					<a class="gitStar"style="width:150px;" href="https://github.com/biojs/edu/blob/master/{{ page.path }}" ><span class="glyphicon glyphicon-pencil" style="font-size:14px; margin-bottom:3px;" ></span> Improve this page</a>
+				</li>
 				<li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/" target="_blank"><i class="fa fa-github"></i><span class="gh-text" id="gh-text">Star</span></a></li>
 				<li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/fork" target="_blank"><i class="fa fa-code-fork"></i><span class="gh-text" id="gh-text">Fork</span></a></li>
 				<li><a class="git" id="gh-btn" href="https://github.com/biojs/edu" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+				
 			</div>
 		</div>
 		

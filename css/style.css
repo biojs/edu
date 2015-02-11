@@ -81,7 +81,6 @@ h2,h3{
 	width: 60%;
 	margin-left: 100px;
 	height: 100px;
-	margin-top: 20px;
 	float: left;
 	margin-top: 50px;
 }
@@ -311,9 +310,7 @@ color: #839496;
 pre{
 	padding: 0px;
 }
-code{
-	font-family: sans-serif;
-}
+
 .improve-this-page{
 	float: right;
 	margin-top: 20px;
@@ -374,25 +371,15 @@ clear: both;
 	padding-bottom: 20px;
 }
 
-.tutorials-togglebox {
+/*.tutorials-togglebox {
 cursor: pointer;
 height: 30px;
 padding: 4px;
 background-color: rgba(100,100,100,0.15);
-border-radius: 4px;
-}
 
-.alert-warning {
-background-color: #fcf8e3;
-border-color: #faebcc;
-color: #8a6d3b;
-}
-.alert {
-padding: 15px;
-margin-bottom: 20px;
-border: 1px solid transparent;
-border-radius: 4px;
-}
+}*/
+
+
 
 .btn{
 	color: #fff;
@@ -417,7 +404,15 @@ line-height: 1.42857143;
 	#logo{
 	margin-left: 20px;
 	font-weight: bold;
-}
+	}
+	#navbar-links2{
+		float: right;
+		margin-right: 10px;
+	}
+	.navbar-div li{
+		float: left;
+		margin-left: 2px;
+	}
 	.leftPanel{
 	    display: none;
 	}
@@ -427,33 +422,42 @@ line-height: 1.42857143;
 		padding: 10px 10px;
 		font-size: 15px;
 		line-height: 20px;
+		border: none;
 		}
 	.heading{
-		margin-top:30px;
-		height: 220px;
+		margin-top:25px;
+		height: 250px;
 		overflow:hidden;
 
+	}
+	.containerBody{
+		border: none;
+		background-color: #fff;
 	}
 
 	.headingTitle{
 		width: 100%;
 		margin:10px auto;
 		padding-left: 10%;
+		margin-top: 40px;
 	}
 
 
 	.author{
 		width: 100%;
-		margin:10px auto;
+		margin:0px auto;
+		background-color: #F7F7F7;
 	}
 
 	.pullButton{
 		bottom: 40px;
 		right: 40px;
-
-		border-radius: 0px;
-		padding: 10px 13px;
+		height: 36px;
+		width: 36px;
+		border-radius: 2px;
+		padding: 4px 6px;
 	}
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -487,8 +491,11 @@ line-height: 1.42857143;
 	}
 
 	.pullButton{
-		top: 100px;
-		left: 0px;
+		bottom: 80px;
+		right: 80px;
+		border-radius: 4px;
+		padding-left: 13px;
+		padding-top: 10px;
 	}
 
 }
