@@ -33,7 +33,7 @@ it should look like this
 ~~~
 [...]
 "snippets": {
-	"js": ["/build/biojsvissnipspector.js", "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
+  "js": ["/build/biojsvissnipspector.js", "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
 [...]
 ~~~
 {% endhlblock %}

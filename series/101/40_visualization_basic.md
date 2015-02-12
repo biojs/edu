@@ -58,7 +58,7 @@ var vis = function(opts){
     console.log(result);
     var resText = document.createElement("div")
     resText.textContent = Object.keys(result).length + " chromosome(s) found.";
-	opts.el.appendChild(resText)
+  opts.el.appendChild(resText)
   })
 };
 module.exports = vis;
@@ -191,7 +191,7 @@ Now we can calculate the total SNPs of a chromosome in a functional way.
 // count the elements in this chromosome
 var total = _.reduce(result[i], function(memo,el,key){
 if(key != "name")
-	return memo + el
+  return memo + el
 else return memo
 });
 ~~~
@@ -206,17 +206,17 @@ We can use `svg`.
 // @param [int] percentage relative amount of SNPs in the chromosome
 // @returns [DOM] svg dom node with a rectangular bar
 function createBar(percentage){
-	var svgNS = "http://www.w3.org/2000/svg";  
-	var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-	svg.style.height = "10px";
-	svg.style.width = "100px";
-	var rect = document.createElementNS(svgNS,"rect"); 
-	rect.setAttributeNS(null,"width",percentage * 100);
-	rect.setAttributeNS(null,"height",10);
-	rect.setAttributeNS(null,"fill","black");
-	rect.setAttributeNS(null,"stroke","none");
-	svg.appendChild(rect);
-	return svg;
+  var svgNS = "http://www.w3.org/2000/svg";  
+  var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.style.height = "10px";
+  svg.style.width = "100px";
+  var rect = document.createElementNS(svgNS,"rect"); 
+  rect.setAttributeNS(null,"width",percentage * 100);
+  rect.setAttributeNS(null,"height",10);
+  rect.setAttributeNS(null,"fill","black");
+  rect.setAttributeNS(null,"stroke","none");
+  svg.appendChild(rect);
+  return svg;
 }     
 ~~~
 
@@ -279,8 +279,8 @@ Remember to create `chr` when looping over the entire chromosome.
 ~~~
 // all chromosomes
 for(var i=0; i < result.length; i++) {    
-	// properties of a single chromosomes
-	for(var key in result[i]){
+  // properties of a single chromosomes
+  for(var key in result[i]){
 ~~~
 
 If you put our code together, you should get something similar to this:
@@ -333,8 +333,8 @@ var vis = function(opts){
     }
     
     function drawBar(el,percentage){
-   	   el.width = 100
-	   el.height = 10
+       el.width = 100
+     el.height = 10
        var ctx = el.getContext("2d");
        ctx.fillRect(0,0,percentage * 100,10);
     }
@@ -372,7 +372,7 @@ var vis = function(opts){
       });
   
       // header
-	  var header = document.createElement("div");
+    var header = document.createElement("div");
       header.textContent = "chr "+ result[i].name;
       chr.appendChild(header);
 
@@ -409,8 +409,8 @@ var vis = function(opts){
     }
     
     function drawBar(el,percentage){
-   	   el.width = 100
-	   el.height = 10
+       el.width = 100
+     el.height = 10
        var ctx = el.getContext("2d");
        ctx.fillRect(0,0,percentage * 100,10);
     }

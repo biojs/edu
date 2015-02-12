@@ -1,114 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">
+<html>
+<head>
+	<title>{{ page.title }}</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">	
+	<link rel="stylesheet" type="text/css" href="/css/external/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/highlight.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-scrollspy.js"></script>
+	<script type="text/javascript" src="/js/bottom.js"></script>
+	
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
-		<title>{{ page.title }}</title>
+	<link rel="stylesheet" type="text/css" href="/css/solarized_dark.css">
+	<link rel="stylesheet" type="text/css" href="/css/tutorials.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/toc.css">
 
-		<!-- Bootstrap core CSS -->
-		<link href="/css/external/bootstrap.min.css" rel="stylesheet">
-
-		<script src="/js/jquery.min.js"></script>
-
-		<!-- Custom BioJS CSS -->
-		<link href="/css/custom.css" rel="stylesheet">
-		<link href="/css/custom_header.css" rel="stylesheet">
-		<link href="/css/sidebar.css" rel="stylesheet">
-
-		{% for css_name in page.extra_css %}
+	{% for css_name in page.extra_css %}
 		<link rel="stylesheet" href="{{ css_name }}">
-		{% endfor %}
+	{% endfor %}
 
-		<!-- needed for tutorial specific css -->
-		{% for css_name in page.extra_css2 %}
+	<!-- needed for tutorial specific css -->
+	{% for css_name in page.extra_css2 %}
 		<link rel="stylesheet" href="{{ css_name }}">
-		{% endfor %}
+	{% endfor %}
 
-		{% for js_name in page.extra_js %}
+	{% for js_name in page.extra_js %}
 		<script src="{{ js_name }}"></script>
-		{% endfor %}
+	{% endfor %}
 
-		<!-- Just for debugging purposes. Don't actually copy this line! -->
-		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-	  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	  <![endif]-->
-	</head>
-
-	<body>
-
-		<!-- Static navbar -->
-		<div class="navbar navbar-default navbar-static-top" role="navigation">
-
-
-
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-                    <a href="/">
-					<div class="navbar-brand" id="navbar-header-uniq">
-						
-                            <img alt="BioJS logo - BioJS school to develop new BioJS components" src=/img/logo.png width=64 height=64>
-                        
-						<h1>Biojs <span class=reg style="margin-right: 36px;">edu</small></h1>
-
-
-
-
-					</div> 
-                    </a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-                        
-                        <li class="dropdown">
-							<a href="/" >Home</a>
-						</li>
-
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Series<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								 {% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
-
-								{% if site.series[el].displayed %}
-									<li> <a href="/series/{{ el }}/index.html"> {{ site.series[el].desc }} </a> </li>
-								 {% unless forloop.last %}
-									<li class="divider"></li>
-								{% endunless %}
-								{% endif %}
-								{% endsorted_keys_for %}
-							</ul>
-
-						</li>
-
-				</div><!--/.nav-collapse -->
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>	
+	
+	<div class="pullButton">
+		<i class="fa fa-bars fa-2x"></i>
+	</div>
+	<div class="container">
+		<div class="topNavbar">
+			<div class="navbar-div" id="logo">
+			<a class="logoLink" href="/">BIOJS</a>
 			</div>
-
-			<!-- Github ribbon -->
-			<a href="https://github.com/biojs/edu/">
-				<div id="github-ribbon" alt="Fork me on GitHub">
-				</div>
-			</a>
+			<div class="navbar-div" id="navbar-links2">
+				<li>
+					<a class="gitStar"style="width:150px;" href="https://github.com/biojs/edu/blob/master/{{ page.path }}" ><span class="glyphicon glyphicon-pencil" style="font-size:14px; margin-bottom:3px;" ></span> Improve this page</a>
+				</li>
+				<li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/" target="_blank"><i class="fa fa-github"></i><span class="gh-text" id="gh-text">Star</span></a></li>
+				<li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/fork" target="_blank"><i class="fa fa-code-fork"></i><span class="gh-text" id="gh-text">Fork</span></a></li>
+				<li><a class="git" id="gh-btn" href="https://github.com/biojs/edu" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+				
+			</div>
 		</div>
+		
 
-
-		{{ content }}
-
-		<div class="container">
-
+		
+		{{content}}
+		
+		<div class="footer">
 			<div class="improve-this-page">
 				<span class="glyphicon glyphicon-pencil"></span> <a href="https://github.com/biojs/edu/blob/master/{{ page.path }}">Improve this page</a>
 			</div>
@@ -121,17 +76,49 @@
 				By visiting this site you agree to the <a href="https://www.google.com/analytics/terms/us.html">data processing agreement</a> by Google.<br />
 				If you do not agree, <a href="http://www.usa.gov/optout-instructions.shtml">opt out</a>.
 			</div>
-		</div> <!-- /container -->
+		
+		</div>
+	</div>
+			<script type="text/javascript">
+	        $(document).ready(function() {
+        			$('.color').each(function(i) {
+        				var position = $(this).position();
+        				console.log(position);
+        				console.log('min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()));
+        				$(this).scrollspy({
+        					min: position.top,
+        					max: position.top + $(this).height(),
+        					onEnter: function(element, position) {
+        						if(console) console.log('entering ' +  element.id);
+        						$("body").css('background-color', element.id);
+        					},
+        					onLeave: function(element, position) {
+        						if(console) console.log('leaving ' +  element.id);
+        					//	$('body').css('background-color','#eee');
+        					}
+        				});
+        			});
+        		});
+        	</script>
+	<script type="text/javascript">
+		$(window).scroll(function(){
+    		$(".topNavbar").css({"top": ($(window).scrollTop()) + "px"});        
+    		if ($(window).scrollTop() > 140){
+	    		$(".leftPanel").css({"top": ($(window).scrollTop()) -140 + "px"});
+			}
+    	});
 
+		$('.pullButton').click(function(){
+			$(".Menu").css("width","100%");
+			$(".Menu").css("left","0");
+			$('.pullButton').css("display","none")
+		});
+		$('.Menu').click(function(){
+			$(".Menu").css("width","250px");
+			$(".Menu").css("left","-250px");
+			$('.pullButton').css("display","block")
+		})
 
-		<!-- Bootstrap core JavaScript
-	  ================================================== -->
-	  <!-- Placed at the end of the document so the pages load faster -->
-	  <script src="/js/bootstrap.min.js"></script>
-	  <script src="/js/bottom.js"></script>
-
-	  <!-- {{ site.name }} -->
-
-
-	</body>
+	</script>
+</body>
 </html>

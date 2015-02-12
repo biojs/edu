@@ -14,7 +14,7 @@ series:
       displayed: true
       code: true
       explanation: true
-      sort: 1
+      sort: 1      
     "102":
       desc: "Advanced series (102)"
       numbering: true

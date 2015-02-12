@@ -14,15 +14,23 @@ span.glyphicon {
 .tutorials-togglebox {
     cursor: pointer;
     background-color: rgba(100,100,100,0.15);
+    border-radius: 4px;
+    height: 30px;
 }
 
 .tutorials-togglebox-icon {
     padding-right: 10px;
     padding-left: 10px;
+    display: block;
+    float: left;
+    padding-top: 4px;
 }
 
 .tutorials-togglebox-text{
     font-weight: bold;
+    display: block;
+    float: left;
+    padding-top: 4px;
 }
 
 .tutorials-highlight {

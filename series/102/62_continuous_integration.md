@@ -6,7 +6,7 @@ series: '102'
 estimated-time: 5
 ---
 
-#### 1) Using [travis][Travis]
+### 1) Using [travis][Travis]
 
 
 1. Add a `.travis.yml`
@@ -39,7 +39,7 @@ You can also install the [Travis CLI](https://github.com/travis-ci/travis.rb)(`g
 ~~~
 
 
-#### 2) Using [drone.io](https://drone.io/)
+### 2) Using [drone.io](https://drone.io/)
 
 * new project -> github -> add your project
 * choose node
@@ -58,10 +58,10 @@ Add the shield to your `package.json`.
 
 ~~~
   "shields": {
-  	"build": {
+    "build": {
          img: "https://drone.io/github.com/greenify/biojs-io-clustal/status.png",
          href: "https://drone.io/github.com/greenify/biojs-io-clustal/latest"
-	 }
+   }
    },
 ~~~
 
