@@ -16,74 +16,14 @@ extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 	        {% endif %}
 		</div>
 </div>
-</div>
-<div class="Menu">
-			<div class="list">
-			<div class="logoDiv">
-				<img src="/img/logo.svg" id="logoImg">
-				<div class="logoDivName">BIOJS Edu</div>
-			</div>
 
-{% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
-{% if site.series[el].displayed %}
+{% include menu.html %}
 
-<span class="item-heading"> {{ site.series[el].desc }} </span>
-
-{% for tut in site.series[el].tuts %}
-
-<a class="item" href="/series/{{ el }}/{{ tut[1] }}">{{ tut[0] }}</a>
-{% endfor %}
-{% endif %}
-{% endsorted_keys_for %}
-
-	<!-- {% assign count = '1' %}
-
-	{% if page.series ==  "cat" %}
-	{% assign sortedpages = site.pages  %}
-		{% assign sortedpages = site.pages  %}
-	{% else %}
-		{% assign sortedpages = site.pages | sort: "url" %}
-	{% endif%}
-
-	{% for tpage in sortedpages %}
-		{% if tpage.series ==  page.series  %}
-
-			{% unless tpage.cat %}
-				{% assign counter = count | append: "." %}
-			{% endunless %}
-
-				{% capture count %}{{ count | plus: '1' }}{% endcapture %}
-					{% if tpage.url ==  page.url %}
-					<a href="#" class="item">
-							{{ counter }} {{tpage.title}}
-						</a>
-
-					{% else %}
-					
-					<a href="{{ tpage.url }}" class="item">
-						{{ counter }} {{tpage.title}}
-					</a>
-				{% endif %}
-		{% endif %}
-	{% endfor %} -->
-
-		  <!--		{{ count }} articles in this series. -->
-
-{% assign count = nil %}
-{% assign idx = nil %}
-			</div>
-</div>
 <div class="containerBody">
     <div class="leftPanel">
-    <span class="h2itemsHeading">Contents</span>
-{% for tag in page.tags %}
-<a class="h2items " href="#{{tag[1]}}">{{ tag[0] }}</a>
-{% endfor %}
- 
+		{{ content | toc_generate }}
     </div>
     <div class="rightPanel">
-        
-
 
 
         <!-- share it: twitter, google -->
