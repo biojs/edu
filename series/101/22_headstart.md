@@ -4,7 +4,6 @@ layout: series_item
 contributors: David
 series: '101'
 estimated-time: 5 
-tags: [['Install npm','install-npm'],['Your first easy BioJS Component','your-first-easy-biojs-component'],['Reuse your component','reuse-your-component'],['Reusing current BioJS components!','reusing-current-biojs-components'],['Reuse your component in the web','reuse-your-component-in-the-web'],]
 ---
 
 This is a short 5 minutes tutorial on the basics of using and reusing BioJS components.

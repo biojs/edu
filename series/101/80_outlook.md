@@ -4,7 +4,6 @@ layout: series_item
 contributors: David, Seb
 series: '101'
 estimated-time: 10 
-tags: [['Find the solutions on github','find-the-solutions-on-github'],['Get inspirations from other packages','get-inspirations-from-other-packages']]
 ---
 
 {% alert warn %}

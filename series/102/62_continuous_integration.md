@@ -4,7 +4,6 @@ layout: series_item
 contributors: Seb
 series: '102'
 estimated-time: 5
-tags: [['Using travis','using-travistravis'],['Using drone.io','using-droneiohttpsdroneio'],['Add Other Badges','add-other-badges']]
 ---
 
 ### 1) Using [travis][Travis]

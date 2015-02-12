@@ -4,7 +4,6 @@ layout: series_item
 contributors: Seb
 series: '102'
 estimated-time: 30 
-tags: [['Installing a npm dependency','installing-a-npm-dependency'],['Require a dependency','require-a-dependency'],['Download the real data','download-the-real-data'],['Test with live data (mocking)','test-with-live-data-mocking'],['Solution','solution']]
 ---
 
 {% alert warn %}

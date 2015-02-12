@@ -4,7 +4,6 @@ layout: series_item
 contributors: David, Iris, Manny, Seb
 series: '101'
 estimated-time: 60 
-tags: [['Create a new package','create-a-new-package'],['Our input data','our-input-data'],['Export your component','export-your-component'],['The first testcase','the-first-testcase'],['Start coding','start-coding'],['Your first big task','your-first-big-task'],['Verify your solution','verify-your-solution'],['Publish your component','publish-your-component']]
 ---
 
 {% alert warn %}

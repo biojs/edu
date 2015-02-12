@@ -4,12 +4,6 @@ layout: series_item
 contributors: Manny, Seb
 series: '101'
 estimated-time: 5
-tags : [['Purpose of this Tutorial','purpose-of-this-tutorial-series'],
-		['Concepts','concepts'],
-		['MVC','mvc'],
-		['What is a BioJS 2.0 package?','what-is-a-biojs-20-package'],
-		['Javascript guides','javascript-guides'],
-		['Pointers to different visualization approaches','pointers-to-different-visualization-approaches']]
 ---
 
 

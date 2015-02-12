@@ -14,17 +14,7 @@ series:
       displayed: true
       code: true
       explanation: true
-      sort: 1
-      tuts: [
-              ['Introduction','10_intro.html'],
-              ['Getting Started','20_getting_started.html'],
-              ['Headstart','22_headstart.html'],
-              ['Tools','25_tools.html'],
-              ['Package Basics','30_package_basics.html'],
-              ['Visualization Basics','40_visualization_basic.html'],
-              ['Publish it','60_publish_it.html'],
-              ['Outlook','80_outlook.html']
-            ]
+      sort: 1      
     "102":
       desc: "Advanced series (102)"
       numbering: true
@@ -32,8 +22,3 @@ series:
       code: true
       explanation: true
       sort: 2
-      tuts: [['Visualization D3','42_visualization_d3.html'],
-              ['Real Parse','50_real_parser.html'],
-              ['Continuous Integration','62_continuous_integration.html'],
-              ['Gold Standard','70_gold_standard.html']
-              ]

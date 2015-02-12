@@ -4,7 +4,6 @@ layout: series_item
 contributors: David, Seb
 series: '101'
 estimated-time: 15
-tags: [['Create a new package','create-a-new-package'],['Installing the parser as dependency','installing-the-parser-as-dependency'],['Installing the parser as dependency','installing-the-parser-as-dependency'],['Build a browserified version','build-a-browserified-version'],['See the first output','see-the-first-output'],['Extend the visualization','extend-the-visualization'],['Verify your solution','verify-your-solution'],]
 ---
 
 1) Create a new package
