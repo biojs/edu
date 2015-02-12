@@ -1,12 +1,39 @@
----
-layout: default
----
-<div class="container">
+<!DOCTYPE html>
+<html>
 
-	{% if page.title? %}
-	<h2>{{ page.title }}</h2>
-	{% endif %}
-	<div class="static-content">
-		{{ content }}
-	</div>
-</div>
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+    
+
+          {{content}}
+        
+    
+
+    <script>
+    $('.getStarted').click(function() {
+        $(".Menu").css("width", "100%");
+        $(".Menu").css("left", "0");
+        $('.pullButton').css("display", "none")
+    });
+    $('.Menu').click(function() {
+        $(".Menu").css("width", "250px");
+        $(".Menu").css("left", "-250px");
+        $('.pullButton').css("display", "block")
+    })
+    </script>
+</body>
+
+</html>

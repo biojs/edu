@@ -1,35 +1,116 @@
 ---
-layout: series
+layout: default
 extra_css: ["/css/tutorials.css", "/css/solarized_dark.css"]
 ---
-<div class="container-fluid tutorials">
+<div class="heading">
+    <div class="headingTitle">
+        <span class="contentTitle">{{ page.title }} </span>
+		
+    </div>
+    <div class="author">
+			<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
+	        {% if page.contributors %}
+	        <div class="tutorial-item">Contributor(s): {{ page.contributors }}</div>
+	        {% endif %} {% if page.estimated-time %}
+	        <div class="tutorial-item">Duration <span class="glyphicon glyphicon-time" style="font-size:14px;margin-bottom: 2px;"></span>: {{ page.estimated-time }}minutes </div>
+	        {% endif %}
+		</div>
+</div>
+</div>
+<div class="Menu">
+			<div class="list">
+			<div class="logoDiv">
+				<img src="/img/logo.svg" id="logoImg">
+				<div class="logoDivName">BIOJS Edu</div>
+			</div>
 
-	<h2>{{ page.title }}</h2>
+{% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
+{% if site.series[el].displayed %}
 
-	<div class="tutorial-item">Last modified: {{ page.path | file_date | date_to_string }}</div>
-	<!--{% if page.contributors %}-->
-	<!--<div class="tutorial-item">Contributor(s): {{ page.contributors }}</div>-->
-	<!--{% endif %} -->
-	{% if page.estimated-time %}
-	<div class="tutorial-item">Duration: {{ page.estimated-time }} minutes</div>
-	{% endif %} 
+<span class="item-heading"> {{ site.series[el].desc }} </span>
 
-	<!-- share it: twitter, google -->
-	<div style="float:right; height:25px">
-	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<div class="g-plus" data-action="share" data-annotation="bubble" data-align="right"></div>
+{% for tut in site.series[el].tuts %}
 
-	</div>
-	<div class="clearfix"></div>
+<a class="item" href="/series/{{ el }}/{{ tut[1] }}">{{ tut[0] }}</a>
+{% endfor %}
+{% endif %}
+{% endsorted_keys_for %}
 
-	{% if site.series[page.series].explanation %}
+	<!-- {% assign count = '1' %}
 
-	<div class="static-content">
+	{% if page.series ==  "cat" %}
+	{% assign sortedpages = site.pages  %}
+		{% assign sortedpages = site.pages  %}
+	{% else %}
+		{% assign sortedpages = site.pages | sort: "url" %}
+	{% endif%}
 
-		<div id="explanation" style="display:none">
-{% hlblock check %}
+	{% for tpage in sortedpages %}
+		{% if tpage.series ==  page.series  %}
+
+			{% unless tpage.cat %}
+				{% assign counter = count | append: "." %}
+			{% endunless %}
+
+				{% capture count %}{{ count | plus: '1' }}{% endcapture %}
+					{% if tpage.url ==  page.url %}
+					<a href="#" class="item">
+							{{ counter }} {{tpage.title}}
+						</a>
+
+					{% else %}
+					
+					<a href="{{ tpage.url }}" class="item">
+						{{ counter }} {{tpage.title}}
+					</a>
+				{% endif %}
+		{% endif %}
+	{% endfor %} -->
+
+		  <!--		{{ count }} articles in this series. -->
+
+{% assign count = nil %}
+{% assign idx = nil %}
+			</div>
+</div>
+<div class="containerBody">
+    <div class="leftPanel">
+    <span class="h2itemsHeading">Contents</span>
+{% for tag in page.tags %}
+<a class="h2items " href="#{{tag[1]}}">{{ tag[0] }}</a>
+{% endfor %}
+ 
+    </div>
+    <div class="rightPanel">
+        
+
+
+
+        <!-- share it: twitter, google -->
+        <div style="float:right; height:25px">
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script>
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+            </script>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <div class="g-plus" data-action="share" data-annotation="bubble" data-align="right"></div>
+
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="static-content">
+
+            <div id="explanation" style="display:none">
+                {% hlblock check %}
 We will use this icon to mark check points.
 A check point is a way for you to check how you are doing.
 {% endhlblock %}
@@ -67,21 +148,11 @@ If you are doing it by your own, you still can raise your hand in our
 mailing list, just join our [Google Group](https://groups.google.com/forum/#!forum/biojs).
 {% endhlblock %}
 
-		</div>
-		<br />
-	{% endif %}
 
-<div id="upper-link-box" class="link-box">
-{% if page.next_in_series != nil %} 
-	<a href="{{page.next_in_series.url}}" class="btn btn-primary previous-link">Previous</a>
-{% endif %} 
-{% if page.previous_in_series != nil %}
-	<a href="{{page.previous_in_series.url}}" class="btn btn-primary next-link pull-right">Next</a>
-{% endif %}
+            </div>
+            <br />
 
-</div>
-
-<div class="clearfix"> </div>
+            <div class="clearfix"> </div>
 
 {% if site.series[page.series].explanation %}
 
@@ -93,24 +164,21 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 {% endalert %}
 
 {% endif %}
+            {{ content }}
 
+           <div id="lower-link-box" class="link-box">
+				{% if page.next_in_series != nil %} 
+				<a href="{{page.next_in_series.url}}" class="btn btn-primary previous-link">Previous</a>
+				{% endif %} 
+				{% if page.previous_in_series != nil %}
+					<a href="{{page.previous_in_series.url}}" class="btn btn-primary next-link pull-right">Next</a>
+				{% endif %}
 
+				<br />	
+			</div>
 
-		{{ content }}
-
-<div id="lower-link-box" class="link-box">
-{% if page.next_in_series != nil %} 
-	<a href="{{page.next_in_series.url}}" class="btn btn-primary previous-link">Previous</a>
-{% endif %} 
-{% if page.previous_in_series != nil %}
-	<a href="{{page.previous_in_series.url}}" class="btn btn-primary next-link pull-right">Next</a>
-{% endif %}
-
-<br />	
-</div>
-
+		</div>
 	</div>
-</div>
 
 {% if site.series[page.series].code %}
 <script>
@@ -119,39 +187,28 @@ $(document).ready(function (){
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
-
 	jQuery(".collapsible").each(function(i,e){
 		collapseStuff(e,"Hide the code", "Display the code");
-
 	});
 	collapseStuff("#explanation","Hide the icon explanation", "Display the icon explanation");
 	jQuery("#explanation").css("display", "block");
 });
-
 function collapseStuff(e, textHidden, textDisplayed){
-
 	var divHigh = $(e);
 	var children = divHigh.children();
 	children.hide();
-
 	var toggleBox = document.createElement("div");
 	toggleBox.className = "tutorials-togglebox";
 	divHigh.prepend(toggleBox);
-
 	var awesomeIcon = document.createElement("span");
 	var awesomeText= document.createElement("span");
-
 	awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
 	awesomeText.textContent = "Display the code";
 	awesomeText.className = "tutorials-togglebox-text";
-
 	toggleBox.appendChild(awesomeIcon);
 	toggleBox.appendChild(awesomeText);
-
 	awesomeText.textContent = textDisplayed;
-
 	$(toggleBox).click(function(){
-
 		var codeBox = children;
 		var text = divHigh.children().first();
 		if( codeBox.css("display") == "none" ){
@@ -163,7 +220,6 @@ function collapseStuff(e, textHidden, textDisplayed){
 			awesomeText.textContent = textDisplayed;
 			awesomeIcon.className = "tutorials-togglebox-icon glyphicon glyphicon-chevron-down";
 		}
-
 	});
 };
 </script>
