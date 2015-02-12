@@ -16,23 +16,17 @@
 </head>
 
 <body>
-    
 
-          {{content}}
-        
-    
+	{% include menu.html %}
+
+    {{content}}
 
     <script>
-    $('.getStarted').click(function() {
-        $(".Menu").css("width", "100%");
-        $(".Menu").css("left", "0");
-        $('.pullButton').css("display", "none")
-    });
-    $('.Menu').click(function() {
-        $(".Menu").css("width", "250px");
-        $(".Menu").css("left", "-250px");
-        $('.pullButton').css("display", "block")
-    })
+        $('.Menu').click(function() {
+            $(".Menu").css("width", "250px");
+            $(".Menu").css("left", "-250px");
+            $('.pullButton').css("display", "block")
+        })
     </script>
 </body>
 
