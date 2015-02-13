@@ -2,7 +2,7 @@
 title: 'Package basics'
 layout: series_item
 contributors: David, Iris, Manny, Seb
-series: '101'
+series: 'snipspector'
 estimated-time: 60 
 ---
 
