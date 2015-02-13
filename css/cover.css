@@ -275,7 +275,8 @@ body {
   text-align: center;
   padding-bottom: 2em;
   cursor: default;
-  color: #616c84;
+  /*color: #616c84;*/
+  color: white;
 }
 @media screen and (min-width: 900px) {
   .withLove {
