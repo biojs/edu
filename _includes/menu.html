@@ -5,7 +5,6 @@
                 <div class="logoDivName">BioJS Education</div>
             </div>
 {% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
-{% if site.series[el].displayed %}
 
         <span class="item-heading"> {{ site.series[el].desc }} </span>
 			{% for page in site.series[el].pages %}
