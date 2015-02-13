@@ -8,7 +8,7 @@ layout: front
 <div class="cover">
         <div class="topNavbar">
             <div class="navbar-div" id="logo">
-                BIOJS
+                <li><a id="gh-btn" href="https://www.biojs.net"><img src="/img/logo.png" width="35px"></a></li>
             </div>
             <div class="navbar-div" id="navbar-links2">
                 <li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/" target="_blank"><i class="fa fa-github"></i><span class="gh-text" id="gh-text">Star</span></a></li>
@@ -18,10 +18,10 @@ layout: front
         </div>
         <div class="learn">
             <div class="learnHeading">
-                Learn BIOJS
+                Learn BioJS
             </div>
             <div class="getStarted">
-                <i class="fa fa-bars fa-2x"></i><span class="gtstd">Get Started</span>
+                <i class="fa fa-rocket fa-2x"></i><span class="gtstd">Get Started</span>
             </div>
         </div>
     </div>
