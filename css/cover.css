@@ -164,9 +164,9 @@ p{
 	margin-left: 100px;
 	font-weight: bold;
 	color: #162E34;
+	display: inline-block;
+	text-align: center;
 }
-
-
 
 #navbar-links2{
 	float: right;

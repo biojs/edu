@@ -7,8 +7,8 @@ layout: front
 
 <div class="cover">
         <div class="topNavbar">
-            <div class="navbar-div" id="logo">
-                <li><a id="gh-btn" href="https://www.biojs.net"><img src="/img/logo.png" width="35px"></a></li>
+            <div class="navbar-div" id="logo" style="text-height:10px">
+                <li><a id="gh-btn" href="https://www.biojs.net"><img src="/img/logo.png" width="35px"></a><span>BioJS</span></li>
             </div>
             <div class="navbar-div" id="navbar-links2">
                 <li><a class="gitStar" id="gh-btn" href="https://github.com/biojs/biojs/" target="_blank"><i class="fa fa-github"></i><span class="gh-text" id="gh-text">Star</span></a></li>
