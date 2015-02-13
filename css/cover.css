@@ -1,3 +1,4 @@
+
 * {
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -8,65 +9,7 @@
     box-sizing: border-box;
     /* Opera/IE 8+ */
 }
-.cover {
-    width: 100%;
-    height: 100vh;
-    background-color: #F7F7F7;
-    color: #162E34;
-    margin-top: 0px;
-    padding-top: 50px;
-    background-image: url("/img/bg/dna_med.jpg");
-    background-attachment: fixed;
-    background-position: center; 
-}
-@media (max-height: 563) and (max-width: 1000px) {
-    .cover {
-        background-image: url("/img/bg/dna_low.jpg");
-    }
-}
-.learn {
-    width: 50%;
-    height: 200px;
-    margin-top: 20vh;
-    margin-left: auto;
-    margin-right: auto;
-}
-.fa-github-alt,
-.learnHeading,
-#logo {
-    color: white;
-}
-.learnHeading {
-    font-weight: bold;
-}
-.getStarted {
-    height: 42px;
-    width: 170px;
-    border: 2px solid #162E34;
-    border-radius: 5px;
-    margin-left: 0;
-    margin-top: 20px;
-    padding-top: 4px;
-    padding-left: 10px;
-    background-color: #162E34;
-    color: #ffffff;
-}
-.getStarted:hover {
-    cursor: pointer;
-}
-.gtstd {
-    display: block;
-    margin-top: 6px;
-    font-weight: bold;
-    margin-right: 20px;
-    float: right;
-}
-.topNav {
-    width: 100%;
-    height: 30px;
-    position: relative;
-    margin-top: 10px;
-}
+
 .Menu {
     width: 250px;
     position: fixed;
@@ -77,6 +20,7 @@
     z-index: 2;
     background-color: rgba(174, 167, 164, 0.5);
 }
+
 .logoDiv {
     margin: 10px 0px 0px 0px;
     height: 50px;
@@ -95,9 +39,7 @@
     float: left;
     font-weight: bold;
 }
-#logoImg:hover {
-    transform: rotate(45deg);
-}
+
 .list {
     clear: both;
     width: 250px;
@@ -119,7 +61,7 @@
     padding-right: 21px;
     padding-top: 15px;
     position: relative;
-    text-decoration: none;
+
 }
 p {
     padding: 0px;
@@ -139,7 +81,7 @@ p {
     padding-right: 21px;
     padding-top: 15px;
     position: relative;
-    text-decoration: none;
+    text-align: left;
 }
 .item:hover {
     color: #ffffff;
@@ -155,143 +97,252 @@ p {
     margin-left: 6px;
     list-style: none;
 }
-#logo {
-    margin-left: 100px;
-    font-weight: bold;
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
 }
-#navbar-links2 {
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #1A2434;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  background-image: url("/img/bg/dna_med.jpg");
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+@media (max-height: 563) and (max-width: 1000px) {
+    body {
+        background-image: url("/img/bg/dna_low.jpg");
+    }
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
     float: right;
-    margin-right: 100px;
+  }
 }
-.gitStar {
-    background-color: #F7F7F7;
-    height: 20px;
-    width: 55px;
-    display: block;
-    text-decoration: none;
-    color: #000000;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-size: 15px;
-    border-radius: 3px;
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
 }
-.gitStar:hover {
-    cursor: pointer;
-    text-decoration: none;
-    color: #4ca33a;
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
 }
-.git {
-    color: #000000;
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
 }
-.git:hover {
-    color: #4ca33a;
-}
-.gh-text {
-    margin-left: 5px;
-    font-size: 14px;
-}
-.footer {
-    clear: both;
-    width: 100%;
-    height: 250px;
-    background-color: #162E34;
-    color: #ffffff;
-}
-.logoDiv {
-    margin: 10px 0px 0px 0px;
-    height: 50px;
-    padding-left: 20px;
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
     vertical-align: middle;
-    border-bottom: 1px solid rgba(247, 247, 247, 0.1);
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
 }
-.logoDivName {
-    margin-top: 12px;
-    margin-left: 20px;
-    float: left;
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
 }
-#logoImg {
-    height: 40px;
-    width: 40px;
-    float: left;
-    font-weight: bold;
+
+.withLove {
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 2em;
+  cursor: default;
+  color: #616c84;
 }
-@media (max-width: 504px) {
-    .learn {
-        width: 88%;
-        margin-left: 12%;
-    }
-    .learnHeading {
-        font-weight: bold;
-        font-size: 55px;
-    }
-    .getStarted {
-        margin-left: 25%;
-    }
-    #logo {
-        margin-left: 50px;
-    }
+@media screen and (min-width: 900px) {
+  .withLove {
+    margin-top: 125px;
+  }
 }
-@media (min-width: 504px) and (max-width: 610px) {
-    .learn {
-        width: 80%;
-        margin-left: 15%;
-    }
-    .learnHeading {
-        font-weight: bold;
-        font-size: 62px;
-        margin-left: 10px;
-    }
-    .getStarted {
-        margin-left: 25%;
-    }
-    #logo {
-        margin-left: 50px;
-    }
+.withLove * {
+  display: inline-block;
 }
-@media (min-width: 610px) and (max-width: 780px) {
-    .learn {
-        width: 75%;
-        margin-left: 20%;
-    }
-    .learnHeading {
-        font-weight: bold;
-        font-size: 70px;
-        margin-left: 10px;
-    }
-    .getStarted {
-        margin-left: 25%;
-    }
-    #logo {
-        margin-left: 50px;
-    }
+.withLove .alpha,
+.withLove .omega {
+  width: 40%;
 }
-@media (min-width: 780px) and (max-width: 1280px) {
-    .learn {
-        width: 70%;
-        margin-left: 25%;
-    }
-    .learnHeading {
-        font-weight: bold;
-        font-size: 80px;
-        margin-left: 10px;
-    }
-    .getStarted {
-        margin-left: 22%;
-    }
-    #logo {
-        margin-left: 50px;
-    }
+.withLove .alpha {
+  text-align: right;
 }
-@media (min-width: 1280px) {
-    .learn {
-        width: 70%;
-        margin-left: 30%;
-    }
-    .learnHeading {
-        font-weight: bold;
-        font-size: 80px;
-        margin-left: 10px;
-    }
-    .getStarted {
-        margin-left: 18%;
-    }
+.withLove .omega {
+  text-align: left;
+}
+.withLove .heart {
+  margin: 0 -2px;
+  position: relative;
+  z-index: 3;
+  -webkit-animation: throb 1.33s ease-in-out infinite;
+  animation: throb 1.33s ease-in-out infinite;
+}
+.withLove .heart path {
+  fill: #ff005d;
+}
+@media screen and (min-width: 300px) {
+  .withLove .heart {
+    width: 30px;
+    height: 30px;
+    top: .66em;
+  }
+}
+@media screen and (min-width: 460px) {
+  .withLove .heart {
+    top: .8em;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@-webkit-keyframes throb {
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes throb {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
