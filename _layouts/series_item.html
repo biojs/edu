@@ -132,10 +132,13 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 		</div>
 	</div>
 
-<!-- temporaroy removed -->
+<!-- temporaroy removed 
 {% if True or site.series[page.series].code %}
+{% endif %}
+-->
+
 <script>
-$(document).ready(function (){
+document.addEventListener("DOMContentLoaded", function() {
 	// load highlighted code blocks
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
@@ -178,4 +181,3 @@ function collapseStuff(e, textHidden, textDisplayed){
 </script>
 
 <script src="/js/highlight.min.js"></script>
-{% endif %}

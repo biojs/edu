@@ -364,7 +364,7 @@ pre {
     font-size: 15px;
     line-height: 20px;
     padding-right: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 /*.tutorials-togglebox {
 cursor: pointer;
