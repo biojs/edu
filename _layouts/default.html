@@ -31,19 +31,15 @@
 	{% for css_name in page.extra_css2 %}
 		<link rel="stylesheet" href="{{ css_name }}">
 	{% endfor %}
-
-	{% for js_name in page.extra_js %}
-		<script src="{{ js_name }}"></script>
-	{% endfor %}
-
-<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>	
 	
+	<!--
 	<div class="pullButton">
 		<i class="fa fa-bars fa-2x"></i>
 	</div>
-	<div class="container">
+	-->
+	<div class="container" id="main-container">
 		<div class="topNavbar">
 			<div class="navbar-div" id="logo">
 			<a class="logoLink" href="/">BIOJS</a>
@@ -59,11 +55,17 @@
 			</div>
 		</div>
 		
+    <div id="biojs-menu">
+{% include menu.html %}
+	</div>
 
+	<div id="biojs-main-content">
 		
 		{{content}}
+	</div>
 		
 		</div>
+		<!--
 		<div class="footer">
 			<div class="improve-this-page">
 				<span class="glyphicon glyphicon-pencil"></span> <a href="https://github.com/biojs/edu/blob/master/{{ page.path }}">Improve this page</a>
@@ -79,6 +81,8 @@
 			</div>
 		
 		</div>
+		-->
+
 			<script type="text/javascript">
 	        $(document).ready(function() {
         			$('.color').each(function(i) {
@@ -108,6 +112,7 @@
 			}
     	});
 
+		/*
 		$('.pullButton').click(function(){
 			$(".Menu").css("width","100%");
 			$(".Menu").css("left","0");
@@ -118,7 +123,16 @@
 			$(".Menu").css("left","-250px");
 			$('.pullButton').css("display","block")
 		})
+		*/
 
 	</script>
+
+
+	{% for js_name in page.extra_js %}
+		<script src="{{ js_name }}"></script>
+	{% endfor %}
+
+
+	<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
