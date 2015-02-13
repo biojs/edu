@@ -1,19 +1,16 @@
 <div class="Menu">
-        <div class="list">
-            <div class="logoDiv">
-                <img src="/img/logo.svg" id="logoImg">
-                <div class="logoDivName">BIOJS Edu</div>
-            </div>
-{% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
-{% if site.series[el].displayed %}
+    <div class="list">
+        <div class="logoDiv">
+            <img src="/img/logo.svg" id="logoImg">
+            <div class="logoDivName">BIOJS Edu</div>
+        </div>
+        {% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
 
-<span class="item-heading"> {{ site.series[el].desc }} </span>
-{% for page in site.series[el].pages %}
-
-<a class="item" href="{{ page.url }}">{{ page.title}}</a>
-{% endfor %}
-{% endif %}
-{% endsorted_keys_for %}
+        <span class="item-heading"> {{ site.series[el].desc }} </span>
+			{% for page in site.series[el].pages %}
+	
+	        <a class="item" href="{{ page.url }}">{{ page.title}}</a>
+			{% endfor %}
+		{% endsorted_keys_for %}
+    </div>
 </div>
-</div>
-

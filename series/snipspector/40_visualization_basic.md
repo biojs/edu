@@ -2,7 +2,7 @@
 title: 'Visualization: basics'
 layout: series_item
 contributors: David, Seb
-series: '101'
+series: 'snipspector'
 estimated-time: 15
 ---
 
