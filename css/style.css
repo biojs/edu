@@ -21,14 +21,6 @@
 body {
     font-family: 'Lato', Fallback, sans-serif;
 }
-h2,
-h3 {
-    height: 60px;
-    display: block;
-    padding-top: 36px;
-    margin-bottom: 23px;
-    margin-top: -33px;
-}
 .topNavbar {
     width: 100%;
     height: 30px;
