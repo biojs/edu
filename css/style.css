@@ -67,27 +67,22 @@ h3 {
 }
 .heading {
     margin-top: 0px;
-    height: 115px;
-    overflow: auto
-}
-.headingTitle {
-    width: 60%;
-    margin-left: 100px;
-    float: left;
-    margin-top: 30px;
+    height: 95px;
+    overflow: auto;
+    margin-top: 15px;
 }
 .author {
     width: 135px;
-    height: 60%;
-    margin-top: 37px;
-    float: right;
-    margin-right: 10%;
+    margin-top: 7px;
     border: 1px solid #d8d8d8;
     border-radius: 4px;
     background-color: #F7F7F7;
     padding: 14px 15px;
     font-size: 14px;
     color: #333;
+}
+.author .glyphicon {
+    margin-right: 5px;
 }
 .containerBody {
     width: 100%;
@@ -131,13 +126,12 @@ h3 {
 #biojs-menu {
     position: fixed;
     height: 100%;
-    padding-top: 27px
+    padding-top: 0px
 }
 #biojs-main-content {
     overflow: hidden;
     margin-left: 220px
 }
-
 .logoDiv {
     margin: 10px 0px 0px 0px;
     height: 50px;
@@ -209,6 +203,9 @@ h3 {
     font-weight: bold;
     color: #4ca33a;
 }
+#contentTitleCell {
+    padding-left: 30px;
+}
 .gitStar {
     background-color: #F7F7F7;
     height: 20px;
@@ -226,8 +223,21 @@ h3 {
     text-decoration: none;
     color: #4ca33a;
 }
-.git {
-    color: #fff;
+#biojs-iconnav-glyphs .git {
+    color: black;
+    font-size: 22px;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+#biojs-iconnav-help {
+    margin-top: -7px;
+}
+#biojs-iconnav-glyphs {
+    padding-top: 7px;
+    padding-bottom: 26px;
+}
+#biojs-main-content .heading .gitStar .glyphicon {
+    padding-right: 5px;
 }
 .git:hover {
     color: #4ca33a;
@@ -235,6 +245,16 @@ h3 {
 .gh-text {
     margin-left: 5px;
     font-size: 14px;
+}
+#social-media-share {
+    padding-top: 7px;
+    line-height: 20px;
+}
+.share-google-button {
+    padding-top: 25px;
+}
+.twitter-share-button {
+    max-width: 85px;
 }
 /*code {
 padding: 2px 4px;
@@ -416,9 +436,7 @@ background-color: rgba(100,100,100,0.15);
         border: none;
     }
     .heading {
-        margin-top: 25px;
-        height: 250px;
-        overflow: hidden;
+        height: auto;
     }
     .containerBody {
         border: none;
@@ -429,11 +447,6 @@ background-color: rgba(100,100,100,0.15);
         margin: 10px auto;
         padding-left: 10%;
         margin-top: 40px;
-    }
-    .author {
-        width: 100%;
-        margin: 0px auto;
-        background-color: #F7F7F7;
     }
     .pullButton {
         bottom: 40px;
@@ -454,15 +467,6 @@ background-color: rgba(100,100,100,0.15);
     .leftPanel {
         margin-left: 10px;
     }
-    .rightPanel {
-        width: 75%;
-        margin-top: 0px;
-        padding: 10px 10px;
-        font-size: 15px;
-        line-height: 20px;
-        margin-right: 10px;
-        margin-bottom: 0px;
-    }
     .heading {
         overflow: hidden;
     }
@@ -470,9 +474,6 @@ background-color: rgba(100,100,100,0.15);
         width: 60%;
         margin: 10px auto;
         padding-left: 10%;
-    }
-    .author {
-        width: 30%;
     }
     .pullButton {
         bottom: 80px;
@@ -488,4 +489,3 @@ background-color: rgba(100,100,100,0.15);
         left: 0px;
     }
 }
-
