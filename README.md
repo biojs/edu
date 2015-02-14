@@ -62,11 +62,12 @@ Jekyll layouts
 -----------------
 
 * `default`: the root layout (all layouts inherit from this)
-* `container`: layout used for static pages, e.g. the start page (inherits from `default`)
+* `series_item`: layout used to generate a page within a series
+
+currently disabled: 
+
 * `series`: layout used to display the series menu on the right (inherits from `default`)
 * `series_overview`: layout used to generate the category overview (inherits from `series`)
-* `series_item`: layout used to generate a page within a series (inherits from `series`)
-
 
 Special blocks: hlblock
 --------------

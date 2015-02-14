@@ -17,7 +17,7 @@ layout: front
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="http://www.biojs.net"><i class="fa fa-home"></i> Home</a></li>
-                  <li><a href="https://github.com/biojs/edu"><i class="fa fa-github-alt"></i> GitHub</a></li>
+                  <li><a href="https://github.com/biojs/biojs"><i class="fa fa-github-alt"></i> GitHub</a></li>
                 </ul>
               </nav>
             </div>
