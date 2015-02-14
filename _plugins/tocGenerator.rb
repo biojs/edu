@@ -1,4 +1,4 @@
-require 'nokogiri'
+#require 'nokogiri'
 
 module Jekyll
   module TOCGenerator
@@ -9,6 +9,8 @@ module Jekyll
     HIDE_HTML = '<span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">%1</a>]</span>'
 
    def toc_generate(html)
+        return # DISABLED needs nokogiri (Gemfile)
+
         # No Toc can be specified on every single page
         # For example the index page has no table of contents
         no_toc = @context.environments.first["page"]["noToc"] || false;
