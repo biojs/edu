@@ -113,7 +113,7 @@
 		$('.pullButton').click(function(e){
 			$("#biojs-menu").css("display","block");
 			$("#biojs-main-content").css("margin-left","220px");
-			$('.pullButton').css("display","none");
+			$(".pullButton").removeClass("pullButton-mob");
 			e.stopPropagation();
 			return false;
 		});
@@ -128,7 +128,7 @@
 		function closeMenu(){
 			if(isMobile()){
 				$("#biojs-menu").css("display","none");
-				$('.pullButton').css("display","block")
+				$(".pullButton").addClass("pullButton-mob");
 				$("#biojs-main-content").css("margin-left","0px");
 			}
 		}

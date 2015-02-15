@@ -135,7 +135,7 @@ h3 {
     margin-left: 220px
 }
 @media (max-width: 600px) {
-    .pullButton {
+    .pullButton-mob {
         display: block;
     }
     #biojs-menu {
