@@ -28,11 +28,7 @@
 </head>
 <body>	
 	
-	<!--
-	<div class="pullButton">
-		<i class="fa fa-bars fa-2x"></i>
-	</div>
-	-->
+
 	<!--
 	<div class="container" id="main-container">
 		<div class="topNavbar">
@@ -45,7 +41,8 @@
 			</div>
 		</div>
 	-->
-		
+
+
     <div id="biojs-menu">
 {% include menu.html %}
 	</div>
@@ -73,6 +70,8 @@
 		
 		</div>
 		-->
+
+
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/highlight.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-scrollspy.js"></script>
@@ -101,25 +100,41 @@
         		});
         	</script>
 	<script type="text/javascript">
+
+		/*
 		$(window).scroll(function(){
     		$(".topNavbar").css({"top": ($(window).scrollTop()) + "px"});        
     		if ($(window).scrollTop() > 140){
 	    		$(".leftPanel").css({"top": ($(window).scrollTop()) -140 + "px"});
 			}
     	});
+    	*/
 
-		/*
-		$('.pullButton').click(function(){
-			$(".Menu").css("width","100%");
-			$(".Menu").css("left","0");
-			$('.pullButton').css("display","none")
+		$('.pullButton').click(function(e){
+			$("#biojs-menu").css("display","block");
+			$("#biojs-main-content").css("margin-left","220px");
+			$('.pullButton').css("display","none");
+			e.stopPropagation();
+			return false;
+		});
+
+		$(window).click(function(){
+			closeMenu();
 		});
 		$('.Menu').click(function(){
-			$(".Menu").css("width","250px");
-			$(".Menu").css("left","-250px");
-			$('.pullButton').css("display","block")
-		})
-		*/
+			closeMenu();
+		});
+
+		function closeMenu(){
+			if(isMobile()){
+				$("#biojs-menu").css("display","none");
+				$('.pullButton').css("display","block")
+				$("#biojs-main-content").css("margin-left","0px");
+			}
+		}
+		function isMobile(){
+			return $(window).width() <= 600;
+		}
 
 	</script>
 
