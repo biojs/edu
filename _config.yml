@@ -9,7 +9,7 @@ encoding: utf-8
 exclude: [vendor]
 series:
     "101":
-      desc: "Beginner series (101)"
+      desc: "Basics"
       sort: 1
     "snipspector":
       desc: "Snipspector"
