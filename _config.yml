@@ -11,9 +11,9 @@ series:
     "101":
       desc: "Beginner series (101)"
       sort: 1
-    "102":
-      desc: "Advanced series (102)"
-      sort: 2
     "snipspector":
       desc: "Snipspector"
+      sort: 2
+    "102":
+      desc: "Advanced series"
       sort: 3
