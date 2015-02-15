@@ -67,7 +67,7 @@ node reuse.js
 It will show you `3` (because of console.log in `index.js`) and `9`.
 
 {% hlblock info %}
-Are you interested how `require` [works](https://github.com/maxogden/art-of-node#how-require-works)?
+Are you interested how `require` [works](https://github.com/maxogden/art-of-node#user-content-how-require-works)?
 {% endhlblock %}
 
 4) Reusing current BioJS components!
