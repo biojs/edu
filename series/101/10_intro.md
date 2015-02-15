@@ -19,7 +19,7 @@ Getting help
 Our education portal is work in progress. So if you encounter a logical inconsistency or just want to ask a question - don't
 hesitate to contact us.
 
-[![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs)  &nbsp; &nbsp; &nbsp;   [![IRC](https://img.shields.io/badge/irc-%23biojs-yellow.svg)](https://kiwiirc.com/client/irc.freenode.net/biojs)
+[![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs){:target="_blank"}  &nbsp; &nbsp; &nbsp;   [![IRC](https://img.shields.io/badge/irc-%23biojs-yellow.svg)](https://kiwiirc.com/client/irc.freenode.net/biojs){:target="_blank"}
 
 We also have a maintain a public [Github wiki][wiki] and have a [mailing list][groups].
 For technical queries (questions, suggestions, proposal or bug reports) [Github issues](https://github.com/biojs/biojs/issues) are preferred.
