@@ -69,8 +69,29 @@ currently disabled:
 * `series`: layout used to display the series menu on the right (inherits from `default`)
 * `series_overview`: layout used to generate the category overview (inherits from `series`)
 
+Special blocks: alert
+--------------
+
+Display alerts to the user
+
+````
+{% alert warn %}
+Do you like BioJS?
+{% endalert %}
+```
+
+Available types include at the moment:
+
+* `warn`: orange notification - use this for typical errors
+* `danger`: red notification - deadly errors
+* `info`: blue notification - some informative messages
+* `ok`: green notification - positive messages (e.g. end of a tutorial)
+
+
 Special blocks: hlblock
 --------------
+
+Can be used to emphasize content.
 
 ````
 {% hlblock question %}
@@ -80,12 +101,12 @@ Do you like BioJS?
 
 Available types include at the moment:
 
+* `info`: additional info and references
+* `help`: tips, help, ...
 * `task`: use this to assign tasks to your students
 * `questions`: ask your readers questions
 * `check`: checkpoint & verification
 * `stop`: use this before you show a solution
-* `info`: additional info and references
-* `help`: tips, help, ...
 * `raise`: (currently not used)
 
 Special blocks: code
