@@ -14,6 +14,9 @@ series:
     "snipspector":
       desc: "Snipspector"
       sort: 2
-    "102":
-      desc: "Advanced series"
+    "details":
+      desc: "Details"
       sort: 3
+    "102":
+      desc: "Advanced bits"
+      sort: 4
