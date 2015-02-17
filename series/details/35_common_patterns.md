@@ -7,7 +7,7 @@ estimated-time: 10
 
 This is a list of common scenarios you might face - may this list be with you.
 
-### How to have receive a DOM element from the examples?
+### How to "store" a DOM element from the examples?
 
 `examples/simple.js`
 

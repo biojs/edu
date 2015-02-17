@@ -1,7 +1,6 @@
 ---
 title: 'Getting started'
 layout: series_item
-contributors: Iris, Paul, Seb
 series: '101'
 estimated-time: 5
 ---
