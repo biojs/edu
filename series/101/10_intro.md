@@ -1,7 +1,6 @@
 ---
 title: 'Intro'
 layout: series_item
-contributors: Manny, Seb
 series: '101'
 estimated-time: 5
 ---
@@ -16,8 +15,7 @@ Purpose of this tutorial series
 Getting help
 ------------
 
-Our education portal is work in progress. So if you encounter a logical inconsistency or just want to ask a question - don't
-hesitate to contact us.
+Our education portal is work in progress. So if you encounter a logical inconsistency or just want to ask a question - don't hesitate to contact us.
 
 [![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs){:target="_blank"}  &nbsp; &nbsp; &nbsp;   [![IRC](https://img.shields.io/badge/irc-%23biojs-yellow.svg)](https://kiwiirc.com/client/irc.freenode.net/biojs){:target="_blank"}
 
@@ -37,14 +35,6 @@ Concepts in this tutorial
 * Data separation and modularity 
 * Versioning (via npm)
 * Minimal rules -> conventions and gold standards
-
-What is a BioJS 2.0 package?
--------------------------
-
-A tiny building block. It could be anything from a FASTA parser, a tree algorithm or
-a simple visualization module.  
-A general rule of thumb: _something that can be 
-reused by others_
 
 {% hlblock info %}
 The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101/10_intro.md).
