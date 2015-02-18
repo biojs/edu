@@ -1,18 +1,17 @@
 ---
-title: 'Headstart'
+title: 'Modularity'
 layout: series_item
-contributors: David
 series: '101'
-estimated-time: 5 
+estimated-time: 15 
 ---
 
 This is a short 5 minutes tutorial on the basics of using and reusing BioJS components.
 
-1) Install npm
+1) Install node & npm
 -------------------------
 
 {% alert warn %}
-You need to install `npm` before you can start to rock. See <a href="20_getting_started.html"> the getting started guide </a> for more info.
+You need to install `node` before you can start to rock. See <a href="20_getting_started.html"> the getting started guide </a> for more info.
 {% endalert %}
 
 How does the LEGO-System of BioJS works?
@@ -67,7 +66,7 @@ node reuse.js
 It will show you `3` (because of console.log in `index.js`) and `9`.
 
 {% hlblock info %}
-Are you interested how `require` [works](https://github.com/maxogden/art-of-node#how-require-works)?
+Are you interested how `require` [works](https://github.com/maxogden/art-of-node#user-content-how-require-works)?
 {% endhlblock %}
 
 4) Reusing current BioJS components!
@@ -129,5 +128,5 @@ We have created a very simple tree visualization by using this parser.
 
 {% hlblock info %}
 We can create more interactive and fancy visualizations. For a component using
-the Newick parse, have a look at [TnT](https://github.com/daviddao/biojs-vis-tree)
+the Newick parser, have a look at [TnT](https://github.com/daviddao/biojs-vis-tree)
 {% endhlblock %}

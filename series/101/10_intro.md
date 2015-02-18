@@ -1,11 +1,9 @@
 ---
 title: 'Intro'
 layout: series_item
-contributors: Manny, Seb
 series: '101'
 estimated-time: 5
 ---
-
 
 Purpose of this tutorial series
 -------------------------------
@@ -14,47 +12,29 @@ Purpose of this tutorial series
 * Get hands on dependency management in BioJS 2.0
 * Master the workflow for publishing a package on npm and the BioJS 2.0 registry
 
-Concepts
---------
+Getting help
+------------
+
+Our education portal is work in progress. So if you encounter a logical inconsistency or just want to ask a question - don't hesitate to contact us.
+
+[![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs){:target="_blank"}  &nbsp; &nbsp; &nbsp;   [![IRC](https://img.shields.io/badge/irc-%23biojs-yellow.svg)](https://kiwiirc.com/client/irc.freenode.net/biojs){:target="_blank"}
+
+We also have a maintain a public [Github wiki][wiki] and have a [mailing list][groups].
+For technical queries (questions, suggestions, proposal or bug reports) [Github issues](https://github.com/biojs/biojs/issues) are preferred.
+
+If you find a type or want to help us to make this tutorial even better, you are invited to click on "Improve this page".
+
+[gitter]: https://gitter.im/biojs/biojs
+[groups]: https://groups.google.com/forum/#!forum/biojs
+[issue]: https://github.com/biojs/biojs/issues
+[wiki]: (https://github.com/biojs/biojs/wiki)
+
+Concepts in this tutorial
+------------------------
 
 * Data separation and modularity 
 * Versioning (via npm)
 * Minimal rules -> conventions and gold standards
-
-What is a BioJS 2.0 package?
--------------------------
-
-A tiny building block. It could be anything from a FASTA parser, a tree algorithm or
-a simple visualization module.  
-A general rule of thumb: _something that can be 
-reused by others_
-
-Javascript guides
--------------------
-
-* [Mozilla JavaScript guide](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide)
-* [Codecademy](http://www.codecademy.com/courses/javascript-intro/0/1)
-* [Eloquent JavaScript](http://eloquentjavascript.net/) (e-Book)
-* [Speaking JavaScript](http://speakingjs.com/) (e-Book)
-
-Pointers to different visualization approaches
----------------------------------
-
-* SVG 
-  - [D3](http://d3js.org/)
-* Canvas
-  - [KineticJS](http://kineticjs.com/)
-* HTML
-  - [jQuery](https://jquery.com/)
-
-(add your favorite library to this overview)
-
-MVC
-------
-
-* Backbone
- - [Codeschool course](https://www.codeschool.com/courses/anatomy-of-backbone-js)
-
 
 {% hlblock info %}
 The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101/10_intro.md).

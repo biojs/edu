@@ -1,7 +1,6 @@
 ---
 title: 'Getting started'
 layout: series_item
-contributors: Iris, Paul, Seb
 series: '101'
 estimated-time: 5
 ---
@@ -12,7 +11,7 @@ You will need __`npm`__ and __`git`__ on your shell.
 - [__Linux__](#linux)
 - [__Windows__](#windows)
 
-When your machine is ready to rumble, continue to the [tutorial](22_headstart.html)
+When your machine is ready to rumble, continue to the [tutorial](30_headstart.html)
 
 {% hlblock check %}
 

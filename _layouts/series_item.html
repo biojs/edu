@@ -80,6 +80,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </div>
 
+<div class="pullButton pullButton-mob">
+	<i class="fa fa-bars fa-2x"></i>
+</div>
+
 
 <div class="containerBody">
 	<!--
@@ -136,7 +140,6 @@ mailing list, just join our [Google Group](https://groups.google.com/forum/#!for
 
 
             </div>
-            <br />
 
             <div class="clearfix"> </div>
 
@@ -182,8 +185,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	jQuery(".collapsible").each(function(i,e){
 		collapseStuff(e,"Hide the code", "Display the code");
 	});
+	/*
+	DO NOT show the explanation
 	collapseStuff("#explanation","Hide the icon explanation", "Display the icon explanation");
 	jQuery("#explanation").css("display", "block");
+	*/
 });
 function collapseStuff(e, textHidden, textDisplayed){
 	var divHigh = $(e);
