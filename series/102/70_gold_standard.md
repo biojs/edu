@@ -6,21 +6,45 @@ series: '102'
 estimated-time: 5 
 ---
 
-Guidelines
+Conventions
 ----------
 
-* event system: [`biojs-events`](https://github.com/biojs/biojs-events)
-  - please state all the custom events you send in your documentation
 * [io packages](https://github.com/biojs/biojs/wiki/BioJS-parser)
+* visualization:
+ - [`biojs-events`](https://github.com/biojs/biojs-events): A event system to send events to outside listener
 * state your license in your README
 * source folder structure: use either `lib` or `src` (the NodeJS convention is to
 name it `lib`, but frankly it doesn't matter)
 
+Standards
+---------
+
+We have defined some minimal standards that every BioJS package should comply with. If your package doesn't fullfil those standards, it will be tagged via our [io-ratings](https://github.com/biojs/io-ratings) service and for now red warnings might appear. It could happen that we will take more drastic actions in the future.
+
+### 1. Documentation
+
+It is super easy to write usable documentation for your component, we don't expect a masterpiece of modern literature, but especially the user should be able to know how to use your components ;-)
+You could write your documentation with
+* `README.md` (recommended)
+* Github wiki
+* an API documentation generating framework (e.g. docco or jsdoc)
+
+### 2. Working snippets (for vis components)
+
+* [snippets](https://github.com/greenify/biojs-sniper)
+
+### 3. Lack of unit tests (especially for io components)
+
+It is super easy to write automated tests, have a look at [mocha](http://webapplog.com/test-driven-development-in-node-js-with-mocha/).
+
+### 4. Responsiveness on github
+
+We don't expect you to fix an issue on the day someone opens (we are all busy people who have a day job), but if someone opens a pull request with a fix for the bug, you should respond to this within three days (72h) - after all merging something on github takes you less than 30 seconds (with opening the page).
+
 Gold standard
 -------------
 
-Not needed, but highly recommended.
-For the use of every item you will be rewarded by a badge in the BioJS registry.
+The following standards are not required, but could enhance your public visibility.
 
 ### Recommendation for new comers
 
@@ -29,21 +53,12 @@ For those recommendations to new comers: It is not so important how fancy they a
 
 ### Our checklist
 
-* npm presence
-  - use [`npm upload`][publish-guide]
-* automated tests
-  - [mocha](http://webapplog.com/test-driven-development-in-node-js-with-mocha/)
 * public CI
   - [travis][publish-guide]
   - [drone.io][publish-guide]
 * tool-enforced code-consistency
   - [jshint](http://www.jshint.com/)
   - BioJS [coding style guide](https://github.com/biojs/style-guide)
-* user documentation
-  - `README.md`
-  - Github wiki
-* API documentation framework (automatically generated)
-* [snippets](https://github.com/greenify/biojs-sniper)
 * automated integration tests
   - [phantomjs](https://www.npmjs.org/package/phantomjs)
   - [testling](https://ci.testling.com/)
@@ -55,13 +70,6 @@ The gold standard is work in progress.
 If you do disagree with an item listed here, please open an issue on github.
 {% endalert %}
 
-[publish-guide]: 60_publish_it.html
-
-Other useful pointers
----------------------
-
-* build system
-  - [gulp](http://travismaynard.com/writing/getting-started-with-gulp)
 
 Example components
 -----------------
