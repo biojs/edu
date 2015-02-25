@@ -11,6 +11,7 @@ Guidelines
 
 * event system: [`biojs-events`](https://github.com/biojs/biojs-events)
   - please state all the custom events you send in your documentation
+* [io packages](https://github.com/biojs/biojs/wiki/BioJS-parser)
 * state your license in your README
 * source folder structure: use either `lib` or `src` (the NodeJS convention is to
 name it `lib`, but frankly it doesn't matter)
