@@ -7,12 +7,11 @@ permalink: details/conventions/
 estimated-time: 5
 ---
 
-Conventions
+General conventions
 ----------
 
 * [io packages](https://github.com/biojs/biojs/wiki/BioJS-parser)
-* visualization:
- - [`biojs-events`](https://github.com/biojs/biojs-events): A event system to send events to outside listener
+* visualization: [`biojs-events`](https://github.com/biojs/biojs-events): A event system to send events to outside listener
 * state your license in your README
 * source folder structure: use either `lib` or `src` (the NodeJS convention is to
 name it `lib`, but frankly it doesn't matter)
@@ -75,6 +74,6 @@ If you do disagree with an item listed here, please open an issue on github.
 Example components
 -----------------
 
-* [biojs-vis-msa](https://github.com/greenify/biojs-vis-msa) (in CoffeeScript)
+* [msa](https://github.com/greenify/msa) (in CoffeeScript)
 
 (feel free to add your component here)

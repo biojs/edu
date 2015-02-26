@@ -13,8 +13,8 @@ The modularity and re-usability is one of the key ideas of BioJS. Maybe it helps
 (user refers to someone who embeds your application, e.g. a website owner)
 
 * you only have __one div__ (nobody wants to copy HTML that will change over versions, to some extent you could have more for optional user controls)
-* a user is allowed to create multiple instances of your app (on the same page)
-* a user might want to customize your app by changing some options - he will have its own file and customize the your settings
+* a user is allowed to create __multiple__ instances of your app (on the same page)
+* a user wants to __customize__ your app by changing some options - he will have its own file and customize the your settings
 
 ### This means:
 
@@ -24,6 +24,6 @@ The modularity and re-usability is one of the key ideas of BioJS. Maybe it helps
 * Consider the div that your application gets as a virtual environment for your component - only modify stuff inside of it
 * A user will instantiate your application (=will call your main class with new)
 * Don't do crazy shit with document.body or the Function.prototype
-* Don't query the entire web page for DOM elements - an ID is unique. So $('#fancyId') won't work and $(".fancyClass") will return you the objects of all instances
+* Don't query the entire web page for DOM elements. So the naive jQuery won't work as (1) `$('#fancyId')` and ID unique is and if you switch to classes it `$(".fancyClass")` will return you the objects of all instances
 
 A general advise is to create all the needed DOM elements in your component and save references to the most important ones.

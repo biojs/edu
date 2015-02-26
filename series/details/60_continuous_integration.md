@@ -58,7 +58,7 @@ You might want to save same artifacts.
 
 4. Click on "Build now"
 
-#### 3) Using [drone.io](https://drone.io/)
+### 4) Using [drone.io](https://drone.io/)
 
 * new project -> github -> add your project
 * choose node
@@ -85,5 +85,5 @@ There are plenty of fancy badges, here is a list to have a quick start.
 ~~~
 
 {% alert warn %}
-There is no need to add your CI badges to the `package.json` , the BioJS registry will soon automatically recognize existing continuous integration services.
+There is no need to add your CI badges to the `package.json`, the BioJS registry will soon automatically recognize existing continuous integration services.
 {% endalert %}
