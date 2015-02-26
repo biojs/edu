@@ -67,6 +67,7 @@ We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export mo
 We can export the parser in the following way:
 
 (`lib/index.js`)
+
 ~~~
 var graduates = {};
 
@@ -92,6 +93,7 @@ We can `require` our exported package from any file - so let us create a tempora
 test file to show this.
 
 (`lib/tests.js`)
+
 ~~~
 var graduates = require('./index');
 var result = graduates.parse("greenify:DE"\ndaviddao:HK");
