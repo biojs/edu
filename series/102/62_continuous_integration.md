@@ -7,6 +7,9 @@ permalink: 102/continuous_integration/
 estimated-time: 5
 ---
 
+All listed continuous integration providers offer free plans for open source
+repositories.
+
 #### 1) Using [travis][Travis]
 
 
@@ -28,7 +31,34 @@ node_js:
 You can also install the [Travis CLI](https://github.com/travis-ci/travis.rb)(`gem install travis`) command and run `travis enable`.
 {% endhlblock%}
 
-#### 2) Using [drone.io](https://drone.io/)
+With the [`travis.yml`](http://docs.travis-ci.com/user/build-configuration/) you can configure even more!
+
+### 2) Using [circleci](https://circleci.com)
+
+1. [add a project](https://circleci.com/add-projects)
+2. Choose the correct owner/org and repo
+3. Click on `build project`
+
+You might want to save same artifacts or configure more details in a [`circle.yml`](https://circleci.com/docs/configuration)
+
+### 3) Using [snapci](https://snap-ci.com)
+
+1. Setup a new [repo](https://snap-ci.com/github_repositories/new)
+2. Choose your repository and click on "Add"
+3. Edit the "Commands to be executed"
+
+```
+npm install
+npm test
+npm run build
+```
+(`npm run build` is only fis only for visualization components)
+
+You might want to save same artifacts.
+
+4. Click on "Build now"
+
+#### 3) Using [drone.io](https://drone.io/)
 
 * new project -> github -> add your project
 * choose node
@@ -43,8 +73,7 @@ npm run build
 * change the nvm to node __0.10__
 * artifacts: enter the relative dir of files that should be downloadable (e.g. `build/biojs_io_fasta.min.js`)
 
-
-### 3) Add other badges
+### 5) Add other badges
 
 There are plenty of fancy badges, here is a list to have a quick start.
 
