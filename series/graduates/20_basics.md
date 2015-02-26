@@ -7,7 +7,7 @@ estimated-time: 60
 ---
 
 {% hlblock help %}
-You can play in [JSBin](http://jsbin.com/votoce/2/edit?js,console) with the result of this tutorial.
+You can play with the result of this tutorial in [JSBin](http://jsbin.com/votoce/2/edit?js,console)
 {% endhlblock %}
 
 1) Our input data
