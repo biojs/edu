@@ -41,7 +41,7 @@ If you don't want us to create a DOM element automatically and assign this DOM e
 
 ### Wait ... I have never seen `require` in a browser JS!
 
-You will see in a later tutorial that the tool `browserify` allows us `require` even in your browser.
+You will see in a later tutorial that the tool `browserify` allows us to use `require` even in your browser.
 
 ### Why do I have to specify my {css,js} dependencies in the `package.json`?
 

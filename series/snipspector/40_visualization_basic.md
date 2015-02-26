@@ -1,11 +1,15 @@
 ---
-title: 'Visualization: basics'
+title: 'Visualization basics'
 layout: series_item
 contributors: David, Seb
 series: 'snipspector'
 permalink: snipspector/vis_basics/
 estimated-time: 15
 ---
+
+{% alert danger %}
+This visualization guide is very rudimentary and outdated. It will be updated soon.
+{% endalert %}
 
 1) Create a new package
 -----------------------
