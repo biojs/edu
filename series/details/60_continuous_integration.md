@@ -2,8 +2,8 @@
 title: 'Continuous integration'
 layout: series_item
 contributors: Seb
-series: '102'
-permalink: 102/continuous_integration/
+series: 'details'
+permalink: details/continuous_integration/
 estimated-time: 5
 ---
 

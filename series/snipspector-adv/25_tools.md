@@ -1,10 +1,10 @@
 ---
-title: 'Tools'
+title: 'Tools overview'
 layout: series_item
 contributors: Seb
-series: '102'
+series: 'snipspector_adv'
 estimated-time: 5
-permalink: 102/tools/
+permalink: snipspector_adv/tools/
 extra_css2: ["/css/aspects.css"]
 aspectsURL: /img/aspects/
 aspects:

@@ -2,13 +2,13 @@
 title: 'Parser: using real data'
 layout: series_item
 contributors: Seb
-series: '102'
-permalink: 102/parser_real_data/
+series: 'snipspector_adv'
+permalink: snipspector_adv/parser_real_data/
 estimated-time: 30
 ---
 
 {% alert warn %}
-Please create the [basic package](../101/30_package_basics.html) before.
+Please create the [basic package]({{site.baseurl}}snipspector/basics) before.
 Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 

@@ -2,8 +2,8 @@
 title: 'Visualization: D3'
 layout: series_item
 contributors: David
-series: '102'
-permalink: /102/vis_d3/
+series: 'snipspector_adv'
+permalink: /snipspector_adv/vis_d3/
 estimated-time: 30
 ---
 
