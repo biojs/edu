@@ -2,6 +2,7 @@
 title: 'Other resources'
 layout: series_item
 series: '101'
+permalink: 101/other_resources/
 estimated-time: 5
 ---
 
@@ -17,7 +18,7 @@ Javascript guides
 Pointers to different visualization approaches
 ---------------------------------
 
-* SVG 
+* SVG
   - [D3](http://d3js.org/)
 * Canvas
   - [KineticJS](http://kineticjs.com/)

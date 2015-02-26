@@ -2,6 +2,7 @@
 title: 'Package.json'
 layout: series_item
 series: 'details'
+permalink: details/package_json/
 estimated-time: 10
 ---
 
@@ -14,6 +15,7 @@ All the following parameters can be added or changed in your `package.json`
 * `logo`: alternative project logo (default: github avatar)
 * `registryHeight`: height of the registry iFrame for your first example (default: 400)
 * `publication`: PMID (Pubmed Id) to the most recent citation (can also be an array)
+* `testing_service`: testing service used (`travis`, `drone.io`, `circleci`, `snapci`, ...)
 
 ~~~
 "biojs": {

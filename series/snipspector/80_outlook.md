@@ -3,7 +3,8 @@ title: 'Outlook'
 layout: series_item
 contributors: David, Seb
 series: 'snipspector'
-estimated-time: 10 
+permalink: /snipspector/outlook/
+estimated-time: 10
 ---
 
 {% alert warn %}

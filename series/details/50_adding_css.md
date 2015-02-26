@@ -2,6 +2,7 @@
 title: 'Adding CSS'
 layout: series_item
 series: 'details'
+permalink: details/css/
 estimated-time: 10
 ---
 
@@ -17,7 +18,7 @@ We use [`parcelify`](https://github.com/rotundasoftware/parcelify) as this allow
  "style" : "css/*.css"
 ~~~
 
-or 
+or
 
 ~~~
  "style" : "*.scss"

@@ -2,6 +2,7 @@
 title: 'Events'
 layout: series_item
 series: 'details'
+permalink: details/events/
 estimated-time: 10
 ---
 
@@ -72,7 +73,7 @@ How to use
 npm install biojs-events --save
 ~~~
 
-### 2. Mix the events capability with your object 
+### 2. Mix the events capability with your object
 
 After the code of your BioJS component add the events capability by mixing you component prototype with the event class
 

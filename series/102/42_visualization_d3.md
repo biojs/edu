@@ -3,13 +3,14 @@ title: 'Visualization: D3'
 layout: series_item
 contributors: David
 series: '102'
-estimated-time: 30 
+permalink: /102/vis_d3/
+estimated-time: 30
 ---
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
 As a case study, we will continue working with chromosome data and show you how to visualize this data with D3.
 First of all create a new folder called `biojs-vis-snipspector` by running [`slush biojs`](https://github.com/biojs/slush-biojs).
-We will use this as our working bench and only edit the `index.js` file inside the `lib` folder. 
+We will use this as our working bench and only edit the `index.js` file inside the `lib` folder.
 Note: Please replace the current code with our following code!
 
 ### 1) Installing a npm dependency
@@ -47,7 +48,7 @@ to get our parsed data, please have a look at the previous [tutorial](/series/10
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
   var genome = result;
-  
+
 })
 ~~~
 
@@ -88,7 +89,7 @@ var pie = d3.layout.pie()
 Let me go trough the code:
 
 - First we need a `radius`,`width` and `height` value for our svg components.
-- `color` is a function which will translate values into color code. 
+- `color` is a function which will translate values into color code.
 - `arc` draws our svg arc. We we set `innerRadius` to `0`, we would get a piechart.
 - `pie` is our data transformer. D3 provides us with an converter (or layouts), which will convert an array data representation into a suitable representation for pie charts.
 
@@ -139,15 +140,15 @@ function converter(genome){...}
 
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
   var data_res = converter(result);
-  
+
   //Our visualization code ...
-  
+
 })
 ~~~
 
 All chromosomes are now in an optimal array representation and each chromosome object is now represented by his name and dataset.
 
-### 5) Creating a donut chart! 
+### 5) Creating a donut chart!
 
 Now, after cleaning up our data, let's get finally to the visualization part!
 First, we will visualize the data in chromosome 'X' in a donut chart!
@@ -187,7 +188,7 @@ g.append("text")
 
 D3 handles new data with `enter()`. To learn more about `enter`,`update` and `delete`, visit the [d3 tutorial](http://d3js.org/).
 Congratulations! You wrote your first visualization component for biojs!
-Now it is time to export and build it! 
+Now it is time to export and build it!
 
 To export it write a wrapper around your all your code (except the dependencies)
 
@@ -204,7 +205,7 @@ module.exports = d3_show;
 We recommend browserify. Therefore use our preinstalled npm run build-browser!
 
 ~~~
-npm run build-browser 
+npm run build-browser
 ~~~
 
 to create a build for this file! If this fails, create a build folder first!
@@ -213,7 +214,7 @@ Now you can easily include this into a simple html using:
 `snippets/simple_example.js`
 
 ~~~
-var app = require("biojs-vis-snipspector"); 
+var app = require("biojs-vis-snipspector");
 app({el: yourDiv});
 ~~~
 
@@ -243,7 +244,7 @@ function d3_show(opts) {
                     .value(function (d) {
                         return d.number;
                     });
-    
+
 function converter(genome){
         var data_res = [];
 
@@ -271,9 +272,9 @@ function converter(genome){
 
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
   var data_res = converter(result);
-  
+
   var X_data = data_res[22].data;
-        
+
         var svg = d3.select(el).append("svg")
                     .attr("width", width)
                     .attr("height", height)
@@ -300,7 +301,7 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
             .text(function (d) {
                     return d.data.category;
                 });
-  
+
 })
 
 }
@@ -310,7 +311,7 @@ module.exports = d3_show;
 
 For more information about how each code component works, have a look at following [resources](http://schoolofdata.org/2013/10/01/pie-and-donut-charts-in-d3-js/).
 
-In our final component `biojs-vis-snipspector`, we also included a function to visualize all chromosomes. 
+In our final component `biojs-vis-snipspector`, we also included a function to visualize all chromosomes.
 
 <div id="vis"></div>
 

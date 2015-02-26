@@ -3,6 +3,7 @@ title: 'Publish it'
 layout: series_item
 contributors: David, Seb
 series: '101'
+permalink: 101/publish_it/
 estimated-time: 5
 ---
 
@@ -44,4 +45,3 @@ If you have fixed them and want to deploy a new version of your component, run `
 You made it. Get your coffee and celebrate. However the rest of this tutorial stays interesting.
 So just enjoy the rest.
 {% endalert %}
-

@@ -3,11 +3,12 @@ title: 'Package basics'
 layout: series_item
 contributors: David, Iris, Manny, Seb
 series: 'snipspector'
-estimated-time: 60 
+permalink: /snipspector/basics/
+estimated-time: 60
 ---
 
 {% alert warn %}
-You need to install `npm` before you can start to rock. See <a href="20_getting_started.html"> the getting started guide </a> for more info.
+You need to install `npm` before you can start to rock. See <a href="{{site.baseurl}}/101/getting_started/"> the getting started guide </a> for more info.
 {% endalert %}
 
 In the following section we will give you a gentle introduction on how to create a component for BioJS 2.0.
@@ -106,7 +107,7 @@ These snippets will be used for the [BioJS registry](http://biojs.io).
 npm run sniper
 ~~~
 
-and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/biojs-sniper) for more details. 
+and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/biojs-sniper) for more details.
 
 
 ### 2. Watchify
@@ -136,7 +137,7 @@ They are grouped into two sections:
 
 Gotchas:
 
-* The Unit tests are run with PhantomJS, if you want to debug them open the `test/index.html` 
+* The Unit tests are run with PhantomJS, if you want to debug them open the `test/index.html`
 your browser.
 * You need to add your _DOM_ tests to the `test/dom/index.js`.
 
@@ -156,7 +157,7 @@ Depending on the settings you select, the slush bootstraper might add more tasks
 You can see [here](https://github.com/biojs/slush-biojs) the entire list.
 
 
-2) Our input data 
+2) Our input data
 ------------------
 
 First we will have a look at the data. The whole file is a set of ~500K SNPs (Simple Nucleotide Polymorphisms) from [@manuelcorpas][manuelcorpas]). These SNPs come from a saliva sample genotyped using the SNP chip version 2 from [23andMe](https://www.23andme.com/), a personal genomics provider.
@@ -174,12 +175,12 @@ rsid chromosome pos genotype
 ~~~
 
 
-Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genotype usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome. 
+Genotype is the field that tells us exactly what the sequence looks like at a particular position. It is important to note that Genotype usually has two letters, because, as you may remember from high school biology, humans have two pairs of each chromosome. Well, mostly, unless you are a male, in which case you only have a lonely X copy with a tiny Y chromosome.
 
 There are 3 types of genotypes that we will look at in this example.
 
 1. If the same letter is present in both copies, then we say that we have a homozygous SNP; e.g.: AA, TT, GG, CC.
-2. If the letters are different, then we have a heterozygous SNP: AT, GC, etc. 
+2. If the letters are different, then we have a heterozygous SNP: AT, GC, etc.
 3. The position might have been delete in both or either chromosome: --, A-, -G, etc.
 
 These three fields in each feature line are required:
@@ -266,18 +267,18 @@ It is really ok if you see errors here - you will fix them later ;-)
 
 {% hlblock info %}
 In this tutorial we use [Mocha](https://visionmedia.github.io/mocha/) as JavaScript test framework.
-However you can use your favorite - you only need to change the `test` command in the `scripts` section of your `package.json`. 
+However you can use your favorite - you only need to change the `test` command in the `scripts` section of your `package.json`.
 {% endhlblock %}
 
 
 5) Start coding
 ----------------
 
-It is time to code! 
-To begin please open now the `lib` folder and access the `index.js` file. 
+It is time to code!
+To begin please open now the `lib` folder and access the `index.js` file.
 
 {% hlblock info %}
-You can find the code for this exercise on [github](https://github.com/biojs/biojs-tutorial-template-snp). 
+You can find the code for this exercise on [github](https://github.com/biojs/biojs-tutorial-template-snp).
 {% endhlblock %}
 
 First have a look at the provided code.
@@ -286,7 +287,7 @@ First have a look at the provided code.
 var snipspector = {};
 
 snipspector.parse = function() {
-    
+
     var data = ["rs5747620	20	15412698	TT",
     "rs9605903	20	15434720	CC",
     "rs2236639	20	15452483	GC",
@@ -303,16 +304,16 @@ snipspector.parse = function() {
     // hetero(zygous): AC
     // del(etion): A-, -A or --
     for (var i = 0; i < data.length; i++) {
-        // Please fill in your code here! 
+        // Please fill in your code here!
     }
 
-    console.log(chromosomes); 
+    console.log(chromosomes);
 
     return chromosomes;
 }
 
 snipspector.parse(); //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
-                     // {name: "21", homo: 1, hetero: 1, del: 1}, 
+                     // {name: "21", homo: 1, hetero: 1, del: 1},
                      // {name: "22", homo 1, hetero: 1, del: 0 }]
 
 module.exports = snipspector; // Export the object for other components
@@ -352,19 +353,19 @@ Sample of format:
 
 {% hlblock stop %}
 
-No please do __NOT__ have a look at our solution, if your unit test is green - 
+No please do __NOT__ have a look at our solution, if your unit test is green -
 your solution is correct!
 Please only continue if your solution is working.
 
 {% endhlblock %}
 
-__Solution:__ 
+__Solution:__
 
 {% code javascript collapsible=true %}
 var snipspector = {};
 
 snipspector.parse = function() {
-    
+
     var data = ["rs5747620	20	15412698	TT",
     "rs9605903	20	15434720	CC",
     "rs2236639	20	15452483	GC",
@@ -380,7 +381,7 @@ snipspector.parse = function() {
     // homo(zygous): AA
     // hetero(zygous): AC
     // del(etion): A-, -A or --
-    
+
     var chr = null;
     for (var i = 0; i < data.length; i++) {
       var row = data[i].split(/\s+/);
@@ -418,7 +419,7 @@ snipspector.parse = function() {
 }
 
 snipspector.parse(); //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
-                     // {name: "21", homo: 1, hetero: 1, del: 1}, 
+                     // {name: "21", homo: 1, hetero: 1, del: 1},
                      // {name: "22", homo 1, hetero: 1, del: 0 }]
 
 module.exports = snipspector; // Export the object for other components
@@ -435,7 +436,7 @@ Congratulations! You wrote your very first Biojs 2 Component. You can now publis
 If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
 {% endhlblock %}
 
-Furthermore, consider to [publish](60_publish_it.html) your future components to npm. 
+Furthermore, consider to [publish]({{site.baseurl}}/101/publish_it/) your future components to npm.
 In the next tutorial, you will learn [how to create a visualization component](40_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}

@@ -2,6 +2,7 @@
 title: 'What is BioJS?'
 layout: series_item
 series: '101'
+permalink: 101/what_is_biojs/
 estimated-time: 5
 ---
 
@@ -9,7 +10,7 @@ estimated-time: 5
 (Image credits: [Jeremey Page](https://www.flickr.com/photos/jezpage/4990873353))
 {:style="font-size: 9px; text-align: center"}  
 
-  
+
 Basically BioJS components behave like Lego blocks. You don't start from scratch - can build on top of other blocks.
 
 What exactly is a BioJS package?
@@ -17,10 +18,10 @@ What exactly is a BioJS package?
 
 A __tiny building block__ that can be reused by anyone.
 It could be anything from a FASTA parser, a tree algorithm or a simple visualization module.  
-Moreover a BioJS package is also a `npm` package. 
+Moreover a BioJS package is also a `npm` package.
 
 {% hlblock info %}
-`npm` stands for node package manager and is the package repository that powers node. 
+`npm` stands for node package manager and is the package repository that powers node.
 {% endhlblock %}
 
 {% hlblock info %}
@@ -31,7 +32,7 @@ Moreover a BioJS package is also a `npm` package.
 What is BioJS?
 ---------------------
 
-We are quite more than just a registry for components - we aim to build a infrastructure 
+We are quite more than just a registry for components - we aim to build a infrastructure
 , guidelines and tools to avoid the reinvention of the wheel in life sciences (= "Docker for Bio web components").  
 In the early days of BioJS we defined specific _Easy to_ goals, let's see where we currently stand:
 
@@ -44,6 +45,6 @@ In the early days of BioJS we defined specific _Easy to_ goals, let's see where 
 * Easy to _get involved_ : Apart from our amazing tutorial, we are also very active on github and gitter
 
 <!--
-* Easy to start: 
+* Easy to start:
 * Easy to test
 -->

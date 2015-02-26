@@ -2,6 +2,7 @@
 title: 'Getting started'
 layout: series_item
 series: '101'
+permalink: 101/getting_started/
 estimated-time: 5
 ---
 
@@ -11,11 +12,11 @@ You will need __`npm`__ and __`git`__ on your shell.
 - [__Linux__](#linux)
 - [__Windows__](#windows)
 
-When your machine is ready to rumble, continue to the [tutorial](30_headstart.html)
+When your machine is ready to rumble, continue to the [tutorial]({{site.baseurl}}/101/modularity)
 
 {% hlblock check %}
 
-See whether you have both commands (`npm`, `git`) installed. You should run the above without 
+See whether you have both commands (`npm`, `git`) installed. You should run the above without
 any error.
 
 ~~~
@@ -35,10 +36,10 @@ What does `npm` stand for?
 
 <a name="mac"></a>
 
-### Mac Users 
+### Mac Users
 
 Homebrew, git and node.js are three packages that are worth having on your Mac if you want to do software development.
- 
+
 * [Homebrew](http://brew.sh) is called the 'missing package manager for OS X'. It allows you to download packages onto your Mac from your command line.  
 * [Git](https://github.com) is a version control system that will keep track of the changes you have made in code.
 * [Node.js](http://nodejs.org) is a 'runtime environment platform for server-side JavaScript applications'.
@@ -59,13 +60,13 @@ Using Homebrew to install node.js:
 brew install node # installs the node package
 ~~~
 
-If you have not installed `git`, this command uses homebrew to install git: 
+If you have not installed `git`, this command uses homebrew to install git:
 
 ~~~
 brew install git
 ~~~
 
-To ensure you have installed these correctly, it is worth checking by typing "git help" and "npm help" into the command line again. 
+To ensure you have installed these correctly, it is worth checking by typing "git help" and "npm help" into the command line again.
 
 Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/).
 
@@ -80,7 +81,7 @@ You can also download [Github for Mac](https://mac.github.com/).
 Install nodejs via [your package manager](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)
 {% endhlblock %}
 
-E.g. 
+E.g.
 
 ~~~
 curl -sL https://deb.nodesource.com/setup | sudo bash - # Ubuntu, Debian
@@ -106,10 +107,10 @@ nvm install 0.10.30 && nvm alias default 0.10.30 && nvm use default # install no
 
 
 We assume that you most likely will know how to install a package, however feel free to add instructions for your favorite distro.
- 
+
 <a name="windows"></a>
 
-### Windows Users 
+### Windows Users
 
 You must be completely crazy if you want to develop anything on Windows.
 Be warned that some packages just assume that they have a UNIX-like enviroment.
@@ -121,13 +122,13 @@ Way 2) Build node from the source code
 
 1. [install cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/)
     - Use setup.exe in the cygwin folder to install the following packages:
-        * devel → openssl 
-        * devel → g++-gcc 
-        * devel → make 
-        * python → python 
+        * devel → openssl
+        * devel → g++-gcc
+        * devel → make
+        * python → python
         * devel → git
      - Open the cygwin command line with Start > Cygwin > Cygwin Bash Shell.
-  
+
 
 2. Build node from the source:
 

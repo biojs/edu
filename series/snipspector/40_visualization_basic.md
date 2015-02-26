@@ -3,6 +3,7 @@ title: 'Visualization: basics'
 layout: series_item
 contributors: David, Seb
 series: 'snipspector'
+permalink: snipspector/vis_basics/
 estimated-time: 15
 ---
 
@@ -10,7 +11,7 @@ estimated-time: 15
 -----------------------
 
 Go one directory up (`cd ..`) and create a new project `biojs-vis-snipspector`.
-Now we want to create a visualization component, so please answer `yes` to the generator. 
+Now we want to create a visualization component, so please answer `yes` to the generator.
 
 ~~~
 slush biojs
@@ -210,14 +211,14 @@ function createBar(percentage){
 	var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svg.style.height = "10px";
 	svg.style.width = "100px";
-	var rect = document.createElementNS(svgNS,"rect"); 
+	var rect = document.createElementNS(svgNS,"rect");
 	rect.setAttributeNS(null,"width",percentage * 100);
 	rect.setAttributeNS(null,"height",10);
 	rect.setAttributeNS(null,"fill","black");
 	rect.setAttributeNS(null,"stroke","none");
 	svg.appendChild(rect);
 	return svg;
-}     
+}
 ~~~
 
 Alternatively you could also use `canvas`.
@@ -263,13 +264,13 @@ drawBar(canvasChild, percentage);
 ~~~
 
 And now we need to group both in a row.
-        
+
 ~~~
 // group both values in one row
 var row = document.createElement("div");
 row.appendChild(desc);
 row.appendChild(canvasChild);
-chr.appendChild(row); 
+chr.appendChild(row);
 ~~~
 
 Remember to create `chr` when looping over the entire chromosome.
@@ -278,7 +279,7 @@ Remember to create `chr` when looping over the entire chromosome.
 
 ~~~
 // all chromosomes
-for(var i=0; i < result.length; i++) {    
+for(var i=0; i < result.length; i++) {
 	// properties of a single chromosomes
 	for(var key in result[i]){
 ~~~
@@ -294,51 +295,51 @@ var vis = function(opts){
   var self = this; // save reference to itself (in callbacks this is different)
   parser.read("http://files.biojs.net/chromosomes/manny.dummy", function(result){
 
-    for(var i=0; i < result.length; i++) {    
+    for(var i=0; i < result.length; i++) {
       var chr = document.createElement("div");
-      
+
       // count the elements in this chromosome
       var total = _.reduce(result[i], function(memo,el,key){
         if(key != "name")
            return memo + el
         else return memo
       });
-  
+
       // create statistics for a single chromosome
       for(var key in result[i]){
           if(key == "name") continue
           var percentage = result[i][key] / total;
           if(percentage > 0.01){
-            
+
             // format the name of the property
             var desc = document.createElement("span");
             desc.textContent = key;
             desc.style.width = "50px";
             desc.style.paddingLeft = "5px";
             desc.style.display = "inline-block";
-            
+
             // show the value as barchart
             var canvasChild = document.createElement("canvas");
             drawBar(canvasChild, percentage);
-                    
+
             // group both values in one row
             var row = document.createElement("div");
             row.appendChild(desc);
             row.appendChild(canvasChild);
-            
+
             chr.appendChild(row);
           }
       }
       divEl.appendChild(chr);
     }
-    
+
     function drawBar(el,percentage){
    	   el.width = 100
 	   el.height = 10
        var ctx = el.getContext("2d");
        ctx.fillRect(0,0,percentage * 100,10);
     }
-   
+
   })
 };
 {% endcode %}
@@ -361,16 +362,16 @@ var vis = function(opts){
   var self = this; // save reference to itself (in callbacks this is different)
   parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 
-    for(var i=0; i < result.length; i++) {    
+    for(var i=0; i < result.length; i++) {
       var chr = document.createElement("div");
-      
+
       // count the elements in this chromosome
       var total = _.reduce(result[i], function(memo,el,key){
         if(key != "name")
            return memo + el
         else return memo
       });
-  
+
       // header
 	  var header = document.createElement("div");
       header.textContent = "chr "+ result[i].name;
@@ -381,55 +382,55 @@ var vis = function(opts){
           if(key == "name") continue
           var percentage = result[i][key] / total;
           if(percentage > 0.01){
-            
+
             // format the name of the property
             var desc = document.createElement("span");
             desc.textContent = key;
             desc.style.width = "50px";
             desc.style.paddingLeft = "5px";
             desc.style.display = "inline-block";
-            
+
             // show the value as barchart
             var canvasChild = document.createElement("canvas");
             drawBar(canvasChild, percentage);
-                    
+
             // group both values in one row
             var row = document.createElement("div");
             row.appendChild(desc);
             row.appendChild(canvasChild);
-            
+
             // dummy evts
             row.addEventListener("mouseover",mouseover,false);
             row.addEventListener("mouseout",mouseout,false);
-            
+
             chr.appendChild(row);
           }
       }
       divEl.appendChild(chr);
     }
-    
+
     function drawBar(el,percentage){
    	   el.width = 100
 	   el.height = 10
        var ctx = el.getContext("2d");
        ctx.fillRect(0,0,percentage * 100,10);
     }
-    
+
     function mouseover(evt){
       var el = this.childNodes[1];
       el.style.paddingLeft = "10px";
     }
-    
+
      function mouseout(evt){
       var el = this.childNodes[1];
       el.style.paddingLeft = "0px";
     }
-    
+
   })
 };
 {% endcode %}
 
-  
+
 [demo]: http://requirebin.com/?gist=c9248b0840448995758a
 
-  <!-- do not remove this empty line -->   
+  <!-- do not remove this empty line -->

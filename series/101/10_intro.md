@@ -2,6 +2,7 @@
 title: 'Intro'
 layout: series_item
 series: '101'
+permalink: 101/intro/
 estimated-time: 5
 ---
 

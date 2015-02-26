@@ -3,6 +3,7 @@ title: 'Continuous integration'
 layout: series_item
 contributors: Seb
 series: '102'
+permalink: 102/continuous_integration/
 estimated-time: 5
 ---
 
@@ -14,8 +15,8 @@ estimated-time: 5
 ~~~
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
+  - "0.12"
+  - iojs
 ~~~~
 
 2. Add your project on [Travis](https://travis-ci.org/profile/greenify) (flip the button to on - this will create a github webhook)
@@ -27,18 +28,6 @@ node_js:
 You can also install the [Travis CLI](https://github.com/travis-ci/travis.rb)(`gem install travis`) command and run `travis enable`.
 {% endhlblock%}
 
-3. Add the shield to your `package.json`.
-
-~~~
-  "shields": {
-    "test": {
-      "img": "https://travis-ci.org/greenify/biojs-vis-msa.svg?branch=master",
-      "href": "https://travis-ci.org/greenify/biojs-vis-msa"
-    },
-  },
-~~~
-
-
 #### 2) Using [drone.io](https://drone.io/)
 
 * new project -> github -> add your project
@@ -48,22 +37,12 @@ You can also install the [Travis CLI](https://github.com/travis-ci/travis.rb)(`g
 ~~~
 npm install --silent
 npm test
-npm run build-browser
+npm run build
 ~~~
 
 * change the nvm to node __0.10__
 * artifacts: enter the relative dir of files that should be downloadable (e.g. `build/biojs_io_fasta.min.js`)
 
-Add the shield to your `package.json`.
-
-~~~
-  "shields": {
-  	"build": {
-         img: "https://drone.io/github.com/greenify/biojs-io-clustal/status.png",
-         href: "https://drone.io/github.com/greenify/biojs-io-clustal/latest"
-	 }
-   },
-~~~
 
 ### 3) Add other badges
 
@@ -75,3 +54,7 @@ There are plenty of fancy badges, here is a list to have a quick start.
 [![Code Climate](https://codeclimate.com/github/<username>/<package-name>/badges/gpa.svg)](https://codeclimate.com/github/<username>/<package-name>)
 [![NPM downloads](http://img.shields.io/npm/dm/<package-name>.svg)](https://www.npmjs.org/package/<package-name>)
 ~~~
+
+{% alert warn %}
+There is no need to add your CI badges to the `package.json` , the BioJS registry will soon automatically recognize existing continuous integration services.
+{% endalert %}

@@ -2,7 +2,8 @@
 title: 'Modularity'
 layout: series_item
 series: '101'
-estimated-time: 15 
+permalink: 101/modularity/
+estimated-time: 15
 ---
 
 This is a short 5 minutes tutorial on the basics of using and reusing BioJS components.
@@ -11,7 +12,7 @@ This is a short 5 minutes tutorial on the basics of using and reusing BioJS comp
 -------------------------
 
 {% alert warn %}
-You need to install `node` before you can start to rock. See <a href="20_getting_started.html"> the getting started guide </a> for more info.
+You need to install `node` before you can start to rock. See <a href="{{site.baseurl}}/101/getting_started/"> the getting started guide </a> for more info.
 {% endalert %}
 
 How does the LEGO-System of BioJS works?
@@ -35,10 +36,10 @@ module.exports = biojs101;
 ~~~
 
 Congratulations, you wrote your first BioJS Component!
-Run 
+Run
 
 ~~~
-node index.js 
+node index.js
 ~~~
 
 to run this file! It should show you `3`.
@@ -60,7 +61,7 @@ Congratulations! You reused your first biojs function in the source code!
 Check for yourself, type in:
 
 ~~~
-node reuse.js 
+node reuse.js
 ~~~
 
 It will show you `3` (because of console.log in `index.js`) and `9`.
@@ -98,7 +99,7 @@ var parsed_data = parser(newick);
 console.log(parsed_data);
 ~~~
 
-Now run again 
+Now run again
 
 ~~~
 node reuse.js

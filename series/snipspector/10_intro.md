@@ -3,6 +3,7 @@ title: 'Intro'
 layout: series_item
 contributors: Manny, Seb
 series: 'snipspector'
+permalink: /snipspector/intro/
 estimated-time: 5
 ---
 
@@ -13,7 +14,7 @@ Purpose of this tutorial series
 * Get hands on dependency management in BioJS 2.0
 * Master the workflow for publishing a package on npm and the BioJS 2.0 registry
 
-After installing npm, you will first create 
+After installing npm, you will first create
 
 1. A simple parser of SNPs (Single Nucleotide Polymorphisms) from [@manuelcorpas](http://manuelcorpas.com/) (`biojs-io-snipspector`)
 2. Visualize this output (`biojs-vis-snipspector`)

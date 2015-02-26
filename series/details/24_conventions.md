@@ -1,9 +1,10 @@
 ---
-title: 'Gold standard'
+title: 'Conventions'
 layout: series_item
 contributors: Seb
-series: '102'
-estimated-time: 5 
+series: details
+permalink: details/conventions/
+estimated-time: 5
 ---
 
 Conventions

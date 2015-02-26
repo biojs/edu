@@ -2,6 +2,7 @@
 title: 'Common code patterns'
 layout: series_item
 series: 'details'
+permalink: details/code_patterns/
 estimated-time: 10
 ---
 

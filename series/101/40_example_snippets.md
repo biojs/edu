@@ -2,7 +2,8 @@
 title: 'Example snippets'
 layout: series_item
 series: '101'
-estimated-time: 5 
+permalink: 101/example_snippets/
+estimated-time: 5
 ---
 
 {% alert warn %}
@@ -19,7 +20,7 @@ var instance = new App({el: rootDiv, <other options>});
 ~~~
 
 You might realize that an ideal snippet doesn't include any HTML at all. Well why should you?
-If you convert the BioJS snippet to real HTML you would have to create this minimal HTML file for every snippet that you provide. In fact you state all your global dependencies in a global configuration file - the [`package.json`](../details/40_package_json.html)
+If you convert the BioJS snippet to real HTML you would have to create this minimal HTML file for every snippet that you provide. In fact you state all your global dependencies in a global configuration file - the [`package.json`]({{site.baseurl}}/details/package_json)
 
 ~~~
 <html>
@@ -36,7 +37,7 @@ var instance = new App({el: rootDiv, <other options>});
 </html>
 ~~~
 
-If you don't want us to create a DOM element automatically and assign this DOM element to the variable `rootDiv`, you can create your own HTML, but please use only the body part (here `<div id=rootDiv></div>`). 
+If you don't want us to create a DOM element automatically and assign this DOM element to the variable `rootDiv`, you can create your own HTML, but please use only the body part (here `<div id=rootDiv></div>`).
 
 ### Wait ... I have never seen `require` in a browser JS!
 

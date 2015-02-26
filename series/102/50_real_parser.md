@@ -3,7 +3,8 @@ title: 'Parser: using real data'
 layout: series_item
 contributors: Seb
 series: '102'
-estimated-time: 30 
+permalink: 102/parser_real_data/
+estimated-time: 30
 ---
 
 {% alert warn %}
@@ -11,7 +12,7 @@ Please create the [basic package](../101/30_package_basics.html) before.
 Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
-{% hlblock help %} 
+{% hlblock help %}
 [Here](http://jsbin.com/hiyijagawete/2/edit) is the result of this example - parsing the 15MB file with 500,000 lines in your browser.
 {% endhlblock %}
 
@@ -126,14 +127,14 @@ snipspector.parse = function(data) {
     if(data.indexOf('\n') >= 0 ){
       data = data.split('\n');
     }
-    
+
    var chromosomes = [];
 
     // analyze snippets
     // homo(zygous): AA
     // hetero(zygous): AC
     // del(etion): A-, -A or --
-    
+
     var chr = null;
     for (var i = 0; i < data.length; i++) {
 
@@ -177,7 +178,7 @@ snipspector.parse = function(data) {
 }
 
 //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
-// {name: "21", homo: 1, hetero: 1, del: 1}, 
+// {name: "21", homo: 1, hetero: 1, del: 1},
 // {name: "22", homo 1, hetero: 1, del: 0 }]
 
 
@@ -264,7 +265,7 @@ Write a second unit test that calls our mocked URL and test whether `snipspector
 
 {% hlblock stop %}
 
-no please do __not__ have a look at our solution, if your unit test is green - 
+no please do __not__ have a look at our solution, if your unit test is green -
 your solution is correct!
 
 {% endhlblock %}
@@ -287,7 +288,7 @@ var scope = nock(testURL)
   .replyWithFile(200, __dirname + '/test.file');
 
   var dummyObj = [{name: "20", homo: 2, hetero: 1, del: 0},
-{name: "21", homo: 1, hetero: 1, del: 1}, 
+{name: "21", homo: 1, hetero: 1, del: 1},
 {name: "22", homo: 1, hetero: 1, del: 0 }];
 
 describe('Snipspector', function(){
@@ -316,9 +317,9 @@ describe('Snipspector', function(){
   });
 });
 {% endcode %}
-  
+
 <br>
-  
+
 {% hlblock info %}
 You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
 {% endhlblock %}

@@ -4,6 +4,7 @@ layout: series_item
 contributors: Seb
 series: '102'
 estimated-time: 5
+permalink: 102/tools/
 extra_css2: ["/css/aspects.css"]
 aspectsURL: /img/aspects/
 aspects:
@@ -33,7 +34,7 @@ aspects:
     href: https://circleci.com/
   - name: Cloudbees
     img: cloudbees.png
-    href: http://www.cloudbees.com/ 
+    href: http://www.cloudbees.com/
   - name: Code Climate
     img: codeclimate.png
     href: https://codeclimate.com/
@@ -76,7 +77,7 @@ aspects:
   items:
   - name: CSS 4
     img: css4.png
-    href: http://dev.w3.org/csswg/selectors4/ 
+    href: http://dev.w3.org/csswg/selectors4/
   - name: JSHint
     img: jshint.png
     href: http://www.jshint.com/
@@ -91,7 +92,7 @@ aspects:
     href: https://learnboost.github.io/stylus/
   - name: UglifyJS
     img: uglifyjs.png
-    href: https://github.com/mishoo/UglifyJS2 
+    href: https://github.com/mishoo/UglifyJS2
 
 - name: Testing
   folder: testing
@@ -118,7 +119,7 @@ aspects:
   - name: SinonJS
     img: sinonjs.png
     href: http://sinonjs.org/
- 
+
 - name: Utils
   folder: utils
   order: 100
