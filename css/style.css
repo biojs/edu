@@ -215,6 +215,9 @@ h3 {
     color: #ffffff;
     text-decoration: none;
 }
+.item-active {
+    color: white;
+}
 .contentTitle {
     font-size: 40px;
     font-weight: bold;
