@@ -14,14 +14,18 @@ You can play with the result of this tutorial in [JSBin](http://jsbin.com/votoce
 -----------------
 
 We will parse the list of everyone who completed this tutorial. 
-This file is available as [`github repo`](https://github.com/biojs-edu/tutorial-graduates/blob/master/list) and you can add yourself to the list afterwards ;-)
+This list is available as [github repo](https://github.com/biojs-edu/tutorial-graduates/blob/master/list) and you can add yourself to the list afterwards ;-)
 
 
-The file is structured as follows:
+It is structured as following:
 
 ~~~
 alias:country
 ~~~
+
+The alias can be a unique alphanumerical string, whereas the country code is a
+string consisting of exactly two chars as defined by [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2).
+Therefor it could look like this:
 
 ~~~
 greenify:DE
@@ -31,9 +35,6 @@ timruffles:UK
 iriscshih:TW
 ~~~
 
-The alias can be a unique alphanumerical string, whereas the country code is a
-string consisting of exactly two chars as defined by [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2).
-
 2) Bootstrapping the project
 ----------------------------
 
@@ -41,7 +42,7 @@ string consisting of exactly two chars as defined by [ISO 3166-2](https://en.wik
 We assume that you have successfully [bootstrapped]({{sitebaseurl}}/101/bootstrapping) a new BioJS package.
 {% endalert %}
 
-We have selected this options:
+We have selected these options:
 
 ~~~
 ? Module name? (required) biojs-io-graduates
@@ -59,14 +60,16 @@ We have selected this options:
 ? Is this correct? Yes
 ~~~
 
-`slush` already prefills some files and creates a dummy test. When we later state
+`slush` already prefills some files and creates a dummy test. When we later create
 files you will need to replace them.
 
 3) Export your component
 ------------------------
 
 Now it is time to export your component in order to provide your functionality with the other BioJS components or in your module (e.g your first test case).
-We use [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in BioJS.
+We use the [CommonJS Syntax](http://wiki.commonjs.org/wiki/Modules/1.1) to export modules in BioJS.
+So let us start with the ground work for the parser - we use `read_static` to make this tutorial super easy for you ;-)
+In the next tutorial we will show you how to read the entire list.
 
 We can export the parser in the following way:
 
@@ -94,7 +97,7 @@ module.exports = graduates;
 ----------------
 
 We can `require` our exported package from any file - so let us create a temporary
-test file to show this.
+test file to show this:
 
 (`lib/tests.js`)
 
@@ -104,17 +107,17 @@ var result = graduates.parse("greenify:DE"\ndaviddao:HK");
 console.log(result);
 ~~~
 
-You can run your application directly with Node, like this:
+You can run your application directly with Node:
 
 ~~~
 node test.js
 ~~~
 
-As we haven't done any work, our package currently returns `{}`,
+As we haven't done any work, our package currently outputs `{}`,
 but of course it should return `{"DE": 1, "HL: 1}`.
 
 
-Other BioJS components are now able to include your component by using
+Other BioJS components are also able to include your component by using:
 
 ~~~
 var graduates = require('biojs-io-graduates');
@@ -155,7 +158,8 @@ describe('Graduates', function(){
 });
 ~~~
 
-Please remove the prefilled test file `test/test_graduates.js`.
+Please remove the prefilled test file `test/test_graduates.js` or replace it with
+our test file.
 
 You can execute your first test with:
 
