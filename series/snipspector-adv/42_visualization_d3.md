@@ -315,7 +315,7 @@ In our final component `biojs-vis-snipspector`, we also included a function to v
 
 <div id="vis"></div>
 
-Have a look at the [source code](https://github.com/biojs/biojs-vis-snipspector) to learn more!
+Have a look at the [source code](https://github.com/biojs-edu/biojs-vis-snipspector) to learn more!
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="./res/snipvis.js"></script>

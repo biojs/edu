@@ -37,7 +37,7 @@ npm install -g slush slush-biojs
 npm install -g watchify biojs-sniper
 ~~~
 
-`Watchify`: Listens for file changes and incrementely runs `browserify`
+`Watchify`: Listens for file changes and incremental runs `browserify`
 `Browserify`: A tool to lets you `require('modules')` in the browser by bundling up all of your dependencies
 `sniper`: Simulates the BioJS registry and allows you to load files from your disk (it is a local file server)
 
@@ -100,14 +100,14 @@ This naming guideline is only if you are not that creative (like us).
 
 ### 1. Snippets (only available for visualization -> skip)
 
-Allows you to write minimal example [snippets](https://github.com/biojs/biojs-sniper) of your visualization.
+Allows you to write minimal example [snippets](https://github.com/biojs/sniper) of your visualization.
 These snippets will be used for the [BioJS registry](http://biojs.io).
 
 ~~~
 npm run sniper
 ~~~
 
-and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/biojs-sniper) for more details.
+and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/sniper) for more details.
 
 
 ### 2. Watchify
@@ -210,7 +210,7 @@ rs9604967	22	15492342	CC
 
 
 {% hlblock info %}
-To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](50_real_parser.html) you will learn how to parse the real file with 500,000 rows.
+To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing]({{site.baseurl}}/snipspector_adv/parser_real_data) you will learn how to parse the real file with 500,000 rows.
 {% endhlblock %}
 
 3) Export your component
@@ -425,7 +425,7 @@ snipspector.parse(); //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
 module.exports = snipspector; // Export the object for other components
 {% endcode %}
 
-You can also browse the solution at [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
+You can also browse the solution at [github](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging).
 
 8) Publish your component
 -------------------------
@@ -440,5 +440,5 @@ Furthermore, consider to [publish]({{site.baseurl}}/101/publish_it/) your future
 In the next tutorial, you will learn [how to create a visualization component](40_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
+You can find the complete solution of this package on [github](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
 {% endhlblock %}

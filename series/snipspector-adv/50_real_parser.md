@@ -9,7 +9,7 @@ estimated-time: 30
 
 {% alert warn %}
 Please create the [basic package]({{site.baseurl}}snipspector/basics) before.
-Alternatively you can clone the [solution of the last exercise](https://github.com/biojs/biojs-io-snipspector/tree/basic_packaging).
+Alternatively you can clone the [solution of the last exercise](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging).
 {% endalert %}
 
 {% hlblock help %}
@@ -41,7 +41,7 @@ var request = require("nets");
 A sample request might look like this.
 
 ~~~
-request('https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/test/test.file', function (error, response, body) {
+request('https://raw.githubusercontent.com/biojs-edu/biojs-io-snipspector/master/test/test.file', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Prints the reponse body
   }
@@ -59,7 +59,7 @@ request('https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/tes
 {% hlblock task %}
 1. Install the `nets` package
 2. Create a sample file (e.g. `foo.js`)
-3. Download `https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/test/test.file` and print it to the screen
+3. Download `https://raw.githubusercontent.com/biojs-edu/biojs-io-snipspector/master/test/test.file` and print it to the screen
 {% endhlblock  %}
 
 {% hlblock help %}
@@ -72,7 +72,7 @@ __Solution__
 
 {% code javascript collapsible=true %}
 var request = require("nets");
-request('https://raw.githubusercontent.com/biojs/biojs-io-snipspector/master/test/test.file', function (error, response, body) {
+request('https://raw.githubusercontent.com/biojs-edu/biojs-io-snipspector/master/test/test.file', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Prints the reponse body
   }
@@ -321,5 +321,5 @@ describe('Snipspector', function(){
 <br>
 
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs/biojs-io-snipspector) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
+You can find the complete solution of this package on [github](https://github.com/biojs-edu/biojs-io-snipspector) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
 {% endhlblock %}

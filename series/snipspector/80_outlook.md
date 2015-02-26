@@ -20,8 +20,8 @@ Did you really finish all previous tutorials? Wow.
 
 ### Find the solutions on github
 
-* [`biojs-io-snipspector`](https://github.com/biojs/biojs-io-snipspector)
-* [`biojs-vis-snipspector`](https://github.com/biojs/biojs-vis-snipspector)
+* [`biojs-io-snipspector`](https://github.com/biojs-edu/biojs-io-snipspector)
+* [`biojs-vis-snipspector`](https://github.com/biojs-edu/biojs-vis-snipspector)
 
 ### Get inspirations from other packages
 
