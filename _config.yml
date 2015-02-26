@@ -17,6 +17,9 @@ series:
     "details":
       desc: "Details"
       sort: 3
+    "graduates":
+      desc: "\"Graduate\" series"
+      sort: 4
     "snipspector_adv":
       desc: "Advanced snipspector"
-      sort: 4
+      sort: 5

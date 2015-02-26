@@ -298,7 +298,7 @@ If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.gi
 {% endhlblock %}
 
 Furthermore, consider to [publish]({{site.baseurl}}/101/publish_it/) your future components to npm.
-In the next tutorial, you will learn [how to create a visualization component](40_visualization_basics.html) using your newly build `biojs-io-snipspector` component.
+In the next tutorial, you will learn [how to create a visualization component]({{site.baseurl}}/snipspector/vis_basics) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}
 You can find the complete solution of this package on [github](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).
