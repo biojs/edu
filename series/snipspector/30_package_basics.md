@@ -116,7 +116,29 @@ There is an [excellent guide](https://github.com/maxogden/art-of-node#how-requir
 
 4) The first testcase
 ----------------------
+Write the following file to the test folder of your Biojs package directory.
+~~~
+var assert = require("chai").assert;
+var tutorial = require("../");
 
+// you can find more documentation about mocha here
+// https://visionmedia.github.io/mocha/
+
+describe('Snipspector', function(){
+  // do any init stuff here
+  beforeEach(function(){
+    snipspector = tutorial.parse;
+  });
+  describe('parse', function(){
+    it('should return match with default object', function(){
+      dummyObj = [{name: "20", homo: 2, hetero: 1, del: 0},
+                  {name: "21", homo: 1, hetero: 1, del: 1}, 
+                  {name: "22", homo: 1, hetero: 1, del: 0 }];
+      assert.deepEqual(snipspector(), dummyObj);
+    });
+  });
+});
+~~~
 We already provide you with one test case, in the next section we will show you how to fix this unit test.
 You can execute the test suite with:
 
