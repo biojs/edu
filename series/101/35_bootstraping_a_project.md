@@ -40,7 +40,7 @@ mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-### Fill your package with life
+### 1.3) Fill your package with life
 
 #### 1.3.a) Example for bootstrapping a parser
 
@@ -157,7 +157,7 @@ starting:  'npm run sniper','npm run watch'
 
 * check whether you have a `node_modules` folder
 * if not, run `npm install` and report this to us
-* when `npm install` fails, 
+* when `npm install` fails
 * check whether the missing module is part of your `package.json`
 
 ### 1.7) Install watchify & sniper (optional)
