@@ -18,66 +18,110 @@ We use a special [slush generator](https://github.com/biojs/slush-biojs) to boot
 (you can don't need to use it, but it simplifies the work and is especially aimed at newcomers)
 
 {% alert warn %}
-On Linux and Mac you will need to prepend `sudo` for global (`-g`) installations
+On Linux and Mac you will need to prepend `sudo` for global (`-g`) installations or [configure](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) global installations into your home directory.
 {% endalert %}
 
 
-1) Install slush
+### 1.1) Install slush
 
 ~~~
 npm install -g slush slush-biojs
 ~~~
 
-2) Install watchify & sniper (optional)
+(`slush-biojs` is updated frequently, therefore update it from time to time)
 
-~~~
-npm install -g watchify biojs-sniper
-~~~
+`-g` stands for global installation, will download the npm packages to your global npm path (e.g. `/usr/lib/node_modules`) and add the executables
+to your `PATH` variable. If you want to install globally into your home directory without using `sudo`, have a look at [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
 
-`Watchify`: Listens for file changes and incremental runs `browserify`
-`Browserify`: A tool to lets you `require('modules')` in the browser by bundling up all of your dependencies
-`Sniper`: Simulates the BioJS registry and allows you to load files from your disk (it is a local file server)
-
-3) Bootstrap your new project
+### 1.2) Bootstrap your new project
 
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-4) Answer all questions
+### 1.3) Fill the bootstrapper with life
 
-Our first component will be a pure parser, so you can answer `no` when being asked
-for visualization support (the next tutorial will use this parser for a visualization).
+#### 1.3.a) Example for bootstrapping a parser
 
 ~~~
-? Module name?: biojs-vis-msa
-? Description?: An awesome BioJS component
-? Module version?: 0.1.0
-? Author name?: greenify
-? Author email?: <hidden>
-? Github username?: greenify
-? Enter keywords for npm (separate with comma): visualization,msa,alignment
+? Module name? (required) biojs-io-clustal	
+? Description? Parses Clustal alignment files
+? Module version? 0.1.0
+? Author name? greenify
+? Author email? <hidden>
+? Github username? greenify
+? Keywords for npm (separate with comma) clustal, alignment
 ? A visualization lib? No
 ? Unit tests: Yes
-? Configure a build system? (Gulp) Yes
+? Configure a build system? (Gulp) No
 ? Linting (Check code style with JSHint) No
-? Choose your license type: Apache 2
-? Is this correct? (Y/n) Yes
+? Choose your license type: MIT
+? Is this correct? Yes
 ~~~
 
+#### 1.3.b) Example for bootstrapping a visualization component
 
-Inside the folder you find following files:
+~~~
+? Module name? (required) biojs-vis-seqlogo
+? Description? A sequence logo visualizer
+? Module version? 0.1.0
+? Author name? greenify
+? Author email? <hidden>
+? Github username? greenify
+? Keywords for npm (separate with comma) hmm, logo, seqlogo
+? A visualization lib? Yes
+? Unit tests: No
+? Add a example css file? No
+? Configure a build system? (Gulp) No
+? Linting (Check code style with JSHint) No
+? Choose your license type: MIT
+? Is this correct? Yes
+~~~
 
-- `.gitignore`: Files that should be ignored by the git versioning system
-- `LICENSE`: The license under which you want your source code to be distributed, e.g. MIT or Apache 2
-- `index.js`:  Index file over all submodules
-- `package.json`: Information about your package: author, version, ...
-- `lib` : Folder including your real source code
-- `test`: Folder containing your first unit test
-- `build`: Empty folder needed for build
+### 1.4) Resulting structure
 
-(More detailed information will be given later in this tutorial)
+The exact structure might vary depending on the settings you choose in slush.
+Nevertheless in almost all packages you will find these following six items:
+
+* [`package.json`][package.json]: Information about your package: author, version, …
+* `lib` : Folder including your real source code
+* `.gitignore`: Files that should be ignored by the git versioning system
+* `LICENSE`: The license under which you want your source code to be distributed, e.g. MIT or Apache 2
+
+[package.json]: https://github.com/biojs/biojs/wiki/BioJS-sections-in-the-package.json
+
+You probably never have to modify the last two:
+
+* `node_modules`: all npm packages of your packages
+* `build`: target dir for all browserified, minified js or css resources
+
+You can find an overview of all automatically configured npm tasks [here](https://github.com/biojs/slush-biojs).
+
+### Optionally you might find
+
+* [`examples`][examples] (previously: `snippets`): Folder containing visualization examples
+* `test`: Folder containing unit tests
+* [`css`][css]: Folder contain all stylesheets (SASS and LESS files can be added via transforms)
+* `src`: Sometime used as main source folder or by projects with Coffee-Script (those projects transpile the source folder `src` to `lib`)
+
+[css]: https://github.com/biojs/biojs/wiki/Adding-CSS-stylesheets
+[examples]: https://github.com/biojs/biojs-sniper
+
+### 1.5) Install watchify & sniper (optional)
+
+`slush-biojs` should install these packages all npm dependencies and you can run them
+without installing them globally. However if you are lazy, you can install them as shortcuts.
+
+~~~
+npm install -g watchify sniper browserify
+~~~
+
+`Watchify`: Listens for file changes and incremental runs `browserify`  
+`Browserify`: A tool to lets you `require('modules')` in the browser by bundling up all of your dependencies  
+`Sniper`: Simulates the BioJS registry and allows you to load files from your disk (it is a local file server)  
+
+With a global installation you can run `sniper instead of `npm run sniper`.
 
 {% hlblock info %}
 For BioJS 2 components, we have following naming recommendations:
