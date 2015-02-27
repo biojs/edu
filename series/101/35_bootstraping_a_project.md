@@ -34,6 +34,19 @@ npm install -g slush slush-biojs
 to your `PATH` variable. If you want to install globally into your home directory without using `sudo`, have a look at [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
 
 ### 1.2) Bootstrap your new project
+{% hlblock info %}
+For BioJS 2 components, we have following naming recommendations:
+
+__biojs-[io/rest/vis/algo/...]-[name]__
+
+- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
+- Use `vis` for components which are visualizing data sets
+- Use `rest` for REST apis to databases
+- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
+
+If you have a better name for your package, please use it.
+This naming guideline is only if you are not that creative (like us).
+{% endhlblock %}
 
 ~~~
 mkdir <your-project>
@@ -78,20 +91,6 @@ cd <your-project> && slush biojs
 ? Choose your license type: MIT
 ? Is this correct? Yes
 ~~~
-
-{% hlblock info %}
-For BioJS 2 components, we have following naming recommendations:
-
-__biojs-[io/rest/vis/algo/...]-[name]__
-
-- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
-- Use `vis` for components which are visualizing data sets
-- Use `rest` for REST apis to databases
-- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
-
-If you have a better name for your package, please use it.
-This naming guideline is only if you are not that creative (like us).
-{% endhlblock %}
 
 ### 1.4) Resulting file structure
 
