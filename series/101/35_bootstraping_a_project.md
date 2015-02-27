@@ -154,10 +154,12 @@ starting:  'npm run sniper','npm run watch'
 
 `[...] not found` or "Cannot find module xyz"   
 
-* check whether you have a `node_modules` folder
-* if not, run `npm install` and report this to us
-* when `npm install` fails
-* check whether the missing module is part of your `package.json`
+* Check whether you have a `node_modules` folder
+* If `node_modules` does _not_ exist, run `npm install` 
+* If `node_modules` does exist, run `rm -r node_modules && npm install` 
+* When your still experience the same error, check whether the missing module is part of your `package.json`
+* Most common reason: Your npm installation is outdated (especially on Ubuntu/Debian) -> update npm to `2.x`.
+* If you still experience a problem, don't hesitate to contact us
 
 ### 1.7) Install watchify & sniper (optional)
 
