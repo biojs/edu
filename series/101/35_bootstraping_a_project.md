@@ -75,6 +75,7 @@ Inside the folder you find following files:
 - `package.json`: Information about your package: author, version, ...
 - `lib` : Folder including your real source code
 - `test`: Folder containing your first unit test
+- `build`: Empty folder needed for build
 
 (More detailed information will be given later in this tutorial)
 
