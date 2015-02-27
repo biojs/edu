@@ -219,7 +219,6 @@ app({el: yourDiv});
 ~~~
 
 Don't forget to run it on a server! Otherwise Manny's chromosome data is not loaded.
-By the way, you can change the namespace anytime you want. It is defined inside the file `browser.js`!
 
 The final program looks like this:
 
