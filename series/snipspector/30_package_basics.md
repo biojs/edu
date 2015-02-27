@@ -18,6 +18,8 @@ In the next tutorial we will show you how to visualize this data.
 We assume that you have successfully [bootstrapped]({{sitebaseurl}}/101/bootstrapping) a new BioJS package.
 {% endalert %}
 
+You can play with the result of this tutorial on [JSBin](http://jsbin.com/kogewi/1/edit?js,console).
+
 2) Our input data
 ------------------
 
@@ -308,7 +310,7 @@ snipspector.parse(); //Should print [{name: "20", homo: 2, hetero: 1, del: 0,
 module.exports = snipspector; // Export the object for other components
 {% endcode %}
 
-You can also browse the solution at [github](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging).
+You can also browse the solution at [github](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging) or play with it on [JSBin](http://jsbin.com/kogewi/1/edit?js,console).
 
 8) Publish your component
 -------------------------
