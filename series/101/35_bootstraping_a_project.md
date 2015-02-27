@@ -40,7 +40,7 @@ mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
 
-### 1.3) Fill the bootstrapper with life
+### Fill your package with life
 
 #### 1.3.a) Example for bootstrapping a parser
 
@@ -79,7 +79,21 @@ cd <your-project> && slush biojs
 ? Is this correct? Yes
 ~~~
 
-### 1.4) Resulting structure
+{% hlblock info %}
+For BioJS 2 components, we have following naming recommendations:
+
+__biojs-[io/rest/vis/algo/...]-[name]__
+
+- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
+- Use `vis` for components which are visualizing data sets
+- Use `rest` for REST apis to databases
+- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
+
+If you have a better name for your package, please use it.
+This naming guideline is only if you are not that creative (like us).
+{% endhlblock %}
+
+### 1.4) Resulting file structure
 
 The exact structure might vary depending on the settings you choose in slush.
 Nevertheless in almost all packages you will find these following six items:
@@ -108,7 +122,45 @@ You can find an overview of all automatically configured npm tasks [here](https:
 [css]: https://github.com/biojs/biojs/wiki/Adding-CSS-stylesheets
 [examples]: https://github.com/biojs/biojs-sniper
 
-### 1.5) Install watchify & sniper (optional)
+### 1.5) Confirm your installation
+
+If everything went okay, you the following commands should have a similar output
+
+IO packages: `npm test`  
+A simple, default test should pass.
+
+~~~
+  biojs-io-awesome-parser module
+    #hello()
+      ✓ should return a hello 
+
+  1 passing (6ms)
+~~~
+
+Visualization packages: `npm run w`:
+It should start a local webserver and you should see a hello world at [http://localhost:9090/examples](http://localhost:9090/examples) example snippet.
+
+~~~
+starting:  'npm run sniper','npm run watch'
+[npm-run-sniper]: > biojs-vis-awesome-vis@0.1.0 sniper /tmp/biojs-vis-awesome-vis
+[npm-run-sniper]: > sniper .
+[npm-run-watch]: > biojs-vis-awesome-vis@0.1.0 watch /tmp/biojs-vis-awesome-vis
+[npm-run-watch]: > watchify -r ./:biojs-vis-awesome-vis -v -o build/vis.js
+[npm-run-sniper]: running: http://localhost:9090
+[npm-run-sniper]: DIR:.
+[npm-run-watch]: 1218 bytes written to build/vis.js (0.02 seconds)
+~~~
+
+### 1.6) Frequent errors
+
+`[...] not found` or "Cannot find module xyz"   
+
+* check whether you have a `node_modules` folder
+* if not, run `npm install` and report this to us
+* when `npm install` fails, 
+* check whether the missing module is part of your `package.json`
+
+### 1.7) Install watchify & sniper (optional)
 
 `slush-biojs` should install these packages all npm dependencies and you can run them
 without installing them globally. However if you are lazy, you can install them as shortcuts.
@@ -118,24 +170,11 @@ npm install -g watchify sniper browserify
 ~~~
 
 `Watchify`: Listens for file changes and incremental runs `browserify`  
-`Browserify`: A tool to lets you `require('modules')` in the browser by bundling up all of your dependencies  
+`Browserify`: A tool that lets you `require('modules')` in the browser by bundling up all of your dependencies  
 `Sniper`: Simulates the BioJS registry and allows you to load files from your disk (it is a local file server)  
 
 With a global installation you can run `sniper instead of `npm run sniper`.
 
-{% hlblock info %}
-For BioJS 2 components, we have following naming recommendations:
-
-__biojs-[io/rest/vis/algo/...]-[name]__
-
-- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
-- Use `vis` for components which are visualizing data sets
-- Use `rest` for REST apis to databases
-- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
-
-If you have a better name for your package, please use it.
-This naming guideline is only if you are not that creative (like us).
-{% endhlblock %}
 
 2) Available commands
 ----------------------
@@ -166,10 +205,10 @@ Enjoy.
 
 ### 2.3. Tests
 
-(only if you enabled it)
+(only available if you enabled it, by default for parsers)
 
 ~~~
-npm run test
+npm test
 ~~~
 
 They are grouped into two sections:
