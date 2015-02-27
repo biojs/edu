@@ -44,7 +44,7 @@ Another example:
 `examples/simple.js`
 
 ~~~
-    data_url= '../dataset.tsv';
+    data_url= '../data/dataset.tsv';
     d3.tsv(data_url,function (error,data){
 
         count = 0;
@@ -58,18 +58,23 @@ Another example:
         });
 ~~~
 
-where dataset.tsv is stored in the root file
+where dataset.tsv is stored in a newly created data folder that is in the root file
 
 ~~~
 drwxr-xr-x 5 rowlandm rowlandm  4096 Feb 27 16:35 ./
 drwxrwxr-x 4 rowlandm rowlandm  4096 Feb 27 13:49 ../
 drwxrwxr-x 2 rowlandm rowlandm  4096 Feb 27 16:41 build/
--rw-r----- 1 rowlandm rowlandm  3565 Feb 27 15:14 dataset.tsv
+-rw-r----- 1 rowlandm rowlandm  3565 Feb 27 15:14 data/ 
 drwxr-xr-x 2 rowlandm rowlandm  4096 Feb 27 16:41 examples/
 drwxr-xr-x 2 rowlandm rowlandm  4096 Feb 27 16:40 lib/
 -rw-r--r-- 1 rowlandm rowlandm 10725 Feb 27 13:51 LICENSE
 -rw-r--r-- 1 rowlandm rowlandm  1643 Feb 27 16:11 package.json
 -rw-r--r-- 1 rowlandm rowlandm  1502 Feb 27 13:51 README.md
+~~~
+
+~~~
+ls data/
+dataset.tsv
 ~~~
 
 
