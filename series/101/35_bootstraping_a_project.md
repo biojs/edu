@@ -40,6 +40,21 @@ npm install -g watchify biojs-sniper
 
 3) Bootstrap your new project
 
+{% hlblock info %}
+For BioJS 2 components, we have following naming recommendations:
+
+__biojs-[io/rest/vis/algo/...]-[name]__
+
+- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
+- Use `vis` for components which are visualizing data sets
+- Use `rest` for REST apis to databases
+- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
+
+If you have a better name for your package, please use it.
+This naming guideline is only if you are not that creative (like us).
+{% endhlblock %}
+
+
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
@@ -49,6 +64,8 @@ cd <your-project> && slush biojs
 
 Our first component will be a pure parser, so you can answer `no` when being asked
 for visualization support (the next tutorial will use this parser for a visualization).
+
+
 
 ~~~
 ? Module name?: biojs-vis-msa
@@ -78,20 +95,6 @@ Inside the folder you find following files:
 - `build`: Empty folder needed for build
 
 (More detailed information will be given later in this tutorial)
-
-{% hlblock info %}
-For BioJS 2 components, we have following naming recommendations:
-
-__biojs-[io/rest/vis/algo/...]-[name]__
-
-- Use `io` for components which are responsible for parsing data into a specific format (aka parser)
-- Use `vis` for components which are visualizing data sets
-- Use `rest` for REST apis to databases
-- Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
-
-If you have a better name for your package, please use it.
-This naming guideline is only if you are not that creative (like us).
-{% endhlblock %}
 
 2) Available commands
 ----------------------
