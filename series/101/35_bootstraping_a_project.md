@@ -83,6 +83,7 @@ for visualization support (the next tutorial will use this parser for a visualiz
 ? Is this correct? (Y/n) Yes
 ~~~
 
+5) Confirm package has installed correctly
 
 Inside the folder you find following files:
 
@@ -93,6 +94,21 @@ Inside the folder you find following files:
 - `lib` : Folder including your real source code
 - `test`: Folder containing your first unit test
 - `build`: Empty folder needed for build
+
+
+5a) Visualisation packages: check that you can run the browser 
+
+~~~
+npm run w
+~~~
+
+NOTE: you need prunner to run this command. Also note that you will need sudo prepended for Linux machines
+~~~
+npm install -g prunner 
+~~~
+
+Once this is run successfully you should see "hello biojs" at [http://localhost:9090/examples/simple]
+
 
 (More detailed information will be given later in this tutorial)
 
