@@ -12,14 +12,14 @@ series:
       desc: "Basics"
       sort: 1
     "snipspector":
-      desc: "Snipspector"
-      sort: 2
+      desc: "Snipspector tutorial"
+      sort: 4
     "details":
       desc: "Details"
       sort: 3
     "graduates":
-      desc: "\"Graduate\" series"
-      sort: 4
+      desc: "Beginner tutorial"
+      sort: 2
     "snipspector_adv":
       desc: "Advanced snipspector"
       sort: 5
