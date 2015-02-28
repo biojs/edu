@@ -137,7 +137,7 @@ svg.append("circle")
 
 If you see a circle, you can remove the example code and move on.
 
-### 4) Convert our data
+### 5) Convert our data
 
 Now it is time to plot some data! In d3, data are arrays. So the format which our `biojs-io-snipspector` returns is not suitable for our representation.
 Therefore we need to convert our data into this format for each chromosome (each chromosome will be represented by a pie/donut chart)
@@ -195,7 +195,7 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 
 All chromosomes are now in an optimal array representation and each chromosome object is now represented by his name and dataset.
 
-### 5) Creating a donut chart!
+### 6) Creating a donut chart!
 
 Now, after cleaning up our data, let's get finally to the visualization part!
 First, we will visualize the data in chromosome 'X' in a donut chart!
