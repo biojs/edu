@@ -13,37 +13,31 @@ First of all create a new folder called `biojs-vis-snipspector` by running [`slu
 We will use this as our working bench and only edit the `index.js` file inside the `lib` folder.
 Note: Please replace the current code with our following code!
 
-### 1) Installing a npm dependency
+### 1) Installing npm dependencies
 
-For this tutorial, we will require d3 and our parsed data!
+For this tutorial, we will require d3 and our parser!
 In `npm` this is very easy, just run.
 
 ~~~
-npm install biojs-io-snipspector --save
+npm install biojs-io-snipspector d3 --save
 ~~~
-
-{% hlblock info %}
-Please add the following to the "snippets js" section of your `package.json`.
-
-~~~
-https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js
-~~~
-
-it should look like this
-
-~~~
-[...]
-"snippets": {
-	"js": ["/build/biojsvissnipspector.js", "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"],
-[...]
-~~~
-{% endhlblock %}
 
 {% hlblock question %}
 What does `--save` mean? [Help](https://www.npmjs.org/doc/cli/npm-install.html)
 {% endhlblock %}
 
-to get our parsed data, please have a look at the previous [tutorial](/series/101/05_real_parser.html) with real data.
+{% hlblock info %}
+If you don't find a npm package for a js lib, you can add it to the "snippets js" section of your `package.json`.
+
+~~~
+[...]
+"snippets": {
+	"js": ["/build/<your-component>.js", "<non npm libs>"],
+[...]
+~~~
+{% endhlblock %}
+
+to get our parsed data, please have a look at the previous [tutorial]({{site.baseurl}}snipspector_adv/parser_real_data/) with real data.
 
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
@@ -69,6 +63,7 @@ Now we can get started. To define our chart, we first need the size of it, a set
 
 
 ~~~
+var d3 = require("d3");
 var width = 960,
     height = 500,
     radius = Math.min(width, height) / 2;
@@ -86,12 +81,32 @@ var pie = d3.layout.pie()
             });
 ~~~
 
-Let me go trough the code:
+In details:
 
 - First we need a `radius`,`width` and `height` value for our svg components.
 - `color` is a function which will translate values into color code.
 - `arc` draws our svg arc. We we set `innerRadius` to `0`, we would get a piechart.
 - `pie` is our data transformer. D3 provides us with an converter (or layouts), which will convert an array data representation into a suitable representation for pie charts.
+
+### 4) Checking for the BioJS snippet
+
+Normally `slush` should have created an example snippet for you, let's verify whether it is existent.
+The file name doesn't not matter as long as it is in the `examples` directory.
+
+`examples/simple_example.js`
+
+~~~
+var app = require("biojs-vis-snipspector");
+app({el: yourDiv});
+~~~
+
+So let's use this snippet and show our current code, run:
+
+~~~
+npm run w
+~~~
+
+This will run [sniper]({{site.baseurl}}101/example_snippets) and let you browse our work at [http://localhost:9090/examples](http://localhost:9090/examples).
 
 ### 4) Convert our data
 
@@ -208,21 +223,12 @@ We recommend browserify. Therefore use our preinstalled npm run build-browser!
 npm run build-browser
 ~~~
 
-to create a build for this file! If this fails, create a build folder first!
-Now you can easily include this into a simple html using:
-
-`snippets/simple_example.js`
-
-~~~
-var app = require("biojs-vis-snipspector");
-app({el: yourDiv});
-~~~
-
-Don't forget to run it on a server! Otherwise Manny's chromosome data is not loaded.
+to create a build for this file!
 
 The final program looks like this:
 
 {% code javascript collapsible=true %}
+var d3 = require("d3");
 var parser = require("biojs-io-snipspector");
 
 function d3_show(opts) {
