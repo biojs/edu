@@ -153,6 +153,7 @@ Here is our solution:
 Add this into your code.
 
 (add to `lib/index.js`)
+
 ~~~
 function converter(genome){
    var data_res = [];
@@ -194,6 +195,7 @@ parser.read("http://files.biojs.net/chromosomes/manny", function(result){
 ~~~
 
 All chromosomes are now in an optimal array representation and each chromosome object is now represented by his name and dataset.
+
 
 ### 5) Creating a donut chart!
 
