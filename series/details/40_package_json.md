@@ -90,7 +90,18 @@ optional attributes:
 * `buildCSS` (will replace `css`)
 * `buildJS` (will replace `js`)
 
-The `build` attributes can be used to specify alternative locations - in any case the registry will ignore js resources starting with `build`.
+The `build` attributes can be used to specify alternative locations - e.g. for `js` the registry will ignore `js` in favor of `buildJS` while the local sniper will still read the `js` attribute.
+This is useful if you want to work with an unminified, local library version and ship a CDN version at biojs.io.
+Consider this short example:
+
+~~~
+  "js": [
+     "external/soundjs.js"
+  ]
+  "buildJS": [
+      "https://cdnjs.cloudflare.com/ajax/libs/SoundJS/0.6.0/soundjs.min.js"
+  ],
+~~~
 
 {% hlblock info %}
 Do you want to [learn more](https://github.com/biojs/biojs-sniper) about the `sniper`?
