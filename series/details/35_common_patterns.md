@@ -50,6 +50,7 @@ Consider you structured your files like the following:
 ~~~
 
 In this example `dataPath` would be `../data/dataset.tsv` (or `/data/dataset.tsv`).
+You need to create the `data` folder yourself, but the naming is up to you.
 
 ### How to have default options?
 
