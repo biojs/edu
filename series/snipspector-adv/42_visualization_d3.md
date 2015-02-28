@@ -37,7 +37,7 @@ If you don't find a npm package for a js lib, you can add it to the "snippets js
 ~~~
 {% endhlblock %}
 
-to get our parsed data, please have a look at the previous [tutorial]({{site.baseurl}}snipspector_adv/parser_real_data/) with real data.
+In the previous tutorial we wrote a parser please have a look at the previous [tutorial]({{site.baseurl}}snipspector_adv/parser_real_data/), where we called our like this:
 
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
@@ -53,8 +53,23 @@ In the following we will build a donutchart to visualize our data.
 First we need some dependencies. We require d3 for our visualizations and the parser from the previous tutorial.
 We can require them with following code:
 
+(`lib/index.js`)
+
 ~~~
+var d3 = require("d3");
 var parser = require("biojs-io-snipspector");
+~~~
+
+Furthermore we want to wrap our visualization in an exported function:
+
+
+(add to `lib/index.js`)
+
+~~~
+var vis = function(opts){
+ // future code to be added here
+}
+module.exports = vis;
 ~~~
 
 ### 3) Getting started with d3
@@ -62,8 +77,9 @@ var parser = require("biojs-io-snipspector");
 Now we can get started. To define our chart, we first need the size of it, a set of colors, the arc form and an converter for our data:
 
 
+(add to `lib/index.js`)
+
 ~~~
-var d3 = require("d3");
 var width = 960,
     height = 500,
     radius = Math.min(width, height) / 2;
@@ -107,12 +123,26 @@ npm run w
 ~~~
 
 This will run [sniper]({{site.baseurl}}101/example_snippets) and let you browse our work at [http://localhost:9090/examples](http://localhost:9090/examples).
+Currently the snippet will be empty, but you can add some example code inside our module in `lib/index.js` to check whether every is working. 
+
+~~~
+var svg = d3.select(opts.el).append("svg")
+  .attr("width", 100)
+  .attr("height", 100);
+
+svg.append("circle")
+  .style("fill", "red")
+  .attr("r", 40)
+~~~
+
+If you see a circle, you can remove the example code and move on.
 
 ### 4) Convert our data
 
 Now it is time to plot some data! In d3, data are arrays. So the format which our `biojs-io-snipspector` returns is not suitable for our representation.
 Therefore we need to convert our data into this format for each chromosome (each chromosome will be represented by a pie/donut chart)
 
+(add to `lib/index.js`)
 ~~~
 var chromosome_data = [{category: "del", number: 1}, {category: "hetero": ,number: 2} , {category: "homo" , number: 3}];
 ~~~
@@ -121,6 +151,7 @@ Can you come up with an converter?
 Here is our solution:
 Add this into your code.
 
+(add to `lib/index.js`)
 ~~~
 function converter(genome){
    var data_res = [];
@@ -323,6 +354,6 @@ In our final component `biojs-vis-snipspector`, we also included a function to v
 Have a look at the [source code](https://github.com/biojs-edu/biojs-vis-snipspector) to learn more!
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="./res/snipvis.js"></script>
+<script src="{{site.baseurl}}series/snipspector-adv/res/snipvis.js"></script>
 <script>var snipvis = require("biojs-vis-snipspector");
 snipvis(document.getElementById("vis"))</script>
