@@ -292,7 +292,69 @@ Congratulations! You wrote your very first Biojs 2 Component.
 You can find the complete solution of this package on [github](https://github.com/biojs-edu/biojs-io-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
 {% endhlblock %}
 
-8) Add yourself to the graduate list
+8) Extend the generic parser
+----------------------------
+
+We provide a [small generic parser][io-parser], that provides some common functionality like
+downloading files.
+First we need to install the generic component:
+
+```
+npm install biojs-io-parser --save
+```
+
+Then we can require it at the head of the `lib/index.js`.
+
+```
+var parser = require("biojs-io-parser");
+```
+
+And finally we inherit the methods from the generic parser.
+Therefor add this call anywhere, but after the parser variables is defined.
+
+```
+parser.mixin(graduates);
+```
+
+Yes that it that easy to use existing code :)
+But we are pretty sure that you want to test this too!
+As our the online list might change we use `nock` to mock a webserver.
+
+```
+npm install --save-dev nock 
+```
+
+Then we mock our dummy file:
+
+```
+var nock = require('nock')
+
+var testURL = 'http://an.url'
+scope = nock(testURL)
+.persist()
+.get('/list')
+.replyWithFile(200, __dirname + '/dummy.list');
+```
+
+and add a new test (be careful to add it inside the `describe` method):
+
+```
+  it('should work with live data', function(done){
+    tutorial.read(testURL + "/list", function(err, parsed){
+        // the dummy file contains exactly this obj
+        var dummyObj = {DE: 1, HK: 1, NL: 1, UK: 1, TW: 1};
+        assert.deepEqual(parsed, dummyObj);
+        done(); // you need to call the done callback to resume mocha
+    });
+  });
+```
+
+If you everything worked, running `npm test` should still work and now you have
+added the functionality of [the generic biojs parser][io-parser].
+
+[io-parser]: https://github.com/biojs/biojs-io-parser
+
+9) Add yourself to the graduate list
 ------------------------------------
 
 You worked hard - now it is time to acknowledgment.
