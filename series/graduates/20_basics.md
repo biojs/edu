@@ -299,34 +299,34 @@ We provide a [small generic parser][io-parser], that provides some common functi
 downloading files.
 First we need to install the generic component:
 
-```
+~~~
 npm install biojs-io-parser --save
-```
+~~~
 
 Then we can require it at the head of the `lib/index.js`.
 
-```
+~~~
 var parser = require("biojs-io-parser");
-```
+~~~
 
 And finally we inherit the methods from the generic parser.
 Therefor add this call anywhere, but after the parser variables is defined.
 
-```
+~~~
 parser.mixin(graduates);
-```
+~~~
 
 Yes that it that easy to use existing code :)
 But we are pretty sure that you want to test this too!
 As our the online list might change we use `nock` to mock a webserver.
 
-```
+~~~
 npm install --save-dev nock 
-```
+~~~
 
 Then we mock our dummy file:
 
-```
+~~~
 var nock = require('nock')
 
 var testURL = 'http://an.url'
@@ -334,11 +334,11 @@ scope = nock(testURL)
 .persist()
 .get('/list')
 .replyWithFile(200, __dirname + '/dummy.list');
-```
+~~~
 
 and add a new test (be careful to add it inside the `describe` method):
 
-```
+~~~
   it('should work with live data', function(done){
     tutorial.read(testURL + "/list", function(err, parsed){
         // the dummy file contains exactly this obj
@@ -347,7 +347,7 @@ and add a new test (be careful to add it inside the `describe` method):
         done(); // you need to call the done callback to resume mocha
     });
   });
-```
+~~~
 
 If you everything worked, running `npm test` should still work and now you have
 added the functionality of [the generic biojs parser][io-parser].

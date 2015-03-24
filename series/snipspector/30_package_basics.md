@@ -118,7 +118,9 @@ There is an [excellent guide](https://github.com/maxogden/art-of-node#how-requir
 
 4) The first testcase
 ----------------------
+
 Write the following file to the test folder of your Biojs package directory.
+
 ~~~
 var assert = require("chai").assert;
 var tutorial = require("../");
@@ -144,9 +146,9 @@ describe('Snipspector', function(){
 We already provide you with one test case, in the next section we will show you how to fix this unit test.
 You can execute the test suite with:
 
-```
+~~~
 npm test
-```
+~~~
 
 It is really ok if you see errors here - you will fix them later ;-)
 

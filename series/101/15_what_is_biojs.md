@@ -6,7 +6,7 @@ permalink: 101/what_is_biojs/
 estimated-time: 5
 ---
 
-![Lego blocks]({{ site.baseurl}}/img/series/101/lego_blocks.jpg){:height="250px" class="center"}
+![Lego blocks]({{ site.baseurl}}img/series/101/lego_blocks.jpg){:height="250px" class="center"}
 (Image credits: [Jeremey Page](https://www.flickr.com/photos/jezpage/4990873353))
 {:style="font-size: 9px; text-align: center"}  
 
