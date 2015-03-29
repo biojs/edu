@@ -29,9 +29,11 @@ layout: front
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default" id="getStarted"><img src="/img/logo.png" width="30px"> Get Started</a>
             </p>
+            <!--
             <p class="lead">
               <a href="http://try.biojs.net" class="btn btn-lg btn-default" id="terminal"><i class="fa fa-terminal"></i> Try it online (beta)</a>
             </p>
+            -->
           </div>
 
           
