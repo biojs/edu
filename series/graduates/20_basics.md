@@ -25,7 +25,7 @@ alias:country
 
 The alias can be a unique alphanumerical string, whereas the country code is a
 string consisting of exactly two chars as defined by [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2).
-Therefor it could look like this:
+Therefore it could look like this:
 
 ~~~
 greenify:DE
@@ -289,7 +289,7 @@ graduates.parse = function(data) {
 Congratulations! You wrote your very first Biojs 2 Component. 
 
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs-edu/biojs-io-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
+You can find the complete solution of this package on [github](https://github.com/biojs-edu/tutorial-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
 {% endhlblock %}
 
 8) Extend the generic parser
