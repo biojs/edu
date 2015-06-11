@@ -28,7 +28,7 @@ If you find a type or want to help us to make this tutorial even better, you are
 [gitter]: https://gitter.im/biojs/biojs
 [groups]: https://groups.google.com/forum/#!forum/biojs
 [issue]: https://github.com/biojs/biojs/issues
-[wiki]: (https://github.com/biojs/biojs/wiki)
+[wiki]: https://github.com/biojs/biojs/wiki
 
 Concepts in this tutorial
 ------------------------
