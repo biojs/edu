@@ -48,3 +48,9 @@ In the early days of BioJS we defined specific _Easy to_ goals, let's see where 
 * Easy to start:
 * Easy to test
 -->
+
+What you get using BioJS
+---------------------
+In the next video you can check what you can achive reusing and creating BioJS components:
+
+[![BioJS components](http://edu.biojs.net/img/series/101/biojs_videothumb.png)](https://www.youtube.com/watch?v=SkMKuj-Q0YI?t=0s "BioJS components")
