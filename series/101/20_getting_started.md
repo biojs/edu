@@ -134,7 +134,7 @@ Way 2) Build node from the source code
 2. Build node from the source:
 
 ~~~
-git clone git://github.com/ry/node.git
+git clone http://github.com/ry/node.git
 cd node
 ./configure
 make
