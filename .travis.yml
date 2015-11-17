@@ -9,6 +9,6 @@ branches:
   - master
 env:
   global:
-      - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-      - secure: pYlawj0x+kMGSofhExDYjXJSi2DeZSweF7jNzdbG7E3UK1RJXfq4k6w0g+XE2WchDnN9+i/izHHRYLwD0z1UEP+r/3MRGCElOZ23IesdU+uznuOfubBEtVPPlYtyKvWE8glJUVV4AMLmGBwTPn/i4wWMEbsVFTspG/lFBeGWxNQ=
-      - secure: GlwQQii7cVm/2TJKfA0tjFEz7R6PdS5v2olie4VkscrEZ8ZpY+6KqQ24xfhTnVlMLMTgn7aCaUKCmopmTwMGfDrix8Z9zTg6p6t19FznjrdlPlyqVLvqTgw9mYpGargVHvFTIrRXm9GRDKeBYxuR7QInRMcShM4pSBHKePpMZ2E=
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - secure: alR0XjTzPe05HrXyHrMzaZoAyqKHS6/UrRuQftEVsCMsunE5AxB8LJNWWb/I4NPXnX9foe1WvsEg/qOQbeX7H2xtbK/xNdKBUvH56DZGjyqYvPkGZtUTsGZ2/urWG/eHjm/DN4+C/K29CqbekmzkQnvUwYUo5+5v+x5N8KvOHdk=
+  - secure: CMvBMoLKhWBPzIEFTYSPZGhP0dEUSArop0+qFFsfWyoNW2h7pUwJBUZh8gIFPyYdWcN5yv9BTu1CwCvuFLpR8NvLgcp0/PszcS+eK96aYPyDV+az7hs1Gl+O0o4z7eOasz1nveUnS87MQu4h2xm911/rM/KCieEpVp1T5nzaBqk=
