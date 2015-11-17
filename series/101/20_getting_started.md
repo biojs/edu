@@ -49,7 +49,7 @@ You need to open a Terminal session first.
 Installing homebrew:
 
 ~~~
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" # brew is a package manager
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # brew is a package manager
 ~~~
 
 This installs Homebrew. Homebrew is quite a large package so downloading can take a while depending on your internet connection.
@@ -112,9 +112,10 @@ We assume that you most likely will know how to install a package, however feel 
 
 ### Windows Users
 
-You must be completely crazy if you want to develop anything on Windows.
+Windows is definitely not the preferred operating system for software development of this kind. So some additional 
+and often unexpected effort will probably be necessary to get everything running smoothly. 
 Be warned that some packages just assume that they have a UNIX-like enviroment.
-Anyway installing npm on windows is still easy.
+Anyway, installing npm on windows is still easy.
 
 Way 1) Download & install using the [Windows installer](http://nodejs.org/download/)
 
