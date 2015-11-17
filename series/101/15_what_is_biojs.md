@@ -53,4 +53,4 @@ What you get using BioJS
 ---------------------
 In the next video you can check what you can achive reusing and creating BioJS components:
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=SkMKuj-Q0YI" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SkMKuj-Q0YI" frameborder="0"> </iframe>

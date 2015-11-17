@@ -4,11 +4,12 @@ rvm:
 install: bundle install
 script: bundle exec jekyll build
 after_success: bundle exec s3_website push
+sudo: false
 branches:
   only:
   - master
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-  - secure: alR0XjTzPe05HrXyHrMzaZoAyqKHS6/UrRuQftEVsCMsunE5AxB8LJNWWb/I4NPXnX9foe1WvsEg/qOQbeX7H2xtbK/xNdKBUvH56DZGjyqYvPkGZtUTsGZ2/urWG/eHjm/DN4+C/K29CqbekmzkQnvUwYUo5+5v+x5N8KvOHdk=
-  - secure: CMvBMoLKhWBPzIEFTYSPZGhP0dEUSArop0+qFFsfWyoNW2h7pUwJBUZh8gIFPyYdWcN5yv9BTu1CwCvuFLpR8NvLgcp0/PszcS+eK96aYPyDV+az7hs1Gl+O0o4z7eOasz1nveUnS87MQu4h2xm911/rM/KCieEpVp1T5nzaBqk=
+  - secure: Kbn83/Bqny6WKGYMQ48Jd3Qo5xGHtifLcEj/hz2FzxSERrvCF4cnGxKH44P73haZeyMwMux/g4xotNc6OgcyDP4wEsQaOxMydCeF4ut/s2v7yHB0kzQak0pPQYC/Z1Ib7UUG7KcSFUbM92XiYOvg/hycKK7WVdKjIDsgaf0vuu8=
+  - secure: f1jsRWi6KssAwB1g+QD7yxVfAW72n9le5A3E3BUd4I58dAZjxS51OUKJxFrjqj2m1NdmqrlvFXmWzIitIR5bFgsDL62szJU/q4gWCHW5cFYBcIX/wM3vKhFjo6/LFshvbYublrH6RHCH/nF7M1B0Mmr8yc3+3FoNiCqx+q2L854=
