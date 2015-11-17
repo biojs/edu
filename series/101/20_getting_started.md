@@ -92,51 +92,36 @@ yum install npm # Fedora
 
 
 {% hlblock info %}
-If you want to install the packages globally in your userdir (without sudo), see [these instructions](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo-linux.md)
-{% endhlblock %}
-
-{% hlblock info %}
-If you want to avoid installing packages with sudo, you can also use [nvm](https://github.com/creationix/nvm)
+If you want to avoid installing packages with sudo, you can use the node version manager [nvm.](https://github.com/creationix/nvm)
+Install it like this:
 
 ~~~
-curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash # install nvm
-nvm install 0.10.30 && nvm alias default 0.10.30 && nvm use default # install node & npm in userenv
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash # install nvm
+~~~
+
+Then set the most recent node version (or LTS in this case) as your default:
+
+~~~
+nvm install 4.2.2 && nvm alias default 4.2.2 && nvm use default # install node & npm in userenv
 ~~~
 
 {% endhlblock %}
 
+Now you can install node packages like this:
 
-We assume that you most likely will know how to install a package, however feel free to add instructions for your favorite distro.
+~~~
+npm install drawrnajs
+~~~
 
 <a name="windows"></a>
 
 ### Windows Users
 
 Windows is definitely not the preferred operating system for software development of this kind. So some additional 
-and often unexpected effort will probably be necessary to get everything running smoothly. 
+and often unexpected effort will probably be necessary to get everything running. 
 Be warned that some packages just assume that they have a UNIX-like enviroment.
-Anyway, installing npm on windows is still easy.
+Anyway, installing npm on windows is still easy:
 
-Way 1) Download & install using the [Windows installer](http://nodejs.org/download/)
+Just download & install using the [Windows installer](http://nodejs.org/download/)
 
-Way 2) Build node from the source code  
-
-1. [install cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/)
-    - Use setup.exe in the cygwin folder to install the following packages:
-        * devel → openssl
-        * devel → g++-gcc
-        * devel → make
-        * python → python
-        * devel → git
-     - Open the cygwin command line with Start > Cygwin > Cygwin Bash Shell.
-
-
-2. Build node from the source:
-
-~~~
-git clone http://github.com/ry/node.git
-cd node
-./configure
-make
-sudo make install
-~~~
+You can now use it from the Node.js Command Prompt or by installing [Cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/)
