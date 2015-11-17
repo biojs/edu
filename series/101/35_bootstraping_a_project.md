@@ -15,7 +15,7 @@ You need to install `npm` before you can start to rock. See <a href="{{site.base
 --------------------------------------------
 
 We use a special [slush generator](https://github.com/biojs/slush-biojs) to bootstrap a new BioJS project.
-(you can don't need to use it, but it simplifies the work and is especially aimed at newcomers)
+(you don't need to use it, but it simplifies the work and is specifically targeted towards beginners)
 
 {% alert warn %}
 On Linux and Mac you will need to prepend `sudo` for global (`-g`) installations or [configure](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) global installations into your home directory.
@@ -31,7 +31,7 @@ npm install -g slush slush-biojs
 (`slush-biojs` is updated frequently, therefore update it from time to time)
 
 `-g` stands for global installation, will download the npm packages to your global npm path (e.g. `/usr/lib/node_modules`) and add the executables
-to your `PATH` variable. If you want to install globally into your home directory without using `sudo`, have a look at [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
+to your `PATH` variable. If you want to install globally into your home directory without using `sudo`, have a look at [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) or use [nvm](https://github.com/creationix/nvm).
 
 ### 1.2) Bootstrap your new project
 {% hlblock info %}
@@ -41,17 +41,22 @@ __biojs-[io/rest/vis/algo/...]-[name]__
 
 - Use `io` for components which are responsible for parsing data into a specific format (aka parser)
 - Use `vis` for components which are visualizing data sets
-- Use `rest` for REST apis to databases
+- Use `rest` for REST APIs to databases
 - Use `algo` for server/client side algorithms processing the data (e.g. alignments, neural networks, markov models, graph algorithms)
 
-If you have a better name for your package, please use it.
-This naming guideline is only if you are not that creative (like us).
+If you have a better name for your package, feel free to use it.
+This is more of a guideline for when you don't feel like being creative.
 {% endhlblock %}
 
+To use our Slush generator create a directory, change into it and run the generator.
+Like this:
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
 ~~~
+
+The generator will then create a directory structure and a number of useful files for you, including the package.json 
+and license files.
 
 ### 1.3) Fill your package with life
 
