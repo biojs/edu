@@ -6,17 +6,17 @@ permalink: 101/getting_started/
 estimated-time: 5
 ---
 
-You will need __`npm`__ and __`git`__ on your shell.
+#### This page will help you prepare your computer for work with BioJS
 
-- [__Mac__](#mac)
-- [__Linux__](#linux)
-- [__Windows__](#windows)
+You will need to work in a terminal using __`npm`__ and __`git`__. 
+* [Git](https://github.com) is a version control system that will keep track of the changes you have made in code.
+* [Node.js](http://nodejs.org) is a 'runtime environment platform for server-side JavaScript applications'. 
+Node's package managing system is called [npm](https://www.npmjs.com).
 
-When your machine is ready to rumble, continue to the [tutorial]({{site.baseurl}}/101/modularity)
 
 {% hlblock check %}
 
-See whether you have both commands (`npm`, `git`) installed. You should run the above without
+Open your terminal of choice and check whether you have both commands (`npm`, `git`) installed. You should run these without
 any error.
 
 ~~~
@@ -25,6 +25,15 @@ npm help
 ~~~
 
 {% endhlblock %}
+
+If your machine is already set up, continue to the [tutorial]({{site.baseurl}}/101/modularity).
+
+Otherwise, choose your operating system below to learn more: 
+
+- [__Mac__](#mac)
+- [__Linux__](#linux)
+- [__Windows__](#windows)
+
 
 {% hlblock info %}
 If you want to fresh up your `git` skills, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
@@ -36,28 +45,26 @@ What does `npm` stand for?
 
 <a name="mac"></a>
 
-### Mac Users
+### Mac OSX
 
-Homebrew, git and node.js are three packages that are worth having on your Mac if you want to do software development.
+On Mac we recommend installing git and node.js via [Homebrew](http://brew.sh). Homebrew is called the 'missing package manager for OS X'. 
+It allows you to download packages onto your Mac from your command line.
+Homebrew, git and node.js are packages worth having if you want to do software development on your Mac.
+  
+To get started, open a Terminal session first.
 
-* [Homebrew](http://brew.sh) is called the 'missing package manager for OS X'. It allows you to download packages onto your Mac from your command line.  
-* [Git](https://github.com) is a version control system that will keep track of the changes you have made in code.
-* [Node.js](http://nodejs.org) is a 'runtime environment platform for server-side JavaScript applications'.
-
-You need to open a Terminal session first.
-
-Installing homebrew:
+Then install Homebrew using this command:
 
 ~~~
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # brew is a package manager
 ~~~
 
-This installs Homebrew. Homebrew is quite a large package so downloading can take a while depending on your internet connection.
+Homebrew is quite a large package so downloading can take a while depending on your internet connection.
 
-Using Homebrew to install node.js:
+Then use Homebrew to install node.js:
 
 ~~~
-brew install node # installs the node package
+brew install node
 ~~~
 
 If you have not installed `git`, this command uses homebrew to install git:
@@ -66,16 +73,14 @@ If you have not installed `git`, this command uses homebrew to install git:
 brew install git
 ~~~
 
-To ensure you have installed these correctly, it is worth checking by typing "git help" and "npm help" into the command line again.
+Check if the installation was successful by typing "git help" and "npm help" into the command line again.
 
-Alternatively you can also install NodeJs via the [package installer](http://nodejs.org/download/).
-
-You can also download [Github for Mac](https://mac.github.com/).
+Alternatively you can also install node.js via the [package installer](http://nodejs.org/download/) and  download [Github for Mac](https://mac.github.com/).
 
 
 <a name="linux"></a>
 
-### Linux users
+### Linux
 
 {% hlblock help %}
 Install nodejs via [your package manager](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)
@@ -115,13 +120,17 @@ npm install drawrnajs
 
 <a name="windows"></a>
 
-### Windows Users
+### Windows
 
 Windows is definitely not the preferred operating system for software development of this kind. So some additional 
 and often unexpected effort will probably be necessary to get everything running. 
-Be warned that some packages just assume that they have a UNIX-like enviroment.
-Anyway, installing npm on windows is still easy:
+Be warned that some packages just assume that they have a UNIX-like environment. So consider using Linux or Mac OS if you have choice.
 
-Just download & install using the [Windows installer](http://nodejs.org/download/)
+If you don't have a choice or want to try anyway, installing git and npm on windows is still easy:
+Just download & install using the Windows installer for [node](http://nodejs.org/download/) and [git](https://git-scm.com/).
 
-You can now use it from the Node.js Command Prompt or by installing [Cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/)
+After installation, you can use the Git Bash terminal for both npm and git commands in a UNIX-like environment. 
+
+Another possibility would be the [Cygwin](http://www.mcclean-cooper.com/valentino/cygwin_install/) terminal emulator. 
+This allows you to install git via a package manager. **Please beware** that node and npm don't support Cygwin at the moment.
+However you can still use it through Cygwin after installing node via it's installer or building an older version (< 4.2.2) from source.  
