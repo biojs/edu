@@ -114,7 +114,7 @@ node test.js
 ~~~
 
 As we haven't done any work, our package currently outputs `{}`,
-but of course it should return `{"DE": 1, "HL: 1}`.
+but of course it should return `{"DE": 1, "HK: 1}`.
 
 
 Other BioJS components are also able to include your component by using:
@@ -122,7 +122,7 @@ Other BioJS components are also able to include your component by using:
 ~~~
 var graduates = require('biojs-io-graduates');
 graduates.parse("greenify:DE\ndaviddao:HK");
-// should return {"DE": 1, "HL: 1}
+// should return {"DE": 1, "HK": 1}
 ~~~
 
 We don't need the file `tests.js` for our further development as we will use
