@@ -11,5 +11,5 @@ branches:
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-  - secure: Kbn83/Bqny6WKGYMQ48Jd3Qo5xGHtifLcEj/hz2FzxSERrvCF4cnGxKH44P73haZeyMwMux/g4xotNc6OgcyDP4wEsQaOxMydCeF4ut/s2v7yHB0kzQak0pPQYC/Z1Ib7UUG7KcSFUbM92XiYOvg/hycKK7WVdKjIDsgaf0vuu8=
-  - secure: f1jsRWi6KssAwB1g+QD7yxVfAW72n9le5A3E3BUd4I58dAZjxS51OUKJxFrjqj2m1NdmqrlvFXmWzIitIR5bFgsDL62szJU/q4gWCHW5cFYBcIX/wM3vKhFjo6/LFshvbYublrH6RHCH/nF7M1B0Mmr8yc3+3FoNiCqx+q2L854=
+  - secure: h9hhlu4G3KGKy4+kzuoQrASm6wmNmh9qgs7/DWmZvAlvvgNUOC5p31SHHZ3/H3uUKgHgYEUVzgJn29K/jTpZcbxYiFC8JAXgKvN7Ynxk6S/b7syLyeP1SMLUPobd/hiMNpjWfovpjIDULhVzLkRJGrnXN7TNvoeVsaHkyL+ayUk=
+  - secure: Ie7vsfqFJs+FB06Hb7ip6KAaiUlulTeTgCGvZZc1GFjoimbDOJgJFfpV0g+h+Wwtyyj0LAFmq7RYTbC5lmJUa/WPd+qYNaX4uKz39c5yadTTT1qutDf84LoMJQCfCrMQpq1/HNxL5IopvwaKfGq7+Bu4ZWPTQCYiVWfofOqDAlI=
