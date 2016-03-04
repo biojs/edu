@@ -26,7 +26,7 @@ npm help
 
 {% endhlblock %}
 
-If your machine is already set up, continue to the [tutorial]({{site.baseurl}}/101/modularity).
+If your machine is already set up, continue to the [tutorial](/101/modularity).
 
 Otherwise, choose your operating system below to learn more: 
 

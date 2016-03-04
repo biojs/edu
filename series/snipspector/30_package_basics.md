@@ -73,7 +73,7 @@ rs9604967	22	15492342	CC
 
 
 {% hlblock info %}
-To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing]({{site.baseurl}}/snipspector_adv/parser_real_data) you will learn how to parse the real file with 500,000 rows.
+To make this tutorial as easy as possible, we will only work with this static example. In the [extended parsing](/snipspector_adv/parser_real_data) you will learn how to parse the real file with 500,000 rows.
 {% endhlblock %}
 
 3) Export your component
@@ -323,8 +323,8 @@ Congratulations! You wrote your very first Biojs 2 Component. You can now publis
 If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
 {% endhlblock %}
 
-Furthermore, consider to [publish]({{site.baseurl}}/101/publish_it/) your future components to npm.
-In the next tutorial, you will learn [how to create a visualization component]({{site.baseurl}}/snipspector/vis_basics) using your newly build `biojs-io-snipspector` component.
+Furthermore, consider to [publish](/101/publish_it/) your future components to npm.
+In the next tutorial, you will learn [how to create a visualization component](/snipspector/vis_basics) using your newly build `biojs-io-snipspector` component.
 
 {% hlblock info %}
 You can find the complete solution of this package on [github](https://github.com/biojs-edu/biojs-io-snipspector/tree/basic_packaging) and [npm](https://www.npmjs.org/package/biojs-io-snipspector).

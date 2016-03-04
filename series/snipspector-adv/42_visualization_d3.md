@@ -37,7 +37,7 @@ If you don't find a npm package for a js lib, you can add it to the "snippets js
 ~~~
 {% endhlblock %}
 
-In the previous tutorial we wrote a parser please have a look at the previous [tutorial]({{site.baseurl}}snipspector_adv/parser_real_data/), where we called our like this:
+In the previous tutorial we wrote a parser please have a look at the previous [tutorial](/snipspector_adv/parser_real_data/), where we called our like this:
 
 ~~~
 parser.read("http://files.biojs.net/chromosomes/manny", function(result){
@@ -122,7 +122,7 @@ So let's use this snippet and show our current code, run:
 npm run w
 ~~~
 
-This will run [sniper]({{site.baseurl}}101/example_snippets) and let you browse our work at [http://localhost:9090/examples](http://localhost:9090/examples).
+This will run [sniper](/101/example_snippets) and let you browse our work at [http://localhost:9090/examples](http://localhost:9090/examples).
 Currently the snippet will be empty, but you can add some example code inside our module in `lib/index.js` to check whether every is working. 
 
 ~~~
@@ -357,6 +357,6 @@ In our final component `biojs-vis-snipspector`, we also included a function to v
 Have a look at the [source code](https://github.com/biojs-edu/biojs-vis-snipspector) to learn more!
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="{{site.baseurl}}series/snipspector-adv/res/snipvis.js"></script>
+<script src="/series/snipspector-adv/res/snipvis.js"></script>
 <script>var snipvis = require("biojs-vis-snipspector");
 snipvis(document.getElementById("vis"))</script>

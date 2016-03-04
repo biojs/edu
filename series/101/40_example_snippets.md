@@ -20,7 +20,7 @@ var instance = new App({el: rootDiv, <other options>});
 ~~~
 
 You might realize that an ideal snippet doesn't include any HTML at all. Well why should you?
-If you convert the BioJS snippet to real HTML you would have to create this minimal HTML file for every snippet that you provide. In fact you state all your global dependencies in a global configuration file - the [`package.json`]({{site.baseurl}}/details/package_json)
+If you convert the BioJS snippet to real HTML you would have to create this minimal HTML file for every snippet that you provide. In fact you state all your global dependencies in a global configuration file - the [`package.json`](//details/package_json)
 
 ~~~
 <html>

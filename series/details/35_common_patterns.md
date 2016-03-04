@@ -38,7 +38,7 @@ xhr(dataPath, function(err,status, body){
 });
 ~~~
 
-You need to add the "xhr" module in the [exposed section]({{site.baseurl}}details/package_json/) of the snippet configuration.
+You need to add the "xhr" module in the [exposed section](/details/package_json/) of the snippet configuration.
 Instead of "xhr", you could also use `jQuery.load`, or `d3.csv` etc.
 Consider you structured your files like the following:
 

@@ -12,7 +12,7 @@ This is a short 5 minutes tutorial on the basics of using and reusing BioJS comp
 -------------------------
 
 {% alert warn %}
-You need to install `node` before you can start to rock. See <a href="{{site.baseurl}}/101/getting_started/"> the getting started guide </a> for more info.
+You need to install `node` before you can start to rock. See <a href="/101/getting_started/"> the getting started guide </a> for more info.
 {% endalert %}
 
 How does the LEGO-System of BioJS works?

@@ -7,7 +7,7 @@ estimated-time: 20
 ---
 
 {% alert warn %}
-You need to install `npm` before you can start to rock. See <a href="{{site.baseurl}}/101/getting_started/"> the getting started guide </a> for more info.
+You need to install `npm` before you can start to rock. See <a href="/101/getting_started/"> the getting started guide </a> for more info.
 {% endalert %}
 
 
