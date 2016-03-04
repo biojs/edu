@@ -27,35 +27,32 @@ Contributor list
 Don't be shy - add yourself to the contributors list of an article.
 The names are sorted alphabetically.
 
-About jekyll
+How to run
 -----------
 
 [Jekyll](http://jekyllrb.com/) is awesome.
 
 ```
-jekyll serve -w
+bundle exec jekyll serve -w
 ```
 (runs jekyll locally in the server mode + watching for changes)
 
 [Install](http://jekyllrb.com/docs/installation/) jekyll.
 
+Installing dependencies
+-----------------------
 
-Problems with jekyll?
---------------------
-
-Try to install a recent version
-
-```
-gem install jekyll
-```
-
-or use [bundler](http://bundler.io/) (virtualenv for ruby).
+We use [bundler](http://bundler.io/) (virtualenv for ruby).
 
 ```
 gem install bundler
 bundle install # in your edu root folder
-# this will install the dependencies specified in the Gemfile & Gemfile.lock
-bundle exec jekyll serve -w # this will execute jekyll with your bundles in the virtualenv
+```
+
+You can then install all dependencies with
+
+```
+bundle install --path vendor/bundle
 ```
 
 Jekyll layouts
