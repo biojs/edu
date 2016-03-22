@@ -34,15 +34,22 @@ What is BioJS?
 
 We are quite more than just a registry for components - we aim to build a infrastructure
 , guidelines and tools to avoid the reinvention of the wheel in life sciences (= "Docker for Bio web components").  
-In the early days of BioJS we defined specific _Easy to_ goals, let's see where we currently stand:
+In the early days of BioJS we defined specific _Easy to_ goals - our set of core principles we, as a community, 
+try to follow when developing BioJS components and its resources:
 
-* Easy to _combine_ - `require('my-awesome-biojs-component')` (with `browserify` we can also use run  `require` in the browser)
-* Easy to _use_ - `npm install my-awesome-biojs-component` (you will see that `npm` exactly behaves like our Lego block manager)
-* Easy to _develop_ : we make only minimal rules and try to give the developers as much freedom as possible
-* Easy to _discover_ : BioJS components can be easily browsed at [biojs.io](http://biojs.io)
-* Easy to _understand_ : We hope you like this education platform
-* Easy to _maintain_ : Everyone creates a github repo for this component and maintains only the code he loves
-* Easy to _get involved_ : Apart from our amazing tutorial, we are also very active on github and gitter
+* Easy to __combine__ - BioJS makes extensive use of Node's `require()` method to load modules - objects that may contain values, objects or functions from another JavaScript file. E.g. `require('my-awesome-biojs-component')` will load the module of my-awesome-biojs-component into your own project (with `browserify` we can also use run  `require` in the browser)
+* 
+* Easy to __use__ - BioJS lets you use components easily by single-line installation via npm. All you need is to write `npm install my-awesome-biojs-component` into your terminal to get everything you need to reuse the `my-awesome-biojs-component` (you will see that `npm` exactly behaves like our Lego block manager)
+* 
+* Easy to __develop__ : BioJS provides with you a minimal essentials sets of conventions and Best Practices, so you as a contributing developer can enjoy as  much freedom as possible when creating your own components
+* 
+* Easy to __discover__ : BioJS sums up all of its over 130 components in the [ __BioJS Registry__](http://biojs.io)
+* 
+* Easy to __understand__ : The community of BioJS works steadily on creating and improving learning resources for its users and developers. You find anything unclear or if you are missing something, please feel free to [edit these pages on github](https://github.com/biojs/edu) by sending us a pull request, or requesting new learning sections by creating [a github issue](https://github.com/biojs/edu/issues)
+* 
+* Easy to __maintain__ : Everyone creates a github repo for their own component and maintains only the code they love!
+* 
+* Easy to __get involved__ : Apart from our amazing tutorial, we are also very active on [github](https://github.com/biojs/), [gitter](https://gitter.im/biojs/biojs) and [slack chat](http://biojs-slackin.herokuapp.com/)
 
 <!--
 * Easy to start:
@@ -51,6 +58,6 @@ In the early days of BioJS we defined specific _Easy to_ goals, let's see where 
 
 What you get using BioJS
 ---------------------
-In the next video you can check what you can achive reusing and creating BioJS components:
+In the next video you can check out what you can achieve by reusing and creating BioJS components:
 
 <iframe width="100%" height="600px" src="http://www.youtube.com/embed/SkMKuj-Q0YI?autoplay=0"></iframe>

@@ -14,8 +14,10 @@ You need to install `npm` before you can start to rock. See <a href="/101/gettin
 1) Create a new package
 --------------------------------------------
 
-We use a special [slush generator](https://github.com/biojs/slush-biojs) to bootstrap a new BioJS project.
-(you don't need to use it, but it simplifies the work and is specifically targeted towards beginners)
+We use a customized [slush generator called slush-biojs](https://github.com/biojs/slush-biojs) to bootstrap each new BioJS project.
+`slush-biojs` helps you to get started with creating your own BioJS component, by creating a directory structure and a number of useful files for you, including the package.json for maintaining all your other project dependencies and license files.
+
+If you are a beginner it is highly recommended to use the slush generator by following the steps on this tutorial page. 
 
 {% alert warn %}
 On Linux and Mac you will need to prepend `sudo` for global (`-g`) installations or [configure](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) global installations into your home directory.
@@ -24,14 +26,25 @@ On Linux and Mac you will need to prepend `sudo` for global (`-g`) installations
 
 ### 1.1) Install slush
 
+Before creating your first slush-generated BioJS component, you will have to install the required tools via the terminal as follows:
+
+First, install `slush` with the following command:
+
 ~~~
-npm install -g slush slush-biojs
+npm install -g slush
 ~~~
 
-(`slush-biojs` is updated frequently, therefore update it from time to time)
+After the installation has finished successfully, it's time for you to install `slush-biojs` as well. You can do it like this:
+
+~~~
+npm install -g slush-biojs
+~~~
 
 `-g` stands for global installation, will download the npm packages to your global npm path (e.g. `/usr/lib/node_modules`) and add the executables
 to your `PATH` variable. If you want to install globally into your home directory without using `sudo`, have a look at [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) or use [nvm](https://github.com/creationix/nvm).
+
+
+`slush-biojs` is updated frequently, so make sure to update it from time to time.
 
 ### 1.2) Bootstrap your new project
 {% hlblock info %}
@@ -50,6 +63,7 @@ This is more of a guideline for when you don't feel like being creative.
 
 To use our Slush generator create a directory, change into it and run the generator.
 Like this:
+
 ~~~
 mkdir <your-project>
 cd <your-project> && slush biojs
@@ -60,7 +74,10 @@ and license files.
 
 ### 1.3) Fill your package with life
 
-#### 1.3.a) Example for bootstrapping a parser
+When initialising the slush generator in your project, you will be prompted with a couple of questions
+which help you to setup your `package.json` file. If you are unsure about what to fill in, you can use the two configuration examples below as a guideline:
+
+#### 1.3.a) Package.json configuration example for bootstrapping a parser
 
 ~~~
 ? Module name? (required) biojs-io-clustal	
@@ -78,7 +95,9 @@ and license files.
 ? Is this correct? Yes
 ~~~
 
-#### 1.3.b) Example for bootstrapping a visualization component
+
+
+#### 1.3.b) Package.json configuration example for bootstrapping a visualization component
 
 ~~~
 ? Module name? (required) biojs-vis-seqlogo
@@ -96,6 +115,10 @@ and license files.
 ? Choose your license type: MIT
 ? Is this correct? Yes
 ~~~
+
+After you confirmed your entries by answering the last questions with a Yes, `slush-biojs` will start installing dependencies 
+and setting up a suitable directory structure. This process might take up to 10 mins, so please be patient and
+enjoy a cup of coffee in the meanwhile.
 
 ### 1.4) Resulting file structure
 
@@ -128,9 +151,17 @@ You can find an overview of all automatically configured npm tasks [here](https:
 
 ### 1.5) Confirm your installation
 
-If everything went okay, you the following commands should have a similar output
+If everything went okay, you should check your BioJS project setup with the following commands depending on your type of component:
 
-IO packages: `npm test`  
+#### 1.5.a) IO packages 
+
+If you created an IO component type of BioJS project, run the following command in your terminal to test
+if your project is setup properly:
+
+~~~
+npm test
+~~~
+
 A simple, default test should pass.
 
 ~~~
@@ -141,8 +172,21 @@ A simple, default test should pass.
   1 passing (6ms)
 ~~~
 
-Visualization packages: `npm run w`:
-It should start a local webserver and you should see a hello world at [http://localhost:9090/examples](http://localhost:9090/examples) example snippet.
+#### 1.5.b) Visualization packages
+
+First prebuild your component, so it can be checked in the browser afterwards. You can build your BioJS project with this command:
+
+~~~
+npm run build
+~~~
+
+After this task has completed, spin up a local webserver hosting your BioJS project with this short command:
+
+~~~
+npm run w
+~~~
+
+You can follow the start of your local webserver in your terminal which will be looking similar to this:
 
 ~~~
 starting:  'npm run sniper','npm run watch'
@@ -154,6 +198,11 @@ starting:  'npm run sniper','npm run watch'
 [npm-run-sniper]: DIR:.
 [npm-run-watch]: 1218 bytes written to build/vis.js (0.02 seconds)
 ~~~
+
+Your examples page will be greeting you with a short "hello world" under this url [http://localhost:9090/examples/simple](http://localhost:9090/examples/simple){:target="_blank"}.
+
+
+If these tests fail, checkout the following frequent errors to fix your current setup:
 
 ### 1.6) Frequent errors
 
