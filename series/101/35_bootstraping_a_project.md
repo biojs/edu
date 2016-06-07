@@ -141,7 +141,7 @@ You can find an overview of all automatically configured npm tasks [here](https:
 
 ### Optionally you might find
 
-* [`examples`][examples] (previously: `snippets`): Folder containing visualization examples
+* [`examples`][examples] (previously called: `snippets`): Folder containing visualization examples
 * `test`: Folder containing unit tests
 * [`css`][css]: Folder contain all stylesheets (SASS and LESS files can be added via transforms)
 * `src`: Sometime used as main source folder or by projects with Coffee-Script (those projects transpile the source folder `src` to `lib`)
@@ -243,7 +243,7 @@ These snippets will be used for the [BioJS registry](http://biojs.io).
 npm run sniper
 ~~~
 
-and open [http://localhost:9090/snippets](http://localhost:9090/snippets). See the [Sniper repository](https://github.com/biojs/sniper) for more details.
+and open [http://localhost:9090/examples](http://localhost:9090/examples). See the [Sniper repository](https://github.com/biojs/sniper) for more details.
 
 
 ### 2.2. Watchify
