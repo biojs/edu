@@ -215,9 +215,54 @@ h3 {
     color: #ffffff;
     text-decoration: none;
 }
-.item-active {
-    color: white;
+.item:after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 8px;
+  height: 1px;
 }
+.item-active, .item-active:hover {
+    color: #89ef75;
+}
+.item-active:after {
+  border-top: 1px solid rgba(255,255,255, .5);
+  width: 1px; 
+  left: 50%;
+  -webkit-animation: .5s ease-in 3s forwards slideUnderLine;
+  -moz-animation: .5s ease-in 3s forwards slideUnderLine;
+  -ms-animation: .5s ease-in 3s forwards slideUnderLine;
+  -o-animation: .5s ease-in 3s forwards slideUnderLine;
+  animation: .5s ease-in 3s forwards slideUnderLine;
+}
+@-webkit-keyframes slideUnderLine { 
+  from { 
+    border-top: 1px solid rgba(255,255,255, .5);
+    width: 1px; 
+    left: 50%;
+  } 
+
+  to { 
+  border-top: 1px solid #89ef75;
+  left: -4px; 
+  width: 100%;
+  }  
+}
+
+@keyframes slideUnderLine { 
+  from { 
+    border-top: 1px solid rgba(255,255,255, .5);
+    width: 1px; 
+    left: 50%;
+  } 
+
+  to { 
+  border-top: 1px solid #6CD757;
+  left: -4px; 
+  width: 100%;
+  }  
+}
+
 .contentTitle {
     font-size: 40px;
     font-weight: bold;
