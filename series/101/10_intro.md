@@ -23,7 +23,7 @@ Our education portal is work in progress. So if you encounter a logical inconsis
 We also maintain a public [Github wiki][wiki] and have a [mailing list][groups].
 For technical queries (questions, suggestions, proposal or bug reports) [Github issues](https://github.com/biojs/biojs/issues) are preferred.
 
-If you find a type or want to help us to make this tutorial even better, you are invited to click on "Improve this page".
+If you find a typo or want to help us to make this tutorial even better, you are invited to click on "Improve this page".
 
 [gitter]: https://gitter.im/biojs/biojs
 [groups]: https://groups.google.com/forum/#!forum/biojavascript
