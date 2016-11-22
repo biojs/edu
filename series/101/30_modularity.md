@@ -6,7 +6,7 @@ permalink: 101/modularity/
 estimated-time: 15
 ---
 
-This is a short 5 minutes tutorial on the basics of using and reusing BioJS components.
+This is a short tutorial on the basics of using and reusing BioJS components -- it should take you about 5 minutes to complete.
 
 1) Install node & npm
 -------------------------
@@ -16,14 +16,14 @@ You need to install `node` before you can start to rock. See <a href="/101/getti
 {% endalert %}
 
 How does the LEGO-System of BioJS works?
-We recommend you to use a Unix terminal and a text editor!
+We recommend you use a Unix terminal and a text editor!
 
 
 2) Your first easy BioJS Component
 -------------------------
 
 Make a new folder and create a new file called `index.js`.
-Now we create an easy BioJS component which adds two numbers and can be reused!
+Now we create a simple BioJS component which adds two numbers and can be reused!
 
 ~~~
 function biojs101(a,b) {
@@ -57,7 +57,7 @@ var reuse = require("./index");
 console.log(reuse(3,6));
 ~~~
 
-Congratulations! You reused your first biojs function in the source code!
+Congratulations! You reused your first BioJS function in the source code!
 Check for yourself, type in:
 
 ~~~
@@ -67,7 +67,7 @@ node reuse.js
 It will show you `3` (because of console.log in `index.js`) and `9`.
 
 {% hlblock info %}
-Are you interested how `require` [works](https://github.com/maxogden/art-of-node#user-content-how-require-works)?
+Are you interested in how `require` [works](https://github.com/maxogden/art-of-node#user-content-how-require-works)?
 {% endhlblock %}
 
 4) Reusing current BioJS components!
@@ -78,11 +78,11 @@ BioJS offers a lot of common parsers and algorithms for reuse.
 Open your `reuse.js` file and type in
 
 ~~~
-var parser = require("biojs-io-newick").parse_newick;
+var parser = require("biojs-io-newick").parse_nwk;
 ~~~
 
 Now you included a newick parser for testing. Checkout the documentation for newick parser to see for yourself.
-To download the biojs component, just type  
+To download the BioJS component, just type
 
 ~~~
 npm install biojs-io-newick --save
@@ -105,7 +105,7 @@ Now run again
 node reuse.js
 ~~~
 
-You should get following:
+You should see the following:
 
 ~~~
 { children:
@@ -115,7 +115,7 @@ You should get following:
 ~~~
 
 Congratulations!
-You parsed a string by reusing a common biojs algorithm.
+You parsed a string by reusing a common BioJS algorithm.
 
 5) Reuse your component in the web
 ----------------------------------
