@@ -110,7 +110,7 @@ console.log(result);
 You can run your application directly with Node:
 
 ~~~
-node test.js
+node tests.js
 ~~~
 
 As we haven't done any work, our package currently outputs `{}`,
@@ -211,7 +211,7 @@ npm ERR! Test failed.  See above for more details.
 ~~~
 
 {% hlblock info %}
-In this tutorial we use [Mocha](https://visionmedia.github.io/mocha/) as JavaScript test framework.
+In this tutorial we use [Mocha](https://github.com/mochajs/mocha) as JavaScript test framework.
 However you can use your favorite - you only need to change the `test` command in the `scripts` section of your `package.json`.
 {% endhlblock %}
 
@@ -225,7 +225,7 @@ There is even `mocha --watch` that automatically reruns all tests on a file chan
 ---------------------
 
 {% hlblock help %}
-If you are new JavaScript or have not coded for a while, you might want to have a look at this [cheatsheet](http://overapi.com/javascript/).
+If you are new JavaScript or have not coded for a while, you might want to have a look at this [cheatsheet](http://overapi.com/javascript).
 {% endhlblock %}
 
 
