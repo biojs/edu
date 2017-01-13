@@ -15,7 +15,7 @@ This is a short tutorial on the basics of using and reusing BioJS components -- 
 You need to install `node` before you can start to rock. See <a href="/101/getting_started/"> the getting started guide </a> for more info.
 {% endalert %}
 
-How does the LEGO-System of BioJS works?
+How does the LEGO-System of BioJS work?
 We recommend you use a Unix terminal and a text editor!
 
 
