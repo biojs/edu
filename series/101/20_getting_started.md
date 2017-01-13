@@ -16,12 +16,13 @@ Node's package managing system is called [npm](https://www.npmjs.com).
 
 {% hlblock check %}
 
-Open your terminal of choice and check whether you have both commands (`npm`, `git`) installed. You should run these without
+Open your terminal of choice and check whether you have `npm`, `git`, and `node` installed. You should run these without
 any error.
 
 ~~~
 git help
 npm help
+node help
 ~~~
 
 {% endhlblock %}
