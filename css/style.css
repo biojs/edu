@@ -28,6 +28,8 @@
 body {
     font-family: 'Lato', Fallback, sans-serif;
 }
+<<<<<<< HEAD
+=======
 h2,
 h3 {
     display: block;
@@ -35,6 +37,7 @@ h3 {
     margin-bottom: 23px;
     margin-top: -33px;
 }
+>>>>>>> upstream/master
 .topNavbar {
     width: 100%;
     height: 30px;
