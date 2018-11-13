@@ -22,5 +22,5 @@ After installing npm, you will first create
 4. Learn how to publish your parser
 
 {% hlblock info %}
-The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101/10_intro.md).
+The BioJS project is truly open source, [even this tutorial](https://gitlab.com/biojs/edu/blob/master/series/101/10_intro.md).
 {% endhlblock %}

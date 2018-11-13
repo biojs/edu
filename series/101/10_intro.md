@@ -18,25 +18,24 @@ Getting help
 
 Our education portal is a work in progress. So if you encounter a logical inconsistency or just want to ask a question - don't hesitate to contact us.
 
-[![Slack](https://img.shields.io/badge/slack-join%20chat-ff69b4.svg)](http://biojs-slackin.herokuapp.com/){:target="_blank"} &nbsp; &nbsp; &nbsp; [![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs){:target="_blank"}  &nbsp; &nbsp; &nbsp;   [![IRC](https://img.shields.io/badge/irc-%23biojs-yellow.svg)](https://kiwiirc.com/client/irc.freenode.net/biojs){:target="_blank"}
+[![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs){:target="_blank"}  &nbsp; &nbsp; &nbsp;   
 
-We also maintain a public [Github wiki][wiki] and have a [mailing list][groups].
+We also maintain a public [Github wiki][wiki].
 For technical queries (questions, suggestions, proposals or bug reports) [Github issues](https://github.com/biojs/biojs/issues) are preferred.
 
 If you find a typo or want to help us to make this tutorial even better, you are invited to click on "Improve this page".
 
 [gitter]: https://gitter.im/biojs/biojs
-[groups]: https://groups.google.com/forum/#!forum/biojavascript
 [issue]: https://github.com/biojs/biojs/issues
 [wiki]: https://github.com/biojs/biojs/wiki
 
 Concepts in this tutorial
 ------------------------
 
-* Data separation and modularity 
+* Data separation and modularity
 * Versioning (via npm)
 * Minimal rules -> conventions and gold standards
 
 {% hlblock info %}
-The BioJS project is truly open source, [even this tutorial](https://github.com/biojs/edu/blob/master/series/101/10_intro.md).
+The BioJS project is truly open source, [even this tutorial](https://gitlab.com/biojs/edu/blob/master/series/101/10_intro.md).
 {% endhlblock %}
