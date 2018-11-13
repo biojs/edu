@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.1
+install: bundle install
+script: bundle exec jekyll build
+after_success: bundle exec s3_website push
+sudo: false
+branches:
+  only:
+  - master
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - secure: h9hhlu4G3KGKy4+kzuoQrASm6wmNmh9qgs7/DWmZvAlvvgNUOC5p31SHHZ3/H3uUKgHgYEUVzgJn29K/jTpZcbxYiFC8JAXgKvN7Ynxk6S/b7syLyeP1SMLUPobd/hiMNpjWfovpjIDULhVzLkRJGrnXN7TNvoeVsaHkyL+ayUk=
+  - secure: Ie7vsfqFJs+FB06Hb7ip6KAaiUlulTeTgCGvZZc1GFjoimbDOJgJFfpV0g+h+Wwtyyj0LAFmq7RYTbC5lmJUa/WPd+qYNaX4uKz39c5yadTTT1qutDf84LoMJQCfCrMQpq1/HNxL5IopvwaKfGq7+Bu4ZWPTQCYiVWfofOqDAlI=
