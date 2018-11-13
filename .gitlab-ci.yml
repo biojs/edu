@@ -1,9 +1,12 @@
 image: ruby:2.1
 
+before_script:
+  - curl -sL https://deb.nodesource.com/setup_11.x | bash -
+  - apt-get install -y nodejs
+
 pages:
   stage: deploy
   script:
-  - apt-get install nodejs
   - bundle install
   - bundle exec jekyll build -d public
   artifacts:
