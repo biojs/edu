@@ -33,22 +33,22 @@ What is BioJS?
 ---------------------
 
 BioJS is far more than just a registry for components - we aim to build an infrastructure, with guidelines and tools to avoid reinventing the wheel in life sciences – think "Docker for Bio web components".  
-In the early days of BioJS we defined specific _Easy to_ goals - our set of core principles we, as a community, 
+In the early days of BioJS we defined specific _Easy to_ goals - our set of core principles we, as a community,
 try to follow when developing BioJS components and its resources:
 
 * Easy to __combine__ - BioJS makes extensive use of Node's `require()` method to load modules - objects that may contain values, objects or functions from another JavaScript file. E.g. `require('my-awesome-biojs-component')` will load the module of my-awesome-biojs-component into your own project (with `browserify` we can also use run  `require` in the browser)
- 
+
 * Easy to __use__ - BioJS lets you use components easily by single-line installation via npm. All you need is to write `npm install my-awesome-biojs-component` into your terminal to get everything you need to reuse the `my-awesome-biojs-component` (you will see that `npm` exactly behaves like our Lego block manager)
 
 * Easy to __develop__ : BioJS provides with you a minimal essential set of conventions and Best Practices, so you as a contributing developer can enjoy as  much freedom as possible when creating your own components
 
 * Easy to __discover__ : BioJS sums up over 130 components in the [ __BioJS Registry__](http://biojs.io)
 
-* Easy to __understand__ : The community of BioJS works steadily on creating and improving learning resources for its users and developers. If you find anything to be unclear or if you are missing something, please feel free to [edit these pages on github](https://github.com/biojs/edu) by sending us a pull request, or request new learning sections by creating [a github issue](https://github.com/biojs/edu/issues)
- 
+* Easy to __understand__ : The community of BioJS works steadily on creating and improving learning resources for its users and developers. If you find anything to be unclear or if you are missing something, please feel free to [edit these pages on github](https://gitlab.com/biojs/edu) by sending us a pull request, or request new learning sections by creating [a github issue](https://gitlab.com/biojs/edu/issues)
+
 * Easy to __maintain__ : Everyone creates a github repo for their own component and maintains only the code they love!
 
-* Easy to __get involved__ : Apart from our amazing tutorial, we are also very active on [github](https://github.com/biojs/), [gitter](https://gitter.im/biojs/biojs) and [slack chat](http://biojs-slackin.herokuapp.com/)
+* Easy to __get involved__ : Apart from our amazing tutorial, we are also very active on [github](https://github.com/biojs/) and [gitter](https://gitter.im/biojs/biojs)
 
 <!--
 * Easy to start:

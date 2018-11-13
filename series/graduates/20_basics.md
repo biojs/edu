@@ -13,8 +13,8 @@ You can play with the result of this tutorial in [JSBin](http://jsbin.com/votoce
 1) Our input data
 -----------------
 
-We will parse the list of everyone who completed this tutorial. 
-This list is available as [github repo](https://github.com/biojs-edu/tutorial-graduates/blob/master/list) and you can add yourself to the list afterwards ;-)
+We will parse the list of everyone who completed this tutorial.
+This list is available as [git repo](https://gitlab.com/biojs-edu/tutorial-graduates/blob/master/list) and you can add yourself to the list afterwards ;-)
 
 
 It is structured as following:
@@ -46,7 +46,7 @@ We have selected these options:
 
 ~~~
 ? Module name? (required) biojs-io-graduates
-? Description? A parser for the BioJS tutorial graduate list 
+? Description? A parser for the BioJS tutorial graduate list
 ? Module version? 0.1.0
 ? Author name? greenify
 ? Author email? greeenify@gmail.com
@@ -192,7 +192,7 @@ So as long as you see something similar to following output, you can safely cont
       +  "UK": 1
       +}
       -{}
-      
+
       at Function.assert.deepEqual (/home/greenify/biojs/packages/biojs-io-graduates/node_modules/chai/lib/chai/interface/assert.js:205:32)
       at Context.<anonymous> (/home/greenify/biojs/packages/biojs-io-graduates/test/test_graduates.js:14:14)
       at callFn (/home/greenify/biojs/packages/biojs-io-graduates/node_modules/mocha/lib/runnable.js:250:21)
@@ -286,10 +286,10 @@ graduates.parse = function(data) {
 }
 {% endcode %}
 
-Congratulations! You wrote your very first Biojs 2 Component. 
+Congratulations! You wrote your very first Biojs 2 Component.
 
 {% hlblock info %}
-You can find the complete solution of this package on [github](https://github.com/biojs-edu/tutorial-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
+You can find the complete solution of this package on [github](https://gitlab.com/biojs-edu/tutorial-graduates) and [npm](https://www.npmjs.org/package/biojs-io-graduates).
 {% endhlblock %}
 
 8) Extend the generic parser
@@ -321,7 +321,7 @@ But we are pretty sure that you want to test this too!
 As our the online list might change we use `nock` to mock a webserver.
 
 ~~~
-npm install --save-dev nock 
+npm install --save-dev nock
 ~~~
 
 Then we mock our dummy file:
@@ -358,12 +358,12 @@ added the functionality of [the generic biojs parser][io-parser].
 ------------------------------------
 
 You worked hard - now it is time to acknowledgment.
-Please pick a fancy alias, lookup your [country alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-2) and add yourself to the [graduate list](https://github.com/biojs-edu/tutorial-graduates/blob/master/list)
+Please pick a fancy alias, lookup your [country alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-2) and add yourself to the [graduate list](https://gitlab.com/biojs-edu/tutorial-graduates/blob/master/list)
 
 {% hlblock info %}
 If you are unfamiliar with git, check out the [Git guide](https://rogerdudler.github.io/git-guide/) or [15 minutes interactive lesson](https://try.github.io/levels/1/challenges/1) by Codeschool.
 {% endhlblock %}
 
 {% hlblock help %}
-If you can't think of a fancy alias, pick either your github username of let [software](http://www.spinxo.com) help you ;-)
+If you can't think of a fancy alias, pick either your github username or let [software](http://www.spinxo.com) help you ;-)
 {% endhlblock %}

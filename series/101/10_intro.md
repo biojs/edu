@@ -21,7 +21,7 @@ Our education portal is a work in progress. So if you encounter a logical incons
 [![Gitter](https://badges.gitter.im/BioJS.png)](https://gitter.im/biojs/biojs){:target="_blank"}  &nbsp; &nbsp; &nbsp;   
 
 We also maintain a public [Github wiki][wiki].
-For technical queries (questions, suggestions, proposals or bug reports) [Github issues](https://github.com/biojs/biojs/issues) are preferred.
+For technical queries (questions, suggestions, proposals or bug reports) [Gitlab issues](https://gitlab.com/biojs/biojs/issues) are preferred.
 
 If you find a typo or want to help us to make this tutorial even better, you are invited to click on "Improve this page".
 
