@@ -13,8 +13,8 @@ layout: front
               <h3 class="masthead-brand">BioJS Edu</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li><a href="http://www.biojs.net"><i class="fa fa-home"></i> Home</a></li>
-                  <li><a href="https://github.com/biojs/biojs"><i class="fa fa-github-alt"></i> GitHub</a></li>
+                  <li><a href="http://www.biojs.net"><i class="fa fa-home"></i> BioJS Registry</a></li>
+                  <li><a href="https://gitlab.com/biojs/biojs"><i class="fa fa-github-alt"></i> BioJS on GitHub</a></li>
                 </ul>
               </nav>
             </div>
@@ -33,7 +33,7 @@ layout: front
             -->
           </div>
 
-          
+
 
           <div class="mastfoot">
             <div class="inner">
@@ -66,5 +66,3 @@ layout: front
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-
-
