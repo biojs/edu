@@ -24,7 +24,8 @@ We have defined some minimal standards that every BioJS package should comply wi
 ### 1. Documentation
 
 It is super easy to write usable documentation for your component, we don't expect a masterpiece of modern literature, but especially the user should be able to know how to use your components ;-)
-You could write your documentation with
+You could write your documentation with  
+
 * `README.md` (recommended)
 * Github wiki
 * an API documentation generating framework (e.g. docco or jsdoc)
