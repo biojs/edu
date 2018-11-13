@@ -3,7 +3,7 @@ image: ruby:2.1
 pages:
   stage: deploy
   script:
-  - sudo apt-get install nodejs
+  - apt-get install nodejs
   - bundle install
   - bundle exec jekyll build -d public
   artifacts:
