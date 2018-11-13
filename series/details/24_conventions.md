@@ -55,8 +55,8 @@ For those recommendations to new comers: It is not so important how fancy they a
 ### Our checklist
 
 * public CI
-  - [travis][publish-guide]
-  - [drone.io][publish-guide]
+  - [travis](/details/conventions/)
+  - [drone.io](/details/conventions/)
 * tool-enforced code-consistency
   - [jshint](http://www.jshint.com/)
   - BioJS [coding style guide](https://github.com/biojs/style-guide)
