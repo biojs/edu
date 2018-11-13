@@ -1,14 +1,14 @@
 <div class="Menu">
         <div class="list">
             <div class="logoDiv">
-                <img src="/img/logo.png" id="logoImg">
+                <a href="/"><img src="/img/logo.png" id="logoImg"></a>
                 <div class="logoDivName">BioJS Education</div>
             </div>
 {% sorted_keys_for el in site.series sort_by:sort has_hash:site.series %}
 
         <span class="item-heading"> {{ site.series[el].desc }} </span>
 			{% for p in site.series[el].pages %}
-	
+
 				<a class="item {% if page.url == p.url%}item-active{%endif%}" href="{{ p.url }}">{{ p.title}}</a>
 			{% endfor %}
 		{% endsorted_keys_for %}
