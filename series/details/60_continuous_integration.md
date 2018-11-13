@@ -1,7 +1,7 @@
 ---
 title: 'Continuous integration'
 layout: series_item
-contributors: Seb
+contributors: Seb, Yo
 series: 'details'
 permalink: details/continuous_integration/
 estimated-time: 5
@@ -41,24 +41,8 @@ With the [`travis.yml`](http://docs.travis-ci.com/user/build-configuration/) you
 
 You might want to save same artifacts or configure more details in a [`circle.yml`](https://circleci.com/docs/configuration)
 
-### 3) Using [snapci](https://snap-ci.com)
 
-1. Setup a new [repo](https://snap-ci.com/github_repositories/new)
-2. Choose your repository and click on "Add"
-3. Edit the "Commands to be executed"
-
-```
-npm install
-npm test
-npm run build
-```
-(`npm run build` is only fis only for visualization components)
-
-You might want to save same artifacts.
-
-4. Click on "Build now"
-
-### 4) Using [drone.io](https://drone.io/)
+### 3) Using [drone.io](https://drone.io/)
 
 * new project -> github -> add your project
 * choose node
