@@ -90,7 +90,7 @@ Install nodejs via [your package manager](https://github.com/joyent/node/wiki/in
 E.g.
 
 ~~~
-curl -sL https://deb.nodesource.com/setup | sudo bash - # Ubuntu, Debian
+curl -sL https://deb.nodesource.com/setup_10.x | sudo bash - ; sudo apt-get install -y nodejs # Ubuntu, Debian
 pacman -S nodejs #  Arch
 emerge nodejs # Gentoo
 yum install npm # Fedora
